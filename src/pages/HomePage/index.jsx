@@ -5,8 +5,15 @@ import AboutUsSection from "./AboutUsSection";
 import HomePageSection from "./HomePageSection";
 import { Heading, Flex, Box, Button, Image, Container } from "@chakra-ui/react";
 import React from "react";
+import { useNavigate } from "react-router-dom";  // Import useNavigate
 
 export default function HomePagePage() {
+  const navigate = useNavigate();  // Initialize the navigate function
+
+  const handleLearnMoreClick = () => {
+    navigate("/aboutus");  // Navigate to the AboutUs page
+  };
+
   return (
     <>
       <Helmet>
@@ -103,26 +110,21 @@ export default function HomePagePage() {
                     Lorem ipsum dolor sit amet consectetur. Interdum vitae et et
                     nunc. Duis dictum ut a mi sapien in.
                   </Heading>
-                  <a
-                    href="https://www.youtube.com/embed/bv8Fxk0sz7I"
-                    target="_blank"
-                    rel="noreferrer"
+                  <Button
+                    size="xl"
+                    color="white.a700"
+                    ml={{ md: "32px", base: "0px" }}
+                    fontWeight={600}
+                    borderColor="light_blue.600"
+                    borderWidth="1px"
+                    borderStyle="solid"
+                    boxShadow="xs"
+                    minw="128px"
+                    borderRadius="8px"
+                    onClick={handleLearnMoreClick}  // Handle the click to navigate
                   >
-                    <Button
-                      size="xl"
-                      color="white.a700"
-                      ml={{ md: "32px", base: "0px" }}
-                      fontWeight={600}
-                      borderColor="light_blue.600"
-                      borderWidth="1px"
-                      borderStyle="solid"
-                      boxShadow="xs"
-                      minw="128px"
-                      borderRadius="8px"
-                    >
-                      Learn more
-                    </Button>
-                  </a>
+                    Learn more
+                  </Button>
                 </Flex>
               </Flex>
             </Container>
