@@ -6,6 +6,7 @@ import AboutUs from "pages/AboutUs";
 import Services from "pages/Services";
 import Publication from "pages/Publication";
 import ServicesOne from "pages/ServicesOne";
+import Login from "pages/Login";
 
 const ProjectRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const ProjectRoutes = () => {
       <Route path="/services" element={<Services />} />
       <Route path="/publication" element={<Publication />} />
       <Route path="/servicesone" element={<ServicesOne />} />
+      <Route path="/login" element={<Login />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
