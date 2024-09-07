@@ -10,7 +10,7 @@ class PublicationAdmin(admin.ModelAdmin):
 
 # Customize the Messages admin
 class MessagesAdmin(admin.ModelAdmin):
-    list_display = ('user_name', 'email', 'message', 'date_created')  # Display these fields in the list view
+    list_display = ('user_name', 'email', 'message', 'status')  # Display these fields in the list view
     search_fields = ('user_name', 'email')  # Add a search bar for 'user_name' and 'email'
     list_filter = ('date_created',)  # Add a filter for date_created
     readonly_fields = ('date_created',)  # Make date_created read-only

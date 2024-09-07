@@ -9,4 +9,4 @@ class PublicationSerializer(serializers.ModelSerializer):
 class MessagesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Messages
-        fields = '__all__'
+        fields = ['user_name', 'email', 'message', 'status', 'date_created']

@@ -19,11 +19,11 @@ export default function ServicesOnePage() {
       <Box bg="white.a700" w="100%">
         <Header />
 
-        {/* about us section */}
-        <AboutUsSection />
-
         {/* contact section */}
         <ContactSection />
+
+        {/* about us section */}
+        <AboutUsSection />
         <Footer mt="188px" />
       </Box>
     </>

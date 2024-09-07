@@ -100,13 +100,6 @@ const PublicationSection = () => {
               </Heading>
               <Text mt="4px">Lorem ipsum dolor sit amet consectetur.</Text>
             </Flex>
-            {/* <Image
-              src="images/img_dots_vertical.svg"
-              alt="Vertical Dots"
-              h="20px"
-              mt="20px"
-              w={{ md: "20px", base: "100%" }}
-            /> */}
           </Flex>
           <Flex justifyContent="flex-end" mb="20px" px="20px">
             <Select
@@ -140,19 +133,29 @@ const PublicationSection = () => {
                     <Td>{pub.description}</Td>
                     <Td>{new Date(pub.date_created).toLocaleDateString()}</Td>
                     <Td>
-                      <DocumentViewer
-                        fileType={pub.publication.split('.').pop().toUpperCase()}
-                        documentName={pub.name}
-                        fileSize={(pub.publication.size / 1024).toFixed(2) + ' KB'}
-                      />
+                      {pub.publication ? (
+                        <DocumentViewer
+                          fileType={pub.publication.split('.').pop().toUpperCase()} // Check if publication exists
+                          documentName={pub.name}
+                          fileSize={(pub.publication.size / 1024).toFixed(2) + ' KB'}
+                        />
+                      ) : (
+                        <Text color="red.500">No document available</Text> // Fallback if undefined
+                      )}
                     </Td>
                     <Td>
-                      <Button
-                        colorScheme="blue"
-                        onClick={() => handleDownload(pub.publication)}
-                      >
-                        Download
-                      </Button>
+                      {pub.publication ? (
+                        <Button
+                          colorScheme="blue"
+                          onClick={() => handleDownload(pub.publication)}
+                        >
+                          Download
+                        </Button>
+                      ) : (
+                        <Button colorScheme="gray" isDisabled>
+                          Unavailable
+                        </Button>
+                      )}
                     </Td>
                   </Tr>
                 ))}

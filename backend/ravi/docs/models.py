@@ -13,12 +13,29 @@ class Publication(models.Model):
     
     
 class Messages(models.Model):
+    URGENT = 'URG'
+    NORMAL = 'NOR'
+    NOT_URGENT = 'NUR'
+
+    STATUS_CHOICES = [
+        (URGENT, 'Urgent'),
+        (NORMAL, 'Normal'),
+        (NOT_URGENT, 'Not Urgent'),
+    ]
+
     user_name = models.CharField(max_length=255)
     message = models.CharField(max_length=255)
     email = models.EmailField(max_length=255)
     date_created = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(
+        max_length=3,
+        choices=STATUS_CHOICES,
+        default=NOT_URGENT,
+    )
 
     def __str__(self):
-        return (self.user_name)
+        return self.user_name
     
+    class Meta:
+        verbose_name_plural = 'Messages'
     

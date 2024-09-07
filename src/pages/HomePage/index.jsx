@@ -10,9 +10,7 @@ export default function HomePagePage() {
   return (
     <>
       <Helmet>
-        <title>
-          Ravi Ariv Institute Empowering Through Education
-        </title>
+        <title>Ravi Ariv Institute Empowering Through Education</title>
         <meta
           name="description"
           content="Join the Ravi Ariv Institute and embrace Service Above Self with our free learning resources. Discover tax laws, advisory services, and capacity development for community betterment"
@@ -23,7 +21,7 @@ export default function HomePagePage() {
           gap={{ md: "70px", base: "35px", sm: "52px" }}
           flexDirection="column"
         >
-          <Header />          
+          <Header />
 
           {/* about us section */}
           <AboutUsSection />
@@ -97,7 +95,7 @@ export default function HomePagePage() {
                   <Heading
                     size="textlg"
                     color="blue_gray.700"
-                    ml={{ md: "32px", base: "0px" }}
+                    ml={{ md: "40px", base: "20px" }} // Adjusted margin-left to move text to the right
                     fontWeight={400}
                     w={{ md: "88%", base: "100%" }}
                     lineHeight="30px"
@@ -107,7 +105,7 @@ export default function HomePagePage() {
                   </Heading>
                   <a
                     href="https://www.youtube.com/embed/bv8Fxk0sz7I"
-                    target="blank"
+                    target="_blank"
                     rel="noreferrer"
                   >
                     <Button
@@ -133,18 +131,19 @@ export default function HomePagePage() {
               position="relative"
               bg="white.a700"
               alignSelf="stretch"
+              px={{ base: "20px", sm: "32px" }}
             >
               <Flex
                 bg="white.a700"
                 justifyContent="flex-start"
                 p={{ base: "20px", sm: "32px" }}
+                flexDirection="column"
+                alignItems="flex-start"
               >
                 <Flex
                   gap="10px"
                   flexDirection="column"
-                  alignItems="start"
-                  justifyContent="center"
-                  px={{ base: "20px", sm: "32px" }}
+                  alignItems="flex-start"
                 >
                   <Heading
                     size="headingxs"
@@ -153,6 +152,8 @@ export default function HomePagePage() {
                     color="light_blue.a700"
                     fontSize="16px"
                     fontWeight={600}
+                    mb="4px"
+                    ml="20px"
                   >
                     Get Our Services Today
                   </Heading>
@@ -161,6 +162,8 @@ export default function HomePagePage() {
                     as="h4"
                     color="gray.900"
                     letterSpacing="-0.96px"
+                    mb="16px"
+                    ml="20px"
                   >
                     What we provide
                   </Heading>
