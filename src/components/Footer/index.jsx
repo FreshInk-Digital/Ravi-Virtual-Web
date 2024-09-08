@@ -77,7 +77,14 @@ export default function Footer({ ...props }) {
                   </Flex>
 
                   <Flex gap="14px" flexDirection="column" alignItems="start" w="100%">
-                    <Heading size="headings" as="h4" color="black.900" fontFamily="Poppins">
+                    <Heading 
+                      size="headings"
+                      as="h4"
+                      color="black.900"
+                      letterSpacing="0.72px"
+                      fontSize={{ md: "24px", base: "24px", sm: "22px" }}
+                      fontWeight={700}
+                    >
                       Support
                     </Heading>
                     <Link href="#" w="100%" lineHeight="24px">
@@ -90,9 +97,16 @@ export default function Footer({ ...props }) {
               </Flex>
             </Flex>
             
-            <Flex gap="20px" w={{ md: "28%", base: "100%" }} flexDirection={{ base: "column", sm: "row" }}>
+            <Flex gap="16px" w={{ md: "30%", base: "100%" }} flexDirection={{ base: "column", sm: "row" }}>
               <Flex gap="14px" flexDirection="column" alignItems="start" w="100%">
-                <Heading size="textlg" as="h6" color="black.900" fontFamily="Poppins">
+                <Heading
+                  size="headings"
+                  as="h4"
+                  color="black.900"
+                  letterSpacing="0.72px"
+                  fontSize={{ md: "24px", base: "24px", sm: "22px" }}
+                  fontWeight={700}
+                >
                   Account
                 </Heading>
                 <UnorderedList styleType="none" gap="8px" display="flex" flexDirection="column" alignItems="start">
@@ -103,23 +117,37 @@ export default function Footer({ ...props }) {
                       </Text>
                     </Link>
                   </ListItem>
+                  <ListItem>
+                    <Link href="/servicesone">
+                      <Text size="textmd" color="black.900" fontFamily="Poppins">
+                        Contact
+                      </Text>
+                    </Link>
+                  </ListItem>
                 </UnorderedList>
               </Flex>
 
               <Flex gap="14px" flexDirection="column" alignItems="start" w="100%">
-                <Heading size="textlg" as="h6" color="black.900" fontFamily="Poppins">
+                <Heading
+                  size="headings"
+                  as="h4"
+                  color="black.900"
+                  letterSpacing="0.72px"
+                  fontSize={{ md: "24px", base: "24px", sm: "22px" }}
+                  fontWeight={700}
+                >
                   Quick Links
                 </Heading>
                 <UnorderedList styleType="none" gap="8px" display="flex" flexDirection="column" alignItems="start">
                   <ListItem>
-                    <Link href="#">
+                    <Link href="/privacy">
                       <Text size="textmd" color="black.900" fontFamily="Poppins">
                         Privacy Policy
                       </Text>
                     </Link>
                   </ListItem>
                   <ListItem>
-                    <Link href="#">
+                    <Link href="terms">
                       <Text size="textmd" color="black.900" fontFamily="Poppins">
                         Terms of Use
                       </Text>
@@ -132,13 +160,7 @@ export default function Footer({ ...props }) {
                       </Text>
                     </Link>
                   </ListItem>
-                  <ListItem>
-                    <Link href="Contact" target="blank" rel="noreferrer">
-                      <Text size="textmd" color="black.900" fontFamily="Poppins">
-                        Contact
-                      </Text>
-                    </Link>
-                  </ListItem>
+                  
                 </UnorderedList>
               </Flex>
             </Flex>
