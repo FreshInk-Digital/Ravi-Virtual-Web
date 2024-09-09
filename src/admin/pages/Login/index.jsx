@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
 import LoginSection from "./LoginSection";
 import { Box } from "@chakra-ui/react";
 import React from "react";
@@ -19,7 +19,7 @@ export default function Login() {
         <Header />
 
         {/* login section */}
-        <LoginSection />
+        <LoginSection route="api/token/" method="login" />
        
         <Footer mt="96px" />
       </Box>
