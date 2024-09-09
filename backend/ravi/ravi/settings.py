@@ -2,7 +2,6 @@ from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
 import os
-from decouple import config, Csv
 
 load_dotenv()
 
