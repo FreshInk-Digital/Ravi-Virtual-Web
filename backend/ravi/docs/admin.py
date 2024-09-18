@@ -1,6 +1,11 @@
 from django.contrib import admin
 from .models import Publication, Messages
 
+# Customizing the Django Admin interface
+admin.site.site_header = "Ravi Moova Admin"
+admin.site.site_title = "Ravi Moova Admin Portal"
+admin.site.index_title = "Welcome to Ravi Moova Admin Dashboard"
+
 # Customize the Publication admin
 class PublicationAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'date_created', 'last_update')  # Display these fields in the list view
