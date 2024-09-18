@@ -65,8 +65,7 @@ INTERNAL_IPS = [
 CORS_ALLOWED_ORIGINS = [
   'http://localhost:8000',
   'http://127.0.0.1:8000',
-  'https://ravimoova.co.tz:2083',
-  'https://ravimoova.co.tz:2083',
+  'https://ravimoova.co.tz',
 ]
 
 ROOT_URLCONF = 'ravi.urls'
