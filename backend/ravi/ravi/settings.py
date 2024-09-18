@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'docs',
 ]
 
+
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -42,10 +44,8 @@ SIMPLE_JWT = {
   "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
 
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
-
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -53,7 +53,19 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+]
+
+INTERNAL_IPS = [
+  # ...
+  '127.0.0.1',
+  # ...
+]
+
+CORS_ALLOWED_ORIGINS = [
+  'http://localhost:8000',
+  'http://127.0.0.1:8000',
+  'http://localhost:3000',
+  'http://127.0.0.1:3000',
 ]
 
 ROOT_URLCONF = 'ravi.urls'
@@ -89,8 +101,8 @@ DATABASES = {
     }
 }
 
-database_url = os.environ.get("DATABASE_URL")
-DATABASES['default'] = dj_database_url.parse(database_url)
+# database_url = os.environ.get("DATABASE_URL")
+# DATABASES['default'] = dj_database_url.parse(database_url)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

@@ -1,25 +1,31 @@
 import React, { useEffect, useState, Suspense } from "react";
 import { Heading, Flex, Box, Text, Table, Thead, Tbody, Tr, Th, Td, Button, Select } from "@chakra-ui/react";
 import api from '../../api/api';
-import DocumentViewer from "../../components/DocumentViewer";
+import DocumentViewer from "../../components/DocumentViewer";  // Ensure this handles preview
 import PaginationComponent from "../../components/PaginationComponent";
 
 const PublicationSection = () => {
-  // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line
   const [publications, setPublications] = useState([]);
   const [sortedPublications, setSortedPublications] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [sortCriteria, setSortCriteria] = useState('date');
+  const [noPublications, setNoPublications] = useState(false);  // Track if there are no publications
   const publicationsPerPage = 12;
 
   useEffect(() => {
     const fetchPublications = async () => {
       try {
         const response = await api.get('Publication/');
-        setPublications(response.data);
-        setTotalPages(Math.ceil(response.data.length / publicationsPerPage));
-        sortPublications(response.data, sortCriteria);
+        if (response.data.length === 0) {
+          setNoPublications(true);  // Set no publications flag if empty
+        } else {
+          setPublications(response.data);
+          setTotalPages(Math.ceil(response.data.length / publicationsPerPage));
+          sortPublications(response.data, sortCriteria);
+          setNoPublications(false);  // Reset flag if there are publications
+        }
       } catch (error) {
         console.error('Error fetching publications:', error);
       }
@@ -28,14 +34,27 @@ const PublicationSection = () => {
     fetchPublications();
   }, [sortCriteria]);
 
-  const handleDownload = (url) => {
+  const handleDownload = (filePath) => {
+    // If filePath already contains the full URL, no need to add the base URL again
+    const isFullUrl = filePath.startsWith('http://') || filePath.startsWith('https://');
+  
+    // If it's a relative path, prepend the base URL
+    const fullUrl = isFullUrl ? filePath : `http://127.0.0.1:8000${filePath}`;
+  
+    console.log(fullUrl);  // Log URL to verify correctness
+  
     const link = document.createElement('a');
-    link.href = url;
-    link.download = url.split('/').pop();
+    link.href = fullUrl;
+    link.setAttribute('download', filePath.split('/').pop());  // Set download attribute
+    link.setAttribute('target', '_blank');  // Open in a new tab to avoid blocking
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
+    document.body.removeChild(link);  // Clean up after download
   };
+  
+  
+  
+  
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -115,65 +134,73 @@ const PublicationSection = () => {
         </Box>
 
         <Box p="20px">
-          <Table variant="simple">
-            <Thead>
-              <Tr>
-                <Th>File Title</Th>
-                <Th>Description</Th>
-                <Th>Date Created</Th>
-                <Th>Preview</Th>
-                <Th>Action</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              <Suspense fallback={<Tr><Td colSpan={5}>Loading...</Td></Tr>}>
-                {currentPublications.map((pub) => (
-                  <Tr key={pub.id}>
-                    <Td>{pub.name}</Td>
-                    <Td>{pub.description}</Td>
-                    <Td>{new Date(pub.date_created).toLocaleDateString()}</Td>
-                    <Td>
-                      {pub.publication ? (
-                        <DocumentViewer
-                          fileType={pub.publication.split('.').pop().toUpperCase()} // Check if publication exists
-                          documentName={pub.name}
-                          fileSize={(pub.publication.size / 1024).toFixed(2) + ' KB'}
-                        />
-                      ) : (
-                        <Text color="red.500">No document available</Text> // Fallback if undefined
-                      )}
-                    </Td>
-                    <Td>
-                      {pub.publication ? (
-                        <Button
-                          colorScheme="blue"
-                          onClick={() => handleDownload(pub.publication)}
-                        >
-                          Download
-                        </Button>
-                      ) : (
-                        <Button colorScheme="gray" isDisabled>
-                          Unavailable
-                        </Button>
-                      )}
-                    </Td>
+          {noPublications ? (  // Display notification if no publications
+            <Text color="red.500" textAlign="center">
+              No publication documents available yet.
+            </Text>
+          ) : (
+            <>
+              <Table variant="simple">
+                <Thead>
+                  <Tr>
+                    <Th>File Title</Th>
+                    <Th>Description</Th>
+                    <Th>Date Created</Th>
+                    <Th>Preview</Th>
+                    <Th>Action</Th>
                   </Tr>
-                ))}
-              </Suspense>
-            </Tbody>
-          </Table>
+                </Thead>
+                <Tbody>
+                  <Suspense fallback={<Tr><Td colSpan={5}>Loading...</Td></Tr>}>
+                    {currentPublications.map((pub) => (
+                      <Tr key={pub.id}>
+                        <Td>{pub.name}</Td>
+                        <Td>{pub.description}</Td>
+                        <Td>{new Date(pub.date_created).toLocaleDateString()}</Td>
+                        <Td>
+                          {pub.publication ? (
+                            <DocumentViewer
+                              fileType={pub.publication.split('.').pop().toUpperCase()} 
+                              documentName={pub.name}
+                              fileUrl={`http://127.0.0.1:8000${pub.publication}`}  // Correct path
+                            />
+                          ) : (
+                            <Text color="red.500">No document available</Text>  // Fallback if undefined
+                          )}
+                        </Td>
+                        <Td>
+                          {pub.publication ? (
+                            <Button
+                              colorScheme="blue"
+                              onClick={() => handleDownload(pub.publication)}
+                            >
+                              Download
+                            </Button>
+                          ) : (
+                            <Button colorScheme="gray" isDisabled>
+                              Unavailable
+                            </Button>
+                          )}
+                        </Td>
+                      </Tr>
+                    ))}
+                  </Suspense>
+                </Tbody>
+              </Table>
 
-          <Flex mt="20px" justifyContent="center">
-            <PaginationComponent
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-            />
-          </Flex>
+              <Flex mt="20px" justifyContent="center">
+                <PaginationComponent
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={handlePageChange}
+                />
+              </Flex>
+            </>
+          )}
         </Box>
       </Box>
     </Box>
   );
-}
+};
 
 export default PublicationSection;
