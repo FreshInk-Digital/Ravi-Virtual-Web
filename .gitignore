@@ -38,8 +38,6 @@ backend/ravi/*.pyd
 backend/ravi/*.log
 backend/ravi/*.sqlite3
 backend/ravi/db.sqlite3
-backend/ravi/media/
-backend/ravi/staticfiles/
 backend/ravi/*.pyc
 backend/ravi/*.pyo
 backend/ravi/*.pyd

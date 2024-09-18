@@ -39,7 +39,7 @@ const PublicationSection = () => {
     const isFullUrl = filePath.startsWith('http://') || filePath.startsWith('https://');
   
     // If it's a relative path, prepend the base URL
-    const fullUrl = isFullUrl ? filePath : `http://127.0.0.1:8000${filePath}`;
+    const fullUrl = isFullUrl ? filePath : `https://ravi-virtual-web.onrender.com/${filePath}`;
   
     console.log(fullUrl);  // Log URL to verify correctness
   
@@ -162,7 +162,7 @@ const PublicationSection = () => {
                             <DocumentViewer
                               fileType={pub.publication.split('.').pop().toUpperCase()} 
                               documentName={pub.name}
-                              fileUrl={`http://127.0.0.1:8000${pub.publication}`}  // Correct path
+                              fileUrl={`https://ravi-virtual-web.onrender.com/${pub.publication}`}  // Correct path
                             />
                           ) : (
                             <Text color="red.500">No document available</Text>  // Fallback if undefined
