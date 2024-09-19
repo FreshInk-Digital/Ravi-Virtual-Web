@@ -7,9 +7,19 @@ from .serializers import PublicationSerializer, MessagesSerializer, UserSerializ
 class PublicationViewSet(viewsets.ModelViewSet):
     queryset = Publication.objects.all()
     serializer_class = PublicationSerializer
-    permission_classes = [AllowAny]
+    
+    def get_permissions (self):
+        if self.action in ['list', 'retrieve']:
+            return [AllowAny()]
+        
+        return [IsAuthenticated()]
 
 class MessagesViewSet(viewsets.ModelViewSet):
     queryset = Messages.objects.all()
     serializer_class = MessagesSerializer
-    permission_classes = [AllowAny]
+    
+    def get_permissions(self):
+        if self.action == 'create':
+            return [AllowAny()]
+        
+        return [IsAuthenticated()]
