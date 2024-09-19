@@ -2,7 +2,7 @@ import axios from "axios";
 import { ACCESS_TOKEN } from "constants/constants";
 
 const api = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: "https://ravi-virtual-web.onrender.com",
 })
 
 api.interceptors.request.use(
