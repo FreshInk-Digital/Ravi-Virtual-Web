@@ -10,7 +10,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY="django-insecure-e2j_zlw0_e(b$fw1uk5z30p_!t)6(l&05a*f44te^j7i5otwt^"
-DEBUG=False
+DEBUG=True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -63,11 +63,11 @@ INTERNAL_IPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-#   'http://localhost:8000',
-#   'http://127.0.0.1:8000',
-#   'http://127.0.0.1:3000',
-#   'http://localhost:3000',
-  'https://ravimoova.co.tz',
+  'http://localhost:8001',
+  'http://127.0.0.1:8001',
+  'http://localhost:3000',
+  'http://127.0.0.1:3000',
+#   'https://ravimoova.co.tz',
 ]
 
 ROOT_URLCONF = 'ravi.urls'
@@ -106,18 +106,18 @@ WSGI_APPLICATION = 'ravi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': os.getenv('DB_NAME'),
-    #     'USER': os.getenv('DB_USER'),
-    #     'PASSWORD': os.getenv('DB_PASSWORD'),
-    #     'HOST': os.getenv('DB_HOST'),
-    #     'PORT': os.getenv('DB_PORT')
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT')
+    }
 }
 
-database_url = os.environ.get("DATABASE_URL")
-DATABASES['default'] = dj_database_url.parse(database_url)
+# database_url = os.environ.get("DATABASE_URL")
+# DATABASES['default'] = dj_database_url.parse(database_url)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

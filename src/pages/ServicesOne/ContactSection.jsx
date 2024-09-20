@@ -12,6 +12,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import ContactInformation from "../../components/ContactInformation";
+import SendSms from "../../api/sendSms"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -19,7 +20,7 @@ export default function ContactSection() {
     email: '',
     message: '',
     phone: '',
-    status: 'NUR', // Default status
+    status: 'NUR',
   });
 
   const [errors, setErrors] = useState({});
@@ -94,6 +95,7 @@ export default function ContactSection() {
 
     try {
       await api.post('/Messages/', formData);
+      await SendSms (formData);
       toast({
         title: 'Message Sent',
         description: "Your message has been sent successfully.",

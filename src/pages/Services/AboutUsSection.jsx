@@ -10,7 +10,7 @@ export default function AboutUsSection() {
     <>
       {/* about us section */}
       <Box
-        h={{ md: "860px", base: "auto" }}
+        h={{ md: "300px", base: "auto" }} // Reduced height
         mt="68px"
         position="relative"
         alignContent="center"
@@ -59,10 +59,10 @@ export default function AboutUsSection() {
               setSliderState(e?.item);
             }}
             ref={sliderRef}
-            items={[...Array(3)].map(() => (
-              <React.Fragment key={Math.random()}>
+            items={[...Array(3)].map((_, index) => (
+              <React.Fragment key={index}>
                 <Flex
-                  h={{ md: "860px", base: "auto" }}
+                  h={{ md: "300px", base: "auto" }} // Reduced height
                   bg="black.900"
                   bgImage="url(/images/img_frame_560_860x1172.png)"
                   bgSize="cover"
@@ -71,41 +71,7 @@ export default function AboutUsSection() {
                   alignItems="center"       // Align items vertically at the center
                   p={{ md: "44px", base: "20px" }}
                 >
-                  {/* <Box w="100%">
-                    <a
-                      href="https://www.youtube.com/embed/bv8Fxk@sz71"
-                      target="blank"
-                    >
-                      <Flex mb="34px" gap="9px" alignItems="center" justifyContent="center">
-                        <Flex
-                          gap="4px"
-                          w="8%"
-                          flexDirection="column"
-                          alignItems="center" // Center text vertically
-                        >
-                          <Text
-                            size="textmd"
-                            color="gray.50"
-                            fontFamily="Poppins"
-                            fontWeight={500}
-                          >
-                            About Us
-                          </Text>
-                          <Box
-                            h="1px"
-                            bg="gray.50"
-                            w="100%"
-                          />
-                        </Flex>
-                        <Image
-                          src="images/img_arrow_right.svg"
-                          alt="Arrow Image"
-                          h="24px"
-                          w="24px"
-                        />
-                      </Flex>
-                    </a>
-                  </Box> */}
+                  {/* Additional content can go here */}
                 </Flex>
               </React.Fragment>
             ))}
