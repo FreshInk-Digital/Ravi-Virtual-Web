@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const api_key = "ab73ecd10a2c18c8";
-const secret_key = "Zjg4ZGNmMTZmZTZjYzU0MGNiMDhmNWYxN2ZiMDk1NjYyNmZlYWJiMDliYTVmZTE0Y2RjNWNjN2U1M2ZkMzcxOQ==";
+const api_key = "49478e6e5cac680b";
+const secret_key = "Y2I3ODliZmMwMTU4MWExNTNkNDVmMzNmZDExZTYyZmRhMjc0MjI4ZmFmNDgyNjY1ZjNiZDZmZjZiMTlkMDRhZg==";
 const content_type = "application/json";
 const source_addr = "INFO";
 
@@ -18,7 +18,7 @@ function send_sms({ user_name, email, phone, message, status }) {
       recipients: [
         {
           recipient_id: 1,
-          dest_addr: "255782671763",
+          dest_addr: "255781969373",
         },
       ],
     },

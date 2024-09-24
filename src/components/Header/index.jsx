@@ -1,16 +1,17 @@
-import { Box, Text, Link, Flex, Image } from "@chakra-ui/react";
+import { Box, Text, Link, Flex, Image, Container, Heading, IconButton, Collapse } from "@chakra-ui/react";
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { SelectBox } from "./../SelectBox";
-import { CloseIcon } from "@chakra-ui/icons";
-import { InputRightElement, InputGroup, Input, UnorderedList, ListItem, Container, Heading } from "@chakra-ui/react";
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { InputRightElement, InputGroup, Input, UnorderedList, ListItem } from "@chakra-ui/react";
 
 const dropDownOptions = [{ label: "Swahili", value: "swahili" }];
 
 export default function Header({ ...props }) {
   const [searchBarValue, setSearchBarValue] = React.useState("");
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [isNavOpen, setIsNavOpen] = React.useState(false);
   const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
@@ -35,13 +36,43 @@ export default function Header({ ...props }) {
       </Box>
 
       <Flex bg="light_blue.a700" alignSelf="stretch" justifyContent="center" py="12px">
-        <Container display="flex" justifyContent="flex-end" px={{ md: "8px", base: "20px" }}>
-          <Flex w={{ md: "74%", base: "100%" }} justifyContent="space-between" gap="20px" flexDirection={{ md: "row", base: "column" }}>
-            <Flex w={{ md: "64%", base: "100%" }} justifyContent="space-between" flexWrap="wrap" gap="20px">
-              <Text color="gray.50" fontFamily="Poppins">
+        <Container
+          display="flex"
+          justifyContent="flex-end"
+          px={{ md: "8px", base: "20px" }}
+          flexDirection={{ md: "row", base: "column" }}
+          alignItems="center"
+        >
+          <Flex
+            w={{ md: "74%", base: "100%" }}
+            justifyContent="space-between"
+            gap="20px"
+            flexDirection={{ md: "row", base: "column" }}
+          >
+            <Flex
+              w={{ md: "64%", base: "100%" }}
+              justifyContent="space-between"
+              flexWrap="wrap"
+              gap="20px"
+              flexDirection={{ base: "column", md: "row" }}
+            >
+              <Text
+                color="gray.50"
+                fontFamily="Poppins"
+                textAlign={{ base: "center", md: "left" }}
+                mb={{ base: "10px", md: "0" }}
+              >
                 Ravi Ariv Institute "Service Above Self" - Learn Free
               </Text>
-              <Heading size="headings" as="h6" color="gray.50" fontFamily="Poppins" textDecoration="underline">
+              <Heading
+                size="headings"
+                as="h6"
+                color="gray.50"
+                fontFamily="Poppins"
+                textDecoration="underline"
+                textAlign={{ base: "center", md: "left" }}
+                mb={{ base: "10px", md: "0" }}
+              >
                 Learn Now
               </Heading>
             </Flex>
@@ -51,7 +82,13 @@ export default function Header({ ...props }) {
               name="Language Selector"
               placeholder={<Text color="white">English</Text>}
               options={dropDownOptions}
-              style={{ color: "gray.50", fontFamily: "Poppins", gap: "4px", w: { md: "12%", base: "100%" } }}
+              style={{
+                color: "gray.50",
+                fontFamily: "Poppins",
+                gap: "4px",
+                w: { md: "12%", base: "100%" },
+              }}
+              mb={{ base: "10px", md: "0" }}
             />
           </Flex>
         </Container>
@@ -66,89 +103,109 @@ export default function Header({ ...props }) {
           px={{ md: "86px", base: "20px" }}
           flexDirection={{ md: "row", base: "column" }}
         >
-          <UnorderedList styleType="none" gap="74px" display="flex" flexDirection={{ base: "column", sm: "row" }}>
-            <ListItem>
-              <Link
-                href="/"
-                _hover={{ textDecoration: "underline" }}
-                color={isActive("/") ? "light_blue.a700" : "light_blue.a700"}
-                textDecoration={isActive("/") ? "underline" : "none"}
-                fontFamily="Poppins"
-              >
-                <Text size="textmd" as="span">Home</Text>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                href="/aboutus"
-                _hover={{ textDecoration: "underline" }}
-                color={isActive("/aboutus") ? "light_blue.a700" : "light_blue.a700"}
-                textDecoration={isActive("/aboutus") ? "underline" : "none"}
-                fontFamily="Poppins"
-              >
-                <Text size="textmd" as="span">About Us</Text>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                href="/services"
-                _hover={{ textDecoration: "underline" }}
-                color={isActive("/services") ? "light_blue.a700" : "light_blue.a700"}
-                textDecoration={isActive("/services") ? "underline" : "none"}
-                fontFamily="Poppins"
-              >
-                <Text size="textmd" as="span">Services</Text>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                href="/publication"
-                _hover={{ textDecoration: "underline" }}
-                color={isActive("/publication") ? "light_blue.a700" : "light_blue.a700"}
-                textDecoration={isActive("/publication") ? "underline" : "none"}
-                fontFamily="Poppins"
-              >
-                <Text size="textmd" as="span">Publication</Text>
-              </Link>
-            </ListItem>
+          {/* Hamburger Menu Icon for Small Screens */}
+          <IconButton
+            aria-label="Toggle navigation"
+            icon={isNavOpen ? <CloseIcon /> : <HamburgerIcon />}
+            display={{ md: "none", base: "block" }}
+            onClick={() => setIsNavOpen(!isNavOpen)}
+            variant="outline"
+            color="light_blue.a700"
+          />
 
-            {/* Tax Laws dropdown */}
-            <ListItem onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} position="relative">
-              <Flex gap="14px" alignItems="center" cursor="pointer">
-                <Text size="textmd" color="light_blue.a700" fontFamily="Poppins">Tax Laws</Text>
-                <Image src="images/img_dropdown_light_blue_a700.svg" alt="Dropdown Indicator" h="25px" w="20px" />
-              </Flex>
+          {/* Navbar Links */}
+          <Collapse in={isNavOpen} animateOpacity>
+            <UnorderedList
+              styleType="none"
+              gap="74px"
+              display={{ md: "flex", base: isNavOpen ? "block" : "none" }}
+              flexDirection={{ base: "column", sm: "row" }}
+              alignItems={{ base: "center", sm: "flex-start" }}
+              textAlign={{ base: "center", sm: "left" }}
+            >
+              <ListItem>
+                <Link
+                  href="/"
+                  _hover={{ textDecoration: "underline" }}
+                  color={isActive("/") ? "light_blue.a700" : "light_blue.a700"}
+                  textDecoration={isActive("/") ? "underline" : "none"}
+                  fontFamily="Poppins"
+                >
+                  <Text size="textmd" as="span">Home</Text>
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link
+                  href="/aboutus"
+                  _hover={{ textDecoration: "underline" }}
+                  color={isActive("/aboutus") ? "light_blue.a700" : "light_blue.a700"}
+                  textDecoration={isActive("/aboutus") ? "underline" : "none"}
+                  fontFamily="Poppins"
+                >
+                  <Text size="textmd" as="span">About Us</Text>
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link
+                  href="/services"
+                  _hover={{ textDecoration: "underline" }}
+                  color={isActive("/services") ? "light_blue.a700" : "light_blue.a700"}
+                  textDecoration={isActive("/services") ? "underline" : "none"}
+                  fontFamily="Poppins"
+                >
+                  <Text size="textmd" as="span">Services</Text>
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link
+                  href="/publication"
+                  _hover={{ textDecoration: "underline" }}
+                  color={isActive("/publication") ? "light_blue.a700" : "light_blue.a700"}
+                  textDecoration={isActive("/publication") ? "underline" : "none"}
+                  fontFamily="Poppins"
+                >
+                  <Text size="textmd" as="span">Publication</Text>
+                </Link>
+              </ListItem>
 
-              {menuOpen && (
-                <motion.div initial="hidden" animate="visible" exit="hidden" variants={dropdownAnimation}>
-                  <Box
-                    mt="10px"
-                    bg="white"
-                    p="20px"
-                    borderRadius="md"
-                    shadow="lg"
-                    position="absolute"
-                    top="100%"
-                    left="0"
-                    width={{ base: "100%", md: "auto" }}
-                    maxWidth="1200px"
-                    zIndex="1000"
-                    overflowY="auto"
-                    maxHeight="500px"
-                    sx={{
-                      "&::-webkit-scrollbar": { width: "6px" },
-                      "&::-webkit-scrollbar-thumb": { background: "#ccc", borderRadius: "10px" },
-                    }}
-                  >
-                    <Text>Under development</Text>
-                  </Box>
-                </motion.div>
-              )}
-            </ListItem>
-          </UnorderedList>
+              {/* Tax Laws dropdown */}
+              <ListItem onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} position="relative">
+                <Flex gap="14px" alignItems="center" cursor="pointer">
+                  <Text size="textmd" color="light_blue.a700" fontFamily="Poppins">Tax Laws</Text>
+                  <Image src="images/img_dropdown_light_blue_a700.svg" alt="Dropdown Indicator" h="25px" w="20px" />
+                </Flex>
+
+                {menuOpen && (
+                  <motion.div initial="hidden" animate="visible" exit="hidden" variants={dropdownAnimation}>
+                    <Box
+                      mt="10px"
+                      bg="white"
+                      p="20px"
+                      borderRadius="md"
+                      shadow="lg"
+                      position="absolute"
+                      top="100%"
+                      left="0"
+                      width={{ base: "100%", md: "auto" }}
+                      maxWidth="1200px"
+                      zIndex="1000"
+                      overflowY="auto"
+                      maxHeight="500px"
+                      sx={{
+                        "&::-webkit-scrollbar": { width: "6px" },
+                        "&::-webkit-scrollbar-thumb": { background: "#ccc", borderRadius: "10px" },
+                      }}
+                    >
+                      <Text>Under development</Text>
+                    </Box>
+                  </motion.div>
+                )}
+              </ListItem>
+            </UnorderedList>
+          </Collapse>
 
           {/* Search bar */}
-          <InputGroup w={{ md: "24%", base: "100%" }} size="xs">
+          <InputGroup w={{ md: "24%", base: "100%" }} size="xs" display={{ md: "block", base: isNavOpen ? "block" : "none" }}>
             <Input
               placeholder={`What are you looking for?`}
               value={searchBarValue}
@@ -168,7 +225,7 @@ export default function Header({ ...props }) {
         </Container>
       </Flex>
 
-      <Box borderBottom="8px solid" borderColor="gray.300" w="100%" my="2px" />
+      <Box borderBottom="8px" borderColor="light_blue.a700" />
     </Flex>
   );
 }
