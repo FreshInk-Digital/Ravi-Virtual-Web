@@ -14,11 +14,6 @@ export default function Header({ ...props }) {
 
   const handleMenuToggle = () => setIsMenuVisible(!isMenuVisible);
 
-  const dropdownAnimation = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
-  };
-
   return (
     <Flex {...props} gap="12px" flexDirection="column" as="header">
       <Box alignSelf="stretch">
@@ -33,11 +28,10 @@ export default function Header({ ...props }) {
       <Flex bg="light_blue.a700" alignSelf="stretch" justifyContent="center" py="12px">
         <Container display="flex" justifyContent="center" px={{ md: "8px", base: "20px" }}>
           <Flex 
-            w={{ md: "74%", base: "100%" }} 
-            justifyContent="space-between" 
-            flexDirection={{ md: "row", base: "column" }}
-            alignItems={{ base: "center", md: "flex-start" }} 
-            textAlign={{ base: "center", md: "left" }} 
+            w={{ md: "100%", base: "100%" }}  // Centering the content
+            flexDirection="column"
+            alignItems="center"  // Center all items vertically
+            textAlign="center"  // Center text within the Flex
           >
             <Text color="gray.50" fontFamily="Poppins">
               Ravi Ariv Institute "Service Above Self" - Learn Free
@@ -67,10 +61,88 @@ export default function Header({ ...props }) {
             color="white"
           />
 
-          {/* Search bar positioned on the right */}
+          {/* Navigation Links and Search Bar centered on large screens */}
+          <Flex
+            display={{ base: "none", md: "flex" }}  // Hide on small screens
+            flexDirection="row"
+            gap="20px"
+            alignItems="center"
+            w="100%"  // Allow full width for centering
+            justifyContent="center"  // Center the links and search bar
+          >
+            <Link
+              href="/"
+              _hover={{ textDecoration: "underline" }}
+              color={isActive("/") ? "light_blue.a700" : "light_blue.a700"}
+              textDecoration={isActive("/") ? "underline" : "none"}
+              fontFamily="Poppins"
+            >
+              <Text size="textmd" as="span">Home</Text>
+            </Link>
+            <Link
+              href="/aboutus"
+              _hover={{ textDecoration: "underline" }}
+              color={isActive("/aboutus") ? "light_blue.a700" : "light_blue.a700"}
+              textDecoration={isActive("/aboutus") ? "underline" : "none"}
+              fontFamily="Poppins"
+            >
+              <Text size="textmd" as="span">About Us</Text>
+            </Link>
+            <Link
+              href="/services"
+              _hover={{ textDecoration: "underline" }}
+              color={isActive("/services") ? "light_blue.a700" : "light_blue.a700"}
+              textDecoration={isActive("/services") ? "underline" : "none"}
+              fontFamily="Poppins"
+            >
+              <Text size="textmd" as="span">Services</Text>
+            </Link>
+            <Link
+              href="/publication"
+              _hover={{ textDecoration: "underline" }}
+              color={isActive("/publication") ? "light_blue.a700" : "light_blue.a700"}
+              textDecoration={isActive("/publication") ? "underline" : "none"}
+              fontFamily="Poppins"
+            >
+              <Text size="textmd" as="span">Publication</Text>
+            </Link>
+            {/* Tax Laws Link with Under Development hover effect */}
+            <Link
+              href="#"
+              _hover={{ textDecoration: "underline", cursor: "default" }}
+              fontFamily="Poppins"
+              color="light_blue.a700" // Match the color with other links
+              onMouseEnter={() => {
+                const tooltip = document.getElementById("tax-laws-tooltip");
+                if (tooltip) tooltip.style.display = "block";
+              }}
+              onMouseLeave={() => {
+                const tooltip = document.getElementById("tax-laws-tooltip");
+                if (tooltip) tooltip.style.display = "none";
+              }}
+            >
+              <Text size="textmd" as="span">Tax Laws</Text>
+              <Box
+                id="tax-laws-tooltip"
+                display="none"
+                position="absolute"
+                bg="white"
+                color="black"
+                p="2px 8px"
+                borderRadius="4px"
+                boxShadow="md"
+                mt="2"
+                zIndex="1000"
+              >
+                Under Development
+              </Box>
+            </Link>
+          </Flex>
+
+          {/* Search bar positioned more to the left */}
           <InputGroup w={{ md: "24%", base: "100%" }} size="xs">
             <Input
-              placeholder={`What are you looking for?`}
+              placeholder={`What’s On Mind?`}
               value={searchBarValue}
               onChange={(e) => setSearchBarValue(e.target.value)}
               color="light_blue.a700_7f"
@@ -86,11 +158,14 @@ export default function Header({ ...props }) {
             </InputRightElement>
           </InputGroup>
 
-          {/* Navigation Links wrapped in a motion.div for animation */}
+          {/* Dropdown for smaller screens */}
           <motion.div
             initial="hidden"
             animate={isMenuVisible ? "visible" : "hidden"}
-            variants={dropdownAnimation}
+            variants={{
+              hidden: { opacity: 0, x: -20 },
+              visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
+            }}
             style={{
               position: "absolute",
               left: "20px",
@@ -146,6 +221,39 @@ export default function Header({ ...props }) {
                   fontFamily="Poppins"
                 >
                   <Text size="textmd" as="span">Publication</Text>
+                </Link>
+              </ListItem>
+              {/* Add Tax Laws link again in dropdown */}
+              <ListItem>
+                <Link
+                  href="#"
+                  _hover={{ textDecoration: "underline", cursor: "default" }}
+                  fontFamily="Poppins"
+                  color="light_blue.a700" // Match the color with other links
+                  onMouseEnter={() => {
+                    const tooltip = document.getElementById("tax-laws-tooltip-dropdown");
+                    if (tooltip) tooltip.style.display = "block";
+                  }}
+                  onMouseLeave={() => {
+                    const tooltip = document.getElementById("tax-laws-tooltip-dropdown");
+                    if (tooltip) tooltip.style.display = "none";
+                  }}
+                >
+                  <Text size="textmd" as="span">Tax Laws</Text>
+                  <Box
+                    id="tax-laws-tooltip-dropdown"
+                    display="none"
+                    position="absolute"
+                    bg="white"
+                    color="black"
+                    p="2px 8px"
+                    borderRadius="4px"
+                    boxShadow="md"
+                    mt="2"
+                    zIndex="1000"
+                  >
+                    Under Development
+                  </Box>
                 </Link>
               </ListItem>
             </UnorderedList>
