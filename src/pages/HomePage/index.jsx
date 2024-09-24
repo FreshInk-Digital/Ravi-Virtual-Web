@@ -1,3 +1,4 @@
+// HomePage/index.jsx
 import { Helmet } from "react-helmet";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
@@ -5,13 +6,13 @@ import AboutUsSection from "./AboutUsSection";
 import HomePageSection from "./HomePageSection";
 import { Heading, Flex, Box, Button, Image, Container } from "@chakra-ui/react";
 import React from "react";
-import { useNavigate } from "react-router-dom";  // Import useNavigate
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 export default function HomePagePage() {
-  const navigate = useNavigate();  // Initialize the navigate function
+  const navigate = useNavigate(); // Initialize the navigate function
 
   const handleLearnMoreClick = () => {
-    navigate("/aboutus");  // Navigate to the AboutUs page
+    navigate("/aboutus"); // Navigate to the AboutUs page
   };
 
   return (
@@ -25,13 +26,16 @@ export default function HomePagePage() {
       </Helmet>
       <Box bg="white.a700" w="100%">
         <Flex
-          gap={{ md: "70px", base: "35px", sm: "52px" }}
+          gap={{ md: "70px", base: "35px", sm: "20px" }} // Adjusted gap for smaller screens
           flexDirection="column"
         >
           <Header />
 
-          {/* about us section */}
-          <AboutUsSection />
+          {/* Conditional rendering of the About Us section */}
+          <Flex display={{ base: "none", md: "flex" }} flexDirection="column" alignItems="center">
+            <AboutUsSection />
+          </Flex>
+
           <Flex flexDirection="column" alignItems="center">
             <Container px={{ md: "0px", base: "20px" }}>
               <Flex
@@ -43,7 +47,7 @@ export default function HomePagePage() {
                 <Image
                   src="images/img_businessman_checking_bankbook.png"
                   alt="Businessman Image"
-                  h="388px"
+                  h={{ md: "388px", base: "250px" }} // Responsive height
                   w={{ md: "50%", base: "100%" }}
                   fit="contain"
                   borderRadius="4px"
@@ -94,6 +98,7 @@ export default function HomePagePage() {
                       letterSpacing="-0.96px"
                       w="100%"
                       lineHeight="60px"
+                      fontSize={{ base: "24px", md: "40px" }} // Responsive font size
                     >
                       Our mission is to make sure the community is a better
                       place
@@ -106,6 +111,7 @@ export default function HomePagePage() {
                     fontWeight={400}
                     w={{ md: "88%", base: "100%" }}
                     lineHeight="30px"
+                    fontSize={{ base: "16px", md: "18px" }} // Responsive font size
                   >
                     Lorem ipsum dolor sit amet consectetur. Interdum vitae et et
                     nunc. Duis dictum ut a mi sapien in.
@@ -121,7 +127,7 @@ export default function HomePagePage() {
                     boxShadow="xs"
                     minw="128px"
                     borderRadius="8px"
-                    onClick={handleLearnMoreClick}  // Handle the click to navigate
+                    onClick={handleLearnMoreClick} // Handle the click to navigate
                   >
                     Learn more
                   </Button>

@@ -45,7 +45,7 @@ export default function Footer({ ...props }) {
                     </Text>
                   </Flex>
                 </Flex>
-                
+
                 <Flex gap="18px" w={{ md: "64%", base: "100%" }} flexDirection={{ base: "column", sm: "row" }}>
                   <Flex gap="14px" flexDirection="column" alignItems="start" w="100%">
                     <Heading
@@ -160,7 +160,6 @@ export default function Footer({ ...props }) {
                       </Text>
                     </Link>
                   </ListItem>
-                  
                 </UnorderedList>
               </Flex>
             </Flex>
@@ -180,7 +179,12 @@ export default function Footer({ ...props }) {
           <Text size="textmd" color="white.a700">
             2024. All rights reserved.
           </Text>
-          <Flex mt="8px" w={{ base: "100%", sm: "14%" }} justifyContent="space-between" gap="20px">
+          <Flex
+            mt="8px"
+            w={{ base: "100%", sm: "14%" }}
+            justifyContent="center" // Center the icons
+            gap="20px"
+          >
             <Image src="images/img_social_icon.svg" alt="Social Icon 1" h="24px" w="24px" />
             <Image src="images/img_social_icon_white_a700.svg" alt="Social Icon 2" h="24px" w="24px" />
             <Image src="images/img_social_icon_white_a700_24x24.svg" alt="Social Icon 3" h="24px" w="24px" />
