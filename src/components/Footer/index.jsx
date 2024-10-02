@@ -35,13 +35,13 @@ export default function Footer({ ...props }) {
                   <Flex gap="8px" alignItems="center">
                     <Image src="images/img_call.svg" alt="Call Icon" h="24px" w="24px" />
                     <Text size="textmd" color="black.900" fontFamily="Poppins">
-                      +255 756 260 034
+                      +255 781 969 373
                     </Text>
                   </Flex>
                   <Flex gap="8px" alignItems="center">
                     <Image src="images/ic_sharp_email.svg" alt="Email Icon" h="24px" w="24px" />
                     <Text size="textmd" color="black.900" fontFamily="Poppins">
-                      info@raviavir.co.tz
+                      ravimoova@gmail.com
                     </Text>
                   </Flex>
                 </Flex>
@@ -56,22 +56,22 @@ export default function Footer({ ...props }) {
                       fontSize={{ md: "24px", base: "24px", sm: "22px" }}
                       fontWeight={700}
                     >
-                      Exclusive
+                      Support
                     </Heading>
                     <UnorderedList styleType="none" display="flex" flexDirection="column" gap="8px">
                       <ListItem>
-                        <Link href="Subscribe" target="blank" rel="noreferrer">
-                          <Text size="textmd" color="black.900" fontFamily="Poppins">
-                            Subscribe
-                          </Text>
-                        </Link>
+                  
+                        <Text size="textmd" color="black.900" fontFamily="Poppins">
+                          234 Kibada Road, Kigamboni,
+                        </Text>
+                
                       </ListItem>
                       <ListItem>
-                        <Link href="#">
-                          <Text size="textmd" color="black.900" fontFamily="Poppins">
-                            Get 10% off your first order
-                          </Text>
-                        </Link>
+                      
+                        <Text size="textmd" color="black.900" fontFamily="Poppins">
+                          Dar es Salaam, Tanzania.
+                        </Text>
+                        
                       </ListItem>
                     </UnorderedList>
                   </Flex>
@@ -85,11 +85,21 @@ export default function Footer({ ...props }) {
                       fontSize={{ md: "24px", base: "24px", sm: "22px" }}
                       fontWeight={700}
                     >
-                      Support
+                      Related Links
                     </Heading>
-                    <Link href="#" w="100%" lineHeight="24px">
+                    <Link href="https://www.tra.go.tz/" w="100%" target="blank" rel="noreferrer" lineHeight="24px">
                       <Text size="textmd" color="black.900" fontFamily="Poppins">
-                        111 10th Road, Dodoma, DH 1515, Tanzania.
+                        Tanzania Revenue Authority
+                      </Text>
+                    </Link>
+                    <Link href="https://ita.ac.tz/" w="100%" target="blank" rel="noreferrer" lineHeight="24px">
+                      <Text size="textmd" color="black.900" fontFamily="Poppins">
+                        Institute of Tax Administration
+                      </Text>
+                    </Link>
+                    <Link href="https://www.mof.go.tz/" w="100%" target="blank" rel="noreferrer" lineHeight="24px">
+                      <Text size="textmd" color="black.900" fontFamily="Poppins">
+                        Ministry of Finance
                       </Text>
                     </Link>
                   </Flex>

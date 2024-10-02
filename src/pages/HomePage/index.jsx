@@ -97,7 +97,7 @@ export default function HomePagePage() {
                       color="gray.900"
                       letterSpacing="-0.96px"
                       w="100%"
-                      lineHeight="60px"
+                      lineHeight="45px"
                       fontSize={{ base: "24px", md: "40px" }} // Responsive font size
                     >
                       Our mission is to make sure the community is a better
@@ -113,8 +113,7 @@ export default function HomePagePage() {
                     lineHeight="30px"
                     fontSize={{ base: "16px", md: "18px" }} // Responsive font size
                   >
-                    Lorem ipsum dolor sit amet consectetur. Interdum vitae et et
-                    nunc. Duis dictum ut a mi sapien in.
+                    Our mission is to make sure that taxes and taxation are fairly and accurately legislated, imposed and administered by all stakeholders.
                   </Heading>
                   <Button
                     size="xl"

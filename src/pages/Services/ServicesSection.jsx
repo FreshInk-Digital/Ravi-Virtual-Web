@@ -5,13 +5,13 @@ import React, {Suspense} from "react";
 const servicesReportsList = [
   {
     headingText: "Tax Advisory",
-    descriptionText: "Lorem LoremLorem oremLorem Lorem",
+    descriptionText: "We provide tax advisory services in seeking clarifications.",
     buttonText: "Click here to request",
     linkTo:"/servicesone",
   },
   {
-    headingText: "Commentaries",
-    descriptionText: "Lorem LoremLorem oremLorem Lorem",
+    headingText: "Tax Health Check",
+    descriptionText: "Understanding of tax laws and their respective provisions.",
     buttonText: "Click here to request",
     linkTo:"/servicesone",
   },
@@ -22,7 +22,7 @@ const servicesReportsList = [
     linkTo:"/servicesone",
   },
   {
-    headingText: "Tax Judgments",
+    headingText: "Second Opinion",
     descriptionText: "Lorem LoremLorem oremLorem Lorem",
     buttonText: "Click here to request",
     linkTo:"/servicesone",

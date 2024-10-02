@@ -4,11 +4,11 @@ import React from "react";
 export default function ContactInformation({
   callText = "Call To US",
   availabilityText = "We are available 24/7, 7 days a week.",
-  phoneText = "Phone: +255 755 260 034",
+  phoneText = "Phone: +255 781 969 373",
   writeText = "Write To US",
   formText = "Fill out our form and we will contact you within 24 hours.",
-  customerEmailText = "Emails: customer@raviariv.co.yz",
-  supportEmailText = "Emails: support@raviariv.co.tz",
+  customerEmailText = "Email: ravimoova@gmail.com",
+  // supportEmailText = "Email: support@raviariv.co.tz",
   textareaPlaceholder = "Enter your message here...",
   ...props
 }) {
@@ -57,9 +57,9 @@ export default function ContactInformation({
           <Text color="black.900" fontFamily="Poppins">
             {customerEmailText}
           </Text>
-          <Text color="black.900" fontFamily="Poppins">
+          {/* <Text color="black.900" fontFamily="Poppins">
             {supportEmailText}
-          </Text>
+          </Text> */}
         </Flex>
       </Flex> 
     </Flex>

@@ -42,9 +42,13 @@ export default function AboutUsPage() {
                     textAlign="justify"
                     fontWeight="normal"  // Ensure regular font weight
                   >
-                    Carlio brand is one of the most reliable motor oil manufacturers, which is engaged in the production
-                    of high-quality products with a history of more than decades in the industry. In order to get more
-                    information about other aspects and products of the Carlio brand, you can use the following buttons:
+                    Ravi Ariv Virtual Institute or RAVI is one of the most reliable 
+                    tax advisory service providers which is engaged in the tax advisory
+                    services, capacity development, tax health check, tax judgments, second
+                    opinion and transaction advisory a service of high-quality services with
+                    a history of more than two decades in the taxation industry in Tanzania.
+                    In order to get more information about other aspects and products of the 
+                    RAVI brand, you can use the following ribbons
                   </Heading>
                 </Flex>
                 <Flex gap="20px" flexDirection="column" alignItems="end">
@@ -58,13 +62,15 @@ export default function AboutUsPage() {
                     textAlign="justify"
                     fontWeight="normal"  // Ensure regular font weight
                   >
-                    The meaning of production in Carlio is the creation, development, and the path to progress, and the
-                    starting point to achieve the goals that we all have the Petroforce brand, with over 20 years of
-                    experience in the oil and petrochemical industry, we officially started our activities in the
-                    field of design, engineering, construction of refinery equipment, and the production of various motor and
-                    industrial lubricants in the year 1390 (2011)
+                    The meaning of service provision in RAVI is the creation, development, 
+                    and the path to progress, and the starting point to achieve the goals that 
+                    we all have in all our service rendering the taxation services, with over 20 years 
+                    of experience in the accounting, training and taxation, we officially started 
+                    our activities in the field of training and teaching. Then embarked in filed 
+                    taxation engagements in terms of tax auditing, tax legislation, capacity development in taxation, 
+                    tax legislations.
                   </Heading>
-                  <Heading
+                  {/* <Heading
                     as="h4"
                     color="black.900"
                     fontFamily="Poppins"
@@ -78,7 +84,7 @@ export default function AboutUsPage() {
                     experience in the oil and petrochemical industry, we officially started our activities in the field
                     of design, engineering, construction of refinery equipment, and the production of various motor and
                     industrial lubricants in the year 1390 (2011)
-                  </Heading>
+                  </Heading> */}
                 </Flex>
               </Flex>
             </Flex>
@@ -108,11 +114,7 @@ export default function AboutUsPage() {
                     textAlign="justify"
                     fontWeight="normal"  // Ensure regular font weight
                   >
-                    The meaning of production in Carlio is the creation, development, and the path to progress, and the
-                    starting point to achieve the goals that we all have the Petroforce brand, with over 20 years of
-                    experience in the oil and petrochemical industry, we officially started our activities in the field
-                    of design, engineering, construction of refinery equipment, and the production of various motor and
-                    industrial lubricants in the year 1390 (2011)
+                    Our mission is to make sure that taxes and taxation are fairly and accurately legislated, imposed and administered by all stakeholders.
                   </Heading>
                   <Heading
                     as="h6"
@@ -123,11 +125,7 @@ export default function AboutUsPage() {
                     textAlign="justify"
                     fontWeight="normal"  // Ensure regular font weight
                   >
-                    The meaning of production in Carlio is the creation, development, and the path to progress, and the
-                    starting point to achieve the goals that we all have the Petroforce brand, with over 20 years of
-                    experience in the oil and petrochemical industry, we officially started our activities in the field
-                    of design, engineering, construction of refinery equipment, and the production of various motor and
-                    industrial lubricants in the year 1390 (2011)
+                    To promote fair and accurate legislation, imposition and administration of taxation by all stakeholders.
                   </Heading>
                 </Flex>
               </Flex>

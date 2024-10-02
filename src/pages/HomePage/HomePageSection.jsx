@@ -5,12 +5,12 @@ import React, { Suspense } from "react";
 const homepageReportsList = [
   {
     headingText: "Tax Advisory",
-    descriptionText: "Lorem LoremLorem oremLorem Lorem",
+    descriptionText: "We provide tax advisory services in seeking clarifications.",
     buttonText: "Click here to request",
   },
   {
-    headingText: "Commentaries",
-    descriptionText: "Lorem LoremLorem oremLorem Lorem",
+    headingText: "Tax Health Check",
+    descriptionText: "Understanding of tax laws and their respective provisions.",
     buttonText: "Click here to request",
   },
   {
@@ -19,7 +19,7 @@ const homepageReportsList = [
     buttonText: "Click here to request",
   },
   {
-    headingText: "Tax Judgements",
+    headingText: "Second Opinion",
     descriptionText: "Lorem LoremLorem oremLorem Lorem",
     buttonText: "Click here to request",
   },
