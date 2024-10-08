@@ -34,7 +34,7 @@ export default function Header({ ...props }) {
             textAlign="center"  // Center text within the Flex
           >
             <Text color="gray.50" fontFamily="Poppins">
-              Ravi Ariv Institute "Service Above Self" - Learn Free
+              Ravi Ariv Virtual Institute "Service Above Self" - Learn Free
             </Text>
             <Heading size="headings" as="h6" color="gray.50" fontFamily="Poppins" textDecoration="underline">
               Learn Now

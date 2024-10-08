@@ -160,7 +160,7 @@ export default function HomePagePage() {
                     fontSize="16px"
                     fontWeight={600}
                     mb="4px"
-                    ml="20px"
+                    ml={{md: "70px", base: "30px"}}
                   >
                     Get Our Services Today
                   </Heading>
@@ -170,7 +170,7 @@ export default function HomePagePage() {
                     color="gray.900"
                     letterSpacing="-0.96px"
                     mb="16px"
-                    ml="20px"
+                    ml={{md: "70px", base: "30px"}}
                   >
                     What we provide
                   </Heading>
@@ -181,7 +181,7 @@ export default function HomePagePage() {
               <HomePageSection />
             </Box>
           </Flex>
-          <Footer />
+          <Footer mt="0px" />
         </Flex>
       </Box>
     </>
