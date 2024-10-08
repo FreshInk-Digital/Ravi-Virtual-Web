@@ -16,7 +16,7 @@ export default function AboutUsPage() {
       </Helmet>
       <Flex bg="white.a700" w="100%" flexDirection="column" alignItems="center">
         <Header alignSelf="stretch" />
-        <Container mt="80px" px={{ md: "0px", base: "20px" }}>
+        <Container mt="25px" px={{ md: "0px", base: "20px" }}>
           <Box>
             <Flex alignItems="center" flexDirection={{ md: "row", base: "column" }}>
               <Image
@@ -26,12 +26,13 @@ export default function AboutUsPage() {
                 w={{ md: "530px", base: "100%" }}
                 fit="cover"
                 borderRadius="16px"
+                display={{ base: "none", md: "block" }} // Hide on small displays
               />
-              <Flex gap="20px" flex={1} flexDirection="column" alignSelf={{ md: "auto", base: "stretch" }}>
-                <Flex gap="12px" flexDirection="column" alignItems="end">
-                  <Flex alignSelf="stretch" px={{ md: "50px", base: "20px" }}>
+              <Flex gap="20px" flex={1} flexDirection="column" alignSelf={{ md: "auto", base: "stretch" }} alignItems="center">
+                <Flex gap="12px" flexDirection="column" alignItems="center"> {/* Center content */}
+                  <Flex alignSelf="stretch" px={{ md: "50px", base: "0px" }}>
                     <Heading size="headingxl" as="hl" color="black.900" fontFamily="Poppins" textTransform="capitalize">
-                      About Who We Are
+                      Who We Are
                     </Heading>
                   </Flex>
                   <Heading
@@ -40,7 +41,7 @@ export default function AboutUsPage() {
                     w={{ md: "92%", base: "100%" }}
                     lineHeight="151.52%"
                     textAlign="justify"
-                    fontWeight="normal"  // Ensure regular font weight
+                    fontWeight="normal"
                   >
                     Ravi Ariv Virtual Institute or RAVI is one of the most reliable 
                     tax advisory service providers which is engaged in the tax advisory
@@ -51,16 +52,28 @@ export default function AboutUsPage() {
                     RAVI brand, you can use the following ribbons
                   </Heading>
                 </Flex>
+
+                {/* Insert the background image here for small screens */}
+                <Box 
+                  h={{ md: "0px", base: "250px" }} // Adjust height based on screen size
+                  bg="black.900"
+                  bgImage="url(/images/img_frame_560_390x1172.png)"
+                  bgSize="cover"
+                  bgRepeat="no-repeat"
+                  w={{ md: "0%", base: "100%" }}
+                  mt={{ base: "20px", md: "0px" }} // Add margin on small displays
+                />
+
                 <Flex gap="20px" flexDirection="column" alignItems="end">
                   <Box h="2px" bg="gray.200" w="92%" />
                   <Heading
                     as="h3"
                     color="black.900"
                     fontFamily="Poppins"
-                    w={{ md: "92%", base: "100%"}}
+                    w={{ md: "96%", base: "100%" }}
                     lineHeight="151.52%"
                     textAlign="justify"
-                    fontWeight="normal"  // Ensure regular font weight
+                    fontWeight="normal"
                   >
                     The meaning of service provision in RAVI is the creation, development, 
                     and the path to progress, and the starting point to achieve the goals that 
@@ -70,24 +83,11 @@ export default function AboutUsPage() {
                     taxation engagements in terms of tax auditing, tax legislation, capacity development in taxation, 
                     tax legislations.
                   </Heading>
-                  {/* <Heading
-                    as="h4"
-                    color="black.900"
-                    fontFamily="Poppins"
-                    w={{ md: "92%", base: "100%" }}
-                    lineHeight="151.52%"
-                    textAlign="justify"
-                    fontWeight="normal"  // Ensure regular font weight
-                  >
-                    The meaning of production in Carlio is the creation, development, and the path to progress, and the
-                    starting point to achieve the goals that we all have the Petroforce brand, with over 20 years of
-                    experience in the oil and petrochemical industry, we officially started our activities in the field
-                    of design, engineering, construction of refinery equipment, and the production of various motor and
-                    industrial lubricants in the year 1390 (2011)
-                  </Heading> */}
                 </Flex>
               </Flex>
             </Flex>
+
+            {/* Mission & Vision Section */}
             <Flex
               mt="56px"
               ml={{ md: "10px", base: "0px" }}
@@ -112,7 +112,7 @@ export default function AboutUsPage() {
                     w={{ md: "80%", base: "100%" }}
                     lineHeight="151.52%"
                     textAlign="justify"
-                    fontWeight="normal"  // Ensure regular font weight
+                    fontWeight="normal"
                   >
                     Our mission is to make sure that taxes and taxation are fairly and accurately legislated, imposed and administered by all stakeholders.
                   </Heading>
@@ -123,32 +123,23 @@ export default function AboutUsPage() {
                     w={{ md: "80%", base: "100%" }}
                     lineHeight="151.52%"
                     textAlign="justify"
-                    fontWeight="normal"  // Ensure regular font weight
+                    fontWeight="normal"
                   >
                     To promote fair and accurate legislation, imposition and administration of taxation by all stakeholders.
                   </Heading>
                 </Flex>
               </Flex>
+
               <Image
                 src="images/image_work_being_creative_01.jpg"
                 alt="Creative Work"
-                h="430px"
+                h={{ md: "430px", base: "250px" }} // Adjust height based on screen size
                 w={{ md: "36%", base: "100%" }}
+                mt={{ base: "-95px"}}
                 fit="contain"
+                display={{ base: "block", md: "block" }} // Hide on small displays
               />
             </Flex>
-            <Box mt="28px">
-              <Box
-                h={{ md: "390px", base: "auto" }}
-                bg="black.900"
-                bgImage="url(/images/img_frame_560_390x1172.png)"
-                bgSize="cover"
-                bgRepeat="no-repeat"
-                p={{ md: "56px", base: "20px" }}
-              >
-                {/* Additional content here */}
-              </Box>
-            </Box>
           </Box>
         </Container>
         <Footer mt="14px" alignSelf="stretch" />
