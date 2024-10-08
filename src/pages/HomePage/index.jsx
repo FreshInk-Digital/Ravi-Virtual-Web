@@ -12,7 +12,7 @@ export default function HomePagePage() {
   const navigate = useNavigate(); // Initialize the navigate function
 
   const handleLearnMoreClick = () => {
-    navigate("/aboutus"); // Navigate to the AboutUs page
+    navigate("/aboutus"); // Navigate to the About Us page
   };
 
   return (
@@ -100,25 +100,25 @@ export default function HomePagePage() {
                       lineHeight="45px"
                       fontSize={{ base: "24px", md: "40px" }} // Responsive font size
                     >
-                      Our mission is to make sure the community is a better
-                      place
+                      Our mission is to make sure the community is a better place
                     </Heading>
                   </Flex>
                   <Heading
                     size="textlg"
                     color="blue_gray.700"
-                    ml={{ md: "40px", base: "20px" }} // Adjusted margin-left to move text to the right
+                    ml={{ md: "40px", base: "0px" }} // Adjusted margin-left to move text to the right
                     fontWeight={400}
                     w={{ md: "88%", base: "100%" }}
                     lineHeight="30px"
                     fontSize={{ base: "16px", md: "18px" }} // Responsive font size
+                    textAlign="justify" // Added text alignment
                   >
                     Our mission is to make sure that taxes and taxation are fairly and accurately legislated, imposed and administered by all stakeholders.
                   </Heading>
                   <Button
                     size="xl"
                     color="white.a700"
-                    ml={{ md: "32px", base: "0px" }}
+                    ml={{ md: "32px", base: "70px" }}
                     fontWeight={600}
                     borderColor="light_blue.600"
                     borderWidth="1px"
@@ -177,7 +177,7 @@ export default function HomePagePage() {
                 </Flex>
               </Flex>
 
-              {/* home page section */}
+              {/* Home page section */}
               <HomePageSection />
             </Box>
           </Flex>
