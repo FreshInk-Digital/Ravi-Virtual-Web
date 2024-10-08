@@ -30,7 +30,7 @@ export default function AboutUsPage() {
               />
               <Flex gap="20px" flex={1} flexDirection="column" alignSelf={{ md: "auto", base: "stretch" }} alignItems="center">
                 <Flex gap="12px" flexDirection="column" alignItems="center"> {/* Center content */}
-                  <Flex alignSelf="stretch" px={{ md: "50px", base: "0px" }}>
+                  <Flex alignSelf="stretch" px={{ md: "20px", base: "0px" }}>
                     <Heading size="headingxl" as="hl" color="black.900" fontFamily="Poppins" textTransform="capitalize">
                       Who We Are
                     </Heading>

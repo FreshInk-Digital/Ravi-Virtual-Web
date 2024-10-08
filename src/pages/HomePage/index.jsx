@@ -86,7 +86,7 @@ export default function HomePagePage() {
                       borderColor="blue_gray.100"
                       borderWidth="2px"
                       borderStyle="solid"
-                      minw="100px"
+                      minW="100px"
                       borderRadius="6px"
                     >
                       About us
@@ -98,7 +98,7 @@ export default function HomePagePage() {
                       letterSpacing="-0.96px"
                       w="100%"
                       lineHeight="45px"
-                      fontSize={{ base: "24px", md: "40px" }} // Responsive font size
+                      fontSize={{ base: "24px", sm: "28px", md: "32px", lg: "40px" }} // Responsive font size
                     >
                       Our mission is to make sure the community is a better place
                     </Heading>
@@ -106,11 +106,11 @@ export default function HomePagePage() {
                   <Heading
                     size="textlg"
                     color="blue_gray.700"
-                    ml={{ md: "40px", base: "0px" }} // Adjusted margin-left to move text to the right
+                    ml={{ lg: "40px", md: "25px", base: "0px" }} // Responsive margin-left
                     fontWeight={400}
                     w={{ md: "88%", base: "100%" }}
                     lineHeight="30px"
-                    fontSize={{ base: "16px", md: "18px" }} // Responsive font size
+                    fontSize={{ base: "16px", sm: "17px", md: "18px", lg: "20px" }} // Responsive font size
                     textAlign="justify" // Added text alignment
                   >
                     Our mission is to make sure that taxes and taxation are fairly and accurately legislated, imposed and administered by all stakeholders.
@@ -118,13 +118,13 @@ export default function HomePagePage() {
                   <Button
                     size="xl"
                     color="white.a700"
-                    ml={{ md: "32px", base: "70px" }}
+                    ml={{ lg: "32px", md: "20px", base: "70px" }}
                     fontWeight={600}
                     borderColor="light_blue.600"
                     borderWidth="1px"
                     borderStyle="solid"
                     boxShadow="xs"
-                    minw="128px"
+                    minW="128px"
                     borderRadius="8px"
                     onClick={handleLearnMoreClick} // Handle the click to navigate
                   >
@@ -155,12 +155,12 @@ export default function HomePagePage() {
                   <Heading
                     size="headingxs"
                     as="h3"
-                    textAlign="start"
+                    textAlign={{ base: "center", md: "start" }} // Responsive text alignment
                     color="light_blue.a700"
-                    fontSize="16px"
+                    fontSize={{ base: "16px", sm: "18px", md: "20px", lg: "22px" }} // Responsive font size
                     fontWeight={600}
                     mb="4px"
-                    ml={{md: "70px", base: "30px"}}
+                    ml={{ lg: "40px", md: "25px", base: "30px" }} // Responsive margin-left
                   >
                     Get Our Services Today
                   </Heading>
@@ -168,9 +168,10 @@ export default function HomePagePage() {
                     size="heading2xl"
                     as="h4"
                     color="gray.900"
-                    letterSpacing="-0.96px"
+                    letterSpacing={{ base: "-0.5px", md: "-0.96px", lg: "-1px" }} // Responsive letter spacing
                     mb="16px"
-                    ml={{md: "70px", base: "30px"}}
+                    ml={{ lg: "40px", md: "25px", base: "30px" }} // Responsive margin-left
+                    fontSize={{ base: "20px", sm: "22px", md: "24px", lg: "26px" }} // Responsive font size
                   >
                     What we provide
                   </Heading>
