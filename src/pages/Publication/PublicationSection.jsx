@@ -1,5 +1,20 @@
 import React, { useEffect, useState, Suspense } from "react";
-import { Heading, Flex, Box, Text, Table, Thead, Tbody, Tr, Th, Td, Button, Select } from "@chakra-ui/react";
+import {
+  Heading,
+  Flex,
+  Box,
+  Text,
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  Button,
+  Select,
+  useBreakpointValue,
+  Spinner,
+} from "@chakra-ui/react";
 import api from '../../api/api';
 import DocumentViewer from "../../components/DocumentViewer";  // Ensure this handles preview
 import PaginationComponent from "../../components/PaginationComponent";
@@ -51,10 +66,6 @@ const PublicationSection = () => {
     link.click();
     document.body.removeChild(link);  // Clean up after download
   };
-  
-  
-  
-  
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -76,6 +87,9 @@ const PublicationSection = () => {
   };
 
   const currentPublications = sortedPublications.slice((currentPage - 1) * publicationsPerPage, currentPage * publicationsPerPage);
+
+  // Determine if the screen is small
+  const isSmallScreen = useBreakpointValue({ base: true, md: false });
 
   return (
     <Box mt="24px" px={{ md: "50px", base: "20px" }}>
@@ -140,54 +154,59 @@ const PublicationSection = () => {
             </Text>
           ) : (
             <>
-              <Table variant="simple">
-                <Thead>
-                  <Tr>
-                    <Th>File Title</Th>
-                    <Th>Description</Th>
-                    <Th>Date Created</Th>
-                    <Th>Preview</Th>
-                    <Th>Action</Th>
-                  </Tr>
-                </Thead>
-                <Tbody>
-                  <Suspense fallback={<Tr><Td colSpan={5}>Loading...</Td></Tr>}>
-                    {currentPublications.map((pub) => (
-                      <Tr key={pub.id}>
-                        <Td>{pub.name}</Td>
-                        <Td>{pub.description}</Td>
-                        <Td>{new Date(pub.date_created).toLocaleDateString()}</Td>
-                        <Td>
-                          {pub.publication ? (
-                            <DocumentViewer
-                              fileType={pub.publication.split('.').pop().toUpperCase()} 
-                              documentName={pub.name}
-                              fileUrl={`https://ravi-virtual-web.onrender.com/${pub.publication}`}  // Correct path
-                            />
-                          ) : (
-                            <Text color="red.500">No document available</Text>  // Fallback if undefined
-                          )}
-                        </Td>
-                        <Td>
-                          {pub.publication ? (
-                            <Button
-                              colorScheme="blue"
-                              onClick={() => handleDownload(pub.publication)}
-                            >
-                              Download
-                            </Button>
-                          ) : (
-                            <Button colorScheme="gray" isDisabled>
-                              Unavailable
-                            </Button>
-                          )}
-                        </Td>
-                      </Tr>
-                    ))}
-                  </Suspense>
-                </Tbody>
-              </Table>
+              {/* Make the table horizontally scrollable on small screens */}
+              <Box overflowX="auto">
+                <Table variant="simple" size={isSmallScreen ? "sm" : "md"}>
+                  <Thead>
+                    <Tr>
+                      <Th fontSize={{ base: "sm", md: "md" }}>File Title</Th>
+                      <Th fontSize={{ base: "sm", md: "md" }}>Description</Th>
+                      <Th fontSize={{ base: "sm", md: "md" }}>Date Created</Th>
+                      <Th fontSize={{ base: "sm", md: "md" }}>Preview</Th>
+                      <Th fontSize={{ base: "sm", md: "md" }}>Action</Th>
+                    </Tr>
+                  </Thead>
+                  <Tbody>
+                    <Suspense fallback={<Tr><Td colSpan={5}><Spinner /></Td></Tr>}>
+                      {currentPublications.map((pub) => (
+                        <Tr key={pub.id}>
+                          <Td fontSize={{ base: "sm", md: "md" }}>{pub.name}</Td>
+                          <Td fontSize={{ base: "sm", md: "md" }}>{pub.description}</Td>
+                          <Td fontSize={{ base: "sm", md: "md" }}>{new Date(pub.date_created).toLocaleDateString()}</Td>
+                          <Td>
+                            {pub.publication ? (
+                              <DocumentViewer
+                                fileType={pub.publication.split('.').pop().toUpperCase()} 
+                                documentName={pub.name}
+                                fileUrl={`https://ravi-virtual-web.onrender.com/${pub.publication}`}  // Correct path
+                              />
+                            ) : (
+                              <Text color="red.500">No document available</Text>  // Fallback if undefined
+                            )}
+                          </Td>
+                          <Td>
+                            {pub.publication ? (
+                              <Button
+                                colorScheme="blue"
+                                size={{ base: "sm", md: "md" }}
+                                onClick={() => handleDownload(pub.publication)}
+                              >
+                                Download
+                              </Button>
+                            ) : (
+                              <Button colorScheme="gray" size={{ base: "sm", md: "md" }} isDisabled>
+                                Unavailable
+                              </Button>
+                            )}
+                          </Td>
+                        </Tr>
+                      ))}
+                    </Suspense>
+                  </Tbody>
+                </Table>
+              </Box>
 
+              {/* Pagination */}
               <Flex mt="20px" justifyContent="center">
                 <PaginationComponent
                   currentPage={currentPage}
