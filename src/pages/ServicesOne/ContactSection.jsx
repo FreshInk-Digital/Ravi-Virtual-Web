@@ -157,7 +157,7 @@ export default function ContactSection() {
             >
               You Can Reach Us Anytime{" "}
             </Heading>
-            <Flex alignSelf="stretch" mb="0px">
+            <Flex alignSelf="stretch" mb={{ md: "0px", base:"50px"}}>
               <Heading
                 size="heading2xl"
                 color="gray.900"

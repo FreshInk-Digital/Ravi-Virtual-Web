@@ -53,7 +53,7 @@ export default function ServicesSection() {
                     size="heading2xl"
                     color="gray.900"
                     letterSpacing="-0.96px"
-                    textAlign={{ base: "center", md: "start" }}
+                    textAlign={{ base: "start", md: "start" }}
                   >
                     We'd love to help You
                   </Heading>
