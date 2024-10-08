@@ -39,10 +39,22 @@ export default function ServicesSection() {
             <Flex w={{ md: "92%", base: "100%" }} justifyContent="center" px={{ base: "20px", sm: "32px" }}>
               <Box w="100%">
                 <Flex gap="10px" flexDirection="column" alignItems="start" justifyContent="center">
-                  <Heading size="headingxs" as="hl" color="light_blue.a700" ml="-30px" fontSize="16px" fontWeight={600}>
+                  <Heading
+                    size="headingxs"
+                    as="hl"
+                    color="light_blue.a700"
+                    fontSize="16px"
+                    fontWeight={600}
+                    textAlign={{ base: "center", md: "start" }}
+                    >
                     Get Our Services Today
                   </Heading>
-                  <Heading size="heading2xl" color="gray.900" ml="-30px" letterSpacing="-0.96px">
+                  <Heading
+                    size="heading2xl"
+                    color="gray.900"
+                    letterSpacing="-0.96px"
+                    textAlign={{ base: "center", md: "start" }}
+                  >
                     We'd love to help You
                   </Heading>
                 </Flex>

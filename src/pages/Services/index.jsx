@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import AboutUsSection from "./AboutUsSection";
 import ServicesSection from "./ServicesSection";
 import { Box } from "@chakra-ui/react";
 import React from "react";
@@ -23,8 +22,7 @@ export default function ServicesPage() {
         <ServicesSection />
 
         {/* about us section */}
-        <AboutUsSection />
-        <Footer mt="96px" />
+        <Footer mt="0px" />
       </Box>
     </>
   );
