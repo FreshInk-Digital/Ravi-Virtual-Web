@@ -159,8 +159,8 @@ export default function HomePagePage() {
                     color="light_blue.a700"
                     fontSize={{ base: "16px", sm: "18px", md: "20px", lg: "22px" }} // Responsive font size
                     fontWeight={600}
-                    mb="4px"
-                    ml={{ lg: "40px", md: "25px", base: "30px" }} // Responsive margin-left
+                    mb="0px"
+                    ml={{ lg: "65px", md: "25px", base: "0px" }} // Responsive margin-left
                   >
                     Get Our Services Today
                   </Heading>
@@ -169,8 +169,8 @@ export default function HomePagePage() {
                     as="h4"
                     color="gray.900"
                     letterSpacing={{ base: "-0.5px", md: "-0.96px", lg: "-1px" }} // Responsive letter spacing
-                    mb="16px"
-                    ml={{ lg: "40px", md: "25px", base: "30px" }} // Responsive margin-left
+                    mb="0px"
+                    ml={{ lg: "65px", md: "25px", base: "0px" }} // Responsive margin-left
                     fontSize={{ base: "20px", sm: "22px", md: "24px", lg: "26px" }} // Responsive font size
                   >
                     What we provide
