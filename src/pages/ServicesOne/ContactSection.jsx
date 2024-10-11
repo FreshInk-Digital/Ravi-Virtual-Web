@@ -153,7 +153,7 @@ export default function ContactSection() {
               color="light_blue.a700"
               fontSize="16px"
               fontWeight={600}
-              ml={{ base: "-15px", md: "30px"}}
+              ml={{ base: "-15px"}}
               mb="-10px"
             >
               You Can Reach Us Anytime{" "}
@@ -163,7 +163,7 @@ export default function ContactSection() {
                 size="heading2xl"
                 color="gray.900"
                 letterSpacing="-0.96px"
-                ml={{ base: "-15px", md: "30px"}}
+                ml={{ base: "-15px"}}
               >
                 Contact Us Through
               </Heading>
