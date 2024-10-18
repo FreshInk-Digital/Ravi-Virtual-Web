@@ -1,14 +1,13 @@
-import { Box, Text, Link, Flex, Image, IconButton, VStack } from "@chakra-ui/react";
+import { Box, Text, Link, Flex, Image, IconButton } from "@chakra-ui/react";
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { CloseIcon, HamburgerIcon, ChevronDownIcon } from "@chakra-ui/icons";
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { InputRightElement, InputGroup, Input, UnorderedList, ListItem, Container, Heading } from "@chakra-ui/react";
 
 export default function Header({ ...props }) {
   const [searchBarValue, setSearchBarValue] = React.useState("");
   const [isMenuVisible, setIsMenuVisible] = React.useState(false); // For toggling the mobile menu
-  const [isTaxDropdownVisible, setIsTaxDropdownVisible] = React.useState(false); // For toggling the Tax Laws dropdown
   const location = useLocation();
 
   // List of paths for navigation
@@ -17,6 +16,7 @@ export default function Header({ ...props }) {
     { name: "About Us", path: "/aboutus" },
     { name: "Services", path: "/services" },
     { name: "Publication", path: "/publication" },
+    { name: "Tax Laws", path: "/tax-laws" }, // Tax Laws link now directly points to Tax Laws page
   ];
 
   // Determines if a path is active
@@ -24,9 +24,6 @@ export default function Header({ ...props }) {
 
   // Toggle for the main menu (mobile)
   const handleMenuToggle = () => setIsMenuVisible(!isMenuVisible);
-
-  // Toggle for the Tax Laws dropdown on click
-  const handleTaxLawsClick = () => setIsTaxDropdownVisible(!isTaxDropdownVisible);
 
   // Get the active link's index for positioning the underline
   const activeLinkIndex = navLinks.findIndex((link) => isActive(link.path));
@@ -116,84 +113,6 @@ export default function Header({ ...props }) {
                 }}
               />
             )}
-
-            {/* Tax Laws with Dropdown (click to open) */}
-            <Box position="relative">
-              <Flex alignItems="center">
-                <Link
-                  onClick={handleTaxLawsClick} // Opens dropdown on click
-                  _hover={{ textDecoration: "underline", cursor: "pointer", color: "light_blue.a500" }}
-                  fontFamily="Poppins"
-                  color="light_blue.a700"
-                  display="flex"
-                  alignItems="center"
-                >
-                  <Text size="textmd" as="span">
-                    Tax Laws
-                  </Text>
-                  <ChevronDownIcon
-                    ml="4px"
-                    transition="transform 0.2s"
-                    transform={isTaxDropdownVisible ? "rotate(180deg)" : "rotate(0deg)"} // Rotate icon
-                  />
-                </Link>
-              </Flex>
-
-              {isTaxDropdownVisible && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  style={{
-                    position: "absolute",
-                    top: "30px",
-                    left: "0",
-                    background: "white",
-                    boxShadow: "lg",
-                    borderRadius: "md",
-                    padding: "10px",
-                    zIndex: "1000",
-                    width: "200px",
-                  }}
-                >
-                  <VStack align="flex-start" spacing="10px">
-                    <Link
-                      href="/income-tax-act"
-                      fontFamily="Poppins"
-                      _hover={{ color: "light_blue.a500", textDecoration: "underline" }}
-                      color={isActive("/income-tax-act") ? "light_blue.a700" : "light_blue.a700"}
-                    >
-                      Income Tax Act
-                    </Link>
-                    <Link
-                      href="/regulation-act"
-                      fontFamily="Poppins"
-                      _hover={{ color: "light_blue.a500", textDecoration: "underline" }}
-                      color={isActive("/regulation-act") ? "light_blue.a700" : "light_blue.a700"}
-                    >
-                      Regulation Act
-                    </Link>
-                    <Link
-                      href="/corporate-tax-law"
-                      fontFamily="Poppins"
-                      _hover={{ color: "light_blue.a500", textDecoration: "underline" }}
-                      color={isActive("/corporate-tax-law") ? "light_blue.a700" : "light_blue.a700"}
-                    >
-                      Corporate Tax Law
-                    </Link>
-                    <Link
-                      href="/tax-compliance"
-                      fontFamily="Poppins"
-                      _hover={{ color: "light_blue.a500", textDecoration: "underline" }}
-                      color={isActive("/tax-compliance") ? "light_blue.a700" : "light_blue.a700"}
-                    >
-                      Tax Compliance
-                    </Link>
-                  </VStack>
-                </motion.div>
-              )}
-            </Box>
           </Flex>
 
           {/* Mobile Menu */}
@@ -230,65 +149,6 @@ export default function Header({ ...props }) {
                     </Link>
                   </ListItem>
                 ))}
-
-                {/* Tax Laws in the mobile dropdown */}
-                <ListItem>
-                  <Link
-                    onClick={handleTaxLawsClick}
-                    _hover={{ textDecoration: "underline", cursor: "pointer", color: "light_blue.a500" }}
-                    fontFamily="Poppins"
-                    color="light_blue.a700"
-                    display="flex"
-                    alignItems="center"
-                  >
-                    <Text size="textmd" as="span">
-                      Tax Laws
-                    </Text>
-                    <ChevronDownIcon
-                      ml="4px"
-                      transition="transform 0.2s"
-                      transform={isTaxDropdownVisible ? "rotate(180deg)" : "rotate(0deg)"} // Rotate icon
-                    />
-                  </Link>
-                </ListItem>
-
-                {/* Mobile Tax Laws dropdown */}
-                {isTaxDropdownVisible && (
-                  <VStack align="flex-start" spacing="10px" mt="10px">
-                    <Link
-                      href="/income-tax-act"
-                      fontFamily="Poppins"
-                      _hover={{ color: "light_blue.a500", textDecoration: "underline" }}
-                      color={isActive("/income-tax-act") ? "light_blue.a700" : "light_blue.a700"}
-                    >
-                      Income Tax Act
-                    </Link>
-                    <Link
-                      href="/regulation-act"
-                      fontFamily="Poppins"
-                      _hover={{ color: "light_blue.a500", textDecoration: "underline" }}
-                      color={isActive("/regulation-act") ? "light_blue.a700" : "light_blue.a700"}
-                    >
-                      Regulation Act
-                    </Link>
-                    <Link
-                      href="/corporate-tax-law"
-                      fontFamily="Poppins"
-                      _hover={{ color: "light_blue.a500", textDecoration: "underline" }}
-                      color={isActive("/corporate-tax-law") ? "light_blue.a700" : "light_blue.a700"}
-                    >
-                      Corporate Tax Law
-                    </Link>
-                    <Link
-                      href="/tax-compliance"
-                      fontFamily="Poppins"
-                      _hover={{ color: "light_blue.a500", textDecoration: "underline" }}
-                      color={isActive("/tax-compliance") ? "light_blue.a700" : "light_blue.a700"}
-                    >
-                      Tax Compliance
-                    </Link>
-                  </VStack>
-                )}
               </UnorderedList>
             </motion.div>
           )}
