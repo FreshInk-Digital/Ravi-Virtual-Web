@@ -186,9 +186,14 @@ export default function Footer({ ...props }) {
           py={{ base: "20px", sm: "38px" }}
           flexDirection={{ base: "column", sm: "row" }}
         >
-          <Text size="textmd" color="white.a700">
-            2024. All rights reserved.
-          </Text>
+          <Link 
+            href="https://www.instagram.com/freshink_digital/" 
+            isExternal
+          >
+            <Text size="textmd" color="white.a700">
+              Designed & monitored by FreshInk Digital
+            </Text>
+          </Link>
           <Flex
             mt="8px"
             w={{ base: "100%", sm: "14%" }}
