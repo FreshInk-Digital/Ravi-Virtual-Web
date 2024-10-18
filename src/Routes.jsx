@@ -6,6 +6,7 @@ import AboutUs from "pages/AboutUs";
 import Services from "pages/Services";
 import Publication from "pages/Publication";
 import TaxLaws from "pages/TaxLaws";
+import IncomeTaxActPage from "pages/IncomeTaxAct";
 import ServicesOne from "pages/ServicesOne";
 import Login from "admin/pages/Login";
 import Dashboard from "admin/pages/Dashboard";
@@ -25,6 +26,7 @@ const ProjectRoutes = () => {
       <Route path="/services" element={<Services />} />
       <Route path="/publication" element={<Publication />} />
       <Route path="/tax-laws" element={<TaxLaws />} />
+      <Route path="/income-tax-act" element={<IncomeTaxActPage />} />
       <Route path="/servicesone" element={<ServicesOne />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />

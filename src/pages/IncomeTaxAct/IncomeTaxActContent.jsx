@@ -46,10 +46,10 @@ export default function IncomeTaxActContent() {
   return (
     <Box mt="24px" px={{ md: "50px", base: "20px" }}>
       <Heading size="lg" mb="4" textAlign="center" color="gray.800">
-        Income Tax Act 2024
+        Income Tax Act
       </Heading>
       <Text mb="8" textAlign="center" color="gray.600">
-        Explore the updated provisions and regulations governing income tax in 2024.
+        Explore the updated provisions and regulations governing income tax.
       </Text>
 
       {/* Table for Linking Provisions */}
