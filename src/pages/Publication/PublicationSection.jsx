@@ -12,7 +12,6 @@ import {
   Td,
   Button,
   Select,
-  useBreakpointValue,
   Spinner,
 } from "@chakra-ui/react";
 import api from '../../api/api';
@@ -50,18 +49,13 @@ const PublicationSection = () => {
   }, [sortCriteria]);
 
   const handleDownload = (filePath) => {
-    // If filePath already contains the full URL, no need to add the base URL again
     const isFullUrl = filePath.startsWith('http://') || filePath.startsWith('https://');
-  
-    // If it's a relative path, prepend the base URL
-    const fullUrl = isFullUrl ? filePath : `https://ravi-virtual-web.onrender.com/${filePath}`;
-  
-    console.log(fullUrl);  // Log URL to verify correctness
+    const fullUrl = isFullUrl ? filePath : `https://backend.ravimoova.co.tz/${filePath}`;
   
     const link = document.createElement('a');
     link.href = fullUrl;
-    link.setAttribute('download', filePath.split('/').pop());  // Set download attribute
-    link.setAttribute('target', '_blank');  // Open in a new tab to avoid blocking
+    link.setAttribute('download', filePath.split('/').pop());
+    link.setAttribute('target', '_blank');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);  // Clean up after download
@@ -88,11 +82,8 @@ const PublicationSection = () => {
 
   const currentPublications = sortedPublications.slice((currentPage - 1) * publicationsPerPage, currentPage * publicationsPerPage);
 
-  // Determine if the screen is small
-  const isSmallScreen = useBreakpointValue({ base: true, md: false });
-
   return (
-    <Box mt="24px" px={{ md: "50px", base: "20px" }}>
+    <Box mt="24px" px={{ md: "50px", base: "20px" }} fontFamily="Poppins">
       <Box
         borderColor="blue_gray.50"
         borderWidth="1px"
@@ -101,6 +92,7 @@ const PublicationSection = () => {
         boxShadow="xs"
         borderRadius="12px"
         overflow="hidden"
+        fontFamily="Poppins"
       >
         <Box
           borderColor="blue_gray.50"
@@ -109,6 +101,7 @@ const PublicationSection = () => {
           bg="white.a700"
           px="20px"
           py="16px"
+          fontFamily="Poppins"
         >
           <Flex
             mb="20px"
@@ -116,6 +109,7 @@ const PublicationSection = () => {
             justifyContent="center"
             alignItems="start"
             flexDirection={{ md: "row", base: "column" }}
+            fontFamily="Poppins"
           >
             <Flex
               mt="20px"
@@ -123,23 +117,21 @@ const PublicationSection = () => {
               flex={1}
               flexDirection="column"
               alignItems="start"
+              fontFamily="Poppins"
             >
-              <Heading
-                size="headingmd"
-                as="h1"
-                color="gray.900"
-              >
+              <Heading size="lg" as="h1" color="gray.900" fontFamily="Poppins">
                 Browse through different resources under the company
               </Heading>
-              <Text mt="4px">Lorem ipsum dolor sit amet consectetur.</Text>
+              <Text mt="4px" fontFamily="Poppins">Explore our publications to discover a wide range of resources.</Text>
             </Flex>
           </Flex>
-          <Flex justifyContent="flex-end" mb="20px" px="20px">
+          <Flex justifyContent="flex-end" mb="20px" px="20px" fontFamily="Poppins">
             <Select
               placeholder="Sort By"
               onChange={handleSortChange}
               value={sortCriteria}
               maxW="200px"
+              fontFamily="Poppins"
             >
               <option value="date">Date Created</option>
               <option value="name">Alphabetically (A-Z)</option>
@@ -147,54 +139,54 @@ const PublicationSection = () => {
           </Flex>
         </Box>
 
-        <Box p="20px">
-          {noPublications ? (  // Display notification if no publications
-            <Text color="red.500" textAlign="center">
+        <Box p="20px" fontFamily="Poppins">
+          {noPublications ? (
+            <Text color="red.500" textAlign="center" fontFamily="Poppins">
               No publication documents available yet.
             </Text>
           ) : (
             <>
-              {/* Make the table horizontally scrollable on small screens */}
-              <Box overflowX="auto">
-                <Table variant="simple" size={isSmallScreen ? "sm" : "md"}>
+              <Box overflowX="auto" fontFamily="Poppins">
+                <Table variant="striped" fontFamily="Poppins">
                   <Thead>
                     <Tr>
-                      <Th fontSize={{ base: "sm", md: "md" }}>File Title</Th>
-                      <Th fontSize={{ base: "sm", md: "md" }}>Description</Th>
-                      <Th fontSize={{ base: "sm", md: "md" }}>Date Created</Th>
-                      <Th fontSize={{ base: "sm", md: "md" }}>Preview</Th>
-                      <Th fontSize={{ base: "sm", md: "md" }}>Action</Th>
+                      <Th fontFamily="Poppins">File Title</Th>
+                      <Th fontFamily="Poppins">Description</Th>
+                      <Th fontFamily="Poppins">Date Created</Th>
+                      <Th fontFamily="Poppins">Preview</Th>
+                      <Th fontFamily="Poppins">Action</Th>
                     </Tr>
                   </Thead>
-                  <Tbody>
+                  <Tbody fontFamily="Poppins">
                     <Suspense fallback={<Tr><Td colSpan={5}><Spinner /></Td></Tr>}>
                       {currentPublications.map((pub) => (
                         <Tr key={pub.id}>
-                          <Td fontSize={{ base: "sm", md: "md" }}>{pub.name}</Td>
-                          <Td fontSize={{ base: "sm", md: "md" }}>{pub.description}</Td>
-                          <Td fontSize={{ base: "sm", md: "md" }}>{new Date(pub.date_created).toLocaleDateString()}</Td>
+                          <Td fontFamily="Poppins">{pub.name}</Td>
+                          <Td fontFamily="Poppins">{pub.description}</Td>
+                          <Td fontFamily="Poppins">{new Date(pub.date_created).toLocaleDateString()}</Td>
                           <Td>
                             {pub.publication ? (
                               <DocumentViewer
                                 fileType={pub.publication.split('.').pop().toUpperCase()} 
                                 documentName={pub.name}
-                                fileUrl={`https://ravi-virtual-web.onrender.com/${pub.publication}`}  // Correct path
+                                fileUrl={`https://backend.ravimoova.co.tz/${pub.publication}`} 
                               />
                             ) : (
-                              <Text color="red.500">No document available</Text>  // Fallback if undefined
+                              <Text color="red.500" fontFamily="Poppins">No document available</Text>
                             )}
                           </Td>
                           <Td>
                             {pub.publication ? (
                               <Button
-                                colorScheme="blue"
-                                size={{ base: "sm", md: "md" }}
+                                colorScheme="light_blue.a700"
+                                size="sm"
                                 onClick={() => handleDownload(pub.publication)}
+                                fontFamily="Poppins"
                               >
                                 Download
                               </Button>
                             ) : (
-                              <Button colorScheme="gray" size={{ base: "sm", md: "md" }} isDisabled>
+                              <Button colorScheme="gray" size="sm" isDisabled fontFamily="Poppins">
                                 Unavailable
                               </Button>
                             )}
@@ -206,12 +198,12 @@ const PublicationSection = () => {
                 </Table>
               </Box>
 
-              {/* Pagination */}
               <Flex mt="20px" justifyContent="center">
                 <PaginationComponent
                   currentPage={currentPage}
                   totalPages={totalPages}
                   onPageChange={handlePageChange}
+                  fontFamily="Poppins"
                 />
               </Flex>
             </>

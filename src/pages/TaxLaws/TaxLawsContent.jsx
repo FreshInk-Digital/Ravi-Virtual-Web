@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Heading,
@@ -15,7 +15,6 @@ import {
   InputGroup,
   Input,
 } from "@chakra-ui/react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Correct hook for React Router v6
 
 // Data for linking sections
@@ -43,22 +42,23 @@ export default function TaxLawsContent() {
   };
 
   return (
-    <Box mt="24px" px={{ md: "50px", base: "20px" }}>
-      <Heading size="lg" mb="4" textAlign="center" color="gray.800">
+    <Box mt="24px" px={{ md: "50px", base: "20px" }} fontFamily="Poppins">
+      <Heading size="lg" mb="4" textAlign="center" color="gray.800" fontFamily="Poppins">
         Tax Laws
       </Heading>
-      <Text mb="8" textAlign="center" color="gray.600">
+      <Text mb="8" textAlign="center" color="gray.600" fontFamily="Poppins">
         Access the full text of the Tax Laws. Explore sections covering various acts, repealed laws, and more.
       </Text>
 
       {/* Search and Filter Options */}
-      <Box display="flex" justifyContent="space-between" mb="4">
+      <Box display="flex" justifyContent="space-between" mb="4" fontFamily="Poppins">
         <InputGroup>
           <Input
             placeholder="Title Filter"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             w={{ base: "100%", md: "300px" }}
+            fontFamily="Poppins"
           />
         </InputGroup>
         
@@ -66,6 +66,7 @@ export default function TaxLawsContent() {
           w={{ base: "100%", md: "100px" }}
           value={itemsPerPage}
           onChange={(e) => setItemsPerPage(Number(e.target.value))}
+          fontFamily="Poppins"
         >
           <option value={5}>5</option>
           <option value={10}>10</option>
@@ -77,24 +78,24 @@ export default function TaxLawsContent() {
       </Box>
 
       {/* Table for Tax Laws */}
-      <Box overflowX="auto">
-        <Table variant="striped" colorScheme="blue">
+      <Box overflowX="auto" fontFamily="Poppins">
+        <Table variant="striped" fontFamily="Poppins">
           <Thead>
             <Tr>
-              <Th>S. No.</Th>
-              <Th>Title</Th>
-              <Th>Created Date</Th>
-              <Th>Link</Th>
+              <Th fontFamily="Poppins">S. No.</Th>
+              <Th fontFamily="Poppins">Title</Th>
+              <Th fontFamily="Poppins">Created Date</Th>
+              <Th fontFamily="Poppins">Link</Th>
             </Tr>
           </Thead>
           <Tbody>
             {filteredLaws.slice(0, itemsPerPage).map((law, index) => (
               <Tr key={index}>
-                <Td>{law.number}</Td>
-                <Td>{law.title}</Td>
-                <Td>{law.date}</Td>
+                <Td fontFamily="Poppins">{law.number}</Td>
+                <Td fontFamily="Poppins">{law.title}</Td>
+                <Td fontFamily="Poppins">{law.date}</Td>
                 <Td>
-                  <Link color="blue.500" onClick={() => handleLinkClick(law.link)}>
+                  <Link color="blue.500" onClick={() => handleLinkClick(law.link)} fontFamily="Poppins">
                     View
                   </Link>
                 </Td>
@@ -106,8 +107,8 @@ export default function TaxLawsContent() {
 
       {/* Pagination Placeholder - You can implement pagination as needed */}
       {filteredLaws.length > itemsPerPage && (
-        <Box mt="4" textAlign="center">
-          <Button colorScheme="blue" onClick={() => setItemsPerPage(itemsPerPage + 5)}>
+        <Box mt="4" textAlign="center" fontFamily="Poppins">
+          <Button colorScheme="blue" onClick={() => setItemsPerPage(itemsPerPage + 5)} fontFamily="Poppins">
             Load More
           </Button>
         </Box>

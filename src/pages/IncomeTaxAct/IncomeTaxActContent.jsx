@@ -44,33 +44,33 @@ export default function IncomeTaxActContent() {
   };
 
   return (
-    <Box mt="24px" px={{ md: "50px", base: "20px" }}>
-      <Heading size="lg" mb="4" textAlign="center" color="gray.800">
+    <Box mt="24px" px={{ md: "50px", base: "20px" }} fontFamily="Poppins">
+      <Heading size="lg" mb="4" textAlign="center" color="gray.800" fontFamily="Poppins">
         Income Tax Act
       </Heading>
-      <Text mb="8" textAlign="center" color="gray.600">
+      <Text mb="8" textAlign="center" color="gray.600" fontFamily="Poppins">
         Explore the updated provisions and regulations governing income tax.
       </Text>
 
       {/* Table for Linking Provisions */}
       <Box overflowX="auto" mt="8">
-        <Table variant="striped" colorScheme="blue">
+        <Table variant="striped" >
           <Thead>
             <Tr>
-              <Th>S. No.</Th>
-              <Th>Section</Th>
-              <Th>Reference</Th>
-              <Th>Linked To</Th>
+              <Th fontFamily="Poppins">S. No.</Th>
+              <Th fontFamily="Poppins">Section</Th>
+              <Th fontFamily="Poppins">Reference</Th>
+              <Th fontFamily="Poppins">Linked To</Th>
             </Tr>
           </Thead>
           <Tbody>
             {linkingSections.map((section, index) => (
               <Tr key={index}>
-                <Td>{section.number}</Td>
-                <Td>{section.section}</Td>
-                <Td>{section.reference}</Td>
+                <Td fontFamily="Poppins">{section.number}</Td>
+                <Td fontFamily="Poppins">{section.section}</Td>
+                <Td fontFamily="Poppins">{section.reference}</Td>
                 <Td>
-                  <Link color="blue.500" onClick={() => handleLinkClick(section)}>
+                  <Link color="blue.500" fontFamily="Poppins" onClick={() => handleLinkClick(section)}>
                     {section.linkedTo}
                   </Link>
                 </Td>
@@ -83,10 +83,10 @@ export default function IncomeTaxActContent() {
       {/* Modal for displaying provision details */}
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent bg="white"> {/* Set background color to white */}
-          <ModalHeader>Provision Details</ModalHeader>
+        <ModalContent bg="white" fontFamily="Poppins">
+          <ModalHeader fontFamily="Poppins">Provision Details</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
+          <ModalBody fontFamily="Poppins">
             <Text>Section: {selectedProvision?.section}</Text>
             <Text>Reference: {selectedProvision?.reference}</Text>
             <Text>Linked To: {selectedProvision?.linkedTo}</Text>
