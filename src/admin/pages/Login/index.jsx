@@ -21,7 +21,7 @@ export default function Login() {
         {/* login section */}
         <LoginSection route="api/token/" method="login" />
        
-        <Footer mt="96px" />
+        <Footer mt="0px" />
       </Box>
     </>
   );
