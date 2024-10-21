@@ -19,7 +19,7 @@ export default function AboutUsPage() {
         <Container mt="25px" px={{ md: "0px", base: "20px" }} textAlign="center">
           {/* Who We Are Section */}
           <Box
-            bg="blue.500"
+            bg="light_blue.a700"
             w="100%"
             p="30px"
             borderRadius="12px"
@@ -59,7 +59,7 @@ export default function AboutUsPage() {
 
           {/* Mission & Vision Section */}
           <Box
-            bg="blue.500"
+            bg="light_blue.a700"
             w="100%"
             p="30px"
             borderRadius="12px"
