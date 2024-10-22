@@ -20,11 +20,7 @@ import { useNavigate } from "react-router-dom"; // Correct hook for React Router
 // Data for linking sections
 const taxLawsData = [
   { number: 1, title: "INCOME TAX ACT", date: "01 July 2024", link: "/income-tax-act" },
-  { number: 2, title: "ARCHITECTS AND QUANTITY SURVEYORS (REGISTRATION) ACT", date: "01 August 1997", link: "/statutes/repealed-acts/426-the-architects-and-quantity-surveyors-registration-act" },
-  { number: 3, title: "AUDIO-VISUAL INSTITUTE OF DAR-ES-SALAAM ACT", date: "01 July 1975", link: "/statutes/repealed-acts/427-the-audio-visual-institute-of-dar-es-salaam-act" },
-  { number: 4, title: "BANK OF TANZANIA ACT", date: "01 January 1970", link: "/statutes/repealed-acts/428-the-bank-of-tanzania-act" },
-  { number: 5, title: "BANKING AND FINANCIAL INSTITUTIONS ACT", date: "18 October 1991", link: "/statutes/repealed-acts/429-the-banking-and-financial-institutions-act" },
-  { number: 6, title: "DAIRY INDUSTRY ACT", date: "04 February 1966", link: "/statutes/repealed-acts/430-the-dairy-industry-act" },
+  
   // Add more rows as needed
 ];
 
