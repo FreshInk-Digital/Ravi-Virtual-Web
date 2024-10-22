@@ -145,13 +145,17 @@ export default function ContactSection() {
           p={{ base: "20px", sm: "32px" }}
           mb="-90px"
         >
-          <Flex
+        </Flex>
+        <Container px={{ md: "0px", base: "20px" }}>
+        <Flex
             gap="10px"
             w={{ md: "94%", base: "100%" }}
             flexDirection="column"
             alignItems="start"
-            justifyContent="center"
-            px={{ base: "20px", sm: "32px" }}
+            justifyContent="start"
+            textAlign="start"
+            mt={{ md: "0px", base: "15px" }}
+            pt={{ md: "0px", base: "15px" }}
           >
             <Heading
               size="headingxs"
@@ -159,24 +163,20 @@ export default function ContactSection() {
               color="light_blue.a700"
               fontSize="16px"
               fontWeight={600}
-              ml={{ base: "-15px"}}
-              mb="-10px"
             >
               You Can Reach Us Anytime{" "}
             </Heading>
-            <Flex alignSelf="stretch" mb={{ md: "0px", base:"50px"}}>
+            <Flex alignSelf="stretch">
               <Heading
                 size="heading2xl"
                 color="gray.900"
                 letterSpacing="-0.96px"
-                ml={{ base: "-15px"}}
               >
                 Contact Us Through
               </Heading>
             </Flex>
           </Flex>
-        </Flex>
-        <Container px={{ md: "0px", base: "20px" }}>
+
           <Flex
             justifyContent="space-between"
             alignItems="start"

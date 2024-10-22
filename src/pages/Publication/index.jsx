@@ -224,6 +224,7 @@ export default function PublicationPage() {
 
         {/* publication section */}
         <PublicationSection />
+        
         <Footer mt="0px" />
       </Box>
     </>

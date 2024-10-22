@@ -27,9 +27,11 @@ const IncomeTaxActContent = () => {
   return (
     <Box
       mt="24px"
-      px={{ md: "50px", base: "20px" }}
+      px={{ md: "20px", base: "10px" }} // Padding for spacing
+      maxW="1170px"  // Set maximum width
+      margin="0 auto"  // Center the content on the page
       fontFamily="Poppins"
-      userSelect="none" // Prevent text selection
+      userSelect="none"  // Prevent text selection
     >
 
       {/* Existing content... */}

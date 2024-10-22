@@ -15,7 +15,7 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import api from '../../api/api';
-import DocumentViewer from "../../components/DocumentViewer";  // Ensure this handles preview
+import DocumentViewer from "../../components/DocumentViewer";
 import PaginationComponent from "../../components/PaginationComponent";
 
 const PublicationSection = () => {
@@ -25,7 +25,7 @@ const PublicationSection = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [sortCriteria, setSortCriteria] = useState('date');
-  const [noPublications, setNoPublications] = useState(false);  // Track if there are no publications
+  const [noPublications, setNoPublications] = useState(false);
   const publicationsPerPage = 12;
 
   useEffect(() => {
@@ -33,12 +33,12 @@ const PublicationSection = () => {
       try {
         const response = await api.get('Publication/');
         if (response.data.length === 0) {
-          setNoPublications(true);  // Set no publications flag if empty
+          setNoPublications(true);
         } else {
           setPublications(response.data);
           setTotalPages(Math.ceil(response.data.length / publicationsPerPage));
           sortPublications(response.data, sortCriteria);
-          setNoPublications(false);  // Reset flag if there are publications
+          setNoPublications(false);
         }
       } catch (error) {
         console.error('Error fetching publications:', error);
@@ -51,14 +51,14 @@ const PublicationSection = () => {
   const handleDownload = (filePath) => {
     const isFullUrl = filePath.startsWith('http://') || filePath.startsWith('https://');
     const fullUrl = isFullUrl ? filePath : `https://backend.ravimoova.co.tz/${filePath}`;
-  
+
     const link = document.createElement('a');
     link.href = fullUrl;
     link.setAttribute('download', filePath.split('/').pop());
     link.setAttribute('target', '_blank');
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);  // Clean up after download
+    document.body.removeChild(link);
   };
 
   const handlePageChange = (page) => {
@@ -83,8 +83,10 @@ const PublicationSection = () => {
   const currentPublications = sortedPublications.slice((currentPage - 1) * publicationsPerPage, currentPage * publicationsPerPage);
 
   return (
-    <Box mt="24px" px={{ md: "50px", base: "20px" }} fontFamily="Poppins">
+    <Box mt="24px" px={{ md: "20px", base: "10px" }} fontFamily="Poppins">
       <Box
+        maxW="1155px"  // Set a maximum width to avoid full-page stretch
+        margin="0 auto"  // Center the table by applying margin auto
         borderColor="blue_gray.50"
         borderWidth="1px"
         borderStyle="solid"
@@ -93,6 +95,7 @@ const PublicationSection = () => {
         borderRadius="12px"
         overflow="hidden"
         fontFamily="Poppins"
+        p="20px"  // Apply padding to ensure the content doesn't touch the edges
       >
         <Box
           borderColor="blue_gray.50"
