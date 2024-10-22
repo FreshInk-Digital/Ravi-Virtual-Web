@@ -5,25 +5,25 @@ import React, {Suspense} from "react";
 const servicesReportsList = [
   {
     headingText: "Tax Advisory",
-    descriptionText: "We provide tax advisory services in seeking clarifications.",
+    descriptionText: "We provide tax advisory services in seeking clarifications and apply rulings.",
     buttonText: "Click here to request",
     linkTo:"/servicesone",
   },
   {
     headingText: "Tax Health Check",
-    descriptionText: "Understanding of tax laws and their respective provisions.",
+    descriptionText: "We conduct tax health checks before tax audits or investigations.",
     buttonText: "Click here to request",
     linkTo:"/servicesone",
   },
   {
     headingText: "Capacity Development",
-    descriptionText: "Lorem LoremLorem oremLorem Lorem",
+    descriptionText: "We conduct capacity development programs in taxation.",
     buttonText: "Click here to request",
     linkTo:"/servicesone",
   },
   {
     headingText: "Second Opinion",
-    descriptionText: "Lorem LoremLorem oremLorem Lorem",
+    descriptionText: "We provide second on taxation matters including transaction advisory services.",
     buttonText: "Click here to request",
     linkTo:"/servicesone",
   },
@@ -36,7 +36,7 @@ export default function ServicesSection() {
       <Box mt="24px">
         <Box bg="white.a700">
 
-          <Flex bg="white.a700" justifyContent="center">
+          <Flex bg="white.a700" textAlign="center"  justifyContent="center">
             <Container mb="5px" display="flex" justifyContent="center" px={{ md: "0px", base: "20px" }}>
               <Flex gap="0px" w="100%" flexDirection={{ md: "column", base: "column" }}>
                   <Heading
@@ -59,7 +59,7 @@ export default function ServicesSection() {
             </Container>
           </Flex>
 
-          <Flex bg="white.a700" justifyContent="center">
+          <Flex bg="white.a700" textAlign="center" justifyContent="center">
             <Container mb="32px" display="flex" justifyContent="center" px={{ md: "0px", base: "20px" }}>
               <Flex gap="12px" w="100%" flexDirection={{ md: "row", base: "column" }}>
                 <Suspense fallback={<div>Loading feed...</div>}>
@@ -71,7 +71,7 @@ export default function ServicesSection() {
             </Container>
           </Flex>
 
-          <Flex bg="white.a700" justifyContent="center">
+          <Flex bg="white.a700" textAlign="center" justifyContent="center">
             <Container mb="32px" display="flex" justifyContent="center" px={{ md: "0px", base: "20px" }}>
               <Flex gap="12px" w="100%" flexDirection={{ md: "row", base: "column" }}>
                 <Suspense fallback={<div>Loading feed...</div>}>

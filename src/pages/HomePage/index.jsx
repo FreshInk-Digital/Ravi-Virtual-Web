@@ -100,82 +100,66 @@ export default function HomePagePage() {
                       lineHeight="45px"
                       fontSize={{ base: "24px", sm: "28px", md: "32px", lg: "40px" }} // Responsive font size
                     >
-                      Our mission is to make sure the community is a better place
+                      We strive to make more good tax citizens.
                     </Heading>
+                    <Heading
+                      size="textlg"
+                      color="blue_gray.700"
+                      fontWeight={400}
+                      w={{ md: "88%", base: "100%" }}
+                      lineHeight="30px"
+                      fontSize={{ base: "16px", sm: "17px", md: "18px", lg: "20px" }} // Responsive font size
+                      textAlign="justify" // Added text alignment
+                    >
+                      Our mission is to make sure that taxes and taxation are fairly and accurately legislated, imposed and administered by all stakeholders.
+                    </Heading>
+                    <Button
+                      size="xl"
+                      color="white.a700"
+                      fontWeight={600}
+                      borderColor="light_blue.600"
+                      borderWidth="1px"
+                      borderStyle="solid"
+                      boxShadow="xs"
+                      minW="128px"
+                      borderRadius="8px"
+                      onClick={handleLearnMoreClick} // Handle the click to navigate
+                    >
+                      Learn more
+                    </Button>
                   </Flex>
-                  <Heading
-                    size="textlg"
-                    color="blue_gray.700"
-                    ml={{ lg: "40px", md: "25px", base: "0px" }} // Responsive margin-left
-                    fontWeight={400}
-                    w={{ md: "88%", base: "100%" }}
-                    lineHeight="30px"
-                    fontSize={{ base: "16px", sm: "17px", md: "18px", lg: "20px" }} // Responsive font size
-                    textAlign="justify" // Added text alignment
-                  >
-                    Our mission is to make sure that taxes and taxation are fairly and accurately legislated, imposed and administered by all stakeholders.
-                  </Heading>
-                  <Button
-                    size="xl"
-                    color="white.a700"
-                    ml={{ lg: "32px", md: "20px", base: "70px" }}
-                    fontWeight={600}
-                    borderColor="light_blue.600"
-                    borderWidth="1px"
-                    borderStyle="solid"
-                    boxShadow="xs"
-                    minW="128px"
-                    borderRadius="8px"
-                    onClick={handleLearnMoreClick} // Handle the click to navigate
-                  >
-                    Learn more
-                  </Button>
                 </Flex>
               </Flex>
             </Container>
             <Box
-              mt="-40px"
               position="relative"
               bg="white.a700"
               alignSelf="stretch"
               px={{ base: "20px", sm: "32px" }}
             >
-              <Flex
-                bg="white.a700"
-                justifyContent="flex-start"
-                p={{ base: "20px", sm: "32px" }}
-                flexDirection="column"
-                alignItems="flex-start"
-              >
-                <Flex
-                  gap="10px"
-                  flexDirection="column"
-                  alignItems="flex-start"
-                >
-                  <Heading
-                    size="headingxs"
-                    as="h3"
-                    textAlign={{ base: "center", md: "start" }} // Responsive text alignment
-                    color="light_blue.a700"
-                    fontSize={{ base: "16px", sm: "18px", md: "20px", lg: "22px" }} // Responsive font size
-                    fontWeight={600}
-                    mb="0px"
-                    ml={{ lg: "65px", md: "25px", base: "0px" }} // Responsive margin-left
-                  >
-                    Get Our Services Today
-                  </Heading>
-                  <Heading
-                    size="heading2xl"
-                    as="h4"
-                    color="gray.900"
-                    letterSpacing={{ base: "-0.5px", md: "-0.96px", lg: "-1px" }} // Responsive letter spacing
-                    mb="0px"
-                    ml={{ lg: "65px", md: "25px", base: "0px" }} // Responsive margin-left
-                    fontSize={{ base: "20px", sm: "22px", md: "24px", lg: "26px" }} // Responsive font size
-                  >
-                    What we provide
-                  </Heading>
-                </Flex>
+              <Flex bg="white.a700" textAlign="center" justifyContent="center">
+                <Container mb="5px" display="flex" justifyContent="center" px={{ md: "0px", base: "20px" }}>
+                  <Flex gap="0px" w="100%" flexDirection={{ md: "column", base: "column" }}>
+                      <Heading
+                        size="headingxs"
+                        as="h3"
+                        color="light_blue.a700"
+                        fontSize="16px"
+                        fontWeight={600}
+                      >
+                        Get Our Services Today
+                      </Heading>
+                      <Heading
+                        size="heading2xl"
+                        fontSize="25px"
+                        as="h4"
+                        color="gray.900"
+                        letterSpacing="-0.96px"
+                      >
+                        What we provide
+                      </Heading>
+                  </Flex>
+                </Container>
               </Flex>
 
               {/* Home page section */}
