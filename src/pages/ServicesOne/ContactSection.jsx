@@ -174,6 +174,7 @@ export default function ContactSection() {
           <Flex
             justifyContent="space-between"
             alignItems="start"
+            fontFamily="Poppins"
             gap="20px"
             px="6px"
             flexDirection={{ md: "row", base: "column" }}

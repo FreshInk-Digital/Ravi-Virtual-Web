@@ -43,10 +43,10 @@ export default function TaxLawsContent() {
 
   return (
     <Box mt="24px" px={{ md: "50px", base: "20px" }} fontFamily="Poppins">
-      <Heading size="lg" mb="4" textAlign="center" color="gray.800" fontFamily="Poppins">
+      <Heading size="lg" as="h1" color="gray.900" textAlign="start" fontFamily="Poppins">
         Tax Laws
       </Heading>
-      <Text mb="8" textAlign="center" color="gray.600" fontFamily="Poppins">
+      <Text mb="8" textAlign="start" color="gray.600" fontFamily="Poppins">
         Access the full text of the Tax Laws. Explore sections covering various acts, repealed laws, and more.
       </Text>
 

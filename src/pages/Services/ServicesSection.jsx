@@ -36,7 +36,7 @@ export default function ServicesSection() {
       <Box mt="24px">
         <Box bg="white.a700">
 
-          <Flex bg="white.a700" textAlign="center"  justifyContent="center">
+          <Flex bg="white.a700" justifyContent="center">
             <Container mb="5px" display="flex" justifyContent="center" px={{ md: "0px", base: "20px" }}>
               <Flex gap="0px" w="100%" flexDirection={{ md: "column", base: "column" }}>
                   <Heading
