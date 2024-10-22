@@ -44,91 +44,103 @@ export default function HomePagePage() {
                 alignItems="center"
                 flexDirection={{ md: "row", base: "column" }}
               >
-                <Image
+                {/* <Image
                   src="images/img_businessman_checking_bankbook.png"
                   alt="Businessman Image"
                   h={{ md: "388px", base: "250px" }} // Responsive height
                   w={{ md: "50%", base: "100%" }}
                   fit="contain"
                   borderRadius="4px"
-                />
-                <Flex
-                  mb="16px"
-                  gap="24px"
-                  flex={1}
-                  flexDirection="column"
-                  alignItems="start"
-                  justifyContent="center"
-                  py={{ md: "64px", base: "20px" }}
-                  alignSelf={{ md: "auto", base: "stretch" }}
+                /> */}
+                <Box
+                  bg="light_blue.a700"
+                  w="100%"
+                  p="0px"
+                  borderRadius="12px"
+                  mb="40px"
+                  boxShadow="md"
+                  textAlign="center"
                 >
                   <Flex
-                    gap="16px"
-                    alignSelf="end"
-                    w={{ md: "94%", base: "100%" }}
+                    mb="16px"
+                    gap="24px"
+                    flex={1}
                     flexDirection="column"
-                    alignItems="start"
+                    alignItems="center"
+                    justifyContent="center"
+                    py={{ md: "64px", base: "20px" }}
+                    alignSelf={{ md: "auto", base: "stretch" }}
                   >
-                    <Button
-                      size="sm"
-                      colorScheme="white_A700"
-                      leftIcon={
-                        <Image
-                          src="images/img_contrast.svg"
-                          alt="Contrast"
-                          h="15px"
-                          w="15px"
-                          my="6px"
-                        />
-                      }
-                      fontWeight={900}
-                      gap="0px"
-                      borderColor="blue_gray.100"
-                      borderWidth="2px"
-                      borderStyle="solid"
-                      minW="100px"
-                      borderRadius="6px"
+                    <Flex
+                      gap="16px"
+                      alignSelf="center"
+                      w={{ md: "94%", base: "100%" }}
+                      flexDirection="column"
+                      alignItems="center"
                     >
-                      About us
-                    </Button>
-                    <Heading
-                      size="heading2xl"
-                      as="h1"
-                      color="gray.900"
-                      letterSpacing="-0.96px"
-                      w="100%"
-                      lineHeight="45px"
-                      fontSize={{ base: "24px", sm: "28px", md: "32px", lg: "40px" }} // Responsive font size
-                    >
-                      We strive to make more good tax citizens.
-                    </Heading>
-                    <Heading
-                      size="textlg"
-                      color="blue_gray.700"
-                      fontWeight={400}
-                      w={{ md: "88%", base: "100%" }}
-                      lineHeight="30px"
-                      fontSize={{ base: "16px", sm: "17px", md: "18px", lg: "20px" }} // Responsive font size
-                      textAlign="justify" // Added text alignment
-                    >
-                      Our mission is to make sure that taxes and taxation are fairly and accurately legislated, imposed and administered by all stakeholders.
-                    </Heading>
-                    <Button
-                      size="xl"
-                      color="white.a700"
-                      fontWeight={600}
-                      borderColor="light_blue.600"
-                      borderWidth="1px"
-                      borderStyle="solid"
-                      boxShadow="xs"
-                      minW="128px"
-                      borderRadius="8px"
-                      onClick={handleLearnMoreClick} // Handle the click to navigate
-                    >
-                      Learn more
-                    </Button>
+                      <Button
+                        size="sm"
+                        colorScheme="white_A700"
+                        leftIcon={
+                          <Image
+                            src="images/img_contrast.svg"
+                            alt="Contrast"
+                            h="15px"
+                            w="15px"
+                            my="6px"
+                          />
+                        }
+                        fontWeight={900}
+                        gap="0px"
+                        borderColor="blue_gray.100"
+                        fontFamily="Poppins"
+                        borderWidth="2px"
+                        borderStyle="solid"
+                        minW="100px"
+                        borderRadius="6px"
+                      >
+                        About us
+                      </Button>
+                      <Heading
+                        size="heading2xl"
+                        as="h1"
+                        color="white"
+                        letterSpacing="-0.96px"
+                        w="100%"
+                        lineHeight="45px"
+                        fontSize={{ base: "24px", sm: "28px", md: "32px", lg: "40px" }} // Responsive font size
+                      >
+                        We strive to make more good tax citizens.
+                      </Heading>
+                      <Heading
+                        size="textlg"
+                        color="white"
+                        fontWeight={400}
+                        w={{ md: "88%", base: "100%" }}
+                        lineHeight="30px"
+                        fontSize={{ base: "16px", sm: "17px", md: "18px", lg: "20px" }} // Responsive font size
+                        textAlign="center"
+                      >
+                        Our mission is to make sure that taxes and taxation are fairly and accurately legislated, imposed and administered by all stakeholders.
+                      </Heading>
+                      <Button
+                        size="md"
+                        colorScheme="white_A700"
+                        fontWeight={900}
+                        gap="0px"
+                        borderColor="blue_gray.100"
+                        borderWidth="2px"
+                        borderStyle="solid"
+                        fontFamily="Poppins"
+                        minW="100px"
+                        borderRadius="6px"
+                        onClick={handleLearnMoreClick} // Handle the click to navigate
+                      >
+                        Learn more
+                      </Button>
+                    </Flex>
                   </Flex>
-                </Flex>
+                </Box>
               </Flex>
             </Container>
             <Box
@@ -163,6 +175,7 @@ export default function HomePagePage() {
               </Flex>
 
               {/* Home page section */}
+              <HomePageSection />
               <HomePageSection />
             </Box>
           </Flex>

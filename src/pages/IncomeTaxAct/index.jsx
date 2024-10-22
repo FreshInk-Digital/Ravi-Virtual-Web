@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import { Box, Heading, Text, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Table, Thead, Tbody, Tr, Th, Td, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import IncomeTaxActContent from "./IncomeTaxActContent"; // New Component
 
 export default function IncomeTaxActPage() {

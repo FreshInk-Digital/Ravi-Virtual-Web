@@ -1,3 +1,5 @@
+// ContactSection.jsx
+
 import React, { useState } from "react";
 import api from "../../api/api";
 import {
@@ -12,7 +14,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import ContactInformation from "../../components/ContactInformation";
-import SendSms from "../../api/sendSms"
+import sendSms from "../../api/sendSms";  // Adjusted import
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -35,24 +37,14 @@ export default function ContactSection() {
 
   const validateForm = () => {
     const newErrors = {};
+    if (!formData.user_name.trim()) newErrors.user_name = "Name is required.";
+    if (!formData.email.trim()) newErrors.email = "Email is required.";
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email address is invalid.";
+    if (!formData.message.trim()) newErrors.message = "Message is required.";
+    else if (formData.message.length > 250) newErrors.message = "Message cannot exceed 250 characters.";
 
-    if (!formData.user_name.trim()) {
-      newErrors.user_name = "Name is required.";
-    }
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required.";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email address is invalid.";
-    }
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required.";
-    } else if (formData.message.length > 250) {
-      newErrors.message = "Message cannot exceed 250 characters.";
-    }
     const phoneError = validatePhone(formData.phone);
-    if (phoneError) {
-      newErrors.phone = phoneError;
-    }
+    if (phoneError) newErrors.phone = phoneError;
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -60,15 +52,12 @@ export default function ContactSection() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    if (name === "message") {
-      setMessageLength(value.length);
-    }
+    if (name === "message") setMessageLength(value.length);
     setFormData({
       ...formData,
       [name]: type === 'checkbox' ? (checked ? value : '') : value,
     });
 
-    // Live validation for phone number
     if (name === "phone") {
       const phoneError = validatePhone(value);
       setErrors({
@@ -81,9 +70,7 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     toast({
       title: 'Sending message...',
@@ -94,25 +81,44 @@ export default function ContactSection() {
     });
 
     try {
+      // Save message to the database first
       await api.post('/Messages/', formData);
-      await SendSms (formData);
-      toast({
-        title: 'Message Sent',
-        description: "Your message has been sent successfully.",
-        status: 'success',
-        duration: 5000,
-        isClosable: true,
-      });
-      setFormData({
-        user_name: '',
-        email: '',
-        message: '',
-        phone: '',
-        status: 'NUR',
-      });
-      setMessageLength(0); // Reset message length counter
+
+      // Send the SMS and handle success/failure
+      const smsResult = await sendSms(formData);
+
+      if (smsResult.success) {
+        toast({
+          title: 'Message Sent',
+          description: smsResult.message,
+          status: 'success',
+          duration: 5000,
+          isClosable: true,
+        });
+      } else {
+        toast({
+          title: 'SMS Failed',
+          description: smsResult.message,
+          status: 'error',
+          duration: 5000,
+          isClosable: true,
+        });
+      }
+
+      // Reset form on success
+      if (smsResult.success) {
+        setFormData({
+          user_name: '',
+          email: '',
+          message: '',
+          phone: '',
+          status: 'NUR',
+        });
+        setMessageLength(0); // Reset message length counter
+      }
+
     } catch (error) {
-      console.error('Error sending message:', error);
+      console.error('Error saving message:', error);
       toast({
         title: 'Send Failed',
         description: "There was an error sending your message. Please try again.",
@@ -259,7 +265,7 @@ export default function ContactSection() {
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder={`Your Phone *`}
-                        type="text" // Changed to text to handle formatting
+                        type="text"
                         fontFamily="Poppins"
                         w="100%"
                         borderRadius="4px"
