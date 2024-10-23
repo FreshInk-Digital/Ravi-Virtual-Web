@@ -1,5 +1,11 @@
 import React, { useEffect } from 'react';
-import { Box, Heading, Text, Divider } from "@chakra-ui/react";
+import { 
+  Box,
+  Heading,
+  Text,
+  Divider
+} from "@chakra-ui/react";
+import IncomeTaxActSchedules from './IncomeTaxActSchedules';
 
 const IncomeTaxActContent = () => {
   
@@ -718,6 +724,9 @@ const IncomeTaxActContent = () => {
         w="20%"
         mx="auto"
       />
+
+      
+      <IncomeTaxActSchedules />
       
       <Heading mt="5">
         TO BE CONTINUED...
