@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text, Divider } from "@chakra-ui/react";
 
 const IncomeTaxActContent = () => {
   
@@ -36,12 +36,21 @@ const IncomeTaxActContent = () => {
 
       {/* Existing content... */}
       {/* Chapter Title */}
-      <Text fontWeight="bold" fontSize="lg" mb="4" textAlign="center" color="gray.800">
+      <Text fontWeight="bold" fontSize="lg" mt="48px" mb="4" textAlign="center" color="gray.800">
         CHAPTER 332
       </Text>
       <Text fontSize="lg" mb="4" textAlign="center" color="gray.800" textTransform="uppercase">
         THE INCOME TAX ACT
       </Text>
+      {/* a divider line */}
+      <Divider
+        mb="10px"
+        borderColor="gray.800"
+        borderWidth="1px"
+        w="20%"
+        mx="auto"
+      />
+
       <Text textAlign="center" mb="8" color="gray.600">
         [PRINCIPAL LEGISLATION]
       </Text>
@@ -571,6 +580,145 @@ const IncomeTaxActContent = () => {
           124. Assessments and Related Decisions Unaffected.
         </Text>  Not refered in TAA, 2014.
       </Text>
+
+      {/* PART IX: REMISSION AND REFUND */}
+      <Text fontSize="md" mt="6" textAlign="center" color="red.500" textDecoration="line-through" textTransform="uppercase">
+        PART IX: REMISSION AND REFUND
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          125. Remission.
+        </Text> refer to section 70 of TAA, 2014.
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          126. Refunds and Set-Off.
+        </Text> refer to section 71 of TAA, 2014
+      </Text>
+
+      {/* PART X: ADMINISTRATION */}
+      <Text fontSize="md" mt="6" textAlign="center" textTransform="uppercase">
+        PART X: ADMINISTRATION
+      </Text>
+
+      {/* Division I: The Commissioner and Other Officers */}
+      <Text fontSize="md" mt="4" textAlign="center" color="red.500" textDecoration="line-through" textTransform="capitalize">
+        Division I: The Commissioner and Other Officers
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          127. Delegation by the Commissioner.
+        </Text> refer to section 16 of TAA, 2014.
+      </Text>
+
+      {/* Division II: Official Documentation and Registration */}
+      <Text fontSize="md" mt="4" textAlign="center" textTransform="capitalize">
+        Division II: Official Documentation and Registration
+      </Text>
+      <Text mt="2">
+        128. International Agreements.
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          129. Regulations.
+        </Text> refer to section 98 of TAA, 2014.
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          130. Practice Notes.
+        </Text> refer to section 9 of TAA, 2014.
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          131. Private Rulings.
+        </Text> refer to section 11 of TAA, 2014.
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          132. Form of Documentation.
+        </Text> refer to section 30 of TAA, 2014.
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          133. Tax Identification Number.
+        </Text> refer to section 22&23 of TAA, 2014.
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          134. Tax Consultants.
+        </Text> refer to section 28 of TAA, 2014.
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          135. Certification of Estimates and Returns.
+        </Text> refer to section 38 of TAA, 2014.
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          136. Filing and Service of Documents.
+        </Text> refer to section 33 of TAA, 2014.
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          136A.Electronic document.
+        </Text> refer to section 34 of TAA, 2014.
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          137. Authorised and Defective Documents.
+        </Text> refer to section 31 of TAA, 2014.
+      </Text>
+
+      {/* Division III: Audit and Information Collection */}
+      <Text fontSize="md" mt="4" textAlign="center" textTransform="capitalize">
+        Division III: Audit and Information Collection
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          138. Commissioner's Access to Information.
+        </Text> refer to section 42 of TAA, 2014.
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          139. Notice to Obtain Information.
+        </Text> refer to section 44 of TAA, 2014.
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          139A. Electronic evidence
+        </Text> no reference in TAA, 2014.
+      </Text>
+      <Text mt="2">
+        <Text as="span" color="red.500" textDecoration="line-through">
+          140. Official Secrecy.
+        </Text> refer to section 21 of TAA, 2014.
+      </Text>
+
+      {/* PART XI: TRANSITIONAL */}
+      <Text fontSize="md" mt="6" textAlign="center" textTransform="uppercase">
+        PART XI: TRANSITIONAL
+      </Text>
+      <Text mt="2">
+        141. Repeal.
+      </Text><Text mt="2">
+        142. Transition.
+      </Text><Text mt="2">
+        143. Agreements and Certificates for fiscal stability.
+      </Text><Text mt="2">
+        144. Assets and liabilities at commencement.
+      </Text><Text mt="2">
+        145. Mining.
+      </Text>
+
+      {/* a divider line */}
+      <Divider
+        mb="10px"
+        borderColor="gray.800"
+        borderWidth="1px"
+        w="20%"
+        mx="auto"
+      />
+      
       <Heading mt="5">
         TO BE CONTINUED...
       </Heading>
