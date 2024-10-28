@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 import IncomeTaxActSchedules from './IncomeTaxActSchedules';
 import IncomeTaxActMain from './IncomeTaxActMain';
+import ImpositionIncomeTax from './ImpositionIncomeTax';
 
 const IncomeTaxActContent = () => {
   
@@ -731,7 +732,10 @@ const IncomeTaxActContent = () => {
 
       {/* IncomeTaxActMain Section */}
       <IncomeTaxActMain />
-      
+
+      {/* ImpositionIncomeTax */}
+      <ImpositionIncomeTax />
+
       <Heading mt="5">
         UNDER DEVELOPMENT...
       </Heading>
