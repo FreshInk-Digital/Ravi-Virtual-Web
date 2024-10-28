@@ -6,6 +6,7 @@ import {
   Divider
 } from "@chakra-ui/react";
 import IncomeTaxActSchedules from './IncomeTaxActSchedules';
+import IncomeTaxActMain from './IncomeTaxActMain';
 
 const IncomeTaxActContent = () => {
   
@@ -725,8 +726,11 @@ const IncomeTaxActContent = () => {
         mx="auto"
       />
 
-      
+      {/* IncomeTaxActSchedules Section */}
       <IncomeTaxActSchedules />
+
+      {/* IncomeTaxActMain Section */}
+      <IncomeTaxActMain />
       
       <Heading mt="5">
         TO BE CONTINUED...

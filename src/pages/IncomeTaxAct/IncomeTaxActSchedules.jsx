@@ -29,14 +29,7 @@ const IncomeTaxActSchedules = () => {
   }, []);
 
   return (
-    <Box
-      mt="24px"
-      px={{ md: "20px", base: "10px" }} // Padding for responsiveness
-      maxW="1170px"  // Set maximum width
-      margin="0 auto"  // Center the content on the page
-      fontFamily="Poppins"
-      userSelect="none"  // Disable text selection
-    >
+    <Box>
       {/* Schedules Heading */}
       <Text fontWeight="bold" fontSize="lg" mt="48px" mb="4" textAlign="center" color="gray.800">
         SCHEDULES

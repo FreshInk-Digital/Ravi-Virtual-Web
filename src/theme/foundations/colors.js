@@ -11,7 +11,7 @@ const colors = {
   blue_gray: {
     50: "#eaecf0",
     100: "#cfd4dc",
-    300: "#98alb2",
+    300: "#98a1b2",
     500: "#667084",
     700: "#475466",
   },
@@ -22,7 +22,7 @@ const colors = {
   gray: {
     50: "#f9f9f9",
     100: "#f5f5f5",
-    200: "#eceсес",
+    200: "#ececec",
     900: "#0f1728",
     "50_01": "#f8f9fb",
     "900_01": "#182230",
@@ -58,5 +58,10 @@ const colors = {
     a700_7f: "#ffffff7f",
   },
   gray_shadow: "#00000029",
+  brown: {
+    800: "#8B4513",  // Dark brown
+    500: "#A52A2A",  // Medium brown
+    100: "#D2B48C",  // Light brown
+  },
 };
 export default colors;

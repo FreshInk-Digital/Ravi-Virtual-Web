@@ -3,7 +3,7 @@ import axios from 'axios';
 const api_key = "49478e6e5cac680b";
 const secret_key = "Y2I3ODliZmMwMTU4MWExNTNkNDVmMzNmZDExZTYyZmRhMjc0MjI4ZmFmNDgyNjY1ZjNiZDZmZjZiMTlkMDRhZg==";
 const content_type = "application/json";
-const source_addr = "INFO";
+const source_addr = "RAVIAPP";
 
 async function send_sms({ user_name, email, phone, message, status }) {
   const sms_message = `Name: ${user_name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}\nStatus: ${status}\n`;
