@@ -1968,7 +1968,7 @@ const IncomeTaxActMain = () => {
         respect of earthmoving, engineering and construction and includes
         geological geotechnical and metallurgical services or any other like services;
       </Text>
-      
+
       {/* Finance Act No. 2 of 2014 s.32 */}
       <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
         Finance Act No.2 of 2014 s.32
@@ -1985,6 +1985,359 @@ const IncomeTaxActMain = () => {
         geological geotechnical and metallurgical services or any other like services;
       </Text>
 
+      {/* Finance Act No.2 of 2014 s.32, Finance Act no 2 of 2016 s. 17 */}
+      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Text as="span" textDecoration="line-through">Finance Act
+No.2 of
+2014 s.32</Text><br />
+Finance Act no
+2 of 2016 s. 17
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+        textDecoration="line-through"
+      >
+        “technical services” in respect of mining, oil and gas operations, means
+services in respect of earthmoving, engeneering and construction
+and includes geological, geotechnical and metallurgical services,
+seismic survey, data interpretation, drilling or any such services;
+      </Text>
+
+      {/* Finance Act no 2 of 2016 s. 17*/}
+      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
+      Finance Act no
+2 of 2016 s. 17
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="red.500"
+      >
+        “technical service” in respect of mining or petroleum operations, means
+services in respect of earthmoving, engineering and construction and
+includes geological, geotechnical and metallurgical services, seismic
+survey, data interpretation, drilling or any such services;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        "total income" has the meaning ascribed to it under section 5 ;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+      >
+"trading stock" means assets owned by a person that are sold or intended
+to be sold in the ordinary course of a business of the person, work in
+progress on such assets and inventories of materials to be
+incorporated into such assets and includes, in the case of a person
+carrying on a banking business, loans made in the ordinary course of
+that business;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+"trustee" -
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (a) means an individual or body corporate holding assets in a
+fiduciary capacity for the benefit of identifiable persons or for
+some object permitted by law and whether or not the assets are
+held alone or jointly with other persons or the individual or
+body corporate is appointed or constituted trustee by personal
+acts, by will, by order or declaration of a court or by other
+operation of the law; and
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(b) includes -
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(i) any executor, administrator, tutor or curator;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(ii) any liquidator, receiver, trustee in bankruptcy or judicial
+manager;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(iii) any person having the administration or control of assets
+subject to a usufruct, fideicommissum or other limited
+interest;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(iv) any person who manages the assets of an incapacitated
+individual; and
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(v) any person who manages assets under a private foundation
+or other similar arrangements;
+      </Text>
+
+      {/* Finance Act No.13 of 2008 s.13 */}
+      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      Finance Act
+No.13 of
+2008 s.13
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+        textDecoration="line-through"
+      >
+        “turnover\” in relation to a business of a resident individual for the year of
+income, means amounts to be included in calculating the
+individual’s income for the business for the year of income under
+section 8 without a deduction for any amount under Subdivision B
+of Division I of Part III.
+      </Text>
+
+      {/* Finance Act No.13 of 2008 s.13 */}
+      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      Finance Act
+      No.13 of 2008 s.13
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+      >
+        "turnover" in relation to a business by a resident person for the year of
+        income, means an amount to be included in calculating the person’s income under section 8 without deducting any amount under
+        Subdivision D of Division I of Part II.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        "turnover" in relation to a business by a resident person for the year of
+        income, means an amount to be included in calculating the person’s income under section 8 without deducting any amount under
+        Subdivision D of Division I of Part II.
+      </Text>
+
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        "unapproved retirement fund" means a retirement fund that is not an
+        approved retirement fund;
+      </Text>
+
+      {/* Finance Act no 2 of 2016 s. 17 */}
+      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
+      Finance Act no
+      2 of 2016 s. 17
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="red.500"
+      >
+        upstream activities” has the meaning ascribed to it under the Petroleum
+        Act.”
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        "underlying ownership" -
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(a) in relation to an entity, means membership interests owned in
+the entity, directly or indirectly through one or more interposed
+entities, by individuals or by entities in which no person has a
+membership interest; or
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(b) in relation to an asset owned by an entity, means the asset
+owned by the persons having underlying ownership of the
+entity in proportion to that ownership of the entity;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+"trust" means an arrangement under which a trustee holds assets but
+excludes a partnership and a corporation;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+"unit trust" means -
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(a) an arrangement under which a trustee holds assets for the
+benefit of at least 20 persons; and 
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(b) where the entitlements of the persons to participate in the
+income or capital of the arrangement are divided into units
+such that the entitlements are determined by the number of
+units owned;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+"withholdee" means a person receiving or entitled to receive a payment
+from which income tax is required to be withheld under Subdivision
+A of Division II of Part VII;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+"withholding agent" means a person required to withhold income tax from
+a payment under Subdivision A of Division II of Part VII;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+"written down value" of a pool of depreciable assets-
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(a) at the end of a year of income has the meaning ascribed to it
+under paragraph 3(4) of the Third Schedule;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(b) at a particular time ("the time") during a year of income
+means-
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(i) the written down value of the pool at the end of the
+previous year of income; plus
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(ii) expenditure incurred prior to the time, which is added to
+the depreciation basis of the pool during the year of
+income or to be added during the following year of
+income under paragraph 3(5) of the Third Schedule; less
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(iii)incomings derived during the year of income or to be
+derived with respect to a realisation occurring prior to the
+time in respect of assets that are or have been in the pool;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+"year of income" has the meaning ascribed to it under section 20.
+      </Text>
 
     </Box>
   );

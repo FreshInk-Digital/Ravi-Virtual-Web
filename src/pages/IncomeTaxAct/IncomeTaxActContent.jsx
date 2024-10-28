@@ -733,7 +733,7 @@ const IncomeTaxActContent = () => {
       <IncomeTaxActMain />
       
       <Heading mt="5">
-        TO BE CONTINUED...
+        UNDER DEVELOPMENT...
       </Heading>
     </Box>
   );
