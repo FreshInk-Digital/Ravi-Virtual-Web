@@ -8,6 +8,7 @@ import {
 import IncomeTaxActSchedules from './IncomeTaxActSchedules';
 import IncomeTaxActMain from './IncomeTaxActMain';
 import ImpositionIncomeTax from './ImpositionIncomeTax';
+import IncomeTaxBase from './IncomeTaxBase'
 
 const IncomeTaxActContent = () => {
   
@@ -735,6 +736,9 @@ const IncomeTaxActContent = () => {
 
       {/* ImpositionIncomeTax */}
       <ImpositionIncomeTax />
+
+      {/* IncomeTaxBase */}
+      <IncomeTaxBase />
 
       <Heading mt="5">
         UNDER DEVELOPMENT...

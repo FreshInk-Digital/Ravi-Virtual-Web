@@ -1687,16 +1687,16 @@ const IncomeTaxActMain = () => {
       <Text fontSize="md" mt="6" textAlign="left" color="red.500">
         Finance Act No. 2 of 2016 s. 17
         <br />
-        <Text as="span" color="brown.500">
+        <Text as="span" color="brown.800">
           Finance Act No 4 of 2017 s. 17
         </Text>
       </Text>
       <Text fontSize="md" mt="6" textAlign="center" color="red.500">
         “rehabilitation fund” with respect to{" "}
-        <Text as="span" color="brown.500" textDecoration="line-through">
+        <Text as="span" color="brown.800" textDecoration="line-through">
           mineral
         </Text>{" "}
-        <Text as="span" color="brown.500">
+        <Text as="span" color="brown.800">
           mining
         </Text>{" "}
         operations or with respect to processing, smelting or refining minerals
@@ -1745,10 +1745,10 @@ const IncomeTaxActMain = () => {
       </Text>
 
       {/* Finance Act No. 8 of 2020 s. 25 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.500">
+      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
         Finance Act No. 8 of 2020 s. 25
       </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="brown.500">
+      <Text fontSize="md" mt="6" textAlign="center" color="brown.800">
         “representative assessee” means an agent of a non-resident person or of
         a beneficial owner;
       </Text>
