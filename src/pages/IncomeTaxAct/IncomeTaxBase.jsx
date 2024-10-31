@@ -1958,6 +1958,616 @@ transfer of the commodity; or
         Subdivision A: Tax Accounting and Timing
       </Text>
 
+      {/* Year of income */}
+      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      Year of
+income
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+      >
+        <Text as="span" fontSize="md" fontWeight="bold">20.-</Text>(1) Subject to the provisions of this section, the year of income
+        for every person shall be the calendar year.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (2) Subject to the provisions of subsections (6), (7) and (8), an
+entity may apply, in writing, to the Commissioner for approval to
+change the entity's year of income from -
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (a) the calendar year; or
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (b) a twelve-month period previously approved by the
+Commissioner under subsection (3),
+to another twelve-month period.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (3) Where, in an application under subsection (2), the entity
+shows a compelling need to change the entity's year of income, the
+Commissioner may, by notice in writing, approve the application
+subject to any conditions as the Commissioner prescribes.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (4) The Commissioner may, by notice in writing, revoke an approval granted to an entity under subsection (3).
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(5) Where an entity's year of income changes, the period between
+the end of its previous year of income and the beginning of its new year of
+income shall be another year of income of length of up to twelve months,
+or to 18 months subject to approval of the Commissioner.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(6) The year of income for every person's foreign permanent
+establishment shall be the same as the year of income of its owner.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(7) The year of income for every non-resident partnership, trust or
+corporation shall be the period, not exceeding twelve months, for which
+the entity makes up its accounts or, if it has no such period, the calendar
+year.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(8) The initial year of income of a person shall be the period of
+twelve months or less or subject to the approval of commissioner eighteen
+months or less from the time the person starts to exist until the end of the
+person's year of income as calculated according to the foregoing
+subsections.
+      </Text>
+
+      {/* Basis of accounting for income tax purposes */}
+      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      Basis of accounting for income tax purposes
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+      >
+        <Text as="span" fontSize="md" fontWeight="bold">21.-</Text>(1) Subject to this Act, a person shall account for his income
+        according to generally accepted accounting principles.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (2) Notwithstanding the provisions of subsection (1), an individual
+shall account for income tax purposes on a cash basis in calculating the
+individual's income from an employment or investment.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+        bgColor="yellow.300"
+      >
+        (3) A corporation shall account for income tax purposes on an
+        accrual basis.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (4) Unless the Commissioner prescribes otherwise by notice in
+writing, individuals in calculating income from a business, partnerships
+and trusts shall account for income tax purposes on either a cash or
+accrual basis according to the method that most clearly reflects the
+person's gains or profits.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (5) Subject to the provisions of subsections (2) and (3), a person
+may apply in writing for a change in the person's basis of accounting for
+income tax purposes and the Commissioner may by notice in writing
+approve the application but only if satisfied that the change is necessary to
+clearly reflect the person's gains and profits.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+      (6) Where any aspect of a person's basis of accounting for income
+tax purposes is changed, adjustments shall be made in the year of income
+of the change so that no item is omitted or taken into account more than
+once.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="red.500"
+      >
+      (7) In this section, “generally accepted accounting
+principles” means the principles adopted by the National Board of
+Accountants and Auditors
+      </Text>
+
+      {/* Cash basis accounting */}
+      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      Cash basis
+      accounting
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+      >
+        <Text as="span" fontSize="md" fontWeight="bold">22.</Text> Subject to this Act, a person who accounts for income tax
+        purposes on a cash basis -.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (a) derives an amount and, therefore, shall include the amount in
+calculating the person’s income or otherwise account for the
+amount as required by this Act when payment is received or
+made available to the person; and 
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (b) incurs expenditure and, therefore, may deduct the expenditure
+in calculating the person’s income or otherwise account for
+the expenditure as required by this Act when payment is
+made.
+      </Text>
+
+      {/* Accrual Basis Accounting */}
+      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      Accrual Basis Accounting
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+      >
+        <Text as="span" fontSize="md" fontWeight="bold">23.-</Text> (1) Subject to this Act, a person who accounts for income tax
+        purposes on an accrual basis-
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (a) derives an amount when it is receivable by the person; and
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(b) incurs expenditure when it is payable by the person.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(2) Subject to this Act, an amount is receivable by a person when
+the person becomes entitled to receive it, even if the time for discharge of
+the entitlement is postponed or the entitlement is payable by instalments.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(3) Subject to this Act, an amount shall be treated as payable by a
+person when all the events that determine liability have occurred and the
+amount of the liability can be determined with reasonable accuracy, but
+not before economic performance with respect to the amount occurs.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(4) For the purposes of subsection (3), economic performance
+occurs -
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(a) with respect to the acquisition of services or property, at the
+time the services or property are provided;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(b) with respect to the use of an asset, at the time the asset is
+used; or
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(c) in any other case, at the time the person makes payment in
+full satisfaction of the liability.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(5) Where in calculating income on an accrual basis -
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(a) a person includes a payment of a particular quantity to which
+the person is entitled or deducts a payment of a particular
+quantity that the person is obliged to make; and
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(b) subsequently that entitlement or obligation is satisfied by a
+payment received or made by the person, as the case requires,
+of a different quantity, including by reason of a change in
+currency valuations,
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+then appropriate adjustments shall be made at the time the payment is
+received or made so as to remedy the inaccuracy.
+      </Text>
+
+      {/* Claim of right */}
+      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      Claim of right
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+      >
+        <Text as="span" fontSize="md" fontWeight="bold">24.</Text> For the purposes of sections 22 and 23, an amount shall be
+treated as derived or expenditure incurred by a person notwithstanding
+that the person is not legally entitled to receive the amount or liable to
+make the payment, if the person claims to be legally entitled to receive, or
+legally obliged to pay the amount.
+      </Text>
+
+      {/* Reverse of amounts including bad debts */}
+      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      Reverse of
+amounts
+including
+bad debts
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+      >
+        <Text as="span" fontSize="md" fontWeight="bold">25.-</Text>(1) Where a person has deducted expenditure in calculating
+the person's income and the person later recovers the expenditure, the
+person shall, at the time of recovery, include the amount recovered in
+calculating the person's income.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (2) Where a person has included an amount in calculating the
+person's income and, because of a legal obligation to do so, the person
+later refunds the amount, the person may, at the time of refund, deduct the
+amount refunded in calculating the person's income.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (3) Where in calculating income on an accrual basis a person
+deducts expenditure that the person shall be obliged to make and the
+person later disclaims an obligation to incur the expenditure, the person
+shall, at the time of disclaimer, include the amount disclaimed in
+calculating the person's income.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (4) Subject to the provisions of subsection (5), where in calculating
+income on an accrual basis a person includes an amount to which the
+person is entitled and the person later -
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (a) disclaims an entitlement to receive the amount; or
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (b) in the case where the amount constitutes a debt claim of the
+person, the person writes off the debt as bad,
+the person may, at the time of disclaimer or writing off, deduct the amount
+disclaimed or written off in calculating the person's income.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (5) A person may disclaim the entitlement to receive an amount or
+        write off as bad a debt claim of the person -
+      </Text>
+
+      {/* Finance Act No. 2 of 2014 s.34 */}
+      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      Finance Act
+No. 2 of
+2014 s.34
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+        textDecoration="line-through"
+      >
+        (a) in the case of a debt claim of a financial institution, only after
+the debt claim has become a bad debt as determined in
+accordance with the relevant standards established by the Bank
+of Tanzania; and
+      </Text>
+
+      {/* Finance Act No. 2 of 2014 s.34 */}
+      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      Finance Act
+No. 2 of
+2014 s.34
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+      >
+        (a) in the case of debt claim of a financial institution, after the debt
+claim has become bad debt as determined in accordance with
+the relevant standards established by the bank of Tanzania and
+such institution has taken all reasonable steps in pursuing
+payment and the institution reasonably believes that debt claim
+will not be satisfied; and;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (b) in any other case, only after the person has taken all reasonable
+steps in pursuing payment and the person reasonably believes
+that the entitlement or debt claim will not be satisfied.
+      </Text>
+
+      {/* Long-term contracts */}
+      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      Long-term
+contracts
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+      >
+        <Text as="span" fontSize="md" fontWeight="bold">26.-</Text>(1) In the case of a person accounting for income tax purposes
+on an accrual basis, amounts to be included or deducted in calculating
+income that relate to a long-term contract shall be taken into account on
+the basis of the percentage of the contract completed during each year of
+income.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (2) The percentage of completion shall be determined by comparing
+the total expenditure allocated to the contract and incurred before the end
+of the year of income with the estimated total contract expenditure as
+determined at the time of commencement of the contract.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (3) Where for the year of income in which a long-term contract is
+completed, the person has an unrelieved loss (determined under section
+19) for the year of income or a previous year of income that is attributable
+to the long-term contract, the Commissioner may allow the loss to be -
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (a) carried back to a previous year of income; and
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(b) treated as an unrelieved loss for that year.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(4) The amount treated as an unrelieved loss for a year of income
+under subsection (3)(b) shall not exceed the amount by which amounts
+included in calculating income for that year of income under the contract
+exceed deductions under the contract for the year.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(5) An unrelieved loss for a year of income shall be attributable to
+a long-term contract to the extent that deductions in calculating the income
+from the business that relate to the contract exceed inclusions in that
+calculation that relate to the contract.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(6) For the purposes of this section, "long-term contract” -
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(a) means a contract for manufacture, installation, or construction,
+or, in relation to each, the performance of related services,
+which is not completed within the year of income in which work under the contract commences; but
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(b) excludes a contract estimated to be completed within six
+months of the date on which work under the contract
+commenced.
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+(7) The regulations may apply the percentage of completion method
+to other types of contracts that span more than one year of income where
+the contract may accelerate expenditure in early years or delay income
+until later years of the contract.
+      </Text>
+      
+
     </Box>
   );
 };
