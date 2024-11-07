@@ -2566,6 +2566,213 @@ to other types of contracts that span more than one year of income where
 the contract may accelerate expenditure in early years or delay income
 until later years of the contract.
       </Text>
+
+      {/* Subdivision B: Quantification, Allocation and Characterisation of Amounts */}
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+        fontStyle="italic"
+      >
+        Subdivision B: Quantification, Allocation and Characterisation of Amounts
+      </Text>
+
+      {/* Quantification according to market value */}
+      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      Quantification
+according to
+market
+value
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+      >
+        <Text as="span" fontSize="md" fontWeight="bold">27.-</Text>(1) A payment or amount to be included or deducted in
+        calculating income shall be quantified as follows -
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        <Text as="span" fontSize="md" color="brown.800">(a)</Text> for payments consisting of the availability for use or use of
+a motor vehicle during a year of income provided in return
+for services whether by way of employment or otherwise
+or provided by an entity to a member or manager of the
+entity, the amount of the payment shall be as prescribed in
+the Fifth Schedule;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        <Text as="span" fontSize="md" color="brown.800">(b)</Text> for payments consisting of a loan provided in return for
+services (whether by way of employment or otherwise) or
+by an entity to a member or manager of the entity-
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (i) where the loan is made by an employer to an
+employee, the term of the loan is less than twelve
+months and the aggregate amount of the loan and any
+similar loans outstanding at any time during the
+previous twelve months does not exceed three months
+basic salary, the quantity of the payment is nil; and
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (ii) in any other case, the amount by which -
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (aa) the interest that would have been paid by the
+payee during the year of income of the payee
+in which the payment is made if interest were
+payable under the loan at the statutory rate for
+the year of income, exceeds;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+        (bb) the interest paid by the payee during the year
+        of income under the loan, if any;
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+       <Text as="span" fontSize="md" color="brown.800">(c)</Text> for payments consisting of the provision of premises
+       (including any furniture or other contents) by an employer for residential occupation by an employee during a year of
+income, (i) or (ii), whichever is less, reduced by any rent
+paid for the occupation by the employee, where -
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+       (i) is the market value rental of the part of the premises
+occupied by the employee for the period occupied
+during the year of income; and
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+       (ii) is the greater of -
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+       (aa) 15 percent of the employee's total income for the
+year of income, calculated without accounting for
+the provision of the premises and, where the
+premises are occupied for only part of the year of
+income, apportioned as appropriate; and
+      </Text>
+      <Text
+        fontSize="md"
+        mt="2"
+        textAlign="center"
+        color="gray.800"
+      >
+       (bb) expenditure claimed as a deduction by the
+employer in respect of the premises for the period
+of occupation by the employee during the year of
+income; and
+      </Text>
+
+      {/* S. 32C of Written Laws (Miscellaneous Amendments) Act No. 7 of 2017 */}
+      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
+      S. 32C of
+Written Laws
+(Miscellaneous
+Amendments)
+Act No. 7 of
+2017
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="brown.800"
+      >
+        (d) for the purpose of tax benefit or advantage, the amount of
+tax benefit or advantage shall be 330 percent of the actual
+tax benefit or advantage:
+      </Text>
+
+      {/* S. 32C of Written Laws (Miscellaneous Amendments) Act No. 7 of 2017 */}
+      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
+      S. 32C of
+Written Laws
+(Miscellaneous
+Amendments)
+Act No. 7 of
+2017
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="brown.800"
+      >
+        Provided that, for the purpose of this paragraph, tax
+benefits or advantage means benefit or advantage obtained by
+a person by shifting an obligation to pay income tax to
+another person;
+      </Text>
+
+      {/* S. 32C of Written Laws (Miscellaneous Amendments) Act No. 7 of 2017 */}
+      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
+      S. 32C of
+Written Laws
+(Miscellaneous
+Amendments)
+Act No. 7 of
+2017
+      </Text>
+      <Text
+        fontSize="md"
+        mt="6"
+        textAlign="center"
+        color="gray.800"
+      >
+        <Text as="span" fontSize="md" color="brown.800">(e)</Text> in any other case, the amount prescribed by the
+regulations or, in the absence of regulations, the market
+value.
+another person;
+      </Text>
       
 
     </Box>

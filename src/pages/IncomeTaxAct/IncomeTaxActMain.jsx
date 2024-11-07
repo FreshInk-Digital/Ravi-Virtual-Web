@@ -117,130 +117,130 @@ const IncomeTaxActMain = () => {
       </Text>
 
       {/* Short Title */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-        Short title
-      </Text>
-      <Text fontSize="md" textAlign="center" color="gray.600">
-        1. This Act may be cited as the Income Tax Act.
-      </Text>
+      <Flex mt="6" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
+          Short title
+        </Text>
+        <Text fontSize="md" color="gray.600" textAlign="left" w="80%">
+          1. This Act may be cited as the Income Tax Act.
+        </Text>
+      </Flex>
 
       {/* Application */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-        Application
-      </Text>
-      <Text fontSize="md" textAlign="center" color="gray.600">
-        2. This Act shall apply to Tanzania Mainland as well as Tanzania
-        Zanzibar.
-      </Text>
+      <Flex mt="6" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
+          Application
+        </Text>
+        <Text fontSize="md" color="gray.600" textAlign="left" w="80%">
+          2. This Act shall apply to Tanzania Mainland as well as Tanzania Zanzibar.
+        </Text>
+      </Flex>
 
       {/* Interpretation */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-        Interpretation
-      </Text>
-      <Text fontSize="md" textAlign="center" color="gray.600">
-        3. In this Act, unless the context requires otherwise -
-      </Text>
+      <Flex mt="6" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
+          Interpretation
+        </Text>
+        <Text fontSize="md" color="gray.600" textAlign="left" w="80%">
+          3. In this Act, unless the context requires otherwise -
+        </Text>
+      </Flex>
 
-      {/* Act No.7 and Finance Act */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-        Act No.7 of 1994 s.8
-      </Text>
-      <Text fontSize="md" textAlign="left" color="red.500">
-        amended by TAA, 2014
-      </Text>
-
-      {/* Adjusted Assessment (Red, Strikethrough and Regular) */}
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="red.500"
-        textDecoration="line-through"
-      >
-        "adjusted assessment" means an assessment adjusted in accordance with
-        section 96;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="red.500">
-        “adjusted assessment” means an assessment adjusted in accordance with
-        section 48 of The Tax Administration Act,”
-      </Text>
+      {/* Act No.7 of 1994 s.8 */}
+      {/* amended by TAA, 2014 */}
+      <Flex mt="6" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
+          Act No.7 of 1994 s.8
+          <br/>
+          <Text as="span" fontSize="md" color="red.500">
+          amended by TAA, 2014
+        </Text>
+        </Text>
+        <Text fontSize="md" color="red.500" textAlign="left" w="80%" >
+        <Text fontSize="md" textDecoration="line-through">
+        "adjusted assessment" means an assessment adjusted in accordance with section 96;
+        </Text>
+        “adjusted assessment” means an assessment adjusted in accordance with section 48 of The Tax Administration Act,”
+        </Text>
+      </Flex>
 
       {/* Finance Act No.8 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
+      <Flex mt="6" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
         Finance Act No. 8 of 2020 s. 25
-      </Text>
-
-      {/* Agent of Non-Resident (Brown, Centered) */}
-      <Text fontSize="md" mt="6" textAlign="center" color="brown.800">
-        “agent of a non-resident person or of a beneficial owner” includes any
-        person in the United Republic-
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
-        (a) who is employed by or on behalf of a non-resident person or a
+        </Text>
+        <Text fontSize="md" color="brown.800" textAlign="left" w="80%" >
+“agent of a non-resident person or of a beneficial owner” includes any
+person in the United Republic-
+<Text fontSize="md" mt="2">
+&ensp;(a) who is employed by or on behalf of a non-resident person or a
         beneficial owner;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
-        (b) who has any business connection with a non-resident person or a
+        </Text>
+<Text fontSize="md" mt="2">
+&ensp;(b) who has any business connection with a non-resident person or a
         beneficial owner;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
-        (c) from or through whom a nonresident person or a beneficial owner is
-        in receipt of any income, whether directly or indirectly; or
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
-        (d) who is a trustee of a non-resident person, and includes any other
-        person who, whether a resident or non-resident, has acquired by means of
+        </Text>
+<Text fontSize="md" mt="2">
+&ensp;(c) from or through whom a nonresident person or a beneficial owner is
+        in receipt of any income, whether directly or indirectly; &ensp;or
+        </Text>
+<Text fontSize="md" mt="2">
+&ensp;(d) who is a trustee of a non-resident person, and includes any other
+        person who, whether a resident or non-resident, has &ensp;acquired by means of
         a transfer, a capital asset situated in the United Republic;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act 2022 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="6" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act 2022
-      </Text>
-
-      {/* “alternative financing arrangement" */}
-      <Text fontSize="md" mt="6" textAlign="center" color="green.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" >
         “alternative financing arrangement” means any financial arrangement
         approved by the Bank of Tanzania other than conventional financial
         arrangements;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        <Text fontSize="md" mt="2">
         "amount derived" means a payment received by a person or that the person
         is entitled to receive;
-      </Text>
-
+        </Text>
+        </Text>
+      </Flex>
+      
       {/* Finance Act No. 4 of 2017 s. 17 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
+      <Flex mt="6" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act No. 4 of 2017 s. 17
-      </Text>
-
-      {/* an entity of a public character (Brown, Centered) */}
-      <Text fontSize="md" mt="6" textAlign="center" color="brown.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" >
         “an entity of a public character” means an entity established and
         functions solely for a public purpose and which operates in such a way
         that:
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
-        (a) its membership is open to the general public or an identifiable
+        <Text fontSize="md" mt="2">
+        &ensp;(a) its membership is open to the general public or an identifiable
         group of a community with common interests;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
-        (b) it operates for purposes other than deriving profit or gain;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
-        (c) it does not allow any distribution or deemed distribution of profit
+        </Text>
+        <Text fontSize="md" mt="2">
+        &ensp;(b) it operates for purposes other than deriving profit or gain;
+        </Text>
+        <Text fontSize="md" mt="2">
+        &ensp;(c) it does not allow any distribution or deemed distribution of profit
         generated out of its charitable business; and
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
-        (d) its profit is ploughed back and used solely for improving or
+        </Text>
+        <Text fontSize="md" mt="2">
+        &ensp;(d) its profit is ploughed back and used solely for improving or
         expansion of the original charitable purpose or function;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No 4 of 2018 s. 23 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="blue.500">
+      <Flex mt="6" alignItems="justify">
+        <Text fontSize="md" color="blue.500" textAlign="left" w="20%">
         Finance Act No 4 of 2018 s. 23
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" >
         "approved retirement fund" means a resident retirement fund having a
         ruling under{" "}
         <Text as="span" textDecoration="line-through">
@@ -250,289 +250,308 @@ const IncomeTaxActMain = () => {
           {" "}
           section 11 of the Tax Administration Act;
         </Text>
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        <Text fontSize="md" mt="2">
         “arrangement” includes an action, agreement, course of conduct, dealing,
         promise, transaction, understanding or undertaking, whether express or
         implied, whether or not enforceable by legal proceedings and whether
         unilateral or involving more than one person;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No. 6 of 2024 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="blue.500">
+      <Flex mt="6" alignItems="justify">
+        <Text fontSize="md" color="blue.500" textAlign="left" w="20%">
         Finance Act No. 6 of 2024
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="blue.500">
+        </Text>
+        <Text fontSize="md" color="blue.500" textAlign="left" w="80%" >
         “artisanal miner” means a person who acquires mineral, and includes
         laborers in mining activities other than a holder of any licence under
         the Mining Act;
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="red.500"
-        textDecoration="line-through"
-      >
+        <Text fontSize="md" mt="2" color="red.500"
+        textDecoration="line-through">
         "assessment" means an assessment under section 94, 95, 96 or 103;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="red.500">
+        </Text>
+        <Text fontSize="md" mt="2"color="red.500" >
         “Assessment” means an assessment made in terms of Section 94 of this Act
         or sections 46, 47,48 or 81 of the Tax Administration Act,”
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No. 6 of 2024 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="blue.500">
+      <Flex mt="6" alignItems="justify">
+        <Text fontSize="md" color="blue.500" textAlign="left" w="20%">
         Finance Act No. 6 of 2024
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" >
         "asset" means a tangible or intangible asset and includes currency,
         goodwill, know-how,{" "}
         <Text as="span" color="blue.500">
           digital asset,
         </Text>{" "}
         property, a right to income or future income and a part of an asset;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        <Text fontSize="md" mt="2" color="gray.800">
         "associate" in relation to a person, means another person where the
         relationship between the two is -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (a) that of an individual and a relative of the individual, unless the
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
+        &ensp;(a) that of an individual and a relative of the individual, unless the
         Commissioner is satisfied that it is not reasonable to expect that
         either individual will act in accordance with the intentions of the
         other;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (b) that of partners in the same partnership, unless the Commissioner is
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
+        &ensp;(b) that of partners in the same partnership, unless the Commissioner is
         satisfied that it is not reasonable to expect that either person will
         act in accordance with the intentions of the other;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (c) that of an entity and -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (i) a person who -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (aa) either alone or together with an associate or associates under
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
+        &ensp;(c) that of an entity and -
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
+        &ensp;&ensp;(i) a person who -
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
+        &emsp;&emsp;(aa) either alone or together with an associate or associates under
         another application of this definition; and
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No. 8 of 2020 s. 25 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
         Finance Act No. 8 of 2020 s. 25
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
-        (bb) whether directly or through one or more interposed entities,
-        <Text as="span" textDecoration="line-through">
-          controls or may benefit from 50 percent or more of the rights to
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" >
+        &emsp;&emsp;(bb) whether directly or through one or more interposed entities,
+        <Text as="span" fontSize="md" textDecoration="line-through">
+        controls or may benefit from 50 percent or more of the rights to
           income or capital or voting power of the entity; or
         </Text>
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No. 8 of 2020 s. 25 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
         Finance Act No. 8 of 2020 s. 25
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="brown.800">
+        </Text>
+        <Text fontSize="md" color="brown.800" textAlign="left" w="80%" >
         controls or may benefit from 25 percent or more of the rights to income
         or capital or voting power of the entity, except that the Commissioner
         may, upon consideration of the nature of business or investment of a
         person, determine the prescribed minimum percentage; or
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
-        (ii) under another application of this definition, is an associate of a
-        person to whom subparagraph (i) applies; or
-      </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
+        &ensp;&ensp;(ii) under another application of this definition, is an
+associate of a person to whom subparagraph (i) applies;
+or
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No. 8 of 2020 s. 25 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
         Finance Act No. 8 of 2020 s. 25
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="brown.800">
+        </Text>
+        <Text fontSize="md" color="brown.800" textAlign="left" w="80%" >
         (d) in any case not covered by paragraphs (a) to (c), such that one may
         reasonably be expected to act, other than as employee, in accordance
         with the intentions of the other
-        <Text as="span" color="brown.800">
+        <Text as="span" fontSize="md"  color="brown.800">
           whether or not they are in a business relationship and whether such
           intentions are communicated or not;
         </Text>
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        <Text fontSize="md" mt="2"color="gray.800" >
         "banking business" means business of a financial institution approved
         under the Banking and Financial Institutions Act;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No. 8 of 2020 s. 25 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
         Finance Act No. 8 of 2020 s. 25
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="brown.800">
+        </Text>
+        <Text fontSize="md" color="brown.800" textAlign="left" w="80%" >
         "beneficial owner” means a natural person-
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
+        <Text fontSize="md" mt="2"color="brown.800" >
         (a) who directly or indirectly ultimately owns or exercises substantial
         control over an entity or an arrangement;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="brown.800" >
         (b) who has a substantial economic interest in or receives substantial
         economic benefit from an entity or an arrangement directly or indirectly
         whether acting alone or together with other persons;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="brown.800" >
         (c) on whose behalf a transaction or arrangement is conducted; or
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="brown.800" >
         (d) who exercises significant control or influence over a person or
         arrangement through a formal or informal agreement;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Section 59 of the Finance Act 2022 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="green.500">
-        Section 59 of the Finance Act 2022
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="green.500" textAlign="left" w="20%">
+          Section 59 of the Finance Act 2022
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" >
         "business" includes -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        <Text fontSize="md" mt="2"color="gray.800" >
         (a) a trade, concern in the nature of trade, manufacture, profession,
         vocation or isolated arrangement with a business character; and
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="green.500">
+        </Text>
+        <Text fontSize="md" mt="2"color="green.500" >
         (b) a transaction or activity carried out through the internet or an
         electronic means including an electronic service or transaction
         conducted in the digital market place regardless of the manner in which
         such transaction is carried out;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Section 17 of Finance Act no 4 of 2017 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
         Section 17 of Finance Act no 4 of 2017
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
-        (c) a past, present or prospective business, but excludes employment
-        <Text as="span" color="brown.800" textDecoration="line-through">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" >
+        (c) a past, present or prospective business, but excludes employment <Text as="span" fontSize="md" color="brown.800" textDecoration="line-through">
           and any activity that, having regard to its nature and the principal
           occupation of its owners or underlying owners, is not carried on with
           a view to deriving profits;
         </Text>
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        <Text fontSize="md" mt="2"color="gray.800" >
         "business asset" means an asset to the extent to which it is employed in
         a business and includes a membership interest of a partner in a
         partnership but excludes -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         (a) trading stock or a depreciable asset;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         (b) an interest in land held by an individual that has a market value of
         less than 10 million shillings at the time it is realised and that has
         been used for agricultural purposes for at least two of the three years
         prior to realization;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         (c) the beneficial interest of a beneficiary in a resident trust;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         (d) shares in a corporation where receipt of a dividend in respect of
         the shares is exempt in the hands of the shareholder under section
         54(2); and
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         (e) shares and securities listed on the Dar es Salaam Stock Exchange
         that are owned by a resident person or by a non resident person who
         either alone or with other associates controls less than 25% of the
         controlling shares of the issuer company;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No. 8 of 2020 s. 25 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
         Finance Act No. 8 of 2020 s. 25
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="brown.800">
+        </Text>
+        <Text fontSize="md" color="brown.800" textAlign="left" w="80%" >
         “business connection” includes any business activity carried out through
         a person who, acting on behalf of the nonresident person or a beneficial
         owner-
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
+        <Text fontSize="md" mt="2"color="brown.800" >
+        "business asset" means an asset to the extent to which it is employed in
+        a business and includes a membership interest of a partner in a
+        partnership but excludes -
+        </Text>
+        <Text fontSize="md" mt="2"color="brown.800" >
         (a) has and habitually exercises in the United Republic, an authority to
         conclude contracts on behalf of the non-resident person or a beneficial
         owner;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="brown.800" >
         (b) habitually concludes contracts or plays the principal role leading
         to conclusion of contracts by that nonresident person or a beneficial
         owner, and the contracts are-
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
-        (i) whether or not in the name of the non-resident person or the
+        </Text>
+        <Text fontSize="md" mt="2"color="brown.800" >
+        &emsp;(i) whether or not in the name of the non-resident person or the
         beneficial owner;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
-        (ii) for the transfer of the ownership of, or for the granting of the
-        right to use property owned by that nonresident person, or that
+        </Text>
+        <Text fontSize="md" mt="2"color="brown.800" >
+        &emsp;(ii) for the transfer of the ownership of, or for the granting of the
+        right to use property owned by that nonresident person, or &emsp;that
         nonresident person has the right to use; or
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
-        (iii) for the provision of services by the non-resident person or the
+        </Text>
+        <Text fontSize="md" mt="2"color="brown.800" >
+        &emsp;(iii) for the provision of services by the non-resident person or the
         beneficial owner;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="brown.800" >
         (c) has no such authority but habitually maintains in the United
         Republic a stock of goods or merchandise from which he regularly
         delivers goods or merchandise on behalf of the nonresident person or the
         beneficial owner;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="brown.800" >
         (d) habitually secures orders in the United Republic, mainly or wholly
         for the non-resident person or for that non-resident person and other
         non-resident persons controlling, controlled by, or subject to the same
         common control as that nonresident person, or for the beneficial owner;
         or
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="brown.800" >
         (e) carries out any business or investment in the United Republic
         through an entity or an arrangement for economic benefit of a
         nonresident person or beneficial owner, whether directly or indirectly
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         "capitalisation of profits" by an entity, includes a capitalisation by
         way of issuing bonus, membership interests or increasing the amount paid
         upon membership interests in the entity or otherwise crediting profits
         to a capital or premium account of the entity;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         "certified public accountant in public practice" has the meaning
         ascribed to it by the Auditors and Accountants (Registrations) Act.;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         "chargeable income" has the meaning ascribed to it by section 6;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         "charitable organisation" has the meaning ascribed to it by section 64;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         "Class of depreciable assets” means a class determined in accordance
         with the provisions of paragraph 1 of the Third Schedule;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* S. 32A of Written Laws (Miscellaneous Amendments) Act No. 7 of 2017 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
         S. 32A of Written Laws (Miscellaneous Amendments) Act No. 7 of 2017
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
+        </Text>
+        <Text fontSize="md" color="brown.800" textAlign="left" w="80%" >
         “Commission” means the Commission of Minerals established under section
         20 of the Mining Act,”
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        <Text fontSize="md" mt="2"color="gray.800" >
         "Commissioner" means the{" "}
-        <Text as="span" color="red.500" textDecoration="line-through">
+        <Text as="span" fontSize="md" color="red.500" textDecoration="line-through">
           {" "}
           Commissioner of Income Tax
         </Text>
-        <Text as="span" color="red.500">
+        <Text as="span" fontSize="md" color="red.500">
           {" "}
           Commissioner General
         </Text>{" "}
@@ -540,237 +559,249 @@ const IncomeTaxActMain = () => {
         means a payment received by an individual on retirement of the
         individual for the surrender of at least half of the individual's
         pension rights in respect of a retirement fund;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No.2 of 2014 s. 32(a) */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act No.2 of 2014 s. 32(a)
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" textDecoration="line-through" w="80%">
         "corporation" means any company or body corporate established,
         incorporated or registered under any law in force in the United Republic
         or elsewhere, an unincorporated association or other body of persons, a
         government, a political subdivision of a government, a parastatal
         organisation, a public international organisation and a unit trust but
         excludes a partnership;
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No.2 of 2014 s. 32(a) */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act No.2 of 2014 s. 32(a)
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         "corporation" means any company or body corporate established,
         incorporated or registered under any law in force in the United Republic
         or elsewhere, an unincorporated association or other body of persons, a
         government, a political subdivision of a government, a public authority,
         public institution, a public international organisation and a unit trust
         but does not include partnership;
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        <Text fontSize="md" mt="2"color="gray.800" >
         “consumption expenditure” has the meaning ascribed to it by section 11;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* Finance Act No. 4 of 2013 s. 18 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-        Finance Act No. 4 of 2013 s. 18
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
-        "contract area" in respect of petroleum operations means the area that
+      {/* Finance Act No. 4 of 2013 s. 18, Finance Act no. 2 of 2016 s.17 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
+        <Text fontSize="md" textDecoration="line-through">Finance Act No. 4 of 2013 s. 18</Text>
+        Finance Act no. 2 of 2016 s.17
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
+        <Text fontSize="md" textDecoration="line-through"> "contract area" in respect of petroleum operations means the area that
         is a subject of petroleum agreement and whenever any part of the
         contract area is relinguished pursuant to petroleum agreement, it
-        represents the contract area as originally granted;
-      </Text>
-
-      {/* Finance Act no. 2 of 2016 s.17 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-        Finance Act no. 2 of 2016 s.17
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        represents the contract area as originally granted;</Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         "controlled foreign trust" and "controlled foreign corporation" means a
-        non-resident trust or corporation in which a resident person owns a
-        membership interest, whether directly or indirectly through one or more
-        interposed non-resident entities, and where-
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+non-resident trust or corporation in which a resident person owns a
+membership interest, whether directly or indirectly through one or
+more interposed non-resident entities, and where-
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         (a) the person is associated with the trust or corporation; or;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         (b) there exist between one and four other resident persons which, if
         associated with the person, would cause the person to be associated with
         the trust or corporation;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         "cost of an asset” has the meaning ascribed to it by section 37;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         "debt claim" means an asset representing a right of one person to
         receive a payment from another person and includes a deposit with a
         financial institution, account receivable, note, bill of exchange or
         bond;
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         "debt obligation" means the obligation corresponding to a debt claim;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* FINANCE ACT NO. 2 OF 2016 S. 17 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="red.500" textAlign="left" w="20%">
         FINANCE ACT NO. 2 OF 2016 S. 17
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="red.500">
+        </Text>
+        <Text fontSize="md" color="red.500" textAlign="left" w="80%">
         “decommissioning fund” with respect to petroleum operations means a fund
-        established under the Petroleum Act;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        established under the Petroleum Act;        
+    
+        <Text fontSize="md" mt="2"color="gray.800" >
         "dependant of an individual” with respect to a year of income, means a
         relative of the individual who has total income that does not exceed
         shillings 250,000 and receives substantial support from the individual
         during the whole year of income for the necessities of life;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* FINANCE ACT NO. 2 OF 2016 S. 17 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         FINANCE ACT NO. 2 OF 2016 S. 17
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
-        "dependant of an individual” with respect to a year of income, means a
-        relative of the individual who has total income that does not exceed
-        shillings 250,000 and receives substantial support from the individual
-        during the whole year of income for the necessities of life;
-      </Text>
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" textDecoration="line-through">
+        "depreciable asset" means an asset employed wholly and exclusively in
+the production of income from a business, and which is likely to
+loose value because of wear and tear, obsolescence or the passing of
+time but excludes goodwill, an interest in land, a membership
+interest in an entity and trading stock         
+        </Text>
+      </Flex>
 
       {/* FINANCE ACT NO. 2 OF 2016 S. 17 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="red.500" textAlign="left" w="20%">
         FINANCE ACT NO. 2 OF 2016 S. 17
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="red.500">
+        </Text>
+        <Text fontSize="md" color="red.500" textAlign="left" w="80%">
         “depreciable asset” means an asset employed wholly and exclusively in
         the production of income from a business, and which is likely to lose
         value because of wear and tear, obsolescence or the passage of time but
         excludes goodwill, mineral or petroleum rights and other interest in
-        land, a membership interest in an entity and trading stock;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        land, a membership interest in an entity and trading stock;   
+
+        <Text fontSize="md" mt="2"color="gray.800" >
         "depreciation basis" at the end of a year of income with respect to a
         pool of depreciable assets, has the meaning ascribed to it by paragraph
         3 of the Third Schedule;
-      </Text>
-
-      {/* FINANCE ACT NO 2 OF 2016 S. 17 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
-        FINANCE ACT NO 2 OF 2016 S. 17
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="red.500">
-        “development area” has the meaning ascribed to it under the Petroleum
-        Act;
-      </Text>
-
-      {/* FINANCE ACT NO 2 OF 2016 S. 17 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
-        FINANCE ACT NO 2 OF 2016 S. 17
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="red.500">
-        “development licence” has the meaning ascribed to it under the Petroleum
-        Act;
-      </Text>
-
-      {/* FINANCE ACT NO 2 OF 2016 S. 17 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
-        FINANCE ACT NO 2 OF 2016 S. 17
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="red.500">
-        “development operations” has the meaning ascribed to it under the
-        Petroleum Act;
-      </Text>
-
-      {/* FINANCE ACT 2022, FINANCE ACT NO. 6 OF 2024 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="green.800">
-        FINANCE ACT 2022 <br />
-        <Text as="span" color="blue.500">
-          FINANCE ACT NO. 6 OF 2024
+        </Text>     
         </Text>
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="blue.500">
+      </Flex>
+
+      {/* FINANCE ACT NO 2 OF 2016 S. 17 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="red.500" textAlign="left" w="20%">
+        FINANCE ACT NO 2 OF 2016 S. 17
+        </Text>
+        <Text fontSize="md" color="red.500" textAlign="left" w="80%">
+        “development area” has the meaning ascribed to it under the Petroleum
+        Act;        
+        </Text>
+      </Flex>
+
+      {/* FINANCE ACT NO 2 OF 2016 S. 17 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="red.500" textAlign="left" w="20%">
+        FINANCE ACT NO 2 OF 2016 S. 17
+        </Text>
+        <Text fontSize="md" color="red.500" textAlign="left" w="80%">
+        “development licence” has the meaning ascribed to it under the Petroleum
+        Act;        
+        </Text>
+      </Flex>
+
+      {/* FINANCE ACT NO 2 OF 2016 S. 17 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="red.500" textAlign="left" w="20%">
+        FINANCE ACT NO 2 OF 2016 S. 17
+        </Text>
+        <Text fontSize="md" color="red.500" textAlign="left" w="80%">
+        “development operations” has the meaning ascribed to it under the
+        Petroleum Act;        
+        </Text>
+      </Flex>
+
+       {/* FINANCE ACT 2022, FINANCE ACT NO. 6 OF 2024 */}
+       <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="blue.500" textAlign="left" w="20%">
+        <Text fontSize="md" color="green.500">FINANCE ACT 2022</Text>
+        FINANCE ACT NO. 6 OF 2024
+        </Text>
+        <Text fontSize="md" color="blue.500" textAlign="left" w="80%">
         “digital content” means any electronic content that may be downloaded,
         streamed or accessed in any other manner, including e-books, magazines,
         news, journals, periodical, database, music, movie, software, mobile
         phone applications, images, text, sound effects, website, webinar,
         webcast, which is not simultaneously broadcasted over any conventional
         radio or television network in the United Republic;
-      </Text>
+        </Text>
+      </Flex>
 
-      <Text fontSize="md" mt="6" textAlign="left" color="blue.500">
+       {/* FINANCE ACT NO. 6 OF 2024 */}
+       <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="blue.500" textAlign="left" w="20%">
         FINANCE ACT NO. 6 OF 2024
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="blue.500">
+        </Text>
+        <Text fontSize="md" color="blue.500" textAlign="left" w="80%">
         “digital content creator” means a person who produces digital content in
         formats that can be shared using a digital medium or platform over the
         internet”.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="green.800">
+
+        <Text fontSize="md" mt="2"color="green.500" >
         “digital market place” means a platform which enables direct interaction
         between buyers and sellers of electronic services;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         “distribution” by an entity:
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         (a) means –
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (i) a payment made by the entity to any of its members, in any capacity
-        to the extent that the amount of the payment exceeds the amount of any
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
+        &emsp;(i) a payment made by the entity to any of its members, in any capacity
+        to the extent that the amount of the payment exceeds &emsp;the amount of any
         payment made by the member to the entity in return for the entity's
         payment; or
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (ii) any re-investment of dividends which enhances the value of shares
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (iii) any capitalisation of profits;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
+        &emsp;(ii) any re-investment of dividends which enhances the value of shares
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
+        &emsp;(iii) any capitalisation of profits;
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         (b) includes a payment made by the entity to one of its members on
         cancellation, redemption or surrender of a membership interest in the
         entity, including as a result of liquidation of the entity or as a
         result of the entity purchasing a membership interest in itself;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         (c) excludes a payment of the type referred to in paragraph (a) (i) or
         (b) -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (i) to the extent to which the payment is directly included in
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
+        &emsp;(i) to the extent to which the payment is directly included in
         calculating the member's income or in calculating a final withholding
         payment, other than by reason of being a distribution; and
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (ii) without limiting any amount treated as a distribution by paragraph
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
+        &emsp;(ii) without limiting any amount treated as a distribution by paragraph
         (a)(ii), that consists of the issue of further membership interests in
         the entity to the entity's members in approximate proportion to the
         members' existing rights to share in dividends of the entity; and
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         (d) in the case of a controlled foreign trust or corporation, is
         interpreted in accordance with section 75;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2"color="gray.800" >
         “dividend of an entity” means a distribution by the entity to the extent
         that it is not a repayment of capital;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
+      
       {/* Finance Act No. 8 of 2012 s. 19 */}
       <Text fontSize="md" mt="6" textAlign="left" color="red.500">
         Finance Act No. 8 of 2012 s. 19
