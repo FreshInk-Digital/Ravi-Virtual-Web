@@ -22,7 +22,7 @@ const taxLawsData = [
   // Add more rows as needed
 ];
 
-export default function TaxLawsContent() {
+export default function LinkedTaxLaws() {
   const [searchTerm, setSearchTerm] = useState("");
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const navigate = useNavigate();
@@ -52,10 +52,10 @@ export default function TaxLawsContent() {
       >
         {/* Heading */}
         <Heading size="lg" as="h1" color="gray.900" textAlign="start" fontFamily="Poppins">
-          Tax Laws
+          Linked Tax Laws
         </Heading>
         <Text mb="8" textAlign="start" color="gray.600" fontFamily="Poppins">
-          Access the full text of the Tax Laws. Explore sections covering various acts, repealed laws, and more.
+          Explore sections covering various acts, repealed laws, and more.
         </Text>
 
         {/* Search and Filter Options */}

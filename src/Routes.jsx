@@ -5,6 +5,7 @@ import HomePage from "pages/HomePage";
 import AboutUs from "pages/AboutUs";
 import Services from "pages/Services";
 import Publication from "pages/Publication";
+import LinkedTaxLaws from "pages/LinkedTaxLaws";
 import TaxLaws from "pages/TaxLaws";
 import IncomeTaxActPage from "pages/IncomeTaxAct";
 import ServicesOne from "pages/ServicesOne";
@@ -26,6 +27,7 @@ const ProjectRoutes = () => {
       <Route path="/services" element={<Services />} />
       <Route path="/publication" element={<Publication />} />
       <Route path="/tax-laws" element={<TaxLaws />} />
+      <Route path="/linked-tax-laws" element={<LinkedTaxLaws />} />
       <Route path="/income-tax-act" element={<IncomeTaxActPage />} />
       <Route path="/servicesone" element={<ServicesOne />} />
       <Route path="/login" element={<Login />} />

@@ -2,14 +2,14 @@ import { Helmet } from "react-helmet";
 import { Box } from "@chakra-ui/react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import TaxLawsDigest from "./TaxLawsDigest";
+import LinkedTaxLaws from "./LinkedTaxLaws";
 
 
-export default function TaxLaws() {
+export default function LinkedTaxLaw() {
   return (
     <>
       <Helmet>
-        <title>Tax Laws - Legal Frameworks</title>
+        <title>Linked Tax Laws - Legal Frameworks</title>
         <meta
           name="description"
           content="Access the full text of the Tax Laws. Explore sections covering income tax act, exemptions, deductions, and more."
@@ -19,8 +19,8 @@ export default function TaxLaws() {
         {/* Header Section */}
         <Header alignSelf="stretch" />
         
-        {/* Tax Laws Digest */}
-        <TaxLawsDigest />
+        {/* Linked Tax Laws */}
+        <LinkedTaxLaws />
 
         {/* Footer */}
         <Footer mt="0px" />

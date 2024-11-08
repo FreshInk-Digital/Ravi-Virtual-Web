@@ -7,7 +7,7 @@ import { InputRightElement, InputGroup, Input, UnorderedList, ListItem, Containe
 
 export default function Header({ ...props }) {
   const [searchBarValue, setSearchBarValue] = React.useState("");
-  const [isMenuVisible, setIsMenuVisible] = React.useState(false); // For toggling the mobile menu
+  const [isMenuVisible, setIsMenuVisible] = React.useState(false);
   const location = useLocation();
 
   // List of paths for navigation
@@ -16,7 +16,8 @@ export default function Header({ ...props }) {
     { name: "About Us", path: "/aboutus" },
     { name: "Services", path: "/services" },
     { name: "Publication", path: "/publication" },
-    { name: "Tax Laws", path: "/tax-laws" }, // Tax Laws link now directly points to Tax Laws page
+    { name: "Linked Tax Laws", path: "/linked-tax-laws" },
+    { name: "Tax Laws", path: "/tax-laws" } // New link added here
   ];
 
   // Determines if a path is active
@@ -75,7 +76,7 @@ export default function Header({ ...props }) {
 
           {/* Desktop Navigation Links with Sliding Underline */}
           <Flex
-            display={{ base: "none", md: "flex" }} // Hide on mobile
+            display={{ base: "none", md: "flex" }}
             flexDirection="row"
             gap="20px"
             alignItems="center"
