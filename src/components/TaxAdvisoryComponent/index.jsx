@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 
 export default function TaxAdvisoryComponent({
-  headingText = "Tax Advisory",
+  headingText = "",
   descriptionText = "Lorem Lorem LoremLorem LoremLorem Lorem",
   buttonText = "Click here to request",
   linkTo = "/servicesone",

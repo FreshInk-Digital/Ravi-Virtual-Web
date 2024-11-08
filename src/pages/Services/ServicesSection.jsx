@@ -70,7 +70,7 @@ export default function ServicesSection() {
               </Flex>
             </Container>
           </Flex>
-
+          
           <Flex bg="white.a700" textAlign="start" justifyContent="center">
             <Container mb="32px" display="flex" justifyContent="center" px={{ md: "0px", base: "20px" }}>
               <Flex gap="12px" w="100%" flexDirection={{ md: "row", base: "column" }}>
