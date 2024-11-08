@@ -4,6 +4,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import AboutUsSection from "./AboutUsSection";
 import HomePageSection from "./HomePageSection";
+import HomePageSection2 from "./HomePageSection2";
 import { Heading, Flex, Box, Button, Image, Container } from "@chakra-ui/react";
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
@@ -176,7 +177,7 @@ export default function HomePagePage() {
 
               {/* Home page section */}
               <HomePageSection />
-              <HomePageSection />
+              <HomePageSection2 />
             </Box>
           </Flex>
           <Footer mt="0px" />
