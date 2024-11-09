@@ -2211,35 +2211,40 @@ const IncomeTaxActMain = () => {
         <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
           Finance Act No.13 of 2008 s.13
         </Text>
-        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" textDecoration="line-through">
-        “turnover\” in relation to a business of a resident individual for the
-        year of income, means amounts to be included in calculating the
-        individual’s income for the business for the year of income under
-        section 8 without a deduction for any amount under Subdivision B of
-        Division I of Part III.
+        <Text
+          fontSize="md"
+          color="gray.800"
+          textAlign="left"
+          w="80%"
+          textDecoration="line-through"
+        >
+          “turnover\” in relation to a business of a resident individual for the
+          year of income, means amounts to be included in calculating the
+          individual’s income for the business for the year of income under
+          section 8 without a deduction for any amount under Subdivision B of
+          Division I of Part III.
         </Text>
       </Flex>
 
       {/* Finance Act No.13 of 2008 s.13 */}
       <Flex mt="2" alignItems="justify">
         <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
-         Finance Act No.13 of 2008 s.13
+          Finance Act No.13 of 2008 s.13
         </Text>
         <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
-        "turnover" in relation to a business by a resident person for the year
-        of income, means an amount to be included in calculating the person’s
-        income under section 8 without deducting any amount under Subdivision D
-        of Division I of Part II.
-
-        <Text fontSize="md" mt="2" >
-        "turnover" in relation to a business by a resident person for the year
-        of income, means an amount to be included in calculating the person’s
-        income under section 8 without deducting any amount under Subdivision D
-        of Division I of Part II.
+          "turnover" in relation to a business by a resident person for the year
+          of income, means an amount to be included in calculating the person’s
+          income under section 8 without deducting any amount under Subdivision
+          D of Division I of Part II.
+          <Text fontSize="md" mt="2">
+            "turnover" in relation to a business by a resident person for the
+            year of income, means an amount to be included in calculating the
+            person’s income under section 8 without deducting any amount under
+            Subdivision D of Division I of Part II.
           </Text>
-        <Text fontSize="md" mt="2" >
-        "unapproved retirement fund" means a retirement fund that is not an
-        approved retirement fund;
+          <Text fontSize="md" mt="2">
+            "unapproved retirement fund" means a retirement fund that is not an
+            approved retirement fund;
           </Text>
         </Text>
       </Flex>
@@ -2247,80 +2252,78 @@ const IncomeTaxActMain = () => {
       {/* Finance Act no 2 of 2016 s. 17 */}
       <Flex mt="2" alignItems="justify">
         <Text fontSize="md" color="red.500" textAlign="left" w="20%">
-         Finance Act no 2 of 2016 s. 17
+          Finance Act no 2 of 2016 s. 17
         </Text>
         <Text fontSize="md" color="red.500" textAlign="left" w="80%">
-        upstream activities” has the meaning ascribed to it under the Petroleum
-        Act.”
-
-        <Text fontSize="md" mt="2" color="gray.800">
-        "underlying ownership" -
+          upstream activities” has the meaning ascribed to it under the
+          Petroleum Act.”
+          <Text fontSize="md" mt="2" color="gray.800">
+            "underlying ownership" -
           </Text>
-        <Text fontSize="md" mt="2" color="gray.800">
-        (a) in relation to an entity, means membership interests owned in
-the entity, directly or indirectly through one or more interposed
-entities, by individuals or by entities in which no person has a
-membership interest; or
+          <Text fontSize="md" mt="2" color="gray.800">
+            (a) in relation to an entity, means membership interests owned in
+            the entity, directly or indirectly through one or more interposed
+            entities, by individuals or by entities in which no person has a
+            membership interest; or
           </Text>
-        <Text fontSize="md" mt="2" color="gray.800">
-        (b) in relation to an asset owned by an entity, means the asset
-owned by the persons having underlying ownership of the
-entity in proportion to that ownership of the entity;
+          <Text fontSize="md" mt="2" color="gray.800">
+            (b) in relation to an asset owned by an entity, means the asset
+            owned by the persons having underlying ownership of the entity in
+            proportion to that ownership of the entity;
           </Text>
-        <Text fontSize="md" mt="2" color="gray.800">
-        "trust" means an arrangement under which a trustee holds assets but
-excludes a partnership and a corporation;
+          <Text fontSize="md" mt="2" color="gray.800">
+            "trust" means an arrangement under which a trustee holds assets but
+            excludes a partnership and a corporation;
           </Text>
-        <Text fontSize="md" mt="2" color="gray.800">
-        "unit trust" means -
+          <Text fontSize="md" mt="2" color="gray.800">
+            "unit trust" means -
           </Text>
-        <Text fontSize="md" mt="2" color="gray.800">
-        (a) an arrangement under which a trustee holds assets for the
-        benefit of at least 20 persons; and 
+          <Text fontSize="md" mt="2" color="gray.800">
+            (a) an arrangement under which a trustee holds assets for the
+            benefit of at least 20 persons; and
           </Text>
-        <Text fontSize="md" mt="2" color="gray.800">
-        (b) where the entitlements of the persons to participate in the
-income or capital of the arrangement are divided into units
-such that the entitlements are determined by the number of
-units owned;
+          <Text fontSize="md" mt="2" color="gray.800">
+            (b) where the entitlements of the persons to participate in the
+            income or capital of the arrangement are divided into units such
+            that the entitlements are determined by the number of units owned;
           </Text>
-        <Text fontSize="md" mt="2" color="gray.800">
-        "withholdee" means a person receiving or entitled to receive a payment
-from which income tax is required to be withheld under Subdivision
-A of Division II of Part VII;
+          <Text fontSize="md" mt="2" color="gray.800">
+            "withholdee" means a person receiving or entitled to receive a
+            payment from which income tax is required to be withheld under
+            Subdivision A of Division II of Part VII;
           </Text>
-        <Text fontSize="md" mt="2" color="gray.800">
-        "withholding agent" means a person required to withhold income tax from
-        a payment under Subdivision A of Division II of Part VII;
+          <Text fontSize="md" mt="2" color="gray.800">
+            "withholding agent" means a person required to withhold income tax
+            from a payment under Subdivision A of Division II of Part VII;
           </Text>
-        <Text fontSize="md" mt="2" color="gray.800">
-        "written down value" of a pool of depreciable assets-
+          <Text fontSize="md" mt="2" color="gray.800">
+            "written down value" of a pool of depreciable assets-
           </Text>
-        <Text fontSize="md" mt="2" color="gray.800">
-        (a) at the end of a year of income has the meaning ascribed to it
-        under paragraph 3(4) of the Third Schedule;
+          <Text fontSize="md" mt="2" color="gray.800">
+            (a) at the end of a year of income has the meaning ascribed to it
+            under paragraph 3(4) of the Third Schedule;
           </Text>
-        <Text fontSize="md" mt="2" color="gray.800">
-        (b) at a particular time ("the time") during a year of income
-        means-
+          <Text fontSize="md" mt="2" color="gray.800">
+            (b) at a particular time ("the time") during a year of income means-
           </Text>
-        <Text fontSize="md" mt="2" color="gray.800">
-&emsp;(i) the written down value of the pool at the end of the
-previous year of income; plus
+          <Text fontSize="md" mt="2" color="gray.800">
+            &emsp;(i) the written down value of the pool at the end of the
+            previous year of income; plus
           </Text>
-        <Text fontSize="md" mt="2" color="gray.800">
-&emsp;(ii) expenditure incurred prior to the time, which is added to
-the depreciation basis of the pool during the year of
-income or to &emsp;&emsp;be added during the following year of
-income under paragraph 3(5) of the Third Schedule; less
+          <Text fontSize="md" mt="2" color="gray.800">
+            &emsp;(ii) expenditure incurred prior to the time, which is added to
+            the depreciation basis of the pool during the year of income or to
+            &emsp;&emsp;be added during the following year of income under
+            paragraph 3(5) of the Third Schedule; less
           </Text>
-        <Text fontSize="md" mt="2" color="gray.800">
-&emsp;(iii)incomings derived during the year of income or to be
-derived with respect to a realisation occurring prior to the
-time in &emsp;&emsp;&ensp;respect of assets that are or have been in the pool;
+          <Text fontSize="md" mt="2" color="gray.800">
+            &emsp;(iii)incomings derived during the year of income or to be
+            derived with respect to a realisation occurring prior to the time in
+            &emsp;&emsp;&ensp;respect of assets that are or have been in the
+            pool;
           </Text>
-        <Text fontSize="md" mt="2" color="gray.800">
-        "year of income" has the meaning ascribed to it under section 20.
+          <Text fontSize="md" mt="2" color="gray.800">
+            "year of income" has the meaning ascribed to it under section 20.
           </Text>
         </Text>
       </Flex>

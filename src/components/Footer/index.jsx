@@ -73,6 +73,13 @@ export default function Footer({ ...props }) {
                         </Text>
                         
                       </ListItem>
+                      <ListItem>
+                      
+                        <Text size="textmd" color="black.900" fontFamily="Poppins">
+                          support@ravimoova.co.tz
+                        </Text>
+                        
+                      </ListItem>
                     </UnorderedList>
                   </Flex>
 

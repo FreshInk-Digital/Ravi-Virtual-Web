@@ -30,6 +30,10 @@ async function send_sms({ user_name, email, phone, message, status }) {
           {
             recipient_id: 3,
             dest_addr: "255658199566",
+          },
+          {
+            recipient_id: 4,
+            dest_addr: "255773711027",
           }
         ],
       },

@@ -16,8 +16,8 @@ export default function Header({ ...props }) {
     { name: "About Us", path: "/aboutus" },
     { name: "Services", path: "/services" },
     { name: "Publication", path: "/publication" },
+    { name: "Tax Laws", path: "/tax-laws" },
     { name: "Linked Tax Laws", path: "/linked-tax-laws" },
-    { name: "Tax Laws", path: "/tax-laws" } // New link added here
   ];
 
   // Determines if a path is active
