@@ -21,9 +21,6 @@ class UserSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
-from rest_framework import serializers
-from .models import Book
-
 class BookSerializer(serializers.ModelSerializer):
     # This will serialize the category name instead of their IDs
     category_name = serializers.CharField(source='category.name', read_only=True)
@@ -40,6 +37,13 @@ class BookSerializer(serializers.ModelSerializer):
             'category_name', 
         ]
         read_only_fields = ['date_created', 'last_update']
+
+class BookCategorySerializer(serializers.ModelSerializer):
+    books = BookSerializer(many=True)  # Include related books for each category
+    
+    class Meta:
+        model = BookCategory
+        fields = ['id', 'name', 'books']
 
 
 class PublicationSerializer(serializers.ModelSerializer):

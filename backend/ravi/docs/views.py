@@ -1,8 +1,8 @@
 from django.contrib.auth.models import User
 from rest_framework import viewsets, generics
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from .models import Publication, Messages, Book
-from .serializers import PublicationSerializer, MessagesSerializer, UserSerializer, BookSerializer
+from .models import Publication, Messages, Book, BookCategory
+from .serializers import PublicationSerializer, MessagesSerializer, UserSerializer, BookSerializer, BookCategorySerializer
 
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
@@ -13,6 +13,11 @@ class BookViewSet(viewsets.ModelViewSet):
             return [AllowAny()]
         
         return [IsAuthenticated()]
+    
+class BookCategoryViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = BookCategory.objects.all()
+    serializer_class = BookCategorySerializer
+    permission_classes = [AllowAny]    
     
 class PublicationViewSet(viewsets.ModelViewSet):
     queryset = Publication.objects.all()

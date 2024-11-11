@@ -1,3 +1,4 @@
+// PublicationSection.js
 import React, { useEffect, useState, Suspense } from "react";
 import {
   Heading,
@@ -26,6 +27,7 @@ const PublicationSection = () => {
   const [totalPages, setTotalPages] = useState(0);
   const [sortCriteria, setSortCriteria] = useState('date');
   const [noPublications, setNoPublications] = useState(false);
+  const [connectionError, setConnectionError] = useState(false);
   const publicationsPerPage = 12;
 
   useEffect(() => {
@@ -39,9 +41,11 @@ const PublicationSection = () => {
           setTotalPages(Math.ceil(response.data.length / publicationsPerPage));
           sortPublications(response.data, sortCriteria);
           setNoPublications(false);
+          setConnectionError(false);  // Reset error state if successful
         }
       } catch (error) {
         console.error('Error fetching publications:', error);
+        setConnectionError(true);  // Set error state if fetch fails
       }
     };
 
@@ -85,8 +89,8 @@ const PublicationSection = () => {
   return (
     <Box mt="24px" px={{ md: "20px", base: "10px" }} fontFamily="Poppins">
       <Box
-        maxW="1155px"  // Set a maximum width to avoid full-page stretch
-        margin="0 auto"  // Center the table by applying margin auto
+        maxW="1155px"
+        margin="0 auto"
         borderColor="blue_gray.50"
         borderWidth="1px"
         borderStyle="solid"
@@ -95,7 +99,7 @@ const PublicationSection = () => {
         borderRadius="12px"
         overflow="hidden"
         fontFamily="Poppins"
-        p="20px"  // Apply padding to ensure the content doesn't touch the edges
+        p="20px"
       >
         <Box
           borderColor="blue_gray.50"
@@ -143,7 +147,11 @@ const PublicationSection = () => {
         </Box>
 
         <Box p="20px" fontFamily="Poppins">
-          {noPublications ? (
+          {connectionError ? (
+            <Text color="red.500" textAlign="center" fontFamily="Poppins">
+              Unable to connect to the server. Please try again later.
+            </Text>
+          ) : noPublications ? (
             <Text color="red.500" textAlign="center" fontFamily="Poppins">
               No publication documents available yet.
             </Text>
