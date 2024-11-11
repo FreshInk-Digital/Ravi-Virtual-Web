@@ -5,6 +5,7 @@ from . import views
 
 # Create a router and register your viewsets
 router = DefaultRouter()
+router.register(r'Book', views.BookViewSet, basename='book')
 router.register(r'Publication', views.PublicationViewSet, basename='publication')
 router.register(r'Messages', views.MessagesViewSet, basename='messages')
 

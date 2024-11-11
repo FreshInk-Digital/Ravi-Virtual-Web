@@ -22,7 +22,7 @@ export default function ContactSection() {
     email: '',
     message: '',
     phone: '',
-    status: 'NUR',
+    status: 'NOT URGENT',
   });
 
   const [errors, setErrors] = useState({});
@@ -112,7 +112,7 @@ export default function ContactSection() {
           email: '',
           message: '',
           phone: '',
-          status: 'NUR',
+          status: 'NOT URGENT',
         });
         setMessageLength(0); // Reset message length counter
       }
@@ -311,8 +311,8 @@ export default function ContactSection() {
                   >
                     <Checkbox
                       name="status"
-                      value="URG"
-                      isChecked={formData.status === 'URG'}
+                      value="URGENT"
+                      isChecked={formData.status === 'URGENT'}
                       onChange={handleChange}
                       colorScheme="green"
                       size="lg"
@@ -324,8 +324,8 @@ export default function ContactSection() {
                     </Checkbox>
                     <Checkbox
                       name="status"
-                      value="NOR"
-                      isChecked={formData.status === 'NOR'}
+                      value="NORMAL"
+                      isChecked={formData.status === 'NORMAL'}
                       onChange={handleChange}
                       colorScheme="blue"
                       size="lg"
@@ -337,8 +337,8 @@ export default function ContactSection() {
                     </Checkbox>
                     <Checkbox
                       name="status"
-                      value="NUR"
-                      isChecked={formData.status === 'NUR'}
+                      value="NOT URGENT"
+                      isChecked={formData.status === 'NOT URGENT'}
                       onChange={handleChange}
                       colorScheme="gray"
                       size="lg"

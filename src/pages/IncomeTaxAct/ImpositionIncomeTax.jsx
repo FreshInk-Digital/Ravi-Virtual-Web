@@ -197,7 +197,7 @@ income; and
         <Text fontSize="md" color="blue.500">
           Finance Act No. 6 of 2024
         </Text>
-        <Text mt="4" fontSize="md" color="blue.500" fontWeight="bold">
+        <Text mt="5" fontSize="md" color="blue.500" fontWeight="bold">
           FINANCE ACT NO. 6 OF 2024
         </Text>
         </Text>

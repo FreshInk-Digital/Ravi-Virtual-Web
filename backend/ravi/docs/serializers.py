@@ -21,6 +21,27 @@ class UserSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
+from rest_framework import serializers
+from .models import Book
+
+class BookSerializer(serializers.ModelSerializer):
+    # This will serialize the category name instead of their IDs
+    category_name = serializers.CharField(source='category.name', read_only=True)
+
+    class Meta:
+        model = Book
+        fields = [
+            'id', 
+            'book', 
+            'name', 
+            'description', 
+            'date_created', 
+            'last_update', 
+            'category_name', 
+        ]
+        read_only_fields = ['date_created', 'last_update']
+
+
 class PublicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Publication

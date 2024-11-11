@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Box, Text } from "@chakra-ui/react";
+import { Flex, Box, Text } from "@chakra-ui/react";
 
 const IncomeTaxBase = () => {
   useEffect(() => {
@@ -71,11 +71,12 @@ const IncomeTaxBase = () => {
       </Text>
 
       {/* Total income */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Total income
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
-        <Text as="span" fontWeight="bold">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
+        <Text fontSize="md" as="span" fontWeight="bold">
           5.-
         </Text>
         (1) The total income of a person shall be the sum of the person's
@@ -83,10 +84,12 @@ const IncomeTaxBase = () => {
         and investment less any reduction allowed for the year of income under
         section 61 relating to retirement contributions to approved retirement
         funds.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2">
         (2) The total income of each person shall be determined separately.
-      </Text>
+          </Text>
+        </Text>
+      </Flex>
 
       {/* Subdivision B: Chargeable Income */}
       <Text
