@@ -559,27 +559,10 @@ immediately prior to such termination; and
         </Text>
       </Flex>
 
-      {/* S. 32B of Written Laws (Miscellaneous Amendments) Act No. 7 of 2017 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
-        
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="red.500">
-        
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
-        
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        
-      </Text>
-
       {/* Subdivision C: Exemption from Tax */}
       <Text
         fontSize="md"
-        mt="2"
+        mt="6"
         textAlign="center"
         color="gray.800"
         fontStyle="italic"
@@ -587,170 +570,171 @@ immediately prior to such termination; and
         Subdivision C: Exemption from Tax
       </Text>
 
-      {/* Minister may exempt income from tax */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      {/* Minister may exempt income from tax  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Minister may exempt income from tax
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
-        <Text as="span" fontWeight="bold">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
+        <Text fontSize="md" as="span" fontWeight="bold">
           10.-
         </Text>
         (1) The Minister may, by order in the Gazette, provide –
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) that any income or class of incomes accrued in or derived from the
         United Republic shall be exempt from tax to the extent specified in such
         order; or
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) that any exemption under the Second Schedule shall cease to have
         effect either generally or to such extent as may be specified in such
         Order.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (2) The Minister may, by Order in the Gazette, amend, vary or replace
         the Second Schedule.
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* Section 26 of the Written Laws (Miscellenous Amendments) ACt No 2 of 2017 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="blue.500">
+      {/* Section 26 of the Written Laws (Miscellenous Amendments) ACt No 2 of 2017  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="blue.500" textAlign="left" w="20%">
         Section 26 of the Written Laws (Miscellenous Amendments)
         <br />
         ACt No 2 of 2017
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="blue.500"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" color="blue.500" textAlign="left" w="80%" textDecoration="line-through">
         (3) Notwithstanding any law to the contrary, no exemption shall be
         provided from tax imposed by this Act and no agreement shall be
         concluded that affects or purports to affect the application of this
         Act, except as provided for by this Act or by way of amendment to this
         Act.
-      </Text>
+        </Text>
+      </Flex>
 
-      {/* Section 26 of the Written Laws (Miscellenous Amendments) ACt No 2 of 2017 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="blue.500">
+      {/* Section 26 of the Written Laws (Miscellenous Amendments) ACt No 2 of 2017  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="blue.500" textAlign="left" w="20%">
         Section 26 of the Written Laws (Miscellenous Amendments)
         <br />
         ACt No 2 of 2017
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="blue.500">
+        </Text>
+        <Text fontSize="md" color="blue.500" textAlign="left" w="80%">
         (3) Notwithstanding any law to the contrary, no exemption shall be
         provided from tax imposed by this Act and no agreement shall be
         concluded that affects or purports to affect the application of this
         Act, except as provided for:
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="blue.500">
+
+        <Text fontSize="md" mt="2">
         (a) by the provisions of this Act;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="blue.500">
+        </Text>
+        <Text fontSize="md" mt="2">
         (b) by an agreement:
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="blue.500">
-        (i) on a strategic project;{" "}
-        <Text as="span" textDecoration="line-through">
+        </Text>
+        <Text fontSize="md" mt="2">
+        &emsp;(i) on a strategic project;{" "}
+        <Text fontSize="md" as="span" textDecoration="line-through">
           and
         </Text>
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* Finance Act 2022 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="green.500">
+      {/* Finance Act 2022, Written Laws Financial Provisions 2022  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="blue.500" textAlign="left" w="20%">
         Finance Act 2022
-        <Text color="brown.800">Written Laws Financial Provisions 2022</Text>
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="blue.500">
-        (ii) on public interest; and
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="green.500">
-        (iii) for a{" "}
-        <Text as="span" color="brown.800">
+        <Text fontSize="md" color="brown.800">Written Laws Financial Provisions 2022</Text>
+        </Text>
+        <Text fontSize="md" color="blue.500" textAlign="left" w="80%">
+        &emsp;(ii) on public interest; and
+
+        <Text fontSize="md" mt="2" color="green.500">
+        &emsp;(iii) for a{" "}
+        <Text fontSize="md" as="span" color="brown.800">
           strategic investment
         </Text>{" "}
         special strategic investment approved by the National Investment
-        Steering Committee under the Tanzania Investment Act,
-        <Text as="span" color="blue.500">
+        Steering Committee under &emsp;&emsp;the Tanzania Investment Act,{" "}
+        <Text fontSize="md" as="span" color="blue.500">
           as may be approved by the Cabinet
         </Text>
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* Finance No 8 of 2020 s.28, Written Laws Financial Act 2021 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="green.500">
-        <Text color="brown.800" textDecoration="line-through">
+      {/* Finance No 8 of 2020 s.28, Written Laws Financial Act 2021  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="green.500" textAlign="left" w="20%">
+        <Text fontSize="md" color="brown.800" textDecoration="line-through">
           Finance No 8 of 2020 s.28
         </Text>
         Written Laws Finance Act 2021
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="brown.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" color="brown.800" textAlign="left" w="80%" textDecoration="line-through">
         “(4) The requirement under subsection (3)(b) shall not apply to a
         strategic project with a total tax payable not exceeding one billion
         shillings for the entire project period.”
-      </Text>
+        </Text>
+      </Flex>
 
-      {/* Written Laws Financial Provisions 2022 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
-        Written Laws Financial Provisions 2022
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="brown.800">
+      {/* Written Laws Financial Provisions 2022  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
+          Written Laws Financial Provisions 2022
+        </Text>
+        <Text fontSize="md" color="brown.800" textAlign="left" w="80%">
         (4) The exemption granted under this section shall cease to have effect
         and the income tax shall become due and payable as if the exemption has
         not been granted if such exemption has been enjoyed in any way by
         another person not entitled to enjoy similar privileges as are conferred
         under this Act.
-      </Text>
+        </Text>
+      </Flex>
 
-      {/* Finance Act 2021 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="green.500">
-        Finance Act 2021
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="green.500">
+      {/* Finance Act 2021  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="green.500" textAlign="left" w="20%">
+          Finance Act 2021
+        </Text>
+        <Text fontSize="md" color="green.500" textAlign="left" w="80%">
         “(4) The requirement under subsection (3)(b) shall not apply to-
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="green.500">
+
+        <Text fontSize="md" mt="2">
         (a) a strategic project with a total tax payable not exceeding one
         billion shillings for the entire project period; or
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="green.500">
+        </Text>
+        <Text fontSize="md" mt="2">
         (b) grant agreement, non-concessional or concessional loan agreement
         between the Government of the United Republic and a donor or lender
         where such agreement provides for income tax exemption
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Limitation for exemption section 14 of Finance Act, 2015 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
-        Limitation for exemption <br />
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="red.500" textAlign="left" w="20%">
+        Limitation for exemption
         section 14 of Finance Act, 2015
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="red.500"
-        textDecoration="line-through"
-      >
-        10A- In exercising powers under this Act, the Minister shall not grant
+        <Text fontSize="md" color="blue.500">
+        Finance Act No 4 of 2018 s. 24
+        </Text>
+        </Text>
+        <Text fontSize="md" color="red.500" textAlign="left" w="80%" textDecoration="line-through">
+        <Text fontSize="md" as="span" fontWeight="bold">10A-</Text>{" "}
+        In exercising powers under this Act, the Minister shall not grant
         tax exemption or remission on income or payment derived from Government
         project financed by a non concessional loan.
-      </Text>
-
-      {/* Finance Act No 4 of 2018 s. 24  */}
-      <Text fontSize="md" mt="6" textAlign="left" color="blue.500">
-        Finance Act No 4 of 2018 s. 24
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Subdivision D: Deductions */}
       <Text
         fontSize="md"
-        mt="2"
+        mt="6"
         textAlign="center"
         color="gray.800"
         fontStyle="italic"
