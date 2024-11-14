@@ -9,7 +9,7 @@ admin.site.site_title = "Ravi Moova Admin Portal"
 admin.site.index_title = "Welcome to Ravi Moova Admin Dashboard"
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('hifadhi/', admin.site.urls),
     path('', include('docs.urls')),
 ]
 
