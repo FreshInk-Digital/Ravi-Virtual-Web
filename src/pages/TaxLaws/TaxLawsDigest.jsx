@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../../api/api'; 
+import api from '../../api/api';
 import {
   Box,
   Heading,
@@ -97,20 +97,26 @@ export default function TaxLawsDigest() {
               {/* Book List for Selected Category */}
               <Collapse in={selectedCategory === category.name} animateOpacity>
                 <VStack align="start" mt="4" spacing="2">
-                  {category.books.map((book, index) => (
-                    <Box
-                      key={index}
-                      bg="gray.50"
-                      p="3"
-                      w="full"
-                      borderRadius="md"
-                      _hover={{ bg: "gray.100" }}
-                    >
-                      <Text color="light_blue.a700" fontSize="md" as="a" href={book.book} target="_blank">
-                        {book.name}
-                      </Text>
-                    </Box>
-                  ))}
+                  {category.books.length > 0 ? (
+                    category.books.map((book, index) => (
+                      <Box
+                        key={index}
+                        bg="gray.50"
+                        p="3"
+                        w="full"
+                        borderRadius="md"
+                        _hover={{ bg: "gray.100" }}
+                      >
+                        <Text color="light_blue.a700" fontSize="md" as="a" href={book.book} target="_blank">
+                          {book.name}
+                        </Text>
+                      </Box>
+                    ))
+                  ) : (
+                    <Text color="gray.500" fontSize="md" fontStyle="italic">
+                      No books uploaded yet.
+                    </Text>
+                  )}
                 </VStack>
               </Collapse>
             </Box>

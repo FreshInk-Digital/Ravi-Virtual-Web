@@ -94,7 +94,7 @@ const IncomeTaxBase = () => {
       {/* Subdivision B: Chargeable Income */}
       <Text
         fontSize="md"
-        mt="2"
+        mt="6"
         textAlign="center"
         color="gray.800"
         fontStyle="italic"
@@ -102,231 +102,257 @@ const IncomeTaxBase = () => {
         Subdivision B: Chargeable Income
       </Text>
 
+
       {/* Chargeable income */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Chargeable income
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         <Text as="span" fontWeight="bold">
           6.-
         </Text>
         (1) Subject to the provisions of subsection (2), the chargeable income
         of a person for a year of income from any employment, business or
         investment shall be-
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No.8 of 2012 s.21 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act No.8 of 2012 s.21
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (a) in the case of a resident person, the person's income from
         employment, business or investment for the year of income irrespective
         of the source of the income{" "}
-        <Text as="span" textDecoration="line-through">
+        <Text fontSize="md" as="span" textDecoration="line-through">
           and;
         </Text>
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No.8 of 2020 s.27 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
         Finance Act No.8 of 2020 s.27
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (b) in the case of a non-resident person, the person's income from the
         employment, business or investment for the year of income, but only to
         the extent that the income has a source in the United Republic{" "}
-        <Text as="span" textDecoration="line-through">
+        <Text fontSize="md" as="span" textDecoration="line-through">
           , and;
         </Text>
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No.8 of 2012 s.21, Finance Act No.8 of 2020 s.27 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act No.8 of 2012 s.21
-        <br />
-        <Text as="span" color="brown.800">
+        <Text fontSize="md" color="brown.800">
           Finance Act No.8 of 2020 s.27
         </Text>
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (c) In the case of a resident corporation which has perpetual unrelieved
         losses referred to in subsection 1(a) of section 4, the turnover of such
         corporation for a year of income-.{" "}
-        <Text as="span" color="brown.800">
+        <Text fontSize="md" as="span" color="brown.800">
           ; and
         </Text>
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No.8 of 2020 s.27 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
         Finance Act No.8 of 2020 s.27
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="brown.800">
+        </Text>
+        <Text fontSize="md" color="brown.800" textAlign="left" w="80%">
         (d) in the case of a representative assessee, the income of a
         nonresident or beneficial owner from business or investment for the year
         of income deemed to accrue or arise in the United Republic.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (2) The chargeable income of a resident individual who at the end of a
         year of income has been resident in the United Republic for two years or
         less in total during the whole of the individual’s life shall be
         determined under subsection (1)(b).
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* Income from an employment Act No.6 of 2006 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      {/* Income from an employmen t Act No.6 of 2006 S.13 Act No.7 of 1994 s.8 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Income from an employmen t Act No.6 of 2006
         <br />
         S.13 Act No.7 of 1994 s.8
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         7.-(1) An individual's income from an employment for a year of income
         shall be the individual's gains or profits from the employment of the
         individual for the year of income.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (2) Subject to the provisions of subsection (3), (4) and (5) in
         calculating an individual's gains or profits from an employment for a
         year of income the following payments made to or on behalf of the
         individual by the employer or an associate of the employer during that
         year of income shall be included:
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) payments of wages, salary, payment in lieu of leave, fees,
         commissions, bonuses, gratuity or any subsistence travelling
         entertainment or other allowance received in respect of employment or
         service rendered;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) payments providing any discharge or reimbursement of expenditure
         incurred by the individual or an associate of the individual;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (c) payments for the individual's agreement to any conditions of the
         employment;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (d) retirement contributions and retirement payments;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (e) payment for redundancy or loss or termination of employment;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (f) other payment made in respect of employment including benefits in
         kind quantified in accordance with section 27;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (g) other amounts as may be required to be included under Division II of
         this Part.
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No. 2 of 2014 s.33 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act No. 2 of 2014 s.33
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (h) annual director’s fees payable to a director other than a full time
         service director.
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act no 5 of 2011 s.14 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act no 5 of 2011 s.14
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (3) In calculating an individual's gains or profits from an employment,
         the following shall be excluded -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) exempt amounts and final withholding payments;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) on premises cafeteria services that are available on a
         nondiscriminatory basis;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (c) medical services, payment for medical services, and payments for
         insurance for medical services to the extent that the services or
         payments are -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (i) available with respect to medical treatment of the individual,
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
+        &emsp;(i) available with respect to medical treatment of the individual,
         spouse of the individual and up to four of their children; and
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (ii) made available by the employer (and any associate of the employer
-        conducting a similar or related business) on a non-discriminatory basis;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
+        &emsp;(ii) made available by the employer (and any associate of the employer
+          conducting a similar or related business) on a non-discriminatory basis;
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (d) any subsistence, travelling, entertainment or other allowance that
         represents solely the reimbursement to the recipient of any amount
         expended by him wholly and exclusively in the production of his income
         from his employment or services rendered;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (e) benefits derived from the use of motor vehicle where the employer
         does not claim any deduction or relief in relation to the ownership,
         maintenance or operation of the vehicle;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (f) benefit derived from the use of residential premises by an employee
         of the Government or any institution whose budget is fully or
         substantially out of Government budget subvention;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (g) payment providing passage of the individual, spouse of the
         individual and up to four of their children to or from a place of
         employment which correspond to the actual travelling cost where the
         individual is domiciled more than 20 miles from the place of employment
         and is recruited or engaged for employment solely in the service of the
         employer at the place of employment;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act no 5 of 2011 s.14 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act no 5 of 2011 s.14
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (h) retirement contributions and retirement payments exempted under the
-        Public Service Retirement Benefits Act;
-        <Text as="span" textDecoration="line-through">
+        Public Service Retirement Benefits Act;{" "}
+        <Text fontSize="md" as="span" textDecoration="line-through">
           and
         </Text>
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act no 5 of 2011 s.14 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act no 5 of 2011 s.14
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (i) payment that it is unreasonable or administratively impracticable
         for the employer to account for or to allocate to their recipients-.
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act no 5 of 2011 s.14 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act no 5 of 2011 s.14
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (j) allowance payable to an employee who offers intramural private
         services to patients in a public hospital; and
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act no 5 of 2011 s.14 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act no 5 of 2011 s.14
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (k) housing allowance, transport allowance, responsibility allowance,
         extra duty allowance, overtime allowance, hardship allowance and
         honoraria payable to an employee of the Government or an institution{" "}
-        <Text as="span" bgColor="yellow.300">
+        <Text fontSize="md" as="span" bgColor="yellow.300">
           the budget of which is fully or substantially paid out of Government
           budget subvention.
         </Text>
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (4) In calculating an individual’s gains or profit from payment for
         redundancy or loss or termination of employment, any payment received in
         respect of a year of income which expired earlier than five years prior
@@ -341,19 +367,27 @@ const IncomeTaxBase = () => {
         portion, allocated to any such year of income shall be deemed to be
         income of that year of income in addition to any other income in that
         year of income.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (5) Where amount received as compensation for the termination of any
         contract of employment or services, whether or not provision is made in
         such contract for the payment of such compensation -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) if the contract is for a specified term, the amount included in
         gains or profits shall not exceed the amount which would have been
         received in respect of the unexpired period of such contract and shall
         be deemed to have accrued evenly in such unexpired period;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
+        (b) if the contract is for an unspecified term and provides for
+compensation on the termination thereof, such compensation
+shall be deemed to have accrued in the period immediately
+following such termination at a rate equal to the rate per
+annum of the gains or profits from such contract received
+immediately prior to such termination; and
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (c) if the contract is for an unspecified term and does not provide for
         compensation on the termination thereof, any compensation paid on the
         termination thereof shall be deemed to have accrued in the period
@@ -362,163 +396,173 @@ const IncomeTaxBase = () => {
         prior to such termination, but the amount so included in gains or
         profits shall not exceed the amount of three years’ remuneration at such
         rate.
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Income from a business */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Income from a business
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
-        <Text as="span" fontWeight="bold">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
+        <Text fontSize="md" as="span" fontWeight="bold">
           8.-
         </Text>
         (1) A person's income from a business for a year of income is the
         person's gains or profits from conducting the business for the year of
         income.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (2) Subject to the provisions of subsection (3), there shall be included
         in calculating a person's gains or profits from conducting a business
         for a year of income the following amounts derived by the person from
         conducting the business during the year of income -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) service fees;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) incomings for trading stock;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (c) gains from the realisation of business assets or liabilities of the
         business as calculated under Division III of this Part;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (d) amounts required to be included under paragraph 4 of the Third
         Schedule on the realisation of the person's depreciable assets of the
         business;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (e) amounts derived as consideration for accepting a restriction on the
         capacity to conduct the business;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (f) gifts and other{" "}
-        <Text as="span" fontStyle="italic">
+        <Text fontSize="md" as="span" fontStyle="italic">
           ex gratia
         </Text>{" "}
         payments received by the person in respect of the business;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (g) amounts derived that are effectively connected with the business and
         that would otherwise be included in calculating the person's income from
         an investment; and
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* S. 33 of Written Laws (Miscellaneous Amendments) Act No. 7 of 2017 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
+      {/* S. 33 of Written Laws (Miscellaneous Amendments) Act No. 7 of 2017  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="red.500" textAlign="left" w="20%">
         S. 33 of Written Laws (Miscellaneous Amendments)
         <br />
         Act No. 7 of 2017
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" textDecoration="line-through">
         (h) other amounts required to be included under Division II of this
         Part, Parts IV, V or VI.
-      </Text>
+        </Text>
+      </Flex>
 
-      {/* S. 33 of Written Laws (Miscellaneous Amendments) Act No. 7 of 2017 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
+      {/* S. 33 of Written Laws (Miscellaneous Amendments) Act No. 7 of 2017  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="red.500" textAlign="left" w="20%">
         S. 33 of Written Laws (Miscellaneous Amendments)
         <br />
         Act No. 7 of 2017
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="red.500">
+        </Text>
+        <Text fontSize="md" color="red.500" textAlign="left" w="80%">
         (h) the amount of tax benefit or advantage quantified under Section 27
         or other amounts required to be included under Division II of this Part,
         Parts IV, V or VI.
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (3) The following are excluded in calculating a person's gains or
         profits from conducting a business-
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) exempt amounts and final withholding payments; and
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) amounts that are included in calculating the person's income from
         any employment.
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* Income from an investment Act No.15 of 2004 s.27 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      {/* Income from an investment Act No.15 of 2004 s.27  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Income from an investment
         <br />
         Act No.15 of 2004 s.27
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
-        <Text as="span" fontWeight="bold">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
+        <Text fontSize="md" as="span" fontWeight="bold">
           9.-
         </Text>
         (1) A person's income from an investment for a year of income is the
         person's gains or profits from conducting the investment for the year of
         income.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (2) Subject to the provisions of subsection (3), in calculating a
         person's gains or profits from conducting an investment for a year of
         income the following amounts derived by the person from conducting the
         investment during that year of income shall be included, namely -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) any dividend, distribution of a trust, gains of an insured from life
         insurance, gains from an interest in an unapproved retirement fund,
         interest, natural resource payment, rent or royalty;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) net gains from the realisation of investment assets of the
         investment as calculated under Division III of this Part;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (c) amounts derived as consideration for accepting a restriction on the
         capacity to conduct the investment; and
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (d) other amounts required to be included under Division II of this
         Part, Parts IV, V or VI.
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* S. 32B of Written Laws (Miscellaneous Amendments) Act No. 7 of 2017 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
-        S. 32B of Written Laws (Miscellaneous Amendments)
+      {/* S. 33 of Written Laws (Miscellaneous Amendments) Act No. 7 of 2017  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="red.500" textAlign="left" w="20%">
+        S. 33 of Written Laws (Miscellaneous Amendments)
         <br />
         Act No. 7 of 2017
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="red.500">
+        </Text>
+        <Text fontSize="md" color="red.500" textAlign="left" w="80%">
         (d) the amount of tax benefit or advantage quantified under section 27
         of the Act or other amounts required to be included under Division II of
         this Part, Parts IV, V or VI.
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (3) In calculating a person's gains and profits from conducting an
         investment, the amounts shall be excluded, namely -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) exempt amounts and final withholding payments; and
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) amounts that are included in calculating the person's income from
         any employment or business.
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Subdivision C: Exemption from Tax */}
       <Text
         fontSize="md"
-        mt="2"
+        mt="6"
         textAlign="center"
         color="gray.800"
         fontStyle="italic"
@@ -526,170 +570,171 @@ const IncomeTaxBase = () => {
         Subdivision C: Exemption from Tax
       </Text>
 
-      {/* Minister may exempt income from tax */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      {/* Minister may exempt income from tax  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Minister may exempt income from tax
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
-        <Text as="span" fontWeight="bold">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
+        <Text fontSize="md" as="span" fontWeight="bold">
           10.-
         </Text>
         (1) The Minister may, by order in the Gazette, provide –
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) that any income or class of incomes accrued in or derived from the
         United Republic shall be exempt from tax to the extent specified in such
         order; or
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) that any exemption under the Second Schedule shall cease to have
         effect either generally or to such extent as may be specified in such
         Order.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (2) The Minister may, by Order in the Gazette, amend, vary or replace
         the Second Schedule.
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* Section 26 of the Written Laws (Miscellenous Amendments) ACt No 2 of 2017 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="blue.500">
+      {/* Section 26 of the Written Laws (Miscellenous Amendments) ACt No 2 of 2017  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="blue.500" textAlign="left" w="20%">
         Section 26 of the Written Laws (Miscellenous Amendments)
         <br />
         ACt No 2 of 2017
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="blue.500"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" color="blue.500" textAlign="left" w="80%" textDecoration="line-through">
         (3) Notwithstanding any law to the contrary, no exemption shall be
         provided from tax imposed by this Act and no agreement shall be
         concluded that affects or purports to affect the application of this
         Act, except as provided for by this Act or by way of amendment to this
         Act.
-      </Text>
+        </Text>
+      </Flex>
 
-      {/* Section 26 of the Written Laws (Miscellenous Amendments) ACt No 2 of 2017 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="blue.500">
+      {/* Section 26 of the Written Laws (Miscellenous Amendments) ACt No 2 of 2017  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="blue.500" textAlign="left" w="20%">
         Section 26 of the Written Laws (Miscellenous Amendments)
         <br />
         ACt No 2 of 2017
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="blue.500">
+        </Text>
+        <Text fontSize="md" color="blue.500" textAlign="left" w="80%">
         (3) Notwithstanding any law to the contrary, no exemption shall be
         provided from tax imposed by this Act and no agreement shall be
         concluded that affects or purports to affect the application of this
         Act, except as provided for:
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="blue.500">
+
+        <Text fontSize="md" mt="2">
         (a) by the provisions of this Act;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="blue.500">
+        </Text>
+        <Text fontSize="md" mt="2">
         (b) by an agreement:
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="blue.500">
-        (i) on a strategic project;{" "}
-        <Text as="span" textDecoration="line-through">
+        </Text>
+        <Text fontSize="md" mt="2">
+        &emsp;(i) on a strategic project;{" "}
+        <Text fontSize="md" as="span" textDecoration="line-through">
           and
         </Text>
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* Finance Act 2022 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="green.500">
+      {/* Finance Act 2022, Written Laws Financial Provisions 2022  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="blue.500" textAlign="left" w="20%">
         Finance Act 2022
-        <Text color="brown.800">Written Laws Financial Provisions 2022</Text>
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="blue.500">
-        (ii) on public interest; and
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="green.500">
-        (iii) for a{" "}
-        <Text as="span" color="brown.800">
+        <Text fontSize="md" color="brown.800">Written Laws Financial Provisions 2022</Text>
+        </Text>
+        <Text fontSize="md" color="blue.500" textAlign="left" w="80%">
+        &emsp;(ii) on public interest; and
+
+        <Text fontSize="md" mt="2" color="green.500">
+        &emsp;(iii) for a{" "}
+        <Text fontSize="md" as="span" color="brown.800">
           strategic investment
         </Text>{" "}
         special strategic investment approved by the National Investment
-        Steering Committee under the Tanzania Investment Act,
-        <Text as="span" color="blue.500">
+        Steering Committee under &emsp;&emsp;the Tanzania Investment Act,{" "}
+        <Text fontSize="md" as="span" color="blue.500">
           as may be approved by the Cabinet
         </Text>
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* Finance No 8 of 2020 s.28, Written Laws Financial Act 2021 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="green.500">
-        <Text color="brown.800" textDecoration="line-through">
+      {/* Finance No 8 of 2020 s.28, Written Laws Financial Act 2021  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="green.500" textAlign="left" w="20%">
+        <Text fontSize="md" color="brown.800" textDecoration="line-through">
           Finance No 8 of 2020 s.28
         </Text>
         Written Laws Finance Act 2021
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="brown.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" color="brown.800" textAlign="left" w="80%" textDecoration="line-through">
         “(4) The requirement under subsection (3)(b) shall not apply to a
         strategic project with a total tax payable not exceeding one billion
         shillings for the entire project period.”
-      </Text>
+        </Text>
+      </Flex>
 
-      {/* Written Laws Financial Provisions 2022 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
-        Written Laws Financial Provisions 2022
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="brown.800">
+      {/* Written Laws Financial Provisions 2022  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
+          Written Laws Financial Provisions 2022
+        </Text>
+        <Text fontSize="md" color="brown.800" textAlign="left" w="80%">
         (4) The exemption granted under this section shall cease to have effect
         and the income tax shall become due and payable as if the exemption has
         not been granted if such exemption has been enjoyed in any way by
         another person not entitled to enjoy similar privileges as are conferred
         under this Act.
-      </Text>
+        </Text>
+      </Flex>
 
-      {/* Finance Act 2021 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="green.500">
-        Finance Act 2021
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="green.500">
+      {/* Finance Act 2021  */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="green.500" textAlign="left" w="20%">
+          Finance Act 2021
+        </Text>
+        <Text fontSize="md" color="green.500" textAlign="left" w="80%">
         “(4) The requirement under subsection (3)(b) shall not apply to-
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="green.500">
+
+        <Text fontSize="md" mt="2">
         (a) a strategic project with a total tax payable not exceeding one
         billion shillings for the entire project period; or
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="green.500">
+        </Text>
+        <Text fontSize="md" mt="2">
         (b) grant agreement, non-concessional or concessional loan agreement
         between the Government of the United Republic and a donor or lender
         where such agreement provides for income tax exemption
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Limitation for exemption section 14 of Finance Act, 2015 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
-        Limitation for exemption <br />
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="red.500" textAlign="left" w="20%">
+        Limitation for exemption
         section 14 of Finance Act, 2015
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="red.500"
-        textDecoration="line-through"
-      >
-        10A- In exercising powers under this Act, the Minister shall not grant
+        <Text fontSize="md" color="blue.500">
+        Finance Act No 4 of 2018 s. 24
+        </Text>
+        </Text>
+        <Text fontSize="md" color="red.500" textAlign="left" w="80%" textDecoration="line-through">
+        <Text fontSize="md" as="span" fontWeight="bold">10A-</Text>{" "}
+        In exercising powers under this Act, the Minister shall not grant
         tax exemption or remission on income or payment derived from Government
         project financed by a non concessional loan.
-      </Text>
-
-      {/* Finance Act No 4 of 2018 s. 24  */}
-      <Text fontSize="md" mt="6" textAlign="left" color="blue.500">
-        Finance Act No 4 of 2018 s. 24
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Subdivision D: Deductions */}
       <Text
         fontSize="md"
-        mt="2"
+        mt="6"
         textAlign="center"
         color="gray.800"
         fontStyle="italic"
@@ -698,93 +743,92 @@ const IncomeTaxBase = () => {
       </Text>
 
       {/* General principles of deductions */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         General principles of deductions
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
-        <Text as="span" fontWeight="bold">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
+        <Text fontSize="md" as="span" fontWeight="bold">
           11.-
         </Text>
         (1) For the purposes of calculating a person's income no deduction shall
         be allowed -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (a) for consumption expenditure incurred by the person or excluded
-        expenditure incurred by the person; or
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
+          (a) for consumption expenditure incurred by the person or excluded
+          expenditure incurred by the person; or
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) otherwise, except as provided for by this Act.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (2) Subject to this Act, for the purposes of calculating a person's
         income for a year of income from any business or investment, there shall
         be deducted all expenditure incurred during the year of income, by the
         person wholly and exclusively in the production of income from the
         business or investment.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (3) No deduction is allowed under subsection (2) for expenditure of a
         capital nature.
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No. 6 of 2024 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="blue.500">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="blue.500" textAlign="left" w="20%">
         Finance Act No. 6 of 2024
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="blue.500">
+        </Text>
+        <Text fontSize="md" color="blue.500" textAlign="left" w="80%">
         (4) Without prejudice to subsection (2), expenditure incurred by a
         person during the year of income on goods or services relating to the
         production of income shall be supported by fiscal receipt except where
         the person providing the goods or services-
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="blue.500">
+
+        <Text fontSize="md" mt="2">
         (a) is a non-resident person with no permanent establishment in the
         United Republic; or
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="blue.500">
+        </Text>
+        <Text fontSize="md" mt="2">
         (b) has been excluded from a requirement to issue fiscal receipt in
         accordance with section 36(2) of the Tax Administration Act; and
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* Finance Act No. 15 of 2010 s.13 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      {/* Finance Act No.15 of 2010 s.13 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act No.15 of 2010 s.13
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        <Text fontSize="md" >
+          Finance Act. No. 4 of 2013 s.19
+        </Text>
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" textDecoration="line-through">
         (4) In the case of mining operation, where separate and distinct mining
         operations are carried on by the same person in different mining licence
         areas, the mines shall be treated as separate mining operations.”;
-      </Text>
-
-      {/* Finance Act No. 4 of 2013 s.19,  */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-        Finance Act. No. 4 of 2013 s.19
-        <Text textDecoration="line-through">
-          Finance Act. No. 4 of 2013 s.19
         </Text>
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+      </Flex>
+
+      {/* Finance Act. No. 4 of 2013 s.19 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%" textDecoration="line-through">
+        Finance Act. No. 4 of 2013 s.19
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" textDecoration="line-through">
         (4) In the case of mining or petroleum operations, where separate and
         distinct mining or petroleum operations are carried on by the same
         person in a different mining area or petroleum contract area,
         determination of allowable deduction for each mining area or petroleum
         contract area shall be treated separately-.
-      </Text>
+        </Text>
+      </Flex>
 
-      {/* FINANCE ACT NO 2 OF 2016 S.18 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
+      {/* FINANCE ACT NO 2 OF 2016 S. 18, Finance Act No.15 of 2010 s.13 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="red.500" textAlign="left" w="20%">
         FINANCE ACT NO 2 OF 2016 S. 18
         <Text fontSize="md" color="gray.800">
           Finance Act No.15 of 2010 s.13
@@ -792,8 +836,8 @@ const IncomeTaxBase = () => {
         <Text fontSize="md" color="blue.500">
           Finance Act No. 6 of 2024
         </Text>
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (
         <Text as="span" fontSize="md" textDecoration="line-through">
           5
@@ -810,318 +854,283 @@ const IncomeTaxBase = () => {
           5
         </Text>
         ) For the purposes of this section -
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         “consumption expenditure” means any expenditure incurred by any person
         in the maintenance of himself, his family or establishment, or for any
         other personal or domestic purpose;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* FINANCE ACT NO 2 OF 2016 S.18 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      {/* FINANCE ACT NO 2 OF 2016 S. 18 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         FINANCE ACT NO 2 OF 2016 S. 18
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" textDecoration="line-through">
         "expenditure of a capital nature" means expenditure -
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) that secures a benefit lasting longer than twelve months; or
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) incurred in respect of natural resource prospecting, exploration and
         development; and
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* FINANCE ACT NO 2 OF 2016 S.18 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
+      {/* FINANCE ACT NO 2 OF 2016 S. 18 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="red.500" textAlign="left" w="20%">
         FINANCE ACT NO 2 OF 2016 S. 18
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="red.500">
+        </Text>
+        <Text fontSize="md" color="red.500" textAlign="left" w="80%">
         "expenditure of a capital nature" means expenditure -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         “excluded expenditure” means -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) tax payable under this Act;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) bribes and expenditure incurred in corrupt practice;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (c) fines and similar penalties payable to a government or a political
         subdivision of a government of any country for breach of any law or
         subsidiary legislation;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* FINANCE ACT NO. 15 OF 2010 S.13 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      {/* Finance Act No.15 of 2010 s.13 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act No.15 of 2010 s.13
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (d) expenditure to the extent to which incurred by a person in deriving
-        exempt amounts or final withholding payments;
-        <Text as="span" textDecoration="line-through">
+        exempt amounts or final withholding payments;{" "}
+        <Text fontSize="md" as="span" textDecoration="line-through">
           or
         </Text>
-      </Text>
+        </Text>
+      </Flex>
 
-      {/* FINANCE ACT NO. 15 OF 2010 S.13 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      {/* Finance Act No.15 of 2010 s.13 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act No.15 of 2010 s.13
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (e) distributions by an entity. or
-      </Text>
+        </Text>
+      </Flex>
 
-      {/* FINANCE ACT NO. 4 OF 2017 S.18 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
+      {/* Finance Act No. 4 of 2017 s.18 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="red.500" textAlign="left" w="20%">
         Finance Act No. 4 of 2017 s.18
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="red.500">
+        </Text>
+        <Text fontSize="md" color="red.500" textAlign="left" w="80%">
         (f) withholding tax paid by a withholder.
-      </Text>
+        </Text>
+      </Flex>
 
-      {/* FINANCE ACT No.15 of 2010 s.13 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      {/* Finance Act No.15 of 2010 s.13, Finance Act No.2 of 2016 s.18 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         <Text fontSize="md" textDecoration="line-through">
           Finance Act No.15 of 2010 s.13
         </Text>
         Finance Act No.2 of 2016 s.18
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%"  textDecoration="line-through">
         (g) “mining operation” shall not include exploration activities
         conducted outside the mining licence area which shall be accumulated and
         allowed when the commercial operations commence
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Interest Act No.15 of 2010 s.14 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Interest Act No.15 of 2010 s.14
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
-        <Text as="span" fontWeight="bold">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
+        <Text fontSize="md" as="span" fontWeight="bold">
           12.-
         </Text>
         (1) For the purposes of section 11(2), interest incurred by a person
         during a year of income under a debt obligation shall be incurred wholly
         and exclusively in the production of income from a business or
         investment if -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) where the debt obligation was incurred in borrowing money, the money
         is employed during the year of income or was used to acquire an asset
         that is employed during the year of income wholly and exclusively in the
         production of income from the business or investment; or
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) in any other case, the debt obligation was incurred wholly and
         exclusively in the production of income from the business or investment
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act no 15 of 2010 s.14 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act no 15 of 2010 s.14
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" textDecoration="line-through">
         (2) The total amount og interest that an exempt controlled resident
         entity may deduct under section 11(2) for a year of income shall not
         exceed the sum of-
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (a)all interest derived by the entity during the year of income that is
         to be included in calculating the entity’s total income for the year of
         income; plus
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b)70 percent of entity’s total income for the year of income calculated
         without including any interest derived or deducting any interest
         incurred by the entity.
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (3)…Any interest for which a deduction is denied as a result of
         subsection 2 may be carried forward and treated as incurred during the
         next year of income.
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* Finance Act No 15 of 2010 s.14 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-        Finance Act No.15 of 2010 s.14
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+      {/* Finance Act No.15 of 2010 s.14 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
+          Finance Act No.15 of 2010 s.14
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (2) The total amount of interest that an exempt-controlled resident
         entity may deduct in accordance with section 11(2) for a year of income
         shall not exceed the sum of interest equivalent to debt-to-equity ratio
         of
-        <Text as="span" textDecoration="line-through">
+        <Text fontSize="md" as="span" textDecoration="line-through">
           {" "}
           70 to 30
         </Text>{" "}
         7 to 3.
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No. 8 of 2012 s.22 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-        Finance Act No. 8 of 2012 s.22
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
+          Finance Act No. 8 of 2012 s.22
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (3) In this section, an entity is an exempt-controlled resident entity
         for a year of income if it is resident and at any time during the year
         of income 25 percent or more of the underlying ownership of the entity
         is held by entities exempt under the Second Schedule, approved
         retirement funds, charitable organisations, non-resident persons or
         associates of such entities or persons.
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No. 8 of 2012 s.22 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-        Finance Act No. 8 of 2012 s.22
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
+          Finance Act No. 8 of 2012 s.22
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (4) Where there is a change of the amount of debt or equity, the amount
         of equity or debt shall be the average of the balances of amount of debt
         or equity at the end of each period.
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No. 8 of 2012 s.22 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-        Finance Act No. 8 of 2012 s.22
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
+          Finance Act No. 8 of 2012 s.22
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (5) For the purpose of this section-.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        “debt” means any debt obligation excluding:
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (i) a non-interest bearing debt obligation;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (ii) a debt obligation owed to a resident financial institution;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
-        (iii) a debt obligation owed to a non-resident bank or financial
-        institution on whose interest tax is withheld in the United Republic;
-      </Text>
 
-      {/* Finance Act No. 8 of 2012 s.22 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+        <Text fontSize="md" mt="2" color="gray.800">
+        “debt” means any debt obligation excluding:
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
+        &emsp;(i) a non-interest bearing debt obligation;
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
+        &emsp;(ii) a debt obligation owed to a resident financial institution;
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
+        &emsp;(iii) a debt obligation owed to a non-resident bank or financial
+        institution on whose interest tax is withheld in the United Republic;
+        </Text>
+        </Text>
+      </Flex>
+
+      {/* Finance Act No. 8 of 2012 s.22, Finance Act 2022 */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act No. 8 of 2012 s.22
         <Text fontSize="md" color="green.500">
           Finance Act 2022
         </Text>
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" color="green.500" textAlign="left" w="80%" >
+        <Text fontSize="md" mt="2" color="gray.800" textDecoration="line-through">
         “equity” means:
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
-        (i) paid up share capital;
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
-        (ii) paid up share premium; and
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
-        (iii) retained earnings on an unconsolidated basis determined in
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800" textDecoration="line-through">
+        &emsp;(i) paid up share capital;
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800" textDecoration="line-through">
+        &emsp;(ii) paid up share premium; and
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800" textDecoration="line-through">
+        &emsp;(iii) retained earnings on an unconsolidated basis determined in
         accordance with generally accepted accounting principles; and
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="green.500">
+        </Text>
         “equity” means paid up share capital at the end of the year of income;
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No. 8 of 2012 s.22 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act No. 8 of 2012 s.22
         <Text fontSize="md" color="brown.800">
           Finance Act No. 8 of 2020 s.29
         </Text>
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" >
         “period” means a month or a part of month
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="brown.800">
+
+        <Text fontSize="md" mt="2" color="brown.800">
         (6) Notwithstanding any other provision to the contrary, the amount of
         deductible realized foreign exchange loss on interest free debt
         obligation shall be the amount of loss attributable to not more than
         seventy percent of such obligation.
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
-      {/* Trading Stock */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      {/* Trading stock */}
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Trading stock
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" >
         <Text as="span" fontSize="md" fontWeight="bold">
           13.-
         </Text>
@@ -1129,50 +1138,53 @@ const IncomeTaxBase = () => {
         income from any business, there shall be deducted in respect of the
         trading stock of the business the allowance determined under subsection
         (2).
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (2) The allowance shall be calculated as -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) the opening value of trading stock of the business for the year of
         income; plus
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) expenditure incurred by the person during the year of income that is
         included in the cost of trading stock of the business; less
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (c) the closing value of trading stock of the business for the year of
         income.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (3) The opening value of trading stock of a business for a year of
         income shall be the closing value of trading stock of the business at
         the end of the previous year of income.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (4) The closing value of trading stock of a business for a year of
         income shall be the lower of -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) the cost of the trading stock of the business at the end of the year
         of income; or
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) the market value of the trading stock of the business at the end of
         the year of income.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (5) Where the closing value of trading stock is determined in accordance
         with subsection (4)(b), the cost of the trading stock shall be reset to
         that value.
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Repair and maintenance expenditure */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Repair and maintenance expenditure
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" >
         <Text as="span" fontSize="md" fontWeight="bold">
           14.-
         </Text>
@@ -1182,13 +1194,15 @@ const IncomeTaxBase = () => {
         of the repair or maintenance of depreciable assets owned and employed by
         the person wholly and exclusively in the production of income from the
         business.
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No. 4 of 2017 s. 19 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="red.500" textAlign="left" w="20%">
         Finance Act No. 4 of 2017 s. 19
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" >
         (2) No deductions shall be allowed under subsection (1) for expenditure
         in improving an asset, but that expenditure may be included in the cost
         of the asset if the requirements of section{" "}
@@ -1205,14 +1219,16 @@ const IncomeTaxBase = () => {
           37
         </Text>
         are met.
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Agriculture improvements */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Agriculture improvement, research development and environ- mental
         expenditure
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" >
         <Text as="span" fontSize="md" fontWeight="bold">
           15.-
         </Text>
@@ -1221,66 +1237,53 @@ const IncomeTaxBase = () => {
         improvement, research and development and environmental expenditure to
         the extent incurred by the person during the year of income in
         conducting the business.
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (2) For the purposes of this section -
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         “agricultural improvement expenditure” means expenditure incurred by the
         owner or occupier of farm land in conducting an agriculture, livestock
         farming or fish farming business where the expenditure is incurred in -
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) clearing the land and excavating irrigation channels; or
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) planting perennial crops or trees bearing crops;
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act no 2 of 2016 s. 19 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act no 2 of 2016 s. 19
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" textDecoration="line-through">
         "environmental expenditure" means subject to subsection (3) expenditure
         incurred -
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) by the owner or occupier of farm land for the prevention of soil
         erosion; or
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) in connection with remedying any damage caused by natural resource
         extraction operations to the surface of or environment on land; and
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act no 2 of 2016 s. 19 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="red.500">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="red.500" textAlign="left" w="20%">
         Finance Act no 2 of 2016 s. 19
-      </Text>
-      <Text fontSize="md" mt="6" textAlign="center" color="red.500">
+        </Text>
+        <Text fontSize="md" color="red.500" textAlign="left" w="80%">
         “environmental expenditure” means expenditure incurred by the owner or
         occupier of farmland for prevention of soil erosion”;
-      </Text>
-      <Text fontSize="md" mt="2" textAlign="center" color="gray.800">
+
+        <Text fontSize="md" mt="2" color="gray.800">
         "research and development expenditure” means expenditure incurred by a
         person in the process of developing the person's business and improving
         business products or process and includes expenditure incurred by a
@@ -1289,19 +1292,16 @@ const IncomeTaxBase = () => {
         that is otherwise included in the cost of anyasset used in the use in
         any such process, including an asset referred to in paragraph 1(3) of
         the Third Schedule.
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act no 2 of 2016 s. 19 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
         Finance Act no 2 of 2016 s. 19
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%" textDecoration="line-through">
         (3) Where a person conducting a resource extraction business makes
         provision for any expenditure of the type referred to in paragraph (b)
         of the definition of “environmental expenditure” in subsection (2), the
@@ -1309,38 +1309,20 @@ const IncomeTaxBase = () => {
         thinks fit and for the purposes of this section only, treat the
         provision as environmental expenditure incurred in conducting the
         business.
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (4) In approving a provision under subsection (3), the Commissioner
         shall specify a date by which the expenditure must be incurred by the
         person, which date shall not be more than two years after the date by
         which resource extraction has substantially ceased by the person on such
         land.
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (5) Where the Commissioner approves a provision under subsection (3),
         and the person does not incur the expenditure by the time specified in
         the approval in accordance with subsection (4) -
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) the Commissioner shall adjust any assessment of the person which has
         been calculated on the basis of a deduction under this section for the
         provision so as to remove the deduction, which adjustment shall be made
@@ -1354,24 +1336,12 @@ const IncomeTaxBase = () => {
           section 96 section 48 of the Tax Administration Act
         </Text>
         ; and
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) the person shall be liable for -
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
-        (i) interest under{" "}
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
+        &emsp;(i) interest under{" "}
         <Text
           as="span"
           fontSize="md"
@@ -1381,15 +1351,9 @@ const IncomeTaxBase = () => {
           sections 99 and 100 sections 75 and 76 of the Tax Administration Act
         </Text>{" "}
         based on any such adjusted assessment; and
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="red.500"
-        textDecoration="line-through"
-      >
-        (ii){" "}
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
+        &emsp;(ii){" "}
         <Text
           as="span"
           fontSize="md"
@@ -1399,223 +1363,169 @@ const IncomeTaxBase = () => {
           a penalty under
         </Text>{" "}
         section 101 section 79 of the Tax Administration Act.
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-        textDecoration="line-through"
-      >
-        (iii) calculated as though the person made, without reasonable excuse, a
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
+        &emsp;(iii) calculated as though the person made, without reasonable excuse, a
         statement to the Commissioner in claiming the deduction that was false
         or misleading in a material particular.
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Gifts to public, charitable */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-      Gifts to
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
+        Gifts to
 public,
 charitable
 and
 religious
 institutions
-<br />
 Acts No.13
 of 2005
 s.9
 6 of 2006
 s.14
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-      >
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         <Text as="span" fontSize="md" fontWeight="bold">16.-</Text>(1) For the purpose of calculating a person's income for a year
         of income from any business, there shall be deducted -
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-      >
+
+        <Text fontSize="md" mt="2" color="gray.800">
         (a) amounts contributed during the year of income to a charitable
 institution referred to in subsection (8) of section 64 or social
 development project;
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-      >
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (b) any donation made under section 12 of the Education Fund
         Act; <Text as="span" fontSize="md" textDecoration="line-through">and</Text>
-      </Text>
-      <Text
-        fontSize="md"
-        mt="2"
-        textAlign="center"
-        color="gray.800"
-      >
+        </Text>
+        <Text fontSize="md" mt="2" color="gray.800">
         (c) amount paid to local government authority, which are
         statutory obligations to support community development projects;- <Text as="span" fontSize="md" color="brown.800">and</Text>
-      </Text>
+        </Text>
+        </Text>
+      </Flex>
 
       {/* Cap. 412 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-      Cap. 412
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
+        Cap. 412
       <Text fontSize="md" color="brown.800">Finance Act no
       8 of 2020 s. 30</Text>
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="brown.800"
-      >
+        </Text>
+        <Text fontSize="md" color="brown.800" textAlign="left" w="80%">
         (d) contribution made to the AIDS Trust Fund established under
         the Tanzania Commission for AIDS Act; and
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act no 8 of 2020 s. 30 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
-      Finance Act no
-8 of 2020 s. 30
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="brown.800"
-      >
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
+        Finance Act no 8 of 2020 s. 30
+        </Text>
+        <Text fontSize="md" color="brown.800" textAlign="left" w="80%">
         (e) contribution made to the Government in the fight against
         Coronavirus disease (COVID-19).
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act no 8 of 2020 s. 30 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
-      Finance Act no
-8 of 2020 s. 30
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="brown.800"
-      >
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
+        Finance Act no 8 of 2020 s. 30
+        </Text>
+        <Text fontSize="md" color="brown.800" textAlign="left" w="80%">
         (2) The provisions of subsection (1)(e) shall cease to have effect on
 such date as the Minister may, by notice published in the Gazette,
 determine
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act no 8 of 2020 s. 30 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
-      Finance Act no
-8 of 2020 s. 30
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-      >
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
+        Finance Act no 8 of 2020 s. 30
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (<Text as="span" fontSize="md" textDecoration="line-through">2</Text><Text as="span" fontSize="md" color="brown">3</Text>) The deduction available under subsection (1)(a) for a year of
 income shall not exceed two percent of the person's income from the
 business calculated without a deduction under that subsection.
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act no 8 of 2020 s. 30 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
-      Finance Act no
-8 of 2020 s. 30
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-      >
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
+        Finance Act no 8 of 2020 s. 30
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (<Text as="span" fontSize="md" textDecoration="line-through">3</Text><Text as="span" fontSize="md" color="brown">4</Text>) For the purpose of calculating a person’s income for a year of
 income from any employment, there shall be deducted any donation made
 under section 12 of the Education Fund Act.
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act no 8 of 2020 s. 30 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
-      Finance Act no
-8 of 2020 s. 30
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-      >
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
+        Finance Act no 8 of 2020 s. 30
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         (<Text as="span" fontSize="md" textDecoration="line-through">4</Text><Text as="span" fontSize="md" color="brown">5</Text>) Subject to subsection <Text as="span" fontSize="md" textDecoration="line-through">(3)</Text> <Text as="span" fontSize="md" color="brown">(4)</Text> an employee who makes a
 donation to the Fund may apply to the Commissioner for deduction.
-      </Text>
+        </Text>
+      </Flex>
 
       {/* Depreciation allowances for depreciable assets */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-      Depreciation
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
+        Depreciation
 allowances
 for depreciable assets
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-      >
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         <Text as="span" fontSize="md" fontWeight="bold">17.</Text> For the purposes of calculating a person's income for a year of
 income from any business, there shall be deducted in respect of
 depreciation of depreciable assets owned and employed by the person
 during the year of income wholly and exclusively in the production of the
 person's income from the business the allowances granted under the Third
-Schedule.
-      </Text>
+Schedule..
+        </Text>
+      </Flex>
 
       {/* Losses on realisation of business assets and liabilities */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-      Losses on
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
+        Losses on
 realisation
 of business
 assets and
 liabilities
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-      >
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         <Text as="span" fontSize="md" fontWeight="bold">18.</Text>  For the purposes of calculating a person's income for a year of
 income from any business, there shall be deducted any loss of the person,
 as calculated under Division III of this Part, from the realisation during the
 year of income of -
 Schedule.
-      </Text>
-      <Text
+
+<Text
         fontSize="md"
         mt="2"
-        textAlign="center"
         color="gray.800"
       >
         (a) a business asset of the business that is or was employed
 wholly and exclusively in the production of income from the
 business; 
       </Text>
-      <Text
+<Text
         fontSize="md"
         mt="2"
-        textAlign="center"
         color="gray.800"
       >
-        (b) a debt obligation incurred in borrowing money, where the
+         (b) a debt obligation incurred in borrowing money, where the
 money is or was employed or an asset purchased with the
 money is or was employed wholly and exclusively in the
 production of income from the business; or
@@ -1623,73 +1533,90 @@ production of income from the business; or
       <Text
         fontSize="md"
         mt="2"
-        textAlign="center"
         color="gray.800"
       >
-        (c) a liability of the business other than a debt obligation incurred
+         (c) a liability of the business other than a debt obligation incurred
 in borrowing money, where the liability was incurred wholly
 and exclusively in the production of income from the
 business.
       </Text>
+        </Text>
+      </Flex>
 
       {/* Losses from a business or investment Act No.15 of 2004 s.28 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="gray.800">
-      Losses
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="gray.800" textAlign="left" w="20%">
+        Losses
 from a
 business or
 investment
 Act No.15
 of 2004
 s.28
-      </Text>
-      <Text
-        fontSize="md"
-        mt="6"
-        textAlign="center"
-        color="gray.800"
-      >
+        </Text>
+        <Text fontSize="md" color="gray.800" textAlign="left" w="80%">
         <Text as="span" fontSize="md" fontWeight="bold">19.-</Text>(1) For the purposes of calculating the income of a person
 (other than a partnership or a foreign permanent establishment) for a
 year of income from a business or investment, there shall be deducted-
-      </Text>
-      <Text
+
+<Text
         fontSize="md"
         mt="2"
-        textAlign="center"
         color="gray.800"
       >
         (a) any unrelieved loss of the year of income of the person from
         any other business or investment; and
       </Text>
-      <Text
+<Text
         fontSize="md"
         mt="2"
-        textAlign="center"
         color="gray.800"
       >
-        (b) any unrelieved loss of a previous year of income of the person
-        from any business or investment.
+         (b) any unrelieved loss of a previous year of income of the person
+         from any business or investment.
       </Text>
+        </Text>
+      </Flex>
 
       {/* Finance Act No 8 of 2020 s.31 */}
-      <Text fontSize="md" mt="6" textAlign="left" color="brown.800">
-      Finance Act
+      <Flex mt="2" alignItems="justify">
+        <Text fontSize="md" color="brown.800" textAlign="left" w="20%">
+        Finance Act
 No 8 of 2020
 s.31
-      </Text>
-      <Text fontSize="md" mt="0" textAlign="left" color="blue.500">Finance Act
+<Text fontSize="md" color="blue.500">Finance Act
       No. 6 of 2024</Text>
+        </Text>
+        <Text fontSize="md" color="brown.800" textAlign="left" w="80%">
+        (2) Income of a person for the year of income having chargeable
+income and unrelieved losses for the four previous consecutive years of
+income may, subject to other limitations imposed by this section, be
+reduced by reason of use of the unrelieved losses which shall not be below
+thirty <Text as="span" fontSize="md" color="blue.500">forty</Text> per centum of that income before any reduction for losses:
+
+<Text
+        fontSize="md"
+        mt="2"
+      >
+        Provided that, the requirement under this subsection shall not
+apply to a corporation undertaking agricultural business or providing
+health or education services.”; and
+      </Text>
+        </Text>
+      </Flex>
+
+      {/* Finance Act No 8 of 2020 s.31 */}
+      <Text fontSize="md" mt="6" textAlign="left" color="">
+      
+      </Text>
+      
       <Text
         fontSize="md"
         mt="6"
         textAlign="center"
         color="brown.800"
       >
-        (2) Income of a person for the year of income having chargeable
-income and unrelieved losses for the four previous consecutive years of
-income may, subject to other limitations imposed by this section, be
-reduced by reason of use of the unrelieved losses which shall not be below
-thirty <Text as="span" fontSize="md" color="blue.500">forty</Text> per centum of that income before any reduction for losses:
+        
       </Text>
       <Text
         fontSize="md"
@@ -1697,9 +1624,7 @@ thirty <Text as="span" fontSize="md" color="blue.500">forty</Text> per centum of
         textAlign="center"
         color="brown.800"
       >
-        Provided that, the requirement under this subsection shall not
-apply to a corporation undertaking agricultural business or providing
-health or education services.”; and
+        
       </Text>
 
       {/* Finance Act No 8 of 2020 s.31 */}
