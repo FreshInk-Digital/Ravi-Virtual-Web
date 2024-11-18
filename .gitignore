@@ -1,66 +1,68 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
+# Dependencies
+/node_modules/
 /.pnp
 .pnp.js
 
-# testing
-/coverage
+# Testing
+/coverage/
 
-# production
-/build
+# Production
+/build/
 /build.zip
 
-# misc
+# Miscellaneous
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+.env
+.env.*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
-# Django files
-
-# Python
-backend/ravi/*.pyc
-backend/ravi/*.pyo
-backend/ravi/*.pyd
+# Python Bytecode
+backend/ravi/**/*.py[cod]
+backend/ravi/**/*.pyo
+backend/ravi/**/*.pyd
 backend/ravi/__pycache__/
-backend/ravi/*.py[cod]
-backend/ravi/*.pyo
-backend/ravi/*.pyd
 
-# Django
+# Django-specific
 backend/ravi/*.log
 backend/ravi/*.sqlite3
 backend/ravi/db.sqlite3
-backend/ravi/*.pyc
-backend/ravi/*.pyo
-backend/ravi/*.pyd
-
-# Environment
-backend/ravi/.env
-
-# IDEs
-backend/ravi/.idea/
-backend/ravi/*.vscode/
-
-# OS-specific
-backend/ravi/.DS_Store
-backend/ravi/Thumbs.db
-
-# Other
-backend/ravi/*.coverage
-backend/ravi/*.coverage.*
-backend/ravi/*.egg
-backend/ravi/*.egg-info
-dist/
-backend/ravi/build/
+backend/ravi/staticfiles/
+backend/ravi/media/
+backend/ravi/migrations/
 backend/ravi/*.mo
 backend/ravi/*.pot
 backend/ravi/*.swp
+
+# Environment Files
+backend/ravi/.env
+backend/ravi/.env.*
+
+# IDE Settings
+.vscode/
+.idea/
+backend/ravi/.vscode/
+backend/ravi/.idea/
+
+# OS-Specific Files
+backend/ravi/.DS_Store
+backend/ravi/Thumbs.db
+
+# Build Files
+backend/ravi/build/
+backend/ravi/dist/
+backend/ravi/*.egg
+backend/ravi/*.egg-info
+backend/ravi/*.coverage
+backend/ravi/*.coverage.*
+
+# General
+*.bak
+*.orig
+*.swp
+*.tmp
+*.log
+*.lock
