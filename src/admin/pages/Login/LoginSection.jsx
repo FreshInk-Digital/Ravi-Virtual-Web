@@ -70,7 +70,7 @@ function LoginSection({ route, method }) {
   };
 
   return (
-    <Flex justify="center" align="center" minH="60vh" px="16px" py="40px">
+    <Flex justify="center" align="center" minH="60vh" px="16px" py="40px" fontFamily="Poppins">
       <Box w={{ base: "100%", md: "400px" }} bg="gray.50" p="24px" borderRadius="8px" boxShadow="md">
         <Heading as="h3" size="lg" mb="24px" textAlign="center" color="black.900">
           {name}
