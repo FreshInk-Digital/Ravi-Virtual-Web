@@ -1,5 +1,3 @@
-// ContactSection.jsx
-
 import React, { useState } from "react";
 import api from "../../api/api";
 import {
@@ -31,7 +29,7 @@ export default function ContactSection() {
 
   const validatePhone = (phone) => {
     if (!phone.trim()) return "Phone number is required.";
-    if (!/^(07|06)\d{8}$/.test(phone)) return "Phone number must start with 07 or 06 and be followed by 8 digits.";
+    if (!/^\d{9}$/.test(phone)) return "Phone number should be 9 digits.";
     return null;
   };
 
@@ -69,25 +67,36 @@ export default function ContactSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
+    // Validate form inputs before proceeding
     if (!validateForm()) return;
+  
+  // Prepare phone number with country code
+  // eslint-disable-next-line
+  const updatedFormData = {
+    ...formData,
+    phone: `255${formData.phone}`, // Prepend "255" to the entered phone number
+  };
 
+    // Show initial toast indicating message sending process
     toast({
-      title: 'Sending message...',
-      description: "Your message is being sent. Please wait.",
+      title: 'Sending Message...',
+      description: 'Your message is being sent. Please wait.',
       status: 'info',
       duration: 3000,
       isClosable: true,
     });
-
+  
     try {
-      // Save message to the database first
-      await api.post('/Messages/', formData);
-
-      // Send the SMS and handle success/failure
+      // Step 1: Save message to the database
+      const saveResponse = await api.post('/Messages/', formData);
+      console.log('Message saved to database:', saveResponse.data);
+  
+      // Step 2: Send SMS
       const smsResult = await sendSms(formData);
-
+  
       if (smsResult.success) {
+        // SMS sent successfully
         toast({
           title: 'Message Sent',
           description: smsResult.message,
@@ -95,18 +104,8 @@ export default function ContactSection() {
           duration: 5000,
           isClosable: true,
         });
-      } else {
-        toast({
-          title: 'SMS Failed',
-          description: smsResult.message,
-          status: 'error',
-          duration: 5000,
-          isClosable: true,
-        });
-      }
-
-      // Reset form on success
-      if (smsResult.success) {
+  
+        // Reset the form
         setFormData({
           user_name: '',
           email: '',
@@ -115,19 +114,29 @@ export default function ContactSection() {
           status: 'NOT URGENT',
         });
         setMessageLength(0); // Reset message length counter
+      } else {
+        // SMS sending failed
+        toast({
+          title: 'SMS Failed',
+          description: smsResult.message,
+          status: 'error',
+          duration: 5000,
+          isClosable: true,
+        });
       }
-
     } catch (error) {
-      console.error('Error saving message:', error);
+      // Catch any error during the database save or SMS sending
+      console.error('Error during message sending process:', error);
       toast({
         title: 'Send Failed',
-        description: "There was an error sending your message. Please try again.",
+        description: 'There was an error saving your message or sending the SMS. Please try again.',
         status: 'error',
         duration: 5000,
         isClosable: true,
       });
     }
   };
+  
 
   return (
     <>
@@ -167,7 +176,7 @@ export default function ContactSection() {
               You Can Reach Us Anytime{" "}
             </Heading>
             <Flex alignSelf="stretch">
-              <Heading
+              <Heading 
                 size="heading2xl"
                 color="gray.900"
                 letterSpacing="-0.96px"
@@ -222,13 +231,13 @@ export default function ContactSection() {
                     gap="16px"
                     w="100%"
                   >
-                    <Box w="100%">
+                    <Box w="100%" display="flex" alignItems="center">
                       <Input
                         size="md"
                         name="user_name"
                         value={formData.user_name}
                         onChange={handleChange}
-                        placeholder={`Your Name *`}
+                        placeholder="Your Name *"
                         type="text"
                         fontFamily="Poppins"
                         w="100%"
@@ -240,13 +249,13 @@ export default function ContactSection() {
                         </Box>
                       )}
                     </Box>
-                    <Box w="100%">
+                    <Box w="100%" display="flex" alignItems="center">
                       <Input
                         size="md"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder={`Your Email *`}
+                        placeholder="Your Email *"
                         type="email"
                         fontFamily="Poppins"
                         w="100%"
@@ -259,23 +268,41 @@ export default function ContactSection() {
                       )}
                     </Box>
                     <Box w="100%">
-                      <Input
-                        size="md"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder={`Your Phone *`}
-                        type="text"
-                        fontFamily="Poppins"
-                        w="100%"
-                        borderRadius="4px"
-                      />
-                      {errors.phone && (
-                        <Box color="red.500" mt="2px">
-                          {errors.phone}
-                        </Box>
-                      )}
-                    </Box>
+  {/* Wrapper for the prefix and input */}
+  <Box w='100%' display="flex" alignItems="center">
+    <Box
+      bg="gray.100"
+      px="10px"
+      py="14px"
+      borderLeftRadius="4px"
+      border="0.2px"
+      borderColor="gray.300"
+    >
+      +255
+    </Box>
+    <Input
+      size="md"
+      name="phone"
+      value={formData.phone}
+      onChange={handleChange}
+      placeholder="Your Phone Number"
+      type="text"
+      fontFamily="Poppins"
+      w="100%"
+      borderRadius="0 4px 4px 0"
+      border="0.2px"
+      borderColor="gray.300"
+    />
+  </Box>
+  {/* Display the error message below the input field */}
+  {errors.phone && (
+    <Box color="red.500" mt="2px">
+      {errors.phone}
+    </Box>
+  )}
+</Box>
+
+
                   </Flex>
                   <Box w="100%">
                     <Textarea
