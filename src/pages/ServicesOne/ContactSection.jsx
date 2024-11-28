@@ -12,24 +12,26 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import ContactInformation from "../../components/ContactInformation";
-import sendSms from "../../api/sendSms";  // Adjusted import
+import sendSms from "../../api/sendSms"; // Adjusted import
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
-    user_name: '',
-    email: '',
-    message: '',
-    phone: '',
-    status: 'NOT URGENT',
+    user_name: "",
+    email: "",
+    message: "",
+    phone: "",
+    status: "NOT URGENT",
   });
 
   const [errors, setErrors] = useState({});
   const [messageLength, setMessageLength] = useState(0);
   const toast = useToast();
 
+  // Updated phone validation function
   const validatePhone = (phone) => {
     if (!phone.trim()) return "Phone number is required.";
-    if (!/^\d{9}$/.test(phone)) return "Phone number should be 9 digits.";
+    if (!/^[76]\d{8}$/.test(phone))
+      return "Phone number must start with 7 or 6 and be 9 digits long.";
     return null;
   };
 
@@ -37,9 +39,13 @@ export default function ContactSection() {
     const newErrors = {};
     if (!formData.user_name.trim()) newErrors.user_name = "Name is required.";
     if (!formData.email.trim()) newErrors.email = "Email is required.";
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email address is invalid.";
+    else if (
+      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)
+    )
+      newErrors.email = "Email address is invalid.";
     if (!formData.message.trim()) newErrors.message = "Message is required.";
-    else if (formData.message.length > 250) newErrors.message = "Message cannot exceed 250 characters.";
+    else if (formData.message.length > 250)
+      newErrors.message = "Message cannot exceed 250 characters.";
 
     const phoneError = validatePhone(formData.phone);
     if (phoneError) newErrors.phone = phoneError;
@@ -53,7 +59,7 @@ export default function ContactSection() {
     if (name === "message") setMessageLength(value.length);
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? (checked ? value : '') : value,
+      [name]: type === "checkbox" ? (checked ? value : "") : value,
     });
 
     if (name === "phone") {
@@ -65,78 +71,84 @@ export default function ContactSection() {
     }
   };
 
+  const handleKeyPress = (e) => {
+    // Restrict input to digits only
+    if (!/[0-9]/.test(e.key)) {
+      e.preventDefault();
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     // Validate form inputs before proceeding
     if (!validateForm()) return;
-  
-  // Prepare phone number with country code
-  // eslint-disable-next-line
-  const updatedFormData = {
-    ...formData,
-    phone: `255${formData.phone}`, // Prepend "255" to the entered phone number
-  };
+
+    // Prepare phone number with country code
+    // eslint-disable-next-line
+    const updatedFormData = {
+      ...formData,
+      phone: `255${formData.phone}`, // Prepend "255" to the entered phone number
+    };
 
     // Show initial toast indicating message sending process
     toast({
-      title: 'Sending Message...',
-      description: 'Your message is being sent. Please wait.',
-      status: 'info',
-      duration: 3000,
+      title: "Sending Message...",
+      description: "Your message is being sent. Please wait.",
+      status: "info",
+      duration: 5000,
       isClosable: true,
     });
-  
+
     try {
       // Step 1: Save message to the database
-      const saveResponse = await api.post('/Messages/', formData);
-      console.log('Message saved to database:', saveResponse.data);
-  
+      const saveResponse = await api.post("/Messages/", formData);
+      console.log("Message saved to database:", saveResponse.data);
+
       // Step 2: Send SMS
       const smsResult = await sendSms(formData);
-  
+
       if (smsResult.success) {
         // SMS sent successfully
         toast({
-          title: 'Message Sent',
+          title: "Message Sent",
           description: smsResult.message,
-          status: 'success',
-          duration: 5000,
+          status: "success",
+          duration: 8000,
           isClosable: true,
         });
-  
+
         // Reset the form
         setFormData({
-          user_name: '',
-          email: '',
-          message: '',
-          phone: '',
-          status: 'NOT URGENT',
+          user_name: "",
+          email: "",
+          message: "",
+          phone: "",
+          status: "NOT URGENT",
         });
         setMessageLength(0); // Reset message length counter
       } else {
-        // SMS sending failed
+        // Message sending failed
         toast({
-          title: 'SMS Failed',
+          title: "Message Failed",
           description: smsResult.message,
-          status: 'error',
+          status: "error",
           duration: 5000,
           isClosable: true,
         });
       }
     } catch (error) {
       // Catch any error during the database save or SMS sending
-      console.error('Error during message sending process:', error);
+      console.error("Error during message sending process:", error);
       toast({
-        title: 'Send Failed',
-        description: 'There was an error saving your message or sending the SMS. Please try again.',
-        status: 'error',
+        title: "Send Failed",
+        description: "There was an error saving your message or sending the SMS. Please try again.",
+        status: "error",
         duration: 5000,
         isClosable: true,
       });
     }
   };
-  
 
   return (
     <>
@@ -153,10 +165,9 @@ export default function ContactSection() {
           justifyContent="center"
           p={{ base: "20px", sm: "32px" }}
           mb="-90px"
-        >
-        </Flex>
+        ></Flex>
         <Container px={{ md: "0px", base: "20px" }}>
-        <Flex
+          <Flex
             gap="10px"
             w={{ md: "94%", base: "100%" }}
             flexDirection="column"
@@ -176,7 +187,7 @@ export default function ContactSection() {
               You Can Reach Us Anytime{" "}
             </Heading>
             <Flex alignSelf="stretch">
-              <Heading 
+              <Heading
                 size="heading2xl"
                 color="gray.900"
                 letterSpacing="-0.96px"
@@ -226,6 +237,7 @@ export default function ContactSection() {
                   mt="14px"
                   alignSelf="stretch"
                 >
+                  {/* Input Fields */}
                   <Flex
                     flexDirection={{ md: "row", base: "column" }}
                     gap="16px"
@@ -268,42 +280,42 @@ export default function ContactSection() {
                       )}
                     </Box>
                     <Box w="100%">
-  {/* Wrapper for the prefix and input */}
-  <Box w='100%' display="flex" alignItems="center">
-    <Box
-      bg="gray.100"
-      px="10px"
-      py="14px"
-      borderLeftRadius="4px"
-      border="0.2px"
-      borderColor="gray.300"
-    >
-      +255
-    </Box>
-    <Input
-      size="md"
-      name="phone"
-      value={formData.phone}
-      onChange={handleChange}
-      placeholder="Your Phone Number"
-      type="text"
-      fontFamily="Poppins"
-      w="100%"
-      borderRadius="0 4px 4px 0"
-      border="0.2px"
-      borderColor="gray.300"
-    />
-  </Box>
-  {/* Display the error message below the input field */}
-  {errors.phone && (
-    <Box color="red.500" mt="2px">
-      {errors.phone}
-    </Box>
-  )}
-</Box>
-
-
+                      {/* Phone Input with Validation */}
+                      <Box w="100%" display="flex" alignItems="center">
+                        <Box
+                          bg="gray.100"
+                          px="10px"
+                          py="14px"
+                          borderLeftRadius="4px"
+                          border="0.2px"
+                          borderColor="gray.300"
+                        >
+                          +255
+                        </Box>
+                        <Input
+                          size="md"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          onKeyPress={handleKeyPress}
+                          maxLength={9} // Limit to 9 digits
+                          placeholder="Your Phone Number"
+                          type="text"
+                          fontFamily="Poppins"
+                          w="100%"
+                          borderRadius="0 4px 4px 0"
+                          border="0.2px"
+                          borderColor="gray.300"
+                        />
+                      </Box>
+                      {errors.phone && (
+                        <Box color="red.500" mt="2px">
+                          {errors.phone}
+                        </Box>
+                      )}
+                    </Box>
                   </Flex>
+                  {/* Message Input */}
                   <Box w="100%">
                     <Textarea
                       size="md"
@@ -330,6 +342,7 @@ export default function ContactSection() {
                       </Box>
                     </Flex>
                   </Box>
+                  {/* Status Checkboxes */}
                   <Flex
                     gap="16px"
                     flexDirection="row"
@@ -339,7 +352,7 @@ export default function ContactSection() {
                     <Checkbox
                       name="status"
                       value="URGENT"
-                      isChecked={formData.status === 'URGENT'}
+                      isChecked={formData.status === "URGENT"}
                       onChange={handleChange}
                       colorScheme="green"
                       size="lg"
@@ -352,7 +365,7 @@ export default function ContactSection() {
                     <Checkbox
                       name="status"
                       value="NORMAL"
-                      isChecked={formData.status === 'NORMAL'}
+                      isChecked={formData.status === "NORMAL"}
                       onChange={handleChange}
                       colorScheme="blue"
                       size="lg"
@@ -365,7 +378,7 @@ export default function ContactSection() {
                     <Checkbox
                       name="status"
                       value="NOT URGENT"
-                      isChecked={formData.status === 'NOT URGENT'}
+                      isChecked={formData.status === "NOT URGENT"}
                       onChange={handleChange}
                       colorScheme="gray"
                       size="lg"
@@ -376,6 +389,7 @@ export default function ContactSection() {
                       Not Urgent
                     </Checkbox>
                   </Flex>
+                  {/* Submit Button */}
                   <Button
                     type="submit"
                     size="2xl"
