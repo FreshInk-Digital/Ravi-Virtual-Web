@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import api from '../../api/api';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import api from "../../api/api";
 import {
   Box,
   Heading,
@@ -18,10 +19,12 @@ export default function TaxLawsDigest() {
   const [categoriesData, setCategoriesData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [error, setError] = useState(null); // State to track connection error
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch categories and books data from backend
-    api.get('/book-categories/')
+    api
+      .get("/book-categories/")
       .then((response) => {
         setCategoriesData(response.data);
         setError(null); // Reset error state on successful fetch
@@ -38,6 +41,24 @@ export default function TaxLawsDigest() {
     );
   };
 
+  const handleBookClick = (book) => {
+
+    // if (!book || !book.book) {
+    //   console.error("Invalid book object:", book);
+    //   return;
+    // }
+    if (book.sensitivity === "critical") {
+      // Navigate to the PdfViewer for critical books
+      navigate(`/pdf-viewer?file=${encodeURIComponent(book.book)}`);
+      // console.log('The book is ',book.book)
+      // alert("This is sensitive content!");
+    } else {
+      // Open the file directly
+      window.open(book.book, "_blank");
+    }
+  };
+
+  
   return (
     <Box mt="24px" px={{ md: "20px", base: "10px" }} fontFamily="Poppins">
       <Box
@@ -93,7 +114,7 @@ export default function TaxLawsDigest() {
                 </Text>
                 <Icon as={selectedCategory === category.name ? ChevronUpIcon : ChevronDownIcon} w={6} h={6} color="light_blue.a700" />
               </Flex>
-              
+
               {/* Book List for Selected Category */}
               <Collapse in={selectedCategory === category.name} animateOpacity>
                 <VStack align="start" mt="4" spacing="2">
@@ -106,8 +127,10 @@ export default function TaxLawsDigest() {
                         w="full"
                         borderRadius="md"
                         _hover={{ bg: "gray.100" }}
+                        onClick={() => handleBookClick(book)} // Handle book click
+                        cursor="pointer"
                       >
-                        <Text color="light_blue.a700" fontSize="md" as="a" href={book.book} target="_blank">
+                        <Text color="light_blue.a700" fontSize="md">
                           {book.name}
                         </Text>
                       </Box>

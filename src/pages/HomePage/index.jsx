@@ -19,10 +19,15 @@ export default function HomePagePage() {
   return (
     <>
       <Helmet>
-        <title>Ravi Ariv Institute Empowering Through Education</title>
+        <title>Ravi Ariv - Home</title>
         <meta
           name="description"
           content="Join the Ravi Ariv Institute and embrace Service Above Self with our free learning resources. Discover tax laws, advisory services, and capacity development for community betterment"
+        />
+
+        <meta
+          name="keywords"
+          content=" Ravi, Ravi Ariv Institute, ravimoova, tax, Tanzania tax consultant, Tanzania tax, Tax Health Check, Capacity Development, Tax exemption, Tax Judgments "
         />
       </Helmet>
       <Box bg="white.a700" w="100%">

@@ -6,6 +6,7 @@ import AboutUs from "pages/AboutUs";
 import Services from "pages/Services";
 import Publication from "pages/Publication";
 import LinkedTaxLaws from "pages/LinkedTaxLaws";
+import LinkedTax from "pages/LinkedTax";
 import TaxLaws from "pages/TaxLaws";
 import IncomeTaxActPage from "pages/IncomeTaxAct";
 import ServicesOne from "pages/ServicesOne";
@@ -13,6 +14,8 @@ import Login from "admin/pages/Login";
 import Dashboard from "admin/pages/Dashboard";
 import Profile from "admin/pages/Profile";
 import ProtectedRoute from "components/ProtectedRoute";
+import PdfViewer from "pages/PdfViewer";
+import Agent from "pages/Agent";
 
 function Logout() {
   localStorage.clear()
@@ -28,8 +31,11 @@ const ProjectRoutes = () => {
       <Route path="/publication" element={<Publication />} />
       <Route path="/tax-laws" element={<TaxLaws />} />
       <Route path="/linked-tax-laws" element={<LinkedTaxLaws />} />
+      <Route path="/linked-tax" element={<LinkedTax />} />
       <Route path="/income-tax-act" element={<IncomeTaxActPage />} />
       <Route path="/servicesone" element={<ServicesOne />} />
+      <Route path="/pdf-viewer" element={<PdfViewer />} />
+      <Route path="/agent-list" element={<Agent />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />
       

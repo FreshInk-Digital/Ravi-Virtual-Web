@@ -32,6 +32,7 @@ class BookSerializer(serializers.ModelSerializer):
             'book', 
             'name', 
             'description', 
+            'sensitivity',
             'date_created', 
             'last_update', 
             'category_name', 
@@ -42,7 +43,7 @@ class BookCategorySerializer(serializers.ModelSerializer):
     books = BookSerializer(many=True)  # Include related books for each category
     
     class Meta:
-        model = BookCategory
+        model = BookCategory 
         fields = ['id', 'name', 'books']
 
 
@@ -54,4 +55,16 @@ class PublicationSerializer(serializers.ModelSerializer):
 class MessagesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Messages
-        fields = ['user_name', 'email', 'message', 'status', 'date_created']
+        fields = ['user_name', 'email', 'phone', 'agent_code', 'location', 'agent_phone', 'message', 'status', 'date_created']
+
+class CasesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cases
+        fields = ['name', 'description', 'date_created', 'file_path']
+
+class AgentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Agent
+        fields = ['id', 'region', 'agent_code', 'first_name', 'last_name', 'phone', 'email']
+        read_only_fields = ['agent_code']
+
