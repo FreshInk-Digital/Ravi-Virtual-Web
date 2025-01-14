@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 from django.contrib.auth.models import User
 
 class BookCategory(models.Model):
@@ -75,21 +76,80 @@ class Messages(models.Model):
     
 
 class Cases(models.Model):
-    CATEGORY_CHOICES = [
-        ('Criminal', 'Criminal'),
-        ('Civil', 'Civil'),
-        ('Administrative', 'Administrative'),
-        ('Othe', 'Other'),
+    # Tax Type Choices
+    TAX_TYPE_CHOICES = [
+        ('Income Tax', 'Income Tax'),
+        ('Value Added Tax', 'Value Added Tax'),
+        ('Excise Duty', 'Excise Duty'),
+        ('Import Duty', 'Import Duty'),
+        ('Skills and Development Levy', 'Skills and Development Levy'),
+        ('Airport Departure Charges', 'Airport Departure Charges'),
+        ('Port Departure Charges', 'Port Departure Charges'),
+        ('Stamp Duty', 'Stamp Duty'),
+        ('Other', 'Other'),
     ]
 
-    name = models.CharField(max_length=255)  # Case name
-    description = models.TextField()  # Case description
+    # Tax Court Choices
+    TAX_COURT_CHOICES = [
+        ('Tax Revenue Appeals Board', 'Tax Revenue Appeals Board'),
+        ('Tax Revenue Appeals Tribunal', 'Tax Revenue Appeals Tribunal'),
+        ('Court of Appeal of Tanzania', 'Court of Appeal of Tanzania'),
+        ('High Court of Tanzania', 'High Court of Tanzania'),
+    ]
+
+    # Registry Choices (Regions of Tanzania)
+    REGISTRY_CHOICES = [
+        ('Arusha', 'Arusha'),
+        ('Dar es Salaam', 'Dar es Salaam'),
+        ('Dodoma', 'Dodoma'),
+        ('Geita', 'Geita'),
+        ('Iringa', 'Iringa'),
+        ('Kagera', 'Kagera'),
+        ('Katavi', 'Katavi'),
+        ('Kigoma', 'Kigoma'),
+        ('Kilimanjaro', 'Kilimanjaro'),
+        ('Lindi', 'Lindi'),
+        ('Manyara', 'Manyara'),
+        ('Mara', 'Mara'),
+        ('Mbeya', 'Mbeya'),
+        ('Morogoro', 'Morogoro'),
+        ('Mtwara', 'Mtwara'),
+        ('Mwanza', 'Mwanza'),
+        ('Njombe', 'Njombe'),
+        ('Pwani', 'Pwani'),
+        ('Rukwa', 'Rukwa'),
+        ('Ruvuma', 'Ruvuma'),
+        ('Shinyanga', 'Shinyanga'),
+        ('Simiyu', 'Simiyu'),
+        ('Singida', 'Singida'),
+        ('Songwe', 'Songwe'),
+        ('Tabora', 'Tabora'),
+        ('Tanga', 'Tanga'),
+        ('Mjini Magharibi', 'Mjini Magharibi'),
+        ('Kaskazini Unguja', 'Kaskazini Unguja'),
+        ('Kusini Unguja', 'Kusini Unguja'),
+        ('Kaskazini Pemba', 'Kaskazini Pemba'),
+        ('Kusini Pemba', 'Kusini Pemba'),
+    ]
+
+    CURRENT_YEAR = datetime.now().year
+    YEAR_CHOICES = [(year, str(year)) for year in range (1960 , CURRENT_YEAR + 1)]
+
+    case_number = models.CharField(max_length=20, null=True)  # Case number and year
+    plaintiff = models.CharField(max_length=255, null=True)  # Plaintiff
+    defendant = models.CharField(max_length=255, null=True) # Defendant
+    description = models.TextField(max_length=500, null=True)  # Description
+    tax_type = models.CharField(max_length=30, choices=TAX_TYPE_CHOICES, null=True)  # Tax Type
+    tax_court = models.CharField(max_length=50, choices=TAX_COURT_CHOICES, null=True)  # Tax Court
+    registry = models.CharField(max_length=30, choices=REGISTRY_CHOICES, null=True)  # Registry (Region)
+    originating_cases = models.TextField(max_length=255, null=True)  # Originating Case (allow multiple cases)
+    year = models.IntegerField(choices=YEAR_CHOICES, default=CURRENT_YEAR)
     date_created = models.DateField(auto_now_add=True)  # Date created
     file_path = models.FileField(upload_to='cases/files/')  # File associated with the case
-    category = models.CharField(max_length=14, choices=CATEGORY_CHOICES, default='Other')  # Category
 
     def __str__(self):
-        return self.name
+        return self.case_number or "Unnamed Case"
+
 
 
 class Agent(models.Model):

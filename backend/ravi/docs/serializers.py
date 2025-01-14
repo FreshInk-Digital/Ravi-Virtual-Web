@@ -60,7 +60,8 @@ class MessagesSerializer(serializers.ModelSerializer):
 class CasesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cases
-        fields = ['name', 'description', 'date_created', 'file_path']
+        fields = [
+            'case_number',  'plaintiff', 'defendant', 'description', 'tax_type', 'tax_court', 'registry', 'originating_cases', 'year',  'date_created', 'file_path',]
 
 class AgentSerializer(serializers.ModelSerializer):
     class Meta:

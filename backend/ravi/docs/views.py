@@ -48,7 +48,7 @@ class CasesViewSet(viewsets.ModelViewSet):
     serializer_class = CasesSerializer
     
     def get_permissions (self):
-        if self.action in ['list', 'retrieve']:
+        if self.action in ['create', 'list', 'retrieve']:
             return [AllowAny()]
         
         return [IsAuthenticated()]

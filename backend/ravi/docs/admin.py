@@ -29,8 +29,9 @@ class MessagesAdmin(admin.ModelAdmin):
 
 # Customize the Messages admin
 class CasesAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description', 'date_created')  # Display these fields in the list view
-    search_fields = ('name', 'description')  # Add a search bar for 'user_name' and 'email'
+    list_display = ('case_number', 'plaintiff', 'defendant', 'date_created')  # Display these fields in the list view
+    search_fields = ('case_number', 'plaintiff', 'defendant', 'description')  # Enable search on these fields
+
 
 class AgentAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'agent_code','phone', 'email', 'get_region_display', )

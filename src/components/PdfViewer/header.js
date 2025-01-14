@@ -17,7 +17,7 @@ export default function Header({ ...props }) {
     { name: "Services", path: "/services" },
     { name: "Publication", path: "/publication" },
     { name: "Tax Laws", path: "/tax-laws" },
-    // { name: "Linked Tax", path: "/linked-tax" },
+    { name: "Linked Tax", path: "/linked-tax" },
     { name: "Agents", path: "/agents" },
     // { name: "Linked Tax Laws", path: "/linked-tax-laws" },
   ];

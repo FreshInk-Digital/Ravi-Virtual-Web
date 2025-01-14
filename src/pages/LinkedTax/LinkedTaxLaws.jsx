@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import api from '../../api/api';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import api from "../../api/api";
 import {
   Box,
   Heading,
@@ -13,24 +13,24 @@ import {
   Alert,
   AlertIcon,
   Spinner,
-  InputRightElement,
   InputGroup,
   Input,
-  Image
+  InputRightElement,
+  Image,
 } from "@chakra-ui/react";
-import { CloseIcon } from "@chakra-ui/icons";
-
-export default function LinkedTax() {
+import {CloseIcon} from "@chakra-ui/icons"
+export default function TaxJudgmentsPanel() {
   const [casesData, setCasesData] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [searchBarValue, setSearchBarValue] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch cases data from the backend
-    api.get('/Cases/')
+    api
+      .get("/Cases/")
       .then((response) => {
         setCasesData(response.data);
         setError(null); // Reset error state on successful fetch
@@ -49,14 +49,19 @@ export default function LinkedTax() {
       console.error("Invalid case object:", caseItem);
       return;
     }
-    console.log('Selected case file path:', caseItem.file_path); // Log the file path
     navigate(`/pdf-viewer?file=${encodeURIComponent(caseItem.file_path)}`);
   };
 
-  // Filter cases based on search input
-  const filteredCases = casesData.filter((caseItem) =>
-    caseItem.name.toLowerCase().includes(searchBarValue.toLowerCase())
-  );
+  // Filter cases based on the search term
+  const filteredCases = casesData.filter((caseItem) => {
+    const lowerCaseTerm = searchTerm.toLowerCase();
+    return (
+      caseItem.case_number.toLowerCase().includes(lowerCaseTerm) ||
+      (caseItem.registry && caseItem.registry.toLowerCase().includes(lowerCaseTerm)) ||
+      caseItem.plaintiff.toLowerCase().includes(lowerCaseTerm) ||
+      caseItem.defendant.toLowerCase().includes(lowerCaseTerm)
+    );
+  });
 
   return (
     <Box mt="24px" px={{ md: "20px", base: "10px" }} fontFamily="Poppins">
@@ -73,27 +78,29 @@ export default function LinkedTax() {
         p="20px"
       >
         <Heading size="lg" as="h1" color="gray.900" textAlign="start">
-          Explore Tax Cases
+          Tax Judgments Panel
         </Heading>
 
-        {/* Search bar positioned more to the left */}
-        <InputGroup w={{ md: "24%", base: "100%" }} size="xs" mt="4">
-          <Input
-            placeholder={`Search Case`}
-            value={searchBarValue}
-            onChange={(e) => setSearchBarValue(e.target.value)}
-            color="light_blue.a700_7f"
-            fontFamily="Poppins"
-            borderRadius="4px"
-          />
-          <InputRightElement>
-            {searchBarValue?.length > 0 ? (
-              <CloseIcon onClick={() => setSearchBarValue("")} cursor="pointer" />
-            ) : (
-              <Image src="images/img_search.svg" alt="Search" h="20px" w="20px" />
-            )}
-          </InputRightElement>
-        </InputGroup>
+        {/* Single Search Bar */}
+        <Box mt="8">
+          <InputGroup>
+            <Input
+              placeholder="Search Case"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              borderRadius="4px"
+              width="25%"
+              height = "50px"
+            />
+            <InputRightElement>
+                {searchTerm?.length > 0 ? (
+                  <CloseIcon onClick={() => setSearchTerm("")} />
+                ) : (
+                  <Image src="images/img_search.svg" alt="Search" h="20px" w="20px" />
+                )}
+              </InputRightElement>
+          </InputGroup>
+        </Box>
 
         {isLoading ? (
           <Spinner size="lg" mt="10" color="blue.500" />
@@ -107,16 +114,20 @@ export default function LinkedTax() {
             <Table variant="striped" cursor="pointer">
               <Thead>
                 <Tr>
-                  <Th>Case Name</Th>
-                  <Th>Case Description</Th>
+                  <Th>Case Number</Th>
+                  <Th>Registry</Th>
+                  <Th>Plaintiff</Th>
+                  <Th>Defendant</Th>
                   <Th>Date Created</Th>
                 </Tr>
               </Thead>
               <Tbody>
                 {filteredCases.map((caseItem, index) => (
                   <Tr key={index} onClick={() => handleRowClick(caseItem)}>
-                    <Td>{caseItem.name}</Td>
-                    <Td>{caseItem.description}</Td>
+                    <Td>{caseItem.case_number}</Td>
+                    <Td>{caseItem.registry}</Td>
+                    <Td>{caseItem.plaintiff}</Td>
+                    <Td>{caseItem.defendant}</Td>
                     <Td>{new Date(caseItem.date_created).toLocaleDateString()}</Td>
                   </Tr>
                 ))}

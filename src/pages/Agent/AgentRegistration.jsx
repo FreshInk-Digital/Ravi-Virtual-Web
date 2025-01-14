@@ -31,6 +31,43 @@ export default function AgentRegistration() {
   const [messageLength, setMessageLength] = useState(0);
   const toast = useToast();
 
+  const REGION_CODES = {
+    Arusha: "01",
+    Dodoma: "02",
+    Geita: "03",
+    Ilala: "04",
+    Iringa: "05",
+    Kagera: "06",
+    Katavi: "07",
+    Kigoma: "08",
+    Kilimanjaro: "09",
+    Kinondoni: "10",
+    Lindi: "11",
+    Manyara: "12",
+    Mara: "13",
+    Mbeya: "14",
+    Morogoro: "15",
+    Mtwara: "16",
+    Mwanza: "17",
+    Njombe: "18",
+    "Pemba North": "19",
+    "Pemba South": "20",
+    Pwani: "21",
+    Rukwa: "22",
+    Ruvuma: "23",
+    Shinyanga: "24",
+    Simiyu: "25",
+    Singida: "26",
+    Songwe: "27",
+    Tabora: "28",
+    Tanga: "29",
+    Temeke: "30",
+    "Unguja North": "31",
+    "Unguja South": "32",
+    "Zanzibar City": "33",
+  };
+
+  
   const validatePhone = (phone) => {
     if (!phone.trim()) return "Phone number is required.";
     if (!/^[76]\d{8}$/.test(phone))
@@ -46,10 +83,21 @@ export default function AgentRegistration() {
   };
 
   // Validation for agent code
-  const validateAgentCode = (agent_code) => {
+  const validateAgentCode = (agent_code, location) => {
     if (!agent_code.trim()) return "Agent code is required.";
-    if (!/^RV-\d{2}-\d{2}$/.test(agent_code))
-      return "Invalid Code.";
+    // if (!/^RV-\d{2}-\d{2}$/.test(agent_code))
+    //   return "Invalid Code.";
+
+    const match = /^RV-(\d{2})-\d{2}$/.exec(agent_code);
+    if (!match) return "Invalid Code";
+
+    const regionCode = match [1];
+    const expectedRegionCode = REGION_CODES[formData.location];
+
+    if (!expectedRegionCode || regionCode !== expectedRegionCode){
+      return "Invalid Agent Code"
+    }
+
     return null;
   };
 
