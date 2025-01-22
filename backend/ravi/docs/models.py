@@ -97,6 +97,12 @@ class Cases(models.Model):
         ('High Court of Tanzania', 'High Court of Tanzania'),
     ]
 
+    TAX_CATEGORY_CHOICES = [
+        ('TRAB', 'TRAB'),
+        ('TRAT', 'TRAT'),
+        ('CAT', 'CAT'),
+    ]
+
     # Registry Choices (Regions of Tanzania)
     REGISTRY_CHOICES = [
         ('Arusha', 'Arusha'),
@@ -139,6 +145,7 @@ class Cases(models.Model):
     plaintiff = models.CharField(max_length=255, null=True)  # Plaintiff
     defendant = models.CharField(max_length=255, null=True) # Defendant
     description = models.TextField(max_length=500, null=True)  # Description
+    tax_category = models.CharField(max_length=30, choices=TAX_CATEGORY_CHOICES, null=True)
     tax_type = models.CharField(max_length=30, choices=TAX_TYPE_CHOICES, null=True)  # Tax Type
     tax_court = models.CharField(max_length=50, choices=TAX_COURT_CHOICES, null=True)  # Tax Court
     registry = models.CharField(max_length=30, choices=REGISTRY_CHOICES, null=True)  # Registry (Region)

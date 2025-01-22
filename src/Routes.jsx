@@ -16,6 +16,7 @@ import Profile from "admin/pages/Profile";
 import ProtectedRoute from "components/ProtectedRoute";
 import PdfViewer from "pages/PdfViewer";
 import Agent from "pages/Agent";
+import CaseDetails from "pages/LinkedTax/caseDetailsPage";
 
 function Logout() {
   localStorage.clear()
@@ -38,6 +39,7 @@ const ProjectRoutes = () => {
       <Route path="/agent-list" element={<Agent />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />
+      <Route path="/case-details" element={<CaseDetails />} />
       
       <Route
         path="/admin-dashboard"
@@ -57,7 +59,7 @@ const ProjectRoutes = () => {
         }
       />
 
-      <Route path="*" element={<NotFound />} />
+      {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
   );
 };
