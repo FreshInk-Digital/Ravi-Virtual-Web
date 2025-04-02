@@ -24,6 +24,7 @@ import {
   ModalBody,
   ModalFooter,
   Button,
+  Text,
   Stack,
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -44,13 +45,27 @@ export default function TaxJudgmentsPanel() {
   const navigate = useNavigate();
   const dropdownRef = useRef();
 
+  const casesPerPage = 20;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Calculate total pages
+  const totalPages = Math.ceil(filteredCases.length / casesPerPage);
+
+  // Get current cases to display
+  const indexOfLastCase = currentPage * casesPerPage;
+  const indexOfFirstCase = indexOfLastCase - casesPerPage;
+  const currentCases = filteredCases.slice(indexOfFirstCase, indexOfLastCase);
+
   useEffect(() => {
     // Fetch cases data from the backend
     api
       .get("/Cases/")
       .then((response) => {
-        setCasesData(response.data);
-        setFilteredCases(response.data); // Initialize filtered cases with all data
+        const sortedCases = response.data.sort((a, b) =>
+          b.case_code.localeCompare(a.case_code)
+        ); // Sort in descending order
+        setCasesData(sortedCases);
+        setFilteredCases(sortedCases); // Initialize filtered cases with sorted data
         setError(null); // Reset error state on successful fetch
       })
       .catch((error) => {
@@ -62,12 +77,11 @@ export default function TaxJudgmentsPanel() {
       });
   }, []);
 
-  const handleRowClick = (caseItem) => {
-    if (!caseItem) {
-      console.error("Invalid case object:", caseItem);
+  const handleRowClick = (caseItem, event) => {
+    // Prevent opening the modal if the click is on the "View Case" link
+    if (event.target.tagName === "A") {
       return;
     }
-
     setSelectedCase(caseItem); // Set the selected case for the modal
     setFileUrl(caseItem.file_path); // Set the file URL from the case
     setIsModalOpen(true); // Open the modal
@@ -85,19 +99,27 @@ export default function TaxJudgmentsPanel() {
 
     // Apply category filter
     if (selectedCategory) {
-      filtered = filtered.filter((caseItem) => caseItem.tax_category === selectedCategory);
+      filtered = filtered.filter(
+        (caseItem) => caseItem.court === selectedCategory
+      );
     }
 
     // Apply search filter
     if (searchTerm) {
       const lowerCaseTerm = searchTerm.toLowerCase();
-      filtered = filtered.filter(
-        (caseItem) =>
-          caseItem.case_number.toLowerCase().includes(lowerCaseTerm) ||
-          (caseItem.registry && caseItem.registry.toLowerCase().includes(lowerCaseTerm)) ||
-          caseItem.plaintiff.toLowerCase().includes(lowerCaseTerm) ||
-          caseItem.defendant.toLowerCase().includes(lowerCaseTerm)
-      );
+      filtered = filtered.filter((caseItem) => {
+        const caseNumber = caseItem.case_number || "";
+        const registry = caseItem.registry || "";
+        const appellant = caseItem.appellant || "";
+        const respondent = caseItem.respondent || "";
+
+        return (
+          caseNumber.toLowerCase().includes(lowerCaseTerm) ||
+          registry.toLowerCase().includes(lowerCaseTerm) ||
+          appellant.toLowerCase().includes(lowerCaseTerm) ||
+          respondent.toLowerCase().includes(lowerCaseTerm)
+        );
+      });
     }
 
     setFilteredCases(filtered);
@@ -107,9 +129,9 @@ export default function TaxJudgmentsPanel() {
     setDropdownVisible((prev) => !prev);
   };
 
-  const handleViewCase = () => {
-    if (fileUrl) {
-      window.open(fileUrl, '_blank'); // Opens the file in a new tab
+  const handleViewCase = (filePath) => {
+    if (filePath) {
+      window.open(filePath, "_blank"); // Opens the file in a new tab
     }
   };
 
@@ -170,7 +192,6 @@ export default function TaxJudgmentsPanel() {
               style={{ cursor: "pointer" }}
             />
 
-            {/* Dropdown Options */}
             {dropdownVisible && (
               <Box
                 ref={dropdownRef}
@@ -184,43 +205,46 @@ export default function TaxJudgmentsPanel() {
                 border="1px solid gray"
                 py="2"
                 width="200px"
+                maxHeight="200px" // Enable scrolling
+                overflowY="auto" // Enable scrolling
               >
-                <Box
-                  px="4"
-                  py="2"
-                  cursor="pointer"
-                  _hover={{ bg: "gray.100" }}
-                  onClick={() => {
-                    setSelectedCategory("TRAB");
-                    setDropdownVisible(false); // Close dropdown after selection
-                  }}
-                >
-                  TRAB
-                </Box>
-                <Box
-                  px="4"
-                  py="2"
-                  cursor="pointer"
-                  _hover={{ bg: "gray.100" }}
-                  onClick={() => {
-                    setSelectedCategory("TRAT");
-                    setDropdownVisible(false); // Close dropdown after selection
-                  }}
-                >
-                  TRAT
-                </Box>
-                <Box
-                  px="4"
-                  py="2"
-                  cursor="pointer"
-                  _hover={{ bg: "gray.100" }}
-                  onClick={() => {
-                    setSelectedCategory("CAT");
-                    setDropdownVisible(false); // Close dropdown after selection
-                  }}
-                >
-                  CAT
-                </Box>
+                {[
+                  { value: "TRAB", label: "TRAB" },
+                  { value: "TRAT", label: "TRAT" },
+                  { value: "CAT", label: "CAT" },
+                  { value: "HCT", label: "HCT" },
+                  {
+                    value: "UGANDA SUPREME COURT",
+                    label: "UGANDA SUPREME COURT",
+                  },
+                  {
+                    value: "KENYA SUPREME COURT",
+                    label: "KENYA SUPREME COURT",
+                  },
+                  { value: "UK SUPREME COURT", label: "UK SUPREME COURT" },
+                  {
+                    value: "INDIA SUPREME COURT",
+                    label: "INDIA SUPREME COURT",
+                  },
+                  {
+                    value: "AUSTRALIA SUPREME COURT",
+                    label: "AUSTRALIA SUPREME COURT",
+                  },
+                ].map((category) => (
+                  <Box
+                    key={category.value}
+                    px="4"
+                    py="2"
+                    cursor="pointer"
+                    _hover={{ bg: "gray.100" }}
+                    onClick={() => {
+                      setSelectedCategory(category.value);
+                      setDropdownVisible(false);
+                    }}
+                  >
+                    {category.label}
+                  </Box>
+                ))}
                 <Box
                   px="4"
                   py="2"
@@ -228,10 +252,10 @@ export default function TaxJudgmentsPanel() {
                   _hover={{ bg: "gray.100" }}
                   onClick={() => {
                     setSelectedCategory("");
-                    setDropdownVisible(false); // Close dropdown after selection
+                    setDropdownVisible(false);
                   }}
                 >
-                  All Categories
+                  ALL COURTS
                 </Box>
               </Box>
             )}
@@ -249,79 +273,127 @@ export default function TaxJudgmentsPanel() {
         ) : (
           <Box mt="10" overflowX="auto">
             <Table variant="striped" cursor="pointer">
-                <Thead>
-                  <Tr>
-                    <Th>Case Name</Th>
-                    <Th>Case Number</Th>
-                    <Th>Plaintiff</Th>
-                    <Th>Defendant</Th>
-                    <Th>Category</Th>
-                    <Th>Action</Th>
+              <Thead>
+                <Tr>
+                  <Th>Case Name</Th>
+                  <Th>Case Code</Th>
+                  <Th>Case Number</Th>
+                  <Th>Appellant</Th>
+                  <Th>Respondent</Th>
+                  <Th>Court</Th>
+                  <Th>Action</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                {currentCases.map((caseItem, index) => (
+                  <Tr
+                    key={index}
+                    onClick={(event) => handleRowClick(caseItem, event)}
+                  >
+                    <Td>
+                      {caseItem.appellant} Vs {caseItem.respondent}
+                    </Td>
+                    <Td>{caseItem.case_code}</Td>
+                    <Td>{caseItem.case_number}</Td>
+                    <Td>{caseItem.appellant}</Td>
+                    <Td>{caseItem.respondent}</Td>
+                    <Td>{caseItem.court}</Td>
+                    <Td>
+                      <a
+                        href={caseItem.file_path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Case
+                      </a>
+                    </Td>
                   </Tr>
-                </Thead>
-                <Tbody>
-                  {filteredCases.map((caseItem, index) => (
-                    <Tr key={index} onClick={() => handleRowClick(caseItem)}>
-                      <Td>
-                        {caseItem.case_number} {caseItem.plaintiff} Vs {caseItem.defendant}
-                      </Td>
-                      <Td>{caseItem.case_number}</Td>
-                      <Td>{caseItem.plaintiff}</Td>
-                      <Td>{caseItem.defendant}</Td>
-                      <Td>{caseItem.tax_category}</Td>
-                      <Td>
-                        {caseItem.file_path && (  // Assuming the file URL is under 'file_path' for each caseItem
-                          <Button onClick={() => handleViewCase(caseItem.file_path)} colorScheme="teal" width="90px" height="30px">
-                            View Case
-                          </Button>
-                        )}
-                      </Td>
-                    </Tr>
-                  ))}
-                </Tbody>
-              </Table>
+                ))}
+              </Tbody>
+            </Table>
 
+            {/* Pagination Controls */}
+            <Flex justify="center" mt="4" gap="4">
+              <Button
+                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                isDisabled={currentPage === 1}
+              >
+                Previous
+              </Button>
+              <Button
+                onClick={() =>
+                  setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                }
+                isDisabled={currentPage === totalPages}
+              >
+                Next
+              </Button>
+            </Flex>
           </Box>
         )}
       </Box>
 
       {/* Modal */}
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
+      <Modal isOpen={isModalOpen} onClose={closeModal} size="lg">
         <ModalOverlay />
-        <ModalContent bg="white" p="3" boxShadow="lg">
-          <ModalHeader>Case Details</ModalHeader>
-          <ModalCloseButton />
+        <ModalContent bg="white" p="6" boxShadow="2xl" borderRadius="12px">
+          <ModalHeader textAlign="center" position="relative" pt="8">
+            <ModalCloseButton position="absolute" right="4" top="4" />
+            <Text
+              fontSize="2xl"
+              fontWeight="bold"
+              color="light_blue.a700"
+              mt="4"
+            >
+              {selectedCase?.appellant} Vs {selectedCase?.respondent}
+            </Text>
+          </ModalHeader>
           <ModalBody>
-            {selectedCase && (
+            <Stack spacing="4" fontSize="md" fontFamily="Poppins">
               <Box>
-                <Stack spacing={4}>
-                  <p><strong>Case Number:</strong> {selectedCase.case_number}</p>
-                  <p><strong>Plaintiff:</strong> {selectedCase.plaintiff}</p>
-                  <p><strong>Defendant:</strong> {selectedCase.defendant}</p>
-                  <p><strong>Tax Category:</strong> {selectedCase.tax_category}</p>
-                  <p><strong>Registry:</strong> {selectedCase.registry}</p>
-                  <p><strong>Description:</strong> {selectedCase.description}</p>
-                  {/* <p><strong>Date Filed:</strong> {selectedCase.date_filed}</p> */}
-                </Stack>
+                <strong>Case Code:</strong> {selectedCase?.case_code}
               </Box>
-            )}
+              <Box>
+                <strong>Case Number:</strong> {selectedCase?.case_number}
+              </Box>
+              <Box>
+                <strong>Appellant:</strong> {selectedCase?.appellant}
+              </Box>
+              <Box>
+                <strong>Respondent:</strong> {selectedCase?.respondent}
+              </Box>
+              <Box>
+                <strong>Year:</strong> {selectedCase?.year}
+              </Box>
+              <Box>
+                <strong>Court:</strong> {selectedCase?.court}
+              </Box>
+              <Box>
+                <strong>Description:</strong> {selectedCase?.description}
+              </Box>
+              <Button
+                mt="4"
+                colorScheme="blue"
+                onClick={() => handleViewCase(fileUrl)}
+                size="lg"
+                width="100%"
+              >
+                Download/View
+              </Button>
+            </Stack>
           </ModalBody>
           <ModalFooter>
-  <Flex width="100%" justifyContent="space-between" alignItems="center">
-    {fileUrl && (
-      <Button onClick={handleViewCase} colorScheme="teal">
-        View Case
-      </Button>
-    )}
-    <Button onClick={closeModal} colorScheme="blue">
-      Close
-    </Button>
-  </Flex>
-</ModalFooter>
-
+            <Button
+              variant="ghost"
+              onClick={closeModal}
+              size="lg"
+              fontFamily="Poppins"
+            >
+              Close
+            </Button>
+          </ModalFooter>
         </ModalContent>
       </Modal>
-
     </Box>
   );
 }

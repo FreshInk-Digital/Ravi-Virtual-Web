@@ -31,6 +31,7 @@ class BookSerializer(serializers.ModelSerializer):
             'id', 
             'book', 
             'name', 
+            'year',
             'description', 
             'sensitivity',
             'date_created', 
@@ -61,7 +62,7 @@ class CasesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cases
         fields = [
-           'id', 'case_number',  'plaintiff', 'defendant', 'description', 'tax_category', 'tax_type', 'tax_court', 'registry', 'originating_cases', 'year',  'date_created', 'file_path',]
+           'id', 'case_number', 'case_code',  'appellant', 'respondent', 'description', 'court', 'tax_type', 'tax_court', 'originating_cases', 'year',  'date_created', 'file_path',]
 
 class AgentSerializer(serializers.ModelSerializer):
     class Meta:

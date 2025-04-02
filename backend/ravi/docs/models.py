@@ -13,6 +13,9 @@ class BookCategory(models.Model):
 
 
 class Book(models.Model):    
+    CURRENT_YEAR = datetime.now().year
+    YEAR_CHOICES = [(year, str(year)) for year in range (1960 , CURRENT_YEAR + 1)]
+
     book = models.FileField(upload_to='attachments/', blank=True, null=True)
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
@@ -20,6 +23,7 @@ class Book(models.Model):
     last_update = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(BookCategory, on_delete=models.CASCADE, related_name="books")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="books")
+    year = models.IntegerField(choices=YEAR_CHOICES, default=CURRENT_YEAR)
 
     SENSITIVITY_CHOICES = [
         ('critical', 'critical'),
@@ -97,58 +101,29 @@ class Cases(models.Model):
         ('High Court of Tanzania', 'High Court of Tanzania'),
     ]
 
-    TAX_CATEGORY_CHOICES = [
+    COURT_CHOICES = [
         ('TRAB', 'TRAB'),
         ('TRAT', 'TRAT'),
         ('CAT', 'CAT'),
+        ('HCT', 'HCT'),
+        ('UGANDA SUPREME COURT', 'UGANDA SUPREME COURT'),
+        ('KENYA SUPREME COURT', 'KENYA SUPREME COURT'),
+        ('UK SUPREME COURT', 'UK SUPREME COURT'),
+        ('INDIA SUPREME COURT', 'INDIA SUPREME COURT'),
+        ('AUSTRALIA SUPREME COURT', 'AUSTRALIA SUPREME COURT'),
     ]
 
-    # Registry Choices (Regions of Tanzania)
-    REGISTRY_CHOICES = [
-        ('Arusha', 'Arusha'),
-        ('Dar es Salaam', 'Dar es Salaam'),
-        ('Dodoma', 'Dodoma'),
-        ('Geita', 'Geita'),
-        ('Iringa', 'Iringa'),
-        ('Kagera', 'Kagera'),
-        ('Katavi', 'Katavi'),
-        ('Kigoma', 'Kigoma'),
-        ('Kilimanjaro', 'Kilimanjaro'),
-        ('Lindi', 'Lindi'),
-        ('Manyara', 'Manyara'),
-        ('Mara', 'Mara'),
-        ('Mbeya', 'Mbeya'),
-        ('Morogoro', 'Morogoro'),
-        ('Mtwara', 'Mtwara'),
-        ('Mwanza', 'Mwanza'),
-        ('Njombe', 'Njombe'),
-        ('Pwani', 'Pwani'),
-        ('Rukwa', 'Rukwa'),
-        ('Ruvuma', 'Ruvuma'),
-        ('Shinyanga', 'Shinyanga'),
-        ('Simiyu', 'Simiyu'),
-        ('Singida', 'Singida'),
-        ('Songwe', 'Songwe'),
-        ('Tabora', 'Tabora'),
-        ('Tanga', 'Tanga'),
-        ('Mjini Magharibi', 'Mjini Magharibi'),
-        ('Kaskazini Unguja', 'Kaskazini Unguja'),
-        ('Kusini Unguja', 'Kusini Unguja'),
-        ('Kaskazini Pemba', 'Kaskazini Pemba'),
-        ('Kusini Pemba', 'Kusini Pemba'),
-    ]
-
+    
     CURRENT_YEAR = datetime.now().year
     YEAR_CHOICES = [(year, str(year)) for year in range (1960 , CURRENT_YEAR + 1)]
-
+    case_code = models.CharField(max_length=20,null=True)
     case_number = models.CharField(max_length=20, null=True)  # Case number and year
-    plaintiff = models.CharField(max_length=255, null=True)  # Plaintiff
-    defendant = models.CharField(max_length=255, null=True) # Defendant
+    appellant = models.CharField(max_length=255, null=True)  # Plaintiff
+    respondent = models.CharField(max_length=255, null=True) # Defendant
     description = models.TextField(max_length=500, null=True)  # Description
-    tax_category = models.CharField(max_length=30, choices=TAX_CATEGORY_CHOICES, null=True)
+    court = models.CharField(max_length=30, choices=COURT_CHOICES, null=True)
     tax_type = models.CharField(max_length=30, choices=TAX_TYPE_CHOICES, null=True)  # Tax Type
     tax_court = models.CharField(max_length=50, choices=TAX_COURT_CHOICES, null=True)  # Tax Court
-    registry = models.CharField(max_length=30, choices=REGISTRY_CHOICES, null=True)  # Registry (Region)
     originating_cases = models.TextField(max_length=255, null=True)  # Originating Case (allow multiple cases)
     year = models.IntegerField(choices=YEAR_CHOICES, default=CURRENT_YEAR)
     date_created = models.DateField(auto_now_add=True)  # Date created

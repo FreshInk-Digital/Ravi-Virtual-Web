@@ -3,7 +3,15 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
-import { InputRightElement, InputGroup, Input, UnorderedList, ListItem, Container, Heading } from "@chakra-ui/react";
+import {
+  InputRightElement,
+  InputGroup,
+  Input,
+  UnorderedList,
+  ListItem,
+  Container,
+  Heading,
+} from "@chakra-ui/react";
 
 export default function Header({ ...props }) {
   const [searchBarValue, setSearchBarValue] = React.useState("");
@@ -17,7 +25,7 @@ export default function Header({ ...props }) {
     { name: "Services", path: "/services" },
     { name: "Publication", path: "/publication" },
     { name: "Tax Laws", path: "/tax-laws" },
-    { name: "Tax Cases", path: "/linked-tax" },
+    { name: "Tax Judgements", path: "/linked-tax" },
     { name: "Agents", path: "/agent-list" },
     // { name: "Linked Tax Laws", path: "/linked-tax-laws" },
   ];
@@ -44,13 +52,33 @@ export default function Header({ ...props }) {
       </Box>
 
       {/* Header with text */}
-      <Flex bg="light_blue.a700" alignSelf="stretch" justifyContent="center" py="12px">
-        <Container display="flex" justifyContent="center" px={{ md: "8px", base: "20px" }}>
-          <Flex w={{ md: "100%", base: "100%" }} flexDirection="column" alignItems="center" textAlign="center">
+      <Flex
+        bg="light_blue.a700"
+        alignSelf="stretch"
+        justifyContent="center"
+        py="12px"
+      >
+        <Container
+          display="flex"
+          justifyContent="center"
+          px={{ md: "8px", base: "20px" }}
+        >
+          <Flex
+            w={{ md: "100%", base: "100%" }}
+            flexDirection="column"
+            alignItems="center"
+            textAlign="center"
+          >
             <Text color="gray.50" fontFamily="Poppins">
               Ravi Ariv Virtual Institute "Service Above Self" - Learn Free
             </Text>
-            <Heading size="headings" as="h6" color="gray.50" fontFamily="Poppins" textDecoration="underline">
+            <Heading
+              size="headings"
+              as="h6"
+              color="gray.50"
+              fontFamily="Poppins"
+              textDecoration="underline"
+            >
               Learn Now
             </Heading>
           </Flex>
@@ -90,8 +118,13 @@ export default function Header({ ...props }) {
               <Link
                 key={link.name}
                 href={link.path}
-                _hover={{ textDecoration: "underline", color: "light_blue.a500" }}
-                color={isActive(link.path) ? "light_blue.a700" : "light_blue.a700"}
+                _hover={{
+                  textDecoration: "underline",
+                  color: "light_blue.a500",
+                }}
+                color={
+                  isActive(link.path) ? "light_blue.a700" : "light_blue.a700"
+                }
                 textDecoration={isActive(link.path) ? "underline" : "none"}
                 fontFamily="Poppins"
               >
@@ -109,7 +142,9 @@ export default function Header({ ...props }) {
                 style={{
                   position: "absolute",
                   bottom: "-2px",
-                  left: `calc(${activeLinkIndex * 20}% + ${activeLinkIndex * 40}px)`,
+                  left: `calc(${activeLinkIndex * 20}% + ${
+                    activeLinkIndex * 40
+                  }px)`,
                   width: "80px",
                   height: "2px",
                   background: "light_blue.a700",
@@ -141,9 +176,18 @@ export default function Header({ ...props }) {
                   <ListItem key={link.name} onClick={handleMenuToggle}>
                     <Link
                       href={link.path}
-                      _hover={{ textDecoration: "underline", color: "light_blue.a500" }}
-                      color={isActive(link.path) ? "light_blue.a700" : "light_blue.a700"}
-                      textDecoration={isActive(link.path) ? "underline" : "none"}
+                      _hover={{
+                        textDecoration: "underline",
+                        color: "light_blue.a500",
+                      }}
+                      color={
+                        isActive(link.path)
+                          ? "light_blue.a700"
+                          : "light_blue.a700"
+                      }
+                      textDecoration={
+                        isActive(link.path) ? "underline" : "none"
+                      }
                       fontFamily="Poppins"
                     >
                       <Text size="textmd" as="span">
@@ -170,7 +214,12 @@ export default function Header({ ...props }) {
               {searchBarValue?.length > 0 ? (
                 <CloseIcon onClick={() => setSearchBarValue("")} />
               ) : (
-                <Image src="images/img_search.svg" alt="Search" h="20px" w="20px" />
+                <Image
+                  src="images/img_search.svg"
+                  alt="Search"
+                  h="20px"
+                  w="20px"
+                />
               )}
             </InputRightElement>
           </InputGroup>

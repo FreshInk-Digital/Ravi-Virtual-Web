@@ -19,8 +19,8 @@ import Agent from "pages/Agent";
 import CaseDetails from "pages/LinkedTax/caseDetailsPage";
 
 function Logout() {
-  localStorage.clear()
-  return <Navigate to="/login" />
+  localStorage.clear();
+  return <Navigate to="/login" />;
 }
 
 const ProjectRoutes = () => {
@@ -40,7 +40,7 @@ const ProjectRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />
       <Route path="/case-details" element={<CaseDetails />} />
-      
+
       <Route
         path="/admin-dashboard"
         element={
@@ -59,7 +59,7 @@ const ProjectRoutes = () => {
         }
       />
 
-      {/* <Route path="*" element={<NotFound />} /> */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
