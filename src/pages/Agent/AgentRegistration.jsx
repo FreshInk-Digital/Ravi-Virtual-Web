@@ -17,13 +17,10 @@ import sendSms from "../../api/agentSms"; // Adjusted import
 
 export default function AgentRegistration() {
   const [formData, setFormData] = useState({
-    user_name: "",
-    email: "",
     agent_code: "",
     location: "",
     agent_phone: "",
     message: "",
-    phone: "",
     status: "NOT URGENT",
   });
 
@@ -67,13 +64,6 @@ export default function AgentRegistration() {
     "Zanzibar City": "33",
   };
 
-  
-  const validatePhone = (phone) => {
-    if (!phone.trim()) return "Phone number is required.";
-    if (!/^[76]\d{8}$/.test(phone))
-      return "Phone number must start with 7 or 6 and be 9 digits long.";
-    return null;
-  };
 
   const validateAgentPhone = (agent_phone) => {
     if (!agent_phone.trim()) return "Phone number is required.";
@@ -90,7 +80,7 @@ export default function AgentRegistration() {
 
     const match = /^RV-(\d{2})-\d{2}$/.exec(agent_code);
     if (!match) return "Invalid Code";
-
+    // eslint-disable-next-line
     const regionCode = match [1];
     const expectedRegionCode = REGION_CODES[formData.location];
 
@@ -103,14 +93,8 @@ export default function AgentRegistration() {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.user_name.trim()) newErrors.user_name = "Name is required.";
     if (!formData.agent_code.trim())
-      newErrors.agent_code = "Agent Name is required.";
-    if (!formData.email.trim()) newErrors.email = "Email is required.";
-    else if (
-      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)
-    )
-      newErrors.email = "Email address is invalid.";
+      newErrors.agent_code = "Agent code is required.";
     if (!formData.location.trim())
       newErrors.location = "Location is required.";
     if (!formData.message.trim()) newErrors.message = "Message is required.";
@@ -120,12 +104,7 @@ export default function AgentRegistration() {
     const agentCodeError = validateAgentCode(formData.agent_code);
     if (agentCodeError) newErrors.agent_code = agentCodeError;
   
-    const phoneError = validatePhone(formData.phone);
-    if (phoneError) newErrors.phone = phoneError;
-
-    const agentphoneError = validatePhone(formData.agent_phone);
-    if (phoneError) newErrors.agent_phone = agentphoneError;
-    setErrors(newErrors);
+    
     return Object.keys(newErrors).length === 0;
   };
   
@@ -140,13 +119,7 @@ export default function AgentRegistration() {
       [name]: type === "checkbox" ? (checked ? value : "") : value,
     }));
 
-    if (name === "phone") {
-      const phoneError = validatePhone(value);
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        phone: phoneError,
-      }));
-    } else if(name === "agent_phone"){
+    if(name === "agent_phone"){
       const agentphoneError = validateAgentPhone(value);
       // console.log('agent phone: ', value)
       setErrors((prevErrors) => ({
@@ -174,7 +147,6 @@ export default function AgentRegistration() {
 
     const updatedFormData = {
       ...formData,
-      phone: `255${formData.phone}`,
     };
     // console.log('agent phone: ', formData.agent_phone)
     toast({
@@ -201,13 +173,10 @@ export default function AgentRegistration() {
         });
 
         setFormData({
-          user_name: "",
-          email: "",
           agent_code: "",
           location: "",
           agent_phone: "",
           message: "",
-          phone: "",
           status: "NOT URGENT",
         });
         setMessageLength(0);
@@ -320,83 +289,8 @@ export default function AgentRegistration() {
                   alignSelf="stretch"
                 >
                   {/* Input Fields */}
-                  <Flex
-                    flexDirection={{ md: "row", base: "column" }}
-                    gap="16px"
-                    w="100%"
-                  >
-                    <Box w="100%" display="flex" alignItems="center">
-                      <Input
-                        size="md"
-                        name="user_name"
-                        value={formData.user_name}
-                        onChange={handleChange}
-                        placeholder="Client Name *"
-                        type="text"
-                        fontFamily="Poppins"
-                        w="100%"
-                        borderRadius="4px"
-                      />
-                      {errors.user_name && (
-                        <Box color="red.500" mt="2px">
-                          {errors.user_name}
-                        </Box>
-                      )}
-                    </Box>
-                    <Box w="100%" display="flex" alignItems="center">
-                      <Input
-                        size="md"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="Client Email *"
-                        type="email"
-                        fontFamily="Poppins"
-                        w="100%"
-                        borderRadius="4px"
-                      />
-                      {errors.email && (
-                        <Box color="red.500" mt="2px">
-                          {errors.email}
-                        </Box>
-                      )}
-                    </Box>
-                    <Box w="100%">
-                      {/* Phone Input with Validation */}
-                      <Box w="100%" display="flex" alignItems="center">
-                        <Box
-                          bg="gray.100"
-                          px="10px"
-                          py="14px"
-                          borderLeftRadius="4px"
-                          border="0.2px"
-                          borderColor="gray.300"
-                        >
-                          +255
-                        </Box>
-                        <Input
-                          size="md"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          onKeyPress={handleKeyPress}
-                          maxLength={9} // Limit to 9 digits
-                          placeholder="Client Phone Number"
-                          type="text"
-                          fontFamily="Poppins"
-                          w="100%"
-                          borderRadius="0 4px 4px 0"
-                          border="0.2px"
-                          borderColor="gray.300"
-                        />
-                      </Box>
-                      {errors.phone && (
-                        <Box color="red.500" mt="2px">
-                          {errors.phone}
-                        </Box>
-                      )}
-                    </Box>
-                  </Flex>
+                  
+                    
 
                   <Flex
                     flexDirection={{ md: "row", base: "column" }}

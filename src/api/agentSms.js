@@ -6,13 +6,13 @@ const secret_key =
 const content_type = "application/json";
 const source_addr = "RAVIAPP";
 
-async function send_sms({ user_name, email, phone, agent_code, location, agent_phone, message, status }) {
+async function send_sms({  agent_code, location, agent_phone, message, status }) {
   // Normalize the email to ensure special characters like '@' are properly encoded
-  const sanitizedEmail = email.normalize("NFKC");
+  // const sanitizedEmail = email.normalize("NFKC");
 
   // Construct the SMS message with the sanitized email
   const sms_message = 
-        `Agent Details \nCode: ${agent_code}\nTax Region: ${location}\nPhone: +255${agent_phone}\n\nClient Details \nName: ${user_name}\nEmail: ${sanitizedEmail}\nPhone: +${phone}\n\nMessage: ${message}\nStatus: ${status}\n`;
+        `Agent Details \nCode: ${agent_code}\nTax Region: ${location}\nPhone: +255${agent_phone}\n\nMessage: ${message}\nStatus: ${status}\n`;
 
   try {
     // Send primary message to recipients
@@ -44,26 +44,26 @@ async function send_sms({ user_name, email, phone, agent_code, location, agent_p
     console.log("Message sent to recipients:", response.data);
 
     // Prepare and send confirmation message to the sender
-    const confirmation_message = `Dear ${user_name},\nThank you for contacting RAVI. Your request has been received. We will contact you soon.`;
-    const confirmationResponse = await axios.post(
-      "https://apisms.beem.africa/v1/send",
-      {
-        source_addr: source_addr,
-        schedule_time: "",
-        encoding: 0,
-        message: confirmation_message,
-        recipients: [{ recipient_id: 6, dest_addr: phone }],
-      },
-      {
-        headers: {
-          "Content-Type": content_type,
-          Authorization: "Basic " + btoa(api_key + ":" + secret_key),
-        },
-      }
-    );
+    // const confirmation_message = `Dear ${user_name},\nThank you for contacting RAVI. Your request has been received. We will contact you soon.`;
+    // const confirmationResponse = await axios.post(
+    //   "https://apisms.beem.africa/v1/send",
+    //   {
+    //     source_addr: source_addr,
+    //     schedule_time: "",
+    //     encoding: 0,
+    //     message: confirmation_message,
+    //     recipients: [{ recipient_id: 6, dest_addr: phone }],
+    //   },
+    //   {
+    //     headers: {
+    //       "Content-Type": content_type,
+    //       Authorization: "Basic " + btoa(api_key + ":" + secret_key),
+    //     },
+    //   }
+    // );
 
     // Log success of confirmation
-    console.log("Confirmation sent to sender:", confirmationResponse.data);
+    // console.log("Confirmation sent to sender:", confirmationResponse.data);
 
     return { success: true, message: "Your message has been sent successfully. We will get back to you shortly." };
   } catch (error) {

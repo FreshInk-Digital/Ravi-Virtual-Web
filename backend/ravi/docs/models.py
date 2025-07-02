@@ -57,8 +57,8 @@ class Messages(models.Model):
         (NOT_URGENT, 'Not Urgent'),
     ]
 
-    user_name = models.CharField(max_length=255)
-    email = models.EmailField(max_length=255 )
+    user_name = models.CharField(max_length=255, default="")
+    email = models.EmailField(max_length=255, default="")
     phone = models.CharField(max_length=255, default="")
     agent_code = models.CharField(max_length=255, default="")
     location = models.CharField(max_length=255, default="")
