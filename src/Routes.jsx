@@ -15,7 +15,7 @@ import Dashboard from "admin/pages/Dashboard";
 import Profile from "admin/pages/Profile";
 import ProtectedRoute from "components/ProtectedRoute";
 import PdfViewer from "pages/PdfViewer";
-import Agent from "pages/Agent";
+import Collaboration from "pages/Collaboration";
 import CaseDetails from "pages/LinkedTax/caseDetailsPage";
 
 function Logout() {
@@ -36,7 +36,7 @@ const ProjectRoutes = () => {
       <Route path="/income-tax-act" element={<IncomeTaxActPage />} />
       <Route path="/servicesone" element={<ServicesOne />} />
       <Route path="/pdf-viewer" element={<PdfViewer />} />
-      <Route path="/agent-list" element={<Agent />} />
+      <Route path="/Collaboration" element={<Collaboration />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />
       <Route path="/case-details" element={<CaseDetails />} />
