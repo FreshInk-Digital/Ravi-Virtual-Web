@@ -46,6 +46,7 @@ backend/ravi/.env.*
 .idea/
 backend/ravi/.vscode/
 backend/ravi/.idea/
+backend.zip
 
 # OS-Specific Files
 backend/ravi/.DS_Store

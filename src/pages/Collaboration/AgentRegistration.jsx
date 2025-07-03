@@ -303,7 +303,7 @@ export default function AgentRegistration() {
                         name="agent_code"
                         value={formData.agent_code}
                         onChange={handleChange}
-                        placeholder="Agent Code *"
+                        placeholder="Collaborator Code *"
                         type="text"
                         fontFamily="Poppins"
                         w="100%"
@@ -387,7 +387,7 @@ export default function AgentRegistration() {
                           onChange={handleChange}
                           onKeyPress={handleKeyPress}
                           maxLength={9} // Limit to 9 digits
-                          placeholder="Agent Phone Number"
+                          placeholder="Phone Number *"
                           type="text"
                           fontFamily="Poppins"
                           w="100%"
