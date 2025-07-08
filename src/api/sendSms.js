@@ -66,7 +66,7 @@ async function send_sms({ user_name, email, phone, message, status }) {
     return { success: true, message: "Your message has been sent successfully. We will get back to you shortly." };
   } catch (error) {
     const errorMessage =
-      error.response?.data?.message || error.message || "Error sending SMS.";
+      error.response?.data?.message || error.message || "Failed to send SMS.";
     console.error("Error in SMS process:", errorMessage);
 
     // Return failure with error message
