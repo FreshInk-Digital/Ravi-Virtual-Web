@@ -1,8 +1,8 @@
 from django.contrib.auth.models import User
 from rest_framework import viewsets, status, generics
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from .models import Publication, Messages, Book, BookCategory, Cases, Agent
-from .serializers import PublicationSerializer, MessagesSerializer, CasesSerializer, BookSerializer, BookCategorySerializer, AgentSerializer
+from .models import Publication, Messages, Book, BookCategory, Cases, Collaborator
+from .serializers import PublicationSerializer, MessagesSerializer, CasesSerializer, BookSerializer, BookCategorySerializer, CollaboratorSerializer
 from django.http import FileResponse, HttpResponseForbidden
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -111,9 +111,9 @@ def stream_book(request, book_id):
 
 
 
-class AgentViewSet(viewsets.ModelViewSet):
-    queryset = Agent.objects.all()
-    serializer_class = AgentSerializer
+class CollaboratorViewSet(viewsets.ModelViewSet):
+    queryset = Collaborator.objects.all()
+    serializer_class = CollaboratorSerializer
     
     # def get_permissions (self):
     #     if self.action in ['list', 'retrieve', 'create', 'get', 'add']:

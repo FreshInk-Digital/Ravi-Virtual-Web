@@ -56,7 +56,7 @@ class PublicationSerializer(serializers.ModelSerializer):
 class MessagesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Messages
-        fields = ['user_name', 'email', 'phone', 'agent_code', 'location', 'agent_phone', 'message', 'status', 'date_created']
+        fields = ['user_name', 'email', 'phone', 'collaborator_code', 'location', 'collaborator_phone', 'message', 'status', 'date_created']
 
 class CasesSerializer(serializers.ModelSerializer):
     class Meta:
@@ -64,9 +64,9 @@ class CasesSerializer(serializers.ModelSerializer):
         fields = [
            'id', 'case_number', 'case_code',  'appellant', 'respondent', 'description', 'court', 'tax_type', 'tax_court', 'originating_cases', 'year',  'date_created', 'file_path',]
 
-class AgentSerializer(serializers.ModelSerializer):
+class CollaboratorSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Agent
-        fields = ['id', 'region', 'agent_code', 'first_name', 'last_name', 'phone', 'email']
-        read_only_fields = ['agent_code']
+        model = Collaborator
+        fields = ['id', 'region', 'collaborator_code', 'first_name', 'last_name', 'phone', 'email']
+        read_only_fields = ['collaborator_code']
 

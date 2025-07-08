@@ -60,9 +60,9 @@ class Messages(models.Model):
     user_name = models.CharField(max_length=255, default="")
     email = models.EmailField(max_length=255, default="")
     phone = models.CharField(max_length=255, default="")
-    agent_code = models.CharField(max_length=255, default="")
+    collaborator_code = models.CharField(max_length=255, default="")
     location = models.CharField(max_length=255, default="")
-    agent_phone = models.CharField(max_length=255, default="")
+    collaborator_phone = models.CharField(max_length=255, default="")
     message = models.CharField(max_length=255)
     
     date_created = models.DateTimeField(auto_now_add=True)
@@ -134,57 +134,56 @@ class Cases(models.Model):
 
 
 
-class Agent(models.Model):
+class Collaborator(models.Model):
     REGION_CHOICES = [
         ('01', 'Arusha'),
-        ('02', 'Dodoma'),
-        ('03', 'Geita'),
-        ('04', 'Ilala'),
+        ('02', 'Dar es salaam'),
+        ('03', 'Dodoma'),
+        ('04', 'Geita'),
         ('05', 'Iringa'),
         ('06', 'Kagera'),
         ('07', 'Katavi'),
         ('08', 'Kigoma'),
         ('09', 'Kilimanjaro'),
-        ('10', 'Kinondoni'),
-        ('11', 'Lindi'),
-        ('12', 'Manyara'),
-        ('13', 'Mara'),
-        ('14', 'Mbeya'),
-        ('15', 'Morogoro'),
-        ('16', 'Mtwara'),
-        ('17', 'Mwanza'),
-        ('18', 'Njombe'),
-        ('19', 'Pemba North'),
-        ('20', 'Pemba South'),
-        ('21', 'Pwani'),
-        ('22', 'Rukwa'),
-        ('23', 'Ruvuma'),
-        ('24', 'Shinyanga'),
-        ('25', 'Simiyu'),
-        ('26', 'Singida'),
-        ('27', 'Songwe'),
-        ('28', 'Tabora'),
-        ('29', 'Tanga'),
-        ('30', 'Temeke'),
-        ('31', 'Unguja North'),
-        ('32', 'Unguja South'),
-        ('33', 'Zanzibar City'),
+        ('10', 'Lindi'),
+        ('11', 'Manyara'),
+        ('12', 'Mara'),
+        ('13', 'Mbeya'),
+        ('14', 'Morogoro'),
+        ('15', 'Mtwara'),
+        ('16', 'Mwanza'),
+        ('17', 'Njombe'),
+        ('18', 'Pemba North'),
+        ('19', 'Pemba South'),
+        ('20', 'Pwani'),
+        ('21', 'Rukwa'),
+        ('22', 'Ruvuma'),
+        ('23', 'Shinyanga'),
+        ('24', 'Simiyu'),
+        ('25', 'Singida'),
+        ('26', 'Songwe'),
+        ('27', 'Tabora'),
+        ('28', 'Tanga'),
+        ('29', 'Temeke'),
+        ('30', 'Unguja North'),
+        ('31', 'Unguja South'),
+        ('32', 'Zanzibar City'),
     ]
     
     region = models.CharField(max_length=2, choices=REGION_CHOICES)
-    agent_code = models.CharField(max_length=15, unique=True, null=True, blank=True, editable=False)
+    collaborator_code = models.CharField(max_length=15, unique=True, null=True, blank=True, editable=False)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     phone = models.CharField(max_length=15, unique=True)
     email = models.EmailField(unique=True)
     
     def save(self, *args, **kwargs):
-        if not self.agent_code:
-            # Count agents in the same region
-            region_agents = Agent.objects.filter(region=self.region).count() + 1
-            self.agent_code = f"RV-{self.region}-{region_agents:02d}"
+        if not self.collaborator_code:
+            # Count collaborators in the same region
+            region_collaborators = Collaborator.objects.filter(region=self.region).count() + 1
+            self.collaborator_code = f"RV-{self.region}-{region_collaborators:02d}"
         super().save(*args, **kwargs)
 
     def __str__(self):
         region_name = dict(self.REGION_CHOICES).get(self.region, "Unknown Region")
-        return f"{self.first_name} {self.last_name} ({region_name}) - {self.agent_code}"
+        return f"{self.first_name} {self.last_name} ({region_name}) - {self.collaborator_code}"

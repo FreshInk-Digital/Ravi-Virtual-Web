@@ -10,7 +10,7 @@ router.register(r'book-categories', views.BookCategoryViewSet, basename='bookcat
 router.register(r'Publication', views.PublicationViewSet, basename='publication')
 router.register(r'Messages', views.MessagesViewSet, basename='messages')
 router.register(r'Cases', views.CasesViewSet, basename='cases')
-router.register(r'Agent', views.AgentViewSet, basename='Agent')
+router.register(r'Collaborator', views.CollaboratorViewSet, basename='collaborator')
 
 urlpatterns = [
     path('', include(router.urls)),

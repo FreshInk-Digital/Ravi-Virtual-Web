@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Publication, Messages, BookCategory, Book, Cases, Agent
+from .models import Publication, Messages, BookCategory, Book, Cases, Collaborator
 from import_export.admin import ImportExportModelAdmin
 import os
 from django.core.files import File
@@ -25,7 +25,7 @@ class PublicationAdmin(admin.ModelAdmin):
 
 # Customize the Messages admin
 class MessagesAdmin(admin.ModelAdmin):
-    list_display = ('user_name', 'email','phone', 'agent_code', 'location', 'agent_phone', 'message', 'status')  # Display these fields in the list view
+    list_display = ('user_name', 'email','phone', 'collaborator_code', 'location', 'collaborator_phone', 'message', 'status')  # Display these fields in the list view
     search_fields = ('user_name', 'email')  # Add a search bar for 'user_name' and 'email'
     list_filter = ('date_created',)  # Add a filter for date_created
     readonly_fields = ('date_created',)  # Make date_created read-only
@@ -72,8 +72,8 @@ class CasesAdmin(ImportExportModelAdmin):
                         print(f"File not found: {absolute_file_path}")
         return response
     
-class AgentAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'agent_code','phone', 'email', 'get_region_display', )
+class CollaboratorAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'collaborator_code','phone', 'email', 'get_region_display', )
     search_fields = ('first_name', 'region')
 
     def get_region_display(self, obj):
@@ -88,4 +88,4 @@ admin.site.register(Messages, MessagesAdmin)
 admin.site.register(BookCategory, BookCategoryAdmin)
 admin.site.register(Book, BookAdmin)
 admin.site.register(Cases, CasesAdmin)
-admin.site.register(Agent, AgentAdmin)
+admin.site.register(Collaborator, CollaboratorAdmin)
