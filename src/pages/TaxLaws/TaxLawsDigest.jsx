@@ -120,29 +120,32 @@ export default function TaxLawsDigest() {
                     <Collapse in={selectedCategory === category.name} animateOpacity>
                       <VStack align="start" mt="4" spacing="2">
                         {category.books.length > 0 ? (
-                          category.books.map((book, index) => (
-                            <Box
-                              key={index}
-                              bg="gray.50"
-                              p="3"
-                              w="full"
-                              borderRadius="md"
-                              _hover={{ bg: "gray.100" }}
-                              onClick={() => handleBookClick(book)}
-                              cursor="pointer"
-                            >
-                              <Text color="light_blue.a700" fontSize="md">
-                                {book.name}
-                              </Text>
-                            </Box>
-                          ))
+                          [...category.books]
+                            .sort((a, b) => b.year - a.year)
+                            .map((book, index) => (
+                              <Box
+                                key={index}
+                                bg="gray.50"
+                                p="3"
+                                w="full"
+                                borderRadius="md"
+                                _hover={{ bg: "gray.100" }}
+                                onClick={() => handleBookClick(book)}
+                                cursor="pointer"
+                              >
+                                <Text color="light_blue.a700" fontSize="md">
+                                  {book.name} ({book.year})
+                                </Text>
+                              </Box>
+                            ))
                         ) : (
                           <Text color="gray.500" fontSize="md" fontStyle="italic">
                             No books uploaded yet.
                           </Text>
                         )}
                       </VStack>
-                    </Collapse>
+                  </Collapse>
+
                   </Box>
                 ))}
               </SimpleGrid>
