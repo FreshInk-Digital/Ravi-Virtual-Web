@@ -2,10 +2,10 @@ import { Helmet } from "react-helmet";
 import { Box } from "@chakra-ui/react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-// import AgentList from "./AgentList";
-import AgentRegistration from './AgentRegistration'
+// import CollaborationList from "./CollaborationList";
+import CollaboratorRegistration from './Collaboration'
 
-export default function Agent() {
+export default function Collaboration() {
   return (
     <>
       <Helmet>
@@ -20,8 +20,8 @@ export default function Agent() {
         <Header alignSelf="stretch" />
         
         {/* Linked Tax Laws */}
-        {/* <AgentList /> */}
-        <AgentRegistration />
+        {/* <CollaborationList /> */}
+        <CollaboratorRegistration />
 
         {/* Footer */}
         <Footer mt="0px" />

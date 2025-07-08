@@ -13,13 +13,13 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import ContactInformation from "../../components/ContactInformation";
-import sendSms from "../../api/agentSms"; // Adjusted import
+import sendSms from "../../api/collaboratorSms"; // Adjusted import
 
-export default function AgentRegistration() {
+export default function CollaboratorRegistration() {
   const [formData, setFormData] = useState({
-    agent_code: "",
+    collaborator_code: "",
     location: "",
-    agent_phone: "",
+    collaborator_phone: "",
     message: "",
     status: "NOT URGENT",
   });
@@ -65,27 +65,27 @@ export default function AgentRegistration() {
   };
 
 
-  const validateAgentPhone = (agent_phone) => {
-    if (!agent_phone.trim()) return "Phone number is required.";
-    if (!/^[76]\d{8}$/.test(agent_phone))
+  const validateCollaboratorPhone = (collaborator_phone) => {
+    if (!collaborator_phone.trim()) return "Phone number is required.";
+    if (!/^[76]\d{8}$/.test(collaborator_phone))
       return "Phone number must start with 7 or 6 and be 9 digits long.";
     return null;
   };
 
-  // Validation for agent code
-  const validateAgentCode = (agent_code, location) => {
-    if (!agent_code.trim()) return "Agent code is required.";
-    // if (!/^RV-\d{2}-\d{2}$/.test(agent_code))
+  // Validation for collaborator code
+  const validateCollaboratorCode = (collaborator_code, location) => {
+    if (!collaborator_code.trim()) return "Collaborator code is required.";
+    // if (!/^RV-\d{2}-\d{2}$/.test(collaborator_code))
     //   return "Invalid Code.";
 
-    const match = /^RV-(\d{2})-\d{2}$/.exec(agent_code);
+    const match = /^RV-(\d{2})-\d{2}$/.exec(collaborator_code);
     if (!match) return "Invalid Code";
     // eslint-disable-next-line
     const regionCode = match [1];
     const expectedRegionCode = REGION_CODES[formData.location];
 
     if (!expectedRegionCode || regionCode !== expectedRegionCode){
-      return "Invalid Agent Code"
+      return "Invalid Collaborator Code"
     }
 
     return null;
@@ -93,16 +93,16 @@ export default function AgentRegistration() {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.agent_code.trim())
-      newErrors.agent_code = "Agent code is required.";
+    if (!formData.collaborator_code.trim())
+      newErrors.collaborator_code = "Collaborator code is required.";
     if (!formData.location.trim())
       newErrors.location = "Location is required.";
     if (!formData.message.trim()) newErrors.message = "Message is required.";
     else if (formData.message.length > 250)
       newErrors.message = "Message cannot exceed 250 characters.";
     
-    const agentCodeError = validateAgentCode(formData.agent_code);
-    if (agentCodeError) newErrors.agent_code = agentCodeError;
+    const collaboratorCodeError = validateCollaboratorCode(formData.collaborator_code, formData.location);
+    if (collaboratorCodeError) newErrors.collaborator_code = collaboratorCodeError;
   
     
     return Object.keys(newErrors).length === 0;
@@ -119,12 +119,12 @@ export default function AgentRegistration() {
       [name]: type === "checkbox" ? (checked ? value : "") : value,
     }));
 
-    if(name === "agent_phone"){
-      const agentphoneError = validateAgentPhone(value);
-      // console.log('agent phone: ', value)
+    if(name === "collaborator_phone"){
+      const collaboratorphoneError = validateCollaboratorPhone(value);
+      // console.log('collaborator phone: ', value)
       setErrors((prevErrors) => ({
         ...prevErrors,
-        agent_phone: agentphoneError,
+        collaborator_phone: collaboratorphoneError,
       }));
     } else if (errors[name]) {
       setErrors((prevErrors) => {
@@ -148,7 +148,7 @@ export default function AgentRegistration() {
     const updatedFormData = {
       ...formData,
     };
-    // console.log('agent phone: ', formData.agent_phone)
+    // console.log('collaborator phone: ', formData.collaborator_phone)
     toast({
       title: "Sending Message...",
       description: "Your message is being sent. Please wait.",
@@ -173,9 +173,9 @@ export default function AgentRegistration() {
         });
 
         setFormData({
-          agent_code: "",
+          collaborator_code: "",
           location: "",
-          agent_phone: "",
+          collaborator_phone: "",
           message: "",
           status: "NOT URGENT",
         });
@@ -243,7 +243,7 @@ export default function AgentRegistration() {
                 color="gray.900"
                 letterSpacing="-0.96px"
               >
-                Agent case pannel
+                Collaborator case pannel
               </Heading>
             </Flex>
           </Flex>
@@ -300,8 +300,8 @@ export default function AgentRegistration() {
                     <Box w="100%" display="flex" alignItems="center">
                       <Input
                         size="md"
-                        name="agent_code"
-                        value={formData.agent_code}
+                        name="collaborator_code"
+                        value={formData.collaborator_code}
                         onChange={handleChange}
                         placeholder="Collaborator Code *"
                         type="text"
@@ -309,9 +309,9 @@ export default function AgentRegistration() {
                         w="100%"
                         borderRadius="4px"
                       />
-                      {errors.agent_code && (
+                      {errors.collaborator_code && (
                         <Box color="red.500" mt="2px">
-                          {errors.agent_code}
+                          {errors.collaborator_code}
                         </Box>
                       )}
                     </Box>
@@ -327,15 +327,14 @@ export default function AgentRegistration() {
                         borderRadius="4px"
                       >
                         <option value="Arusha">Arusha</option>
+                        <option value="Dar es salaam"> Dar es salaam</option>
                         <option value="Dodoma">Dodoma</option>
                         <option value="Geita">Geita</option>
-                        <option value="Ilala">Ilala</option>
                         <option value="Iringa">Iringa</option>
                         <option value="Kagera">Kagera</option>
                         <option value="Katavi">Katavi</option>
                         <option value="Kigoma">Kigoma</option>
                         <option value="Kilimanjaro">Kilimanjaro</option>
-                        <option value="Kinondoni">Kinondoni</option>
                         <option value="Lindi">Lindi</option>
                         <option value="Manyara">Manyara</option>
                         <option value="Mara">Mara</option>
@@ -382,8 +381,8 @@ export default function AgentRegistration() {
                         </Box>
                         <Input
                           size="md"
-                          name="agent_phone"
-                          value={formData.agent_phone}
+                          name="collaborator_phone"
+                          value={formData.collaborator_phone}
                           onChange={handleChange}
                           onKeyPress={handleKeyPress}
                           maxLength={9} // Limit to 9 digits
@@ -396,9 +395,9 @@ export default function AgentRegistration() {
                           borderColor="gray.300"
                         />
                       </Box>
-                      {errors.agent_phone && (
+                      {errors.collaborator_phone && (
                         <Box color="red.500" mt="2px">
-                          {errors.agent_phone}
+                          {errors.collaborator_phone}
                         </Box>
                       )}
                     </Box>

@@ -29,7 +29,7 @@ const servicesReportsList = [
   },
 ];
 
-export default function AgentList() {
+export default function CollaborationList() {
   return (
     <>
       {/* services section */}
@@ -58,7 +58,7 @@ export default function AgentList() {
           fontSize="16px"
           fontWeight={600}
         >
-          Ravi moova Agents
+          Ravi moova Collaborators
         </Heading> */}
         <Heading
           size="heading2xl"
@@ -66,8 +66,8 @@ export default function AgentList() {
           letterSpacing="-0.96px"
           // fontWeight={200}
         >
-          Our Available Agents
-          {/* AGENTS <Text as="span" color="light_blue.a700" size="heading2xl">list</Text> */}
+          Our Available Collaborators
+          {/* COLLABORATORS <Text as="span" color="light_blue.a700" size="heading2xl">list</Text> */}
         </Heading>
       </Flex>
       <Heading
