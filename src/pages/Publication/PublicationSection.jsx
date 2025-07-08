@@ -1,4 +1,3 @@
-// PublicationSection.js
 import React, { useEffect, useState, Suspense } from "react";
 import {
   Heading,
@@ -28,10 +27,12 @@ const PublicationSection = () => {
   const [sortCriteria, setSortCriteria] = useState('date');
   const [noPublications, setNoPublications] = useState(false);
   const [connectionError, setConnectionError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // ✅ NEW
   const publicationsPerPage = 12;
 
   useEffect(() => {
     const fetchPublications = async () => {
+      setIsLoading(true); // ✅ Start loading
       try {
         const response = await api.get('Publication/');
         if (response.data.length === 0) {
@@ -41,11 +42,13 @@ const PublicationSection = () => {
           setTotalPages(Math.ceil(response.data.length / publicationsPerPage));
           sortPublications(response.data, sortCriteria);
           setNoPublications(false);
-          setConnectionError(false);  // Reset error state if successful
+          setConnectionError(false);
         }
       } catch (error) {
         console.error('Error fetching publications:', error);
-        setConnectionError(true);  // Set error state if fetch fails
+        setConnectionError(true);
+      } finally {
+        setIsLoading(false); // ✅ Stop loading
       }
     };
 
@@ -84,7 +87,10 @@ const PublicationSection = () => {
     setTotalPages(Math.ceil(sortedData.length / publicationsPerPage));
   };
 
-  const currentPublications = sortedPublications.slice((currentPage - 1) * publicationsPerPage, currentPage * publicationsPerPage);
+  const currentPublications = sortedPublications.slice(
+    (currentPage - 1) * publicationsPerPage,
+    currentPage * publicationsPerPage
+  );
 
   return (
     <Box mt="24px" px={{ md: "20px", base: "10px" }} fontFamily="Poppins">
@@ -116,7 +122,6 @@ const PublicationSection = () => {
             justifyContent="center"
             alignItems="start"
             flexDirection={{ md: "row", base: "column" }}
-            fontFamily="Poppins"
           >
             <Flex
               mt="20px"
@@ -124,21 +129,22 @@ const PublicationSection = () => {
               flex={1}
               flexDirection="column"
               alignItems="start"
-              fontFamily="Poppins"
             >
-              <Heading size="lg" as="h1" color="gray.900" fontFamily="Poppins">
+              <Heading size="lg" as="h1" color="gray.900">
                 Browse through different resources under the company
               </Heading>
-              <Text mt="4px" fontFamily="Poppins">Explore our publications to discover a wide range of resources.</Text>
+              <Text mt="4px">
+                Explore our publications to discover a wide range of resources.
+              </Text>
             </Flex>
           </Flex>
-          <Flex justifyContent="flex-end" mb="20px" px="20px" fontFamily="Poppins">
+
+          <Flex justifyContent="flex-end" mb="20px" px="20px">
             <Select
               placeholder="Sort By"
               onChange={handleSortChange}
               value={sortCriteria}
               maxW="200px"
-              fontFamily="Poppins"
             >
               <option value="date">Date Created</option>
               <option value="name">Alphabetically (A-Z)</option>
@@ -146,44 +152,48 @@ const PublicationSection = () => {
           </Flex>
         </Box>
 
-        <Box p="20px" fontFamily="Poppins">
-          {connectionError ? (
-            <Text color="red.500" textAlign="center" fontFamily="Poppins">
+        <Box p="20px">
+          {isLoading ? (
+            <Flex justify="center" align="center" minH="200px">
+              <Spinner size="lg" color="blue.500" />
+            </Flex>
+          ) : connectionError ? (
+            <Text color="red.500" textAlign="center">
               Unable to connect to the server. Please try again later.
             </Text>
           ) : noPublications ? (
-            <Text color="red.500" textAlign="center" fontFamily="Poppins">
+            <Text color="red.500" textAlign="center">
               No publication documents available yet.
             </Text>
           ) : (
             <>
-              <Box overflowX="auto" fontFamily="Poppins">
-                <Table variant="striped" fontFamily="Poppins">
+              <Box overflowX="auto">
+                <Table variant="striped">
                   <Thead>
                     <Tr>
-                      <Th fontFamily="Poppins">File Title</Th>
-                      <Th fontFamily="Poppins">Description</Th>
-                      <Th fontFamily="Poppins">Date Created</Th>
-                      <Th fontFamily="Poppins">Preview</Th>
-                      <Th fontFamily="Poppins">Action</Th>
+                      <Th>File Title</Th>
+                      <Th>Description</Th>
+                      <Th>Date Created</Th>
+                      <Th>Preview</Th>
+                      <Th>Action</Th>
                     </Tr>
                   </Thead>
-                  <Tbody fontFamily="Poppins">
+                  <Tbody>
                     <Suspense fallback={<Tr><Td colSpan={5}><Spinner /></Td></Tr>}>
                       {currentPublications.map((pub) => (
                         <Tr key={pub.id}>
-                          <Td fontFamily="Poppins">{pub.name}</Td>
-                          <Td fontFamily="Poppins">{pub.description}</Td>
-                          <Td fontFamily="Poppins">{new Date(pub.date_created).toLocaleDateString()}</Td>
+                          <Td>{pub.name}</Td>
+                          <Td>{pub.description}</Td>
+                          <Td>{new Date(pub.date_created).toLocaleDateString()}</Td>
                           <Td>
                             {pub.publication ? (
                               <DocumentViewer
-                                fileType={pub.publication.split('.').pop().toUpperCase()} 
+                                fileType={pub.publication.split('.').pop().toUpperCase()}
                                 documentName={pub.name}
-                                fileUrl={`https://backend.ravimoova.co.tz/${pub.publication}`} 
+                                fileUrl={`https://backend.ravimoova.co.tz/${pub.publication}`}
                               />
                             ) : (
-                              <Text color="red.500" fontFamily="Poppins">No document available</Text>
+                              <Text color="red.500">No document available</Text>
                             )}
                           </Td>
                           <Td>
@@ -192,12 +202,11 @@ const PublicationSection = () => {
                                 colorScheme="light_blue.a700"
                                 size="sm"
                                 onClick={() => handleDownload(pub.publication)}
-                                fontFamily="Poppins"
                               >
                                 Download
                               </Button>
                             ) : (
-                              <Button colorScheme="gray" size="sm" isDisabled fontFamily="Poppins">
+                              <Button colorScheme="gray" size="sm" isDisabled>
                                 Unavailable
                               </Button>
                             )}
@@ -214,7 +223,6 @@ const PublicationSection = () => {
                   currentPage={currentPage}
                   totalPages={totalPages}
                   onPageChange={handlePageChange}
-                  fontFamily="Poppins"
                 />
               </Flex>
             </>
