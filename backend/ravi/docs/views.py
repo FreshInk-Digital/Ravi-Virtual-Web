@@ -53,6 +53,7 @@ class CollaboratorMessagesViewSet(viewsets.ModelViewSet):
 class CasesViewSet(viewsets.ModelViewSet):
     queryset = Cases.objects.all()
     serializer_class = CasesSerializer
+    permission_classes = [AllowAny]
     parser_classes = (MultiPartParser, FormParser)
 
     @action(detail=False, methods=['post'], url_path='bulk-import')

@@ -20,16 +20,15 @@ export default function TaxLawsDigest() {
   const [error, setError] = useState(null); // State to track connection error
 
   useEffect(() => {
-    // Fetch categories and books data from backend
     api
       .get("/book-categories/")
       .then((response) => {
         setCategoriesData(response.data);
-        setError(null); // Reset error state on successful fetch
+        setError(null);
       })
       .catch((error) => {
         console.error("Failed to fetch categories", error);
-        setError("Failed to connect to the server. Please try again later."); // Set error message on failure
+        setError("Failed to connect to the server. Please try again later.");
       });
   }, []);
 
@@ -65,11 +64,18 @@ export default function TaxLawsDigest() {
         fontFamily="Poppins"
       >
         {/* Heading */}
-        <Heading size="lg" as="h1" color="gray.900" textAlign="start" fontFamily="Poppins">
+        <Heading
+          size="lg"
+          as="h1"
+          color="gray.900"
+          textAlign="start"
+          fontFamily="Poppins"
+        >
           Explore Tax Laws
         </Heading>
         <Text mb="8" textAlign="start" color="gray.600" fontFamily="Poppins">
-          Access the full text of the Tax Laws. Explore sections covering various acts, repealed laws, and more.
+          Access the full text of the Tax Laws. Explore sections covering
+          various acts, repealed laws, and more.
         </Text>
 
         {/* Display error message if there is a connection issue */}
@@ -91,7 +97,10 @@ export default function TaxLawsDigest() {
               p="4"
               boxShadow="lg"
               transition="0.3s"
-              _hover={{ transform: "scale(1.02)", borderColor: "light_blue.a500" }}
+              _hover={{
+                transform: "scale(1.02)",
+                borderColor: "light_blue.a500",
+              }}
             >
               <Flex
                 justify="space-between"
