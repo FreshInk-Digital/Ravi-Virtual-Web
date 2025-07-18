@@ -262,7 +262,7 @@ export default function TaxJudgmentsPanel() {
           </Flex>
         </Flex>
 
-        {/* Loading, Error, or Table */}
+        {/* Loading, Error, or Cases Table */}
         {isLoading ? (
           <Spinner size="lg" mt="10" color="blue.500" />
         ) : error ? (
@@ -270,6 +270,14 @@ export default function TaxJudgmentsPanel() {
             <AlertIcon />
             {error}
           </Alert>
+        ) : casesData.length === 0 ? (
+          <Text textAlign="center" mt="10" fontStyle="italic" fontSize="lg" color="gray.600">
+            No cases uploaded yet.
+          </Text>
+        ) : filteredCases.length === 0 ? (
+          <Text textAlign="center" mt="10" fontStyle="italic" fontSize="lg" color="gray.600">
+            No results found for your search or selected court.
+          </Text>
         ) : (
           <Box mt="10" overflowX="auto">
             <Table variant="striped" cursor="pointer">
@@ -331,6 +339,7 @@ export default function TaxJudgmentsPanel() {
             </Flex>
           </Box>
         )}
+
       </Box>
 
       {/* Modal */}
