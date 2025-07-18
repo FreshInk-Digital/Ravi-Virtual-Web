@@ -11,7 +11,7 @@ router.register(r'Publication', views.PublicationViewSet, basename='publication'
 router.register(r'ContactMessages', views.ContactMessagesViewSet, basename='contact-messages')
 router.register(r'CollaboratorMessages', views.CollaboratorMessagesViewSet, basename='collaborator-messages')
 router.register(r'Cases', views.CasesViewSet, basename='cases')
-router.register(r'Collaborator', views.CollaboratorViewSet, basename='collaborator')
+# router.register(r'Collaborator', views.CollaboratorViewSet, basename='collaborator')
 
 urlpatterns = [
     path('', include(router.urls)),

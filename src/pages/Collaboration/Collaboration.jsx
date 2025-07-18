@@ -17,12 +17,13 @@ import sendSms from "../../api/collaboratorSms"; // Adjusted import
 
 export default function CollaboratorRegistration() {
   const [formData, setFormData] = useState({
-    collaborator_code: "",
-    location: "",
-    collaborator_phone: "",
-    message: "",
-    status: "NOT URGENT",
-  });
+  collaborator_name: "", // ✅ renamed field
+  location: "",
+  collaborator_phone: "",
+  message: "",
+  status: "NOT URGENT",
+});
+
 
   const [errors, setErrors] = useState({});
   const [messageLength, setMessageLength] = useState(0);
@@ -72,41 +73,22 @@ export default function CollaboratorRegistration() {
     return null;
   };
 
-  // Validation for collaborator code
-  const validateCollaboratorCode = (collaborator_code, location) => {
-    if (!collaborator_code.trim()) return "Collaborator code is required.";
-    // if (!/^RV-\d{2}-\d{2}$/.test(collaborator_code))
-    //   return "Invalid Code.";
+const validateForm = () => {
+  const newErrors = {};
 
-    const match = /^RV-(\d{2})-\d{2}$/.exec(collaborator_code);
-    if (!match) return "Invalid Code";
-    // eslint-disable-next-line
-    const regionCode = match [1];
-    const expectedRegionCode = REGION_CODES[formData.location];
+  if (!formData.collaborator_name.trim())
+    newErrors.collaborator_name = "Collaborator name is required.";
+  if (!formData.location.trim())
+    newErrors.location = "Location is required.";
+  if (!formData.message.trim())
+    newErrors.message = "Message is required.";
+  else if (formData.message.length > 250)
+    newErrors.message = "Message cannot exceed 250 characters.";
 
-    if (!expectedRegionCode || regionCode !== expectedRegionCode){
-      return "Invalid Collaborator Code"
-    }
+  setErrors(newErrors);
+  return Object.keys(newErrors).length === 0;
+};
 
-    return null;
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-    if (!formData.collaborator_code.trim())
-      newErrors.collaborator_code = "Collaborator code is required.";
-    if (!formData.location.trim())
-      newErrors.location = "Location is required.";
-    if (!formData.message.trim()) newErrors.message = "Message is required.";
-    else if (formData.message.length > 250)
-      newErrors.message = "Message cannot exceed 250 characters.";
-    
-    const collaboratorCodeError = validateCollaboratorCode(formData.collaborator_code, formData.location);
-    if (collaboratorCodeError) newErrors.collaborator_code = collaboratorCodeError;
-  
-    
-    return Object.keys(newErrors).length === 0;
-  };
   
 
   const handleChange = (e) => {
@@ -173,7 +155,7 @@ export default function CollaboratorRegistration() {
         });
 
         setFormData({
-          collaborator_code: "",
+          collaborator_name: "",
           location: "",
           collaborator_phone: "",
           message: "",
@@ -297,24 +279,25 @@ export default function CollaboratorRegistration() {
                     gap="16px"
                     w="100%"
                   >
-                    <Box w="100%" display="flex" alignItems="center">
-                      <Input
-                        size="md"
-                        name="collaborator_code"
-                        value={formData.collaborator_code}
-                        onChange={handleChange}
-                        placeholder="Collaborator Code *"
-                        type="text"
-                        fontFamily="Poppins"
-                        w="100%"
-                        borderRadius="4px"
-                      />
-                      {errors.collaborator_code && (
-                        <Box color="red.500" mt="2px">
-                          {errors.collaborator_code}
-                        </Box>
-                      )}
-                    </Box>
+<Box w="100%" display="flex" alignItems="center">
+  <Input
+    size="md"
+    name="collaborator_name"
+    value={formData.collaborator_name}
+    onChange={handleChange}
+    placeholder="Collaborator Name *"
+    type="text"
+    fontFamily="Poppins"
+    w="100%"
+    borderRadius="4px"
+  />
+  {errors.collaborator_name && (
+    <Box color="red.500" mt="2px">
+      {errors.collaborator_name}
+    </Box>
+  )}
+</Box>
+
                     <Box w="100%" display="flex" alignItems="center">
                       <Select
                         size="md"
