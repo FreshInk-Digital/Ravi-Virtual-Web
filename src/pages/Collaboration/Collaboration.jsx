@@ -158,7 +158,7 @@ export default function CollaboratorRegistration() {
     });
 
     try {
-      const saveResponse = await api.post("/Messages/", updatedFormData);
+      const saveResponse = await api.post("/CollaboratorMessages/", updatedFormData);
       console.log("Message saved to database:", saveResponse.data);
 
       const smsResult = await sendSms(updatedFormData);

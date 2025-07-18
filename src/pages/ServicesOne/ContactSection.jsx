@@ -102,7 +102,7 @@ export default function ContactSection() {
 
     try {
       // Step 1: Save message to the database
-      const saveResponse = await api.post("/Messages/", formData);
+      const saveResponse = await api.post("/ContactMessages/", formData);
       console.log("Message saved to database:", saveResponse.data);
 
       // Step 2: Send SMS

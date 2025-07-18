@@ -53,10 +53,37 @@ class PublicationSerializer(serializers.ModelSerializer):
         model = Publication
         fields = ['name', 'publication', 'description', 'date_created', 'last_update']
 
-class MessagesSerializer(serializers.ModelSerializer):
+
+# ContactMessagesSerializer
+class ContactMessagesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Messages
-        fields = ['user_name', 'email', 'phone', 'collaborator_code', 'location', 'collaborator_phone', 'message', 'status', 'date_created']
+        fields = [
+            'user_name',
+            'email',
+            'phone',
+            'message',
+            'status',
+            'date_created',
+        ]
+        read_only_fields = ['date_created']
+
+
+# CollaboratorMessagesSerializer (full payload)
+class CollaboratorMessagesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Messages
+        fields = [
+            'collaborator_code',
+            'location',
+            'collaborator_phone',
+            'message',
+            'status',
+            'date_created',
+        ]
+        read_only_fields = ['date_created']
+
+
 
 class CasesSerializer(serializers.ModelSerializer):
     class Meta:

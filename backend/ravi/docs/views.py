@@ -1,8 +1,8 @@
 from django.contrib.auth.models import User
-from rest_framework import viewsets, status, generics
+from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .models import Publication, Messages, Book, BookCategory, Cases, Collaborator
-from .serializers import PublicationSerializer, MessagesSerializer, CasesSerializer, BookSerializer, BookCategorySerializer, CollaboratorSerializer
+from .serializers import PublicationSerializer, ContactMessagesSerializer, CasesSerializer, BookSerializer, BookCategorySerializer, CollaboratorSerializer, CollaboratorMessagesSerializer
 from django.http import FileResponse, HttpResponseForbidden
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -36,22 +36,24 @@ class PublicationViewSet(viewsets.ModelViewSet):
         
         return [IsAuthenticated()]
 
-class MessagesViewSet(viewsets.ModelViewSet):
-    queryset = Messages.objects.all()
-    serializer_class = MessagesSerializer
 
-    def get_permissions(self):
-        if self.action == 'create':
-            return [AllowAny()]
-        return [IsAuthenticated()]
+class ContactMessagesViewSet(viewsets.ModelViewSet):
+    queryset = Messages.objects.all()
+    serializer_class = ContactMessagesSerializer
+    permission_classes = [AllowAny]
+
+
+class CollaboratorMessagesViewSet(viewsets.ModelViewSet):
+    queryset = Messages.objects.all()
+    serializer_class = CollaboratorMessagesSerializer
+    permission_classes = [AllowAny]
 
     def create(self, request, *args, **kwargs):
         data = request.data
 
-        # Validate collaborator
-        collaborator_code = data.get("collaborator_code")
-        location = data.get("location")
-        collaborator_phone = data.get("collaborator_phone")
+        collaborator_code = data.get("collaborator_code", "").strip()
+        location = data.get("location", "").strip()
+        collaborator_phone = data.get("collaborator_phone", "").strip()
 
         try:
             collaborator = Collaborator.objects.get(
@@ -62,11 +64,9 @@ class MessagesViewSet(viewsets.ModelViewSet):
         except Collaborator.DoesNotExist:
             raise ValidationError("Collaborator code, location, or phone number is invalid or not found.")
 
-        # If valid, proceed to normal create logic
         return super().create(request, *args, **kwargs)
 
     def _get_region_code(self, location_name):
-        # Use same mapping as in React
         region_map = {
             'Arusha': '01', 'Dar es salaam': '02', 'Dodoma': '03', 'Geita': '04',
             'Iringa': '05', 'Kagera': '06', 'Katavi': '07', 'Kigoma': '08',
