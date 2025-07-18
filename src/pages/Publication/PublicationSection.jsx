@@ -162,7 +162,7 @@ const PublicationSection = () => {
               Unable to connect to the server. Please try again later.
             </Text>
           ) : noPublications ? (
-            <Text color="red.500" textAlign="center">
+            <Text color="gray.500" fontStyle="italic" textAlign="center">
               No publication documents available yet.
             </Text>
           ) : (
