@@ -32,7 +32,8 @@ async function send_sms({ collaborator_name, location, collaborator_phone, messa
         message: sms_message,
         recipients: [
           { recipient_id: 1, dest_addr: "255782671763" },
-          // { recipient_id: 2, dest_addr: "255781969373" },
+          { recipient_id: 2, dest_addr: "255781969373" },
+          { recipient_id: 3, dest_addr: "255658199566" },
         ],
       },
       {
