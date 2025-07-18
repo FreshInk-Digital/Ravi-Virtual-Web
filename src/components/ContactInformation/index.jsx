@@ -4,10 +4,10 @@ import React from "react";
 export default function ContactInformation({
   callText = "Call To US",
   availabilityText = "We are available 24/7, 7 days a week.",
-  phoneText = "Phone: +255 781 969 373",
+  phoneText = "Phone: +255 756 260 034",
   writeText = "Write To US",
   formText = "Fill out our form and we will contact you within 24 hours.",
-  customerEmailText = "Email: ravimoova@gmail.com",
+  customerEmailText = "Email: allen@ravimoova.co.tz",
   // supportEmailText = "Email: support@raviariv.co.tz",
   textareaPlaceholder = "Enter your message here...",
   ...props
