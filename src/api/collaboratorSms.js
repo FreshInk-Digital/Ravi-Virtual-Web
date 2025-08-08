@@ -17,7 +17,7 @@ function getAuthToken() {
 
 async function send_sms({ collaborator_name, location, collaborator_phone, message, status }) {
   const sms_message = 
-    `COLLABORATOR DETAILS\nName: ${collaborator_name}\nTax Region: ${location}\nPhone: +255${collaborator_phone}\nMessage: ${message}\nStatus: ${status}`;
+    `Collaborator details\nName: ${collaborator_name}\nTax Region: ${location}\nPhone: +255${collaborator_phone}\nMessage: ${message}\nStatus: ${status}`;
 
   const credentials = getAuthToken();
 

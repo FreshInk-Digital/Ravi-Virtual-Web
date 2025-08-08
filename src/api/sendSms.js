@@ -11,7 +11,7 @@ async function send_sms({ user_name, email, phone, message, status }) {
   const sanitizedEmail = email.normalize("NFKC");
 
   // Construct the SMS message with the sanitized email
-  const sms_message = `CUSTOMER DETAILS\nName: ${user_name}\nEmail: ${sanitizedEmail}\nPhone: 0${phone}\nMessage: ${message}\nStatus: ${status}\n`;
+  const sms_message = `Customer details\nName: ${user_name}\nEmail: ${sanitizedEmail}\nPhone: 0${phone}\nMessage: ${message}\nStatus: ${status}\n`;
 
   try {
     // Send primary message to recipients

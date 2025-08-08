@@ -70,7 +70,7 @@ export default function TaxJudgmentsPanel() {
       })
       .catch((error) => {
         console.error("Failed to fetch cases", error);
-        setError("Failed to connect to the server. Please try again later."); // Set error message on failure
+        setError("Error occured. Please try again later."); // Set error message on failure
       })
       .finally(() => {
         setIsLoading(false);
@@ -129,11 +129,10 @@ export default function TaxJudgmentsPanel() {
     setDropdownVisible((prev) => !prev);
   };
 
-  const handleViewCase = (filePath) => {
-    if (filePath) {
-      window.open(filePath, "_blank"); // Opens the file in a new tab
-    }
-  };
+  // const handleViewCase = (caseId) => {
+  //   const streamUrl = `${api.defaults.baseURL}/Cases/${caseId}/stream/`;
+  //   window.open(streamUrl, "_blank", "noopener,noreferrer");
+  // };
 
   // Close the dropdown if clicking outside of it
   useEffect(() => {
@@ -271,11 +270,23 @@ export default function TaxJudgmentsPanel() {
             {error}
           </Alert>
         ) : casesData.length === 0 ? (
-          <Text textAlign="center" mt="10" fontStyle="italic" fontSize="lg" color="gray.600">
+          <Text
+            textAlign="center"
+            mt="10"
+            fontStyle="italic"
+            fontSize="lg"
+            color="gray.600"
+          >
             No cases uploaded yet.
           </Text>
         ) : filteredCases.length === 0 ? (
-          <Text textAlign="center" mt="10" fontStyle="italic" fontSize="lg" color="gray.600">
+          <Text
+            textAlign="center"
+            mt="10"
+            fontStyle="italic"
+            fontSize="lg"
+            color="gray.600"
+          >
             No results found for your search or selected court.
           </Text>
         ) : (
@@ -289,7 +300,7 @@ export default function TaxJudgmentsPanel() {
                   <Th>Appellant</Th>
                   <Th>Respondent</Th>
                   <Th>Court</Th>
-                  <Th>Action</Th>
+                  {/* <Th>Action</Th> */}
                 </Tr>
               </Thead>
               <Tbody>
@@ -306,15 +317,11 @@ export default function TaxJudgmentsPanel() {
                     <Td>{caseItem.appellant}</Td>
                     <Td>{caseItem.respondent}</Td>
                     <Td>{caseItem.court}</Td>
-                    <Td>
-                      <a
-                        href={caseItem.file_path}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                    {/* <Td>
+                      <a href="" size="sm" colorScheme="blue" bgColor="light">
                         View Case
                       </a>
-                    </Td>
+                    </Td> */}
                   </Tr>
                 ))}
               </Tbody>
@@ -339,7 +346,6 @@ export default function TaxJudgmentsPanel() {
             </Flex>
           </Box>
         )}
-
       </Box>
 
       {/* Modal */}
@@ -382,12 +388,12 @@ export default function TaxJudgmentsPanel() {
               </Box>
               <Button
                 mt="4"
-                colorScheme="blue"
-                onClick={() => handleViewCase(fileUrl)}
+                colorScheme="yellow"
+                onClick={() => navigate(`/view-case/${selectedCase?.id}`)}
                 size="lg"
                 width="100%"
               >
-                Download/View
+                View Case
               </Button>
             </Stack>
           </ModalBody>

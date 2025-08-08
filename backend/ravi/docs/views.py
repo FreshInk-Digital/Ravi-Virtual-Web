@@ -1,14 +1,18 @@
 from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from django.http import FileResponse, HttpResponseForbidden
+from django.http import FileResponse, HttpResponseForbidden, Http404
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.views import APIView
 import csv
 import io
+import os
+import mimetypes
+
 
 from .models import Book, BookCategory, Publication, Messages, Cases
-from .serializers import (
+from docs.serializers import (
     BookSerializer, BookCategorySerializer,
     PublicationSerializer, ContactMessagesSerializer,
     CollaboratorMessagesSerializer, CasesSerializer
@@ -49,6 +53,7 @@ class CollaboratorMessagesViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         return super().create(request, *args, **kwargs)
+
 
 class CasesViewSet(viewsets.ModelViewSet):
     queryset = Cases.objects.all()
@@ -96,6 +101,32 @@ class CasesViewSet(viewsets.ModelViewSet):
             },
             status=status.HTTP_201_CREATED if cases_list else status.HTTP_400_BAD_REQUEST
         )
+    
+    @action(detail=True, methods=['get'], url_path='stream', permission_classes=[AllowAny])
+    def stream_file(self, request, pk=None):
+        case = self.get_object()
+
+        if not case.file_path:
+            return Response({"error": "No file associated with this case."}, status=404)
+
+        file_path = case.file_path.path
+        if not os.path.exists(file_path):
+            return Response({"error": "File not found on server."}, status=404)
+
+        # Set correct MIME type
+        mime_type, _ = mimetypes.guess_type(file_path)
+        if not mime_type:
+            mime_type = 'application/pdf'  # Force if unknown
+
+        try:
+            response = FileResponse(open(file_path, "rb"), content_type=mime_type)
+            response["Content-Disposition"] = f'inline; filename="{os.path.basename(file_path)}"'
+            response["X-Content-Type-Options"] = "nosniff"
+            response["Cache-Control"] = "no-store"
+            response["Access-Control-Allow-Origin"] = request.headers.get("Origin", "*")  # <-- CORS HEADER
+            return response
+        except Exception as e:
+            raise Http404("Failed to read the file.")
 
 def stream_book(request, book_id):
     try:
@@ -108,3 +139,5 @@ def stream_book(request, book_id):
         return response
     except Book.DoesNotExist:
         return HttpResponseForbidden("Book not found.")
+    
+

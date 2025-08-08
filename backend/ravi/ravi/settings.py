@@ -64,11 +64,11 @@ INTERNAL_IPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-  'http://localhost:8001',
-  'http://127.0.0.1:8001',
   'http://localhost:3000',
   'http://127.0.0.1:3000',
-#   'https://ravimoova.co.tz',
+  'http://localhost:8001',
+  'http://127.0.0.1:8001',
+# 'https://ravimoova.co.tz',
 ]
 
 ROOT_URLCONF = 'ravi.urls'
@@ -140,7 +140,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # STATIC_URL = '/static/'
 # STATICFILES_DIRS = [BASE_DIR / "static"]
 
-STATICFILES_STOTAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Media files configuration (if needed)
 MEDIA_URL = '/media/'

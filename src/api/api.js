@@ -1,5 +1,4 @@
 import axios from "axios";
-import { ACCESS_TOKEN } from "constants/constants";
 
 // Set the baseURL based on the environment
 const baseURL = process.env.NODE_ENV === "production"
@@ -9,5 +8,6 @@ const baseURL = process.env.NODE_ENV === "production"
 const api = axios.create({
   baseURL,
 });
+
 
 export default api;

@@ -14,7 +14,7 @@ router.register(r'Cases', views.CasesViewSet, basename='cases')
 # router.register(r'Collaborator', views.CollaboratorViewSet, basename='collaborator')
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', include(router.urls)),  # Includes /Cases/<pk>/stream/ as well
     path('api-auth/', include('rest_framework.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
