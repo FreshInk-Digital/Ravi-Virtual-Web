@@ -90,7 +90,7 @@ export default function CaseViewerPage() {
   }
 
   return (
-    <Box p={4} maxW="1200px" mx="auto">
+    <Box p={4} maxW="1200px" mx="auto" fontFamily="Poppins">
       <Flex align="center" mb={4}>
         <IconButton
           icon={<ChevronLeftIcon />}
@@ -102,7 +102,7 @@ export default function CaseViewerPage() {
       </Flex>
 
       {caseDetails && (
-        <Box mb={4} p={4} bg="gray.50" borderRadius="md">
+        <Box mb={4} p={4} bg="gray.50" borderRadius="md" fontFamily="Poppins">
           <Stack spacing={2}>
             <Text fontSize="xl" fontWeight="bold">
               {caseDetails.appellant} Vs {caseDetails.respondent}
