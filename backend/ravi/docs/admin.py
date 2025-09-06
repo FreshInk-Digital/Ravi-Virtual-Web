@@ -41,7 +41,7 @@ class MessagesAdmin(admin.ModelAdmin):
 # --- Cases Admin with Import/Export ---
 @admin.register(Cases)
 class CasesAdmin(ImportExportModelAdmin):
-    list_display = ('case_code', 'appellant', 'respondent', 'court', 'date_created')
+    list_display = ('case_code', 'case_number', 'appellant', 'respondent', 'court', 'date_created')
     search_fields = ('case_code', 'appellant', 'respondent', 'court', 'description')
 
     def import_action(self, request, *args, **kwargs):
