@@ -1,8 +1,13 @@
 import axios from "axios";
 
 // ✅ API Credentials
-const api_key = "49478e6e5cac680b";
-const secret_key = "Y2I3ODliZmMwMTU4MWExNTNkNDVmMzNmZDExZTYyZmRhMjc0MjI4ZmFmNDgyNjY1ZjNiZDZmZjZiMTlkMDRhZg==";
+// const api_key = "49478e6e5cac680b";
+// const secret_key = "Y2I3ODliZmMwMTU4MWExNTNkNDVmMzNmZDExZTYyZmRhMjc0MjI4ZmFmNDgyNjY1ZjNiZDZmZjZiMTlkMDRhZg==";
+
+
+const api_key = "287e10f0a968843c";
+const secret_key = "MDZmNTA1MDFmYjg0ZGFiNGUyNDM5ZTBjZGNlZTRjNTQ5MTRkMjNhZTY4OTNlZDJiNThlYjY5ZDA3ODI0NTRlZg==";
+
 const source_addr = "RAVIAPP";
 const content_type = "application/json";
 
