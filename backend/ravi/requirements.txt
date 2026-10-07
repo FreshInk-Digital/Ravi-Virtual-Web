@@ -6,8 +6,9 @@ djangorestframework-simplejwt
 PyJWT
 pytz
 sqlparse
-psycopg2-binary
+pymysql
 python-dotenv
 gunicorn
 dj_database_url
 whitenoise
+django-import-export

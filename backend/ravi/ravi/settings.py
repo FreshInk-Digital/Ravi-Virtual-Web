@@ -23,7 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    # 'rest_framework.authtoken',
+    'rest_framework.authtoken',
     'corsheaders',
     'docs',
     'import_export',
@@ -35,9 +35,9 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.IsAuthenticated',
-    # ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
 }
 
 SIMPLE_JWT = {
@@ -57,19 +57,19 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-INTERNAL_IPS = [
-  # ...
-  '127.0.0.1',
-  # ...
-]
+# INTERNAL_IPS = [
+#   # ...
+#   '127.0.0.1',
+#   # ...
+# ]
 
 CORS_ALLOWED_ORIGINS = [
+  'https://ravimoova.co.tz',
   'http://localhost:3000',
   'http://127.0.0.1:3000',
-  'http://localhost:8001',
-  'http://127.0.0.1:8001',
-# 'https://ravimoova.co.tz',
 ]
+# Only allow all origins during local development
+CORS_ALLOW_ALL_ORIGINS = DEBUG
 
 ROOT_URLCONF = 'ravi.urls'
 
@@ -94,15 +94,26 @@ WSGI_APPLICATION = 'ravi.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR/"ravi.sqlite3",
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR/"ravi.sqlite3",
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ.get('DB_NAME', 'u122050617_ravimoov_ravi'),
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
+        'PORT': os.environ.get('DB_PORT', '3306'),
+        'USER': os.environ.get('DB_USER', 'u122050617_ravimoov'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+        },
     }
 }
-
-# database_url = os.environ.get("DATABASE_URL")
-# DATABASES['default'] = dj_database_url.parse(database_url)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -121,6 +132,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "ravi-cache",
+    }
+}
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 LANGUAGE_CODE = 'en-us'
@@ -136,9 +155,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
-# STATIC_URL = '/static/'
-# STATICFILES_DIRS = [BASE_DIR / "static"]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -158,12 +174,11 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 
 
 # Secure SSL redirect
-# SECURE_SSL_REDIRECT = True
-
+SECURE_SSL_REDIRECT = not DEBUG
 
 # csrf protection 
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = not DEBUG
+SESSION_COOKIE_SECURE = not DEBUG
 
 # http Strict Transport Security
 SECURE_HSTS_SECONDS = 86400  
