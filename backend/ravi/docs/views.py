@@ -1,10 +1,11 @@
 from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from django.http import FileResponse, HttpResponseForbidden, Http404
+from rest_framework.throttling import ScopedRateThrottle
+from django.db import connection
+from django.http import FileResponse, HttpResponseForbidden, Http404, JsonResponse
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser
-from rest_framework.views import APIView
 import csv
 import io
 import os
@@ -17,6 +18,17 @@ from docs.serializers import (
     PublicationSerializer, ContactMessagesSerializer,
     CollaboratorMessagesSerializer, CasesSerializer
 )
+from .services.sms import send_contact_notifications, send_collaborator_notifications
+
+
+def health_check(request):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute('SELECT 1')
+            cursor.fetchone()
+    except Exception:
+        return JsonResponse({'status': 'unhealthy'}, status=503)
+    return JsonResponse({'status': 'ok'})
 
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
@@ -44,22 +56,51 @@ class PublicationViewSet(viewsets.ModelViewSet):
 class ContactMessagesViewSet(viewsets.ModelViewSet):
     queryset = Messages.objects.all()
     serializer_class = ContactMessagesSerializer
-    permission_classes = [AllowAny]
+
+    def get_permissions(self):
+        if self.action == 'create':
+            return [AllowAny()]
+        return [IsAuthenticated()]
+
+    def get_throttles(self):
+        if self.action == 'create':
+            self.throttle_scope = 'contact_messages'
+            return [ScopedRateThrottle()]
+        return []
+
+    def perform_create(self, serializer):
+        message = serializer.save()
+        send_contact_notifications(message)
 
 class CollaboratorMessagesViewSet(viewsets.ModelViewSet):
     queryset = Messages.objects.all()
     serializer_class = CollaboratorMessagesSerializer
-    permission_classes = [AllowAny]
 
-    def create(self, request, *args, **kwargs):
-        return super().create(request, *args, **kwargs)
+    def get_permissions(self):
+        if self.action == 'create':
+            return [AllowAny()]
+        return [IsAuthenticated()]
+
+    def get_throttles(self):
+        if self.action == 'create':
+            self.throttle_scope = 'collaborator_messages'
+            return [ScopedRateThrottle()]
+        return []
+
+    def perform_create(self, serializer):
+        message = serializer.save()
+        send_collaborator_notifications(message)
 
 
 class CasesViewSet(viewsets.ModelViewSet):
     queryset = Cases.objects.all()
     serializer_class = CasesSerializer
-    permission_classes = [AllowAny]
     parser_classes = (MultiPartParser, FormParser)
+
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve', 'stream_file']:
+            return [AllowAny()]
+        return [IsAuthenticated()]
 
     @action(detail=False, methods=['post'], url_path='bulk-import')
     def bulk_import(self, request):
@@ -123,9 +164,8 @@ class CasesViewSet(viewsets.ModelViewSet):
             response["Content-Disposition"] = f'inline; filename="{os.path.basename(file_path)}"'
             response["X-Content-Type-Options"] = "nosniff"
             response["Cache-Control"] = "no-store"
-            response["Access-Control-Allow-Origin"] = request.headers.get("Origin", "*")  # <-- CORS HEADER
             return response
-        except Exception as e:
+        except Exception:
             raise Http404("Failed to read the file.")
 
 def stream_book(request, book_id):
@@ -140,4 +180,3 @@ def stream_book(request, book_id):
     except Book.DoesNotExist:
         return HttpResponseForbidden("Book not found.")
     
-

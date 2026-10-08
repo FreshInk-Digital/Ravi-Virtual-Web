@@ -40,7 +40,6 @@ export default function TaxJudgmentsPanel() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [selectedCase, setSelectedCase] = useState(null); // For the modal
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
-  const [fileUrl, setFileUrl] = useState(""); // State for the file URL
 
   const navigate = useNavigate();
   const dropdownRef = useRef();
@@ -83,14 +82,12 @@ export default function TaxJudgmentsPanel() {
       return;
     }
     setSelectedCase(caseItem); // Set the selected case for the modal
-    setFileUrl(caseItem.file_path); // Set the file URL from the case
     setIsModalOpen(true); // Open the modal
   };
 
   const closeModal = () => {
     setIsModalOpen(false); // Close the modal
     setSelectedCase(null); // Clear selected case
-    setFileUrl(""); // Clear the file URL
   };
 
   // Filter cases by category and search term

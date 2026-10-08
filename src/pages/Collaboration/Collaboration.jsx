@@ -13,7 +13,6 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import ContactInformation from "../../components/ContactInformation";
-import sendSms from "../../api/collaboratorSms"; // Adjusted import
 
 export default function CollaboratorRegistration() {
   const [formData, setFormData] = useState({
@@ -85,6 +84,9 @@ const validateForm = () => {
   else if (formData.message.length > 250)
     newErrors.message = "Message cannot exceed 250 characters.";
 
+  const phoneError = validateCollaboratorPhone(formData.collaborator_phone);
+  if (phoneError) newErrors.collaborator_phone = phoneError;
+
   setErrors(newErrors);
   return Object.keys(newErrors).length === 0;
 };
@@ -140,43 +142,29 @@ const validateForm = () => {
     });
 
     try {
-      const saveResponse = await api.post("/CollaboratorMessages/", updatedFormData);
-      console.log("Message saved to database:", saveResponse.data);
+      await api.post("/CollaboratorMessages/", updatedFormData);
+      toast({
+        title: "Message Sent",
+        description: "Your submission has been received. We will follow up shortly.",
+        status: "success",
+        duration: 8000,
+        isClosable: true,
+      });
 
-      const smsResult = await sendSms(updatedFormData);
-
-      if (smsResult.success) {
-        toast({
-          title: "Message Sent",
-          description: smsResult.message,
-          status: "success",
-          duration: 8000,
-          isClosable: true,
-        });
-
-        setFormData({
-          collaborator_name: "",
-          location: "",
-          collaborator_phone: "",
-          message: "",
-          status: "NOT URGENT",
-        });
-        setMessageLength(0);
-      } else {
-        toast({
-          title: "Message Failed",
-          description: smsResult.message,
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-        });
-      }
+      setFormData({
+        collaborator_name: "",
+        location: "",
+        collaborator_phone: "",
+        message: "",
+        status: "NOT URGENT",
+      });
+      setMessageLength(0);
     } catch (error) {
       console.error("Error during message sending process:", error);
       toast({
         title: "Send Failed",
         description:
-          "There was an error saving your message or sending the SMS. Please try again.",
+          "There was an error submitting your message. Please try again.",
         status: "error",
         duration: 5000,
         isClosable: true,

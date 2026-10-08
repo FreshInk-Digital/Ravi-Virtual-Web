@@ -14,6 +14,7 @@ router.register(r'Cases', views.CasesViewSet, basename='cases')
 # router.register(r'Collaborator', views.CollaboratorViewSet, basename='collaborator')
 
 urlpatterns = [
+    path('health/', views.health_check, name='health-check'),
     path('', include(router.urls)),  # Includes /Cases/<pk>/stream/ as well
     path('api-auth/', include('rest_framework.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),

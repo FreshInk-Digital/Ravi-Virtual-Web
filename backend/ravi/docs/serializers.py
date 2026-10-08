@@ -60,6 +60,16 @@ class ContactMessagesSerializer(serializers.ModelSerializer):
         ]
         read_only_fields = ['date_created']
 
+    def validate_phone(self, value):
+        digits = ''.join(character for character in value if character.isdigit())
+        if digits.startswith('255'):
+            digits = digits[3:]
+        elif digits.startswith('0'):
+            digits = digits[1:]
+        if len(digits) != 9 or not digits.startswith(('6', '7')):
+            raise serializers.ValidationError('Enter a valid Tanzanian mobile number.')
+        return digits
+
 # --- Collaborator Messages Serializer ---
 class CollaboratorMessagesSerializer(serializers.ModelSerializer):
     class Meta:
@@ -69,6 +79,16 @@ class CollaboratorMessagesSerializer(serializers.ModelSerializer):
             'message', 'status', 'date_created'
         ]
         read_only_fields = ['date_created']
+
+    def validate_collaborator_phone(self, value):
+        digits = ''.join(character for character in value if character.isdigit())
+        if digits.startswith('255'):
+            digits = digits[3:]
+        elif digits.startswith('0'):
+            digits = digits[1:]
+        if len(digits) != 9 or not digits.startswith(('6', '7')):
+            raise serializers.ValidationError('Enter a valid Tanzanian mobile number.')
+        return digits
 
 # --- Cases Serializer ---
 class CasesSerializer(serializers.ModelSerializer):

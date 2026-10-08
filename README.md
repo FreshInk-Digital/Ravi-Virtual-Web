@@ -1,5 +1,32 @@
 # ravi_web
 
+## Environment setup
+
+The frontend and Django backend use separate environment files. Never commit real
+credentials.
+
+1. Copy `.env.example` to `.env` for the React frontend.
+2. Copy `backend/ravi/.env.example` to `backend/ravi/.env` for Django.
+3. Set production values in the hosting provider's environment-variable settings,
+   not in files committed to Git.
+
+Required production values include the public API URL, Django secret and host
+settings, MySQL credentials, and newly rotated Beem Africa credentials. SMS is
+sent by Django; Beem credentials must never be added to React source code.
+
+Before deploying the backend, run:
+
+```bash
+cd backend/ravi
+python manage.py check --deploy
+python manage.py migrate
+python manage.py collectstatic --noinput
+python manage.py test
+```
+
+Generated `build/`, `staticfiles/`, uploaded `media/`, local environment files,
+and SQL backups are intentionally excluded from Git.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ![Screenshot from 2024-11-19 16-00-32](https://github.com/user-attachments/assets/70acc8b4-a2d7-4ce3-9c77-82ea9750cc06)

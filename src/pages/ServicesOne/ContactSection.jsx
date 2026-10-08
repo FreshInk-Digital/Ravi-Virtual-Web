@@ -12,7 +12,6 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import ContactInformation from "../../components/ContactInformation";
-import sendSms from "../../api/sendSms"; // Adjusted import
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -101,48 +100,28 @@ export default function ContactSection() {
     });
 
     try {
-      // Step 1: Save message to the database
-      const saveResponse = await api.post("/ContactMessages/", formData);
-      console.log("Message saved to database:", saveResponse.data);
+      await api.post("/ContactMessages/", formData);
+      toast({
+        title: "Message Sent",
+        description: "Your request has been received. We will contact you soon.",
+        status: "success",
+        duration: 8000,
+        isClosable: true,
+      });
 
-      // Step 2: Send SMS
-      const smsResult = await sendSms(formData);
-
-      if (smsResult.success) {
-        // SMS sent successfully
-        toast({
-          title: "Message Sent",
-          description: smsResult.message,
-          status: "success",
-          duration: 8000,
-          isClosable: true,
-        });
-
-        // Reset the form
-        setFormData({
-          user_name: "",
-          email: "",
-          message: "",
-          phone: "",
-          status: "NOT URGENT",
-        });
-        setMessageLength(0); // Reset message length counter
-      } else {
-        // Message sending failed
-        toast({
-          title: "Message Failed",
-          description: smsResult.message,
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-        });
-      }
+      setFormData({
+        user_name: "",
+        email: "",
+        message: "",
+        phone: "",
+        status: "NOT URGENT",
+      });
+      setMessageLength(0);
     } catch (error) {
-      // Catch any error during the database save or SMS sending
       console.error("Error during message sending process:", error);
       toast({
         title: "Send Failed",
-        description: "There was an error saving your message or sending the SMS. Please try again.",
+        description: "There was an error submitting your message. Please try again.",
         status: "error",
         duration: 5000,
         isClosable: true,

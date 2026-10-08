@@ -2,17 +2,25 @@ from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
 import os
-import dj_database_url
-
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / '.env')
 
-SECRET_KEY="django-insecure-e2j_zlw0_e(b$fw1uk5z30p_!t)6(l&05a*f44te^j7i5otwt^"
-DEBUG=True
 
-ALLOWED_HOSTS = ["*"]
+def env_bool(name, default=False):
+    value = os.getenv(name, str(default))
+    return value.strip().lower() in ('1', 'true', 'yes', 'on')
+
+
+def env_list(name, default=''):
+    return [item.strip() for item in os.getenv(name, default).split(',') if item.strip()]
+
+
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+DEBUG = env_bool('DJANGO_DEBUG', False)
+
+ALLOWED_HOSTS = env_list('DJANGO_ALLOWED_HOSTS', 'backend.ravimoova.co.tz')
 
 # Application definition
 INSTALLED_APPS = [
@@ -38,6 +46,10 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
+    'DEFAULT_THROTTLE_RATES': {
+        'contact_messages': '10/hour',
+        'collaborator_messages': '10/hour',
+    },
 }
 
 SIMPLE_JWT = {
@@ -46,9 +58,9 @@ SIMPLE_JWT = {
 }
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -63,13 +75,29 @@ MIDDLEWARE = [
 #   # ...
 # ]
 
-CORS_ALLOWED_ORIGINS = [
-  'https://ravimoova.co.tz',
-  'http://localhost:3000',
-  'http://127.0.0.1:3000',
-]
-# Only allow all origins during local development
-CORS_ALLOW_ALL_ORIGINS = DEBUG
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = env_list(
+    'CORS_ALLOWED_ORIGINS',
+    'https://ravimoova.co.tz,https://www.ravimoova.co.tz',
+)
+CSRF_TRUSTED_ORIGINS = env_list(
+    'CSRF_TRUSTED_ORIGINS',
+    'https://backend.ravimoova.co.tz',
+)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+    },
+}
 
 ROOT_URLCONF = 'ravi.urls'
 
@@ -101,19 +129,29 @@ WSGI_APPLICATION = 'ravi.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_NAME', 'u122050617_ravimoov_ravi'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
-        'PORT': os.environ.get('DB_PORT', '3306'),
-        'USER': os.environ.get('DB_USER', 'u122050617_ravimoov'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-        },
+if env_bool('USE_SQLITE', False):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': os.environ['DB_NAME'],
+            'HOST': os.environ['DB_HOST'],
+            'PORT': os.getenv('DB_PORT', '3306'),
+            'USER': os.environ['DB_USER'],
+            'PASSWORD': os.environ['DB_PASSWORD'],
+            'CONN_MAX_AGE': 60,
+            'OPTIONS': {
+                'charset': 'utf8mb4',
+                'connect_timeout': 10,
+            },
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -154,9 +192,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    },
+}
 
 # Media files configuration (if needed)
 MEDIA_URL = '/media/'
@@ -176,14 +220,17 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 # Secure SSL redirect
 SECURE_SSL_REDIRECT = not DEBUG
 
+# Trust the HTTPS scheme forwarded by the production reverse proxy.
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # csrf protection 
 CSRF_COOKIE_SECURE = not DEBUG
 SESSION_COOKIE_SECURE = not DEBUG
 
 # http Strict Transport Security
-SECURE_HSTS_SECONDS = 86400  
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_SECONDS = 31536000 if not DEBUG else 0
+SECURE_HSTS_INCLUDE_SUBDOMAINS = not DEBUG
+SECURE_HSTS_PRELOAD = not DEBUG
 
 # X-Frame-Options Header
 X_FRAME_OPTIONS = 'DENY'

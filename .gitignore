@@ -17,6 +17,9 @@ build.zip
 .DS_Store
 .env
 .env.*
+!.env.example
+env
+*.sql
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -41,6 +44,7 @@ backend/ravi/*.swp
 # Environment Files
 backend/ravi/.env
 backend/ravi/.env.*
+!backend/ravi/.env.example
 
 # IDE Settings
 .vscode/

@@ -1,1 +1,1 @@
-web: gunicorn ravi.wsgi
+web: gunicorn ravi.wsgi:application
